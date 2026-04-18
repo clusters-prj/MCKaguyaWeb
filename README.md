@@ -1,2 +1,0 @@
-# MCKaguyaWeb
-MCツクヨミのwebの中身。
