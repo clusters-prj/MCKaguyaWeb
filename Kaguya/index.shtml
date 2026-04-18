@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!--#include virtual="/header.html" -->
+  <main>
+      <section id="project-overview">
+          <h2>プロジェクト概要：超かぐや姫！の再現プロジェクト</h2>
+          <p>
+              本プロジェクトは、マインクラフトにおいて「超かぐや姫！」の世界観を忠実に、かつ独自の解釈を加えて再現することを目的に始動しました。
+          </p>
+      </section>
+
+      <section id="status">
+          <h3>現在の進捗状況</h3>
+          <ul>
+              <li><strong>ワールド地形再現:</strong> 進行中</li>
+              <li><strong>サーバーシステム実装 (Paper/Velocity):</strong> 実装中</li>
+              <li><strong>独自プラグイン・演出設定:</strong> 開発中</li>
+          </ul>
+      </section>
+
+      <section id="tech-stack">
+          <h3>テクニカルスタック</h3>
+          <p>インフラからゲーム内システムまで、以下の技術を用いて構築されています。</p>
+          <table>
+              <thead>
+                  <tr>
+                      <th>カテゴリ</th>
+                      <th>使用技術・環境</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>インフラ</td>
+                      <td>Proxmox / 自宅サーバー環境</td>
+                  </tr>
+                  <tr>
+                      <td>サーバーソフトウェア</td>
+                      <td>Paper (Java Edition)</td>
+                  </tr>
+                  <tr>
+                      <td>主要システム</td>
+                      <td>LuckPerms / MythicMobs / ModelEngine</td>
+                  </tr>
+                  <tr>
+                      <td>Web配信</td>
+                      <td>Apache (HTTP Server)</td>
+                  </tr>
+              </tbody>
+          </table>
+      </section>
+
+      <section id="members">
+          <h3>プロジェクトメンバー</h3>
+          <ul>
+              <li><strong>主催:</strong> Yationi</li>
+              <li><strong>協力・共同開発:</strong> キーマ / 他プロジェクトメンバー</li>
+          </ul>
+      </section>
+
+      <section id="news">
+          <h3>最新情報</h3>
+          <p>更新</p>
+          <p>現在はJava版への環境移行および、専用BGM・演出の組み込みに注力しています。</p>
+      </section>
+  </main>
+  </body>
+</html>

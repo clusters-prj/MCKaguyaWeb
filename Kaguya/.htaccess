@@ -1,0 +1,2 @@
+# 404 Not Foundの場合
+ErrorDocument 404 /404.html
