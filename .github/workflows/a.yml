@@ -1,0 +1,7 @@
+name: Test Action
+on: [push] # 全てのプッシュで発動
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello, GitHub Actions is working!"
