@@ -1,0 +1,30 @@
+name: Sync Subtree to Main Repo
+
+on:
+  push:
+    branches:
+      - main  # Web側が更新されたら発動
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Web Repo
+        uses: actions/checkout@v4
+
+      - name: Push update to Server-configs
+        run: |
+          # 自分の情報を設定
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # 本体リポジトリを一時的にクローン
+          git clone https://x-access-token:${{ secrets.SYNC_TOKEN }}@github.com/swmr71/Server-configs.git main_repo
+          cd main_repo
+
+          # Subtreeを更新
+          # --squashをつけると履歴が綺麗になります
+          git subtree pull --prefix=Web/Pages/Kaguya/ https://github.com/swmr71/MCKaguyaWeb.git main --squash
+
+          # 本体リポジトリへプッシュ
+          git push origin main
