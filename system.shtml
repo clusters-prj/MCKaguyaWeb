@@ -72,12 +72,12 @@
         </section>
 
         <section id="spec">
-            <h3>ハードウェアスペック (目安)</h3>
+            <h3>ハードウェアスペック</h3>
             <table>
                 <tr><th>CPU</th><td>Intel Core i7 相当 (仮想割り当て)</td></tr>
-                <tr><th>RAM</th><td>32GB DDR4</td></tr>
-                <tr><th>Storage</th><td>NVMe SSD</td></tr>
-                <tr><th>OS</th><td>Linux (Debian based)</td></tr>
+                <tr><th>RAM</th><td>4+4GB DDR4</td></tr>
+                <tr><th>Storage</th><td>HDD/NVMe SSD</td></tr>
+                <tr><th>OS</th><td>Linux (Ubuntu based)</td></tr>
             </table>
         </section>
     </main>
