@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../assets/style.css">
   </head>
   <body>
-    <!--#include virtual="/header.html" -->
+    <!--#include virtual="../templates/header.html" -->
     <main>
         <section id="credits-intro">
             <h2>協力者一覧 / Credits</h2>
@@ -47,7 +47,7 @@
             
             <ul style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; list-style: none; padding: 0;">
                 <?php
-                $f = fopen("members.csv", "r");
+                $f = fopen("../data/members.csv", "r");
                 echo '<ul class="member-grid">';
                 while (($line = fgetcsv($f)) !== FALSE) {
                     // line[0]が名前、line[1]が役割

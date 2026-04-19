@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../assets/style.css">
     <title>超かぐや姫！再現プロジェクト</title>
   </head>
   <body>
-    <!--#include virtual="/header.html" -->
+    <!--#include virtual="../templates/header.html" -->
   <main>
       <section id="project-overview">
           <h2>プロジェクト概要：超かぐや姫！の再現プロジェクト</h2>
@@ -62,12 +62,13 @@
                 <li><strong>主催:</strong> Yationi</li>
                 <li><strong>協力・共同開発:</strong> キーマ / 他プロジェクトメンバー</li>
             </ul>
-            <a href="./cont.php">くわしくはこちら</a>
+            <a href="cont.php">くわしくはこちら</a>
         </section>
 
         <section id="history">
-        <!--#include virtual="/history.html" -->
+        <!--#include virtual="history.html" -->
         </section>
   </main>
   </body>
 </html>
+
