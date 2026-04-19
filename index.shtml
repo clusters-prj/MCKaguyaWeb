@@ -65,11 +65,9 @@
           <a href="./cont.php">くわしくはこちら</a>
       </section>
 
-      <section id="news">
-          <h3>最新情報</h3>
-          <p>更新</p>
-          <p>現在はJava版への環境移行および、専用BGM・演出の組み込みに注力しています。</p>
-      </section>
+        <section id="history">
+        <!--#include virtual="/history.html" -->
+        </section>
   </main>
   </body>
 </html>

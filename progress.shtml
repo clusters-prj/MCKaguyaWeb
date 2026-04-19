@@ -49,11 +49,7 @@
         </section>
 
         <section id="history">
-            <h3>更新履歴</h3>
-            <ul>
-                <li>2023/10/XX - Java版への環境移行を開始</li>
-                <li>2023/09/XX - プロジェクト発足・地形生成テスト開始</li>
-            </ul>
+        <!--#include virtual="/history.html" -->
         </section>
     </main>
 </body>
