@@ -56,14 +56,14 @@
           </table>
       </section>
 
-      <section id="members">
-          <h3>プロジェクトメンバー</h3>
-          <ul>
-              <li><strong>主催:</strong> Yationi</li>
-              <li><strong>協力・共同開発:</strong> キーマ / 他プロジェクトメンバー</li>
-          </ul>
-          <a href="./cont.php">くわしくはこちら</a>
-      </section>
+        <section id="members">
+            <h3>プロジェクトメンバー</h3>
+            <ul>
+                <li><strong>主催:</strong> Yationi</li>
+                <li><strong>協力・共同開発:</strong> キーマ / 他プロジェクトメンバー</li>
+            </ul>
+            <a href="./cont.php">くわしくはこちら</a>
+        </section>
 
         <section id="history">
         <!--#include virtual="/history.html" -->
