@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>再現進捗 - 超かぐや姫！再現プロジェクト</title>
+    <style>
+        .progress-container {
+            margin-bottom: 20px;
+        }
+        .progress-bar-bg {
+            background-color: #e0e0e0;
+            border-radius: 8px;
+            height: 20px;
+            width: 100%;
+            overflow: hidden;
+        }
+        .progress-bar-fill {
+            background-color: #4caf50;
+            height: 100%;
+            text-align: center;
+            color: white;
+            font-size: 12px;
+            line-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!--#include virtual="/header.html" -->
+    <main>
+        <section id="progress-detail">
+            <h2>再現進捗状況</h2>
+            <p>プロジェクトの各要素における現在の進捗率です。</p>
+
+            <div class="progress-container">
+                <h4>ワールド地形再現</h4>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" style="width: 50%;">xx%</div>
+                </div>
+                <p>メインとなる竹林および周辺地形の造形中。</p>
+            </div>
+
+            <div class="progress-container">
+                <h4>サーバーシステム (Paper/Velocity)</h4>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" style="width: 50%;">xx%</div>
+                </div>
+                <p>プロキシ設定および基本権限周りの構築完了。</p>
+            </div>
+
+            <div class="progress-container">
+                <h4>独自プラグイン・演出</h4>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" style="width: 50%;">xx%</div>
+                </div>
+                <p>MythicMobsを用いたボス挙動の試作段階。</p>
+            </div>
+
+            <div class="progress-container">
+                <h4>リソースパック・BGM</h4>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" style="width: 50%;">xx%</div>
+                </div>
+                <p>専用BGMの選定およびモデルデータのインポート開始。</p>
+            </div>
+        </section>
+
+        <section id="history">
+            <h3>更新履歴</h3>
+            <ul>
+                <li>2023/10/XX - Java版への環境移行を開始</li>
+                <li>2023/09/XX - プロジェクト発足・地形生成テスト開始</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
