@@ -22,6 +22,7 @@
     padding: 0;
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
   }
   nav a {
     text-decoration: none;
@@ -29,27 +30,17 @@
     font-weight: 600;
     transition: color 0.3s ease, border-bottom 0.3s ease;
     position: relative;
-    border-bottom: 2px solid transparent;
-    padding-bottom: 2px;
+    border-bottom: 3px solid transparent;
+    padding-bottom: 4px;
+    display: inline-block;
   }
   nav a:hover {
     color: #4f46e5;
-    border-bottom: 2px solid #4f46e5;
+    border-bottom-color: #4f46e5;
   }
   nav a.active {
     color: #4f46e5;
-    border-bottom: 2px solid #4f46e5;
-    animation: activeUnderline 0.4s ease-out;
-  }
-  @keyframes activeUnderline {
-    from {
-      border-bottom-color: transparent;
-      opacity: 0.7;
-    }
-    to {
-      border-bottom-color: #4f46e5;
-      opacity: 1;
-    }
+    border-bottom-color: #4f46e5;
   }
   hr {
     border: 0;
