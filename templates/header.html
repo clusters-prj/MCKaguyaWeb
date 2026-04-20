@@ -8,3 +8,17 @@
   </ul>
 </nav>
 <hr>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('nav a');
+    
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (currentPath === href || (currentPath === '/' && href === '/index.shtml')) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
