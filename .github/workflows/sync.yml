@@ -24,7 +24,13 @@ jobs:
 
           # Subtreeを更新
           # --squashをつけると履歴が綺麗になります
-          git subtree pull --prefix=Web/Pages/Kaguya/ https://github.com/swmr71/MCKaguyaWeb.git main --squash
+          git subtree pull --prefix=Web/Pages/Kaguya/ https://github.com/swmr71/MCKaguyaWeb.git main --squash || {
+            echo "マージ競合が発生しました。MCKaguyaWebの変更を強制的に反映させます。"
+            
+            # 競合を解決するため、MCKaguyaWeb側を優先
+            git reset --hard MERGE_HEAD
+            git commit -m "Resolve merge conflict: Keep MCKaguyaWeb changes" --allow-empty
+          }
 
           # 本体リポジトリへプッシュ
           git push origin main
