@@ -1,19 +1,21 @@
 # URL書き換えルール - SSI対応
-RewriteEngine On
-RewriteBase /
-
-# ページへのアクセスを pages/ にリダイレクト
-RewriteRule ^index\.shtml$ pages/index.shtml [L]
-RewriteRule ^contact\.shtml$ pages/contact.shtml [L]
-RewriteRule ^history\.html$ pages/history.html [L]
-RewriteRule ^progress\.shtml$ pages/progress.shtml [L]
-RewriteRule ^system\.shtml$ pages/system.shtml [L]
-
-# テンプレートへのアクセスをリダイレクト
-RewriteRule ^header\.html$ templates/header.html [L]
-
-# CSSへのアクセスをリダイレクト
-RewriteRule ^(style|error)\.css$ assets/$1.css [L]
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # ページへのアクセスを pages/ にリダイレクト
+  RewriteRule ^index\.shtml$ pages/index.shtml [L]
+  RewriteRule ^contact\.shtml$ pages/contact.shtml [L]
+  RewriteRule ^history\.html$ pages/history.html [L]
+  RewriteRule ^progress\.shtml$ pages/progress.shtml [L]
+  RewriteRule ^system\.shtml$ pages/system.shtml [L]
+  
+  # テンプレートへのアクセスをリダイレクト
+  RewriteRule ^header\.html$ templates/header.html [L]
+  
+  # CSSへのアクセスをリダイレクト
+  RewriteRule ^(style|error)\.css$ assets/$1.css [L]
+</IfModule>
 
 # エラーページの定義
 ErrorDocument 403 /errors/403.html
