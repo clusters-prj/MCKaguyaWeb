@@ -62,21 +62,12 @@
                 <li><strong>主催:</strong> Yationi</li>
                 <li><strong>協力・共同開発:</strong> キーマ / 他プロジェクトメンバー</li>
             </ul>
-<<<<<<< HEAD:Web/Pages/Kaguya/pages/index.shtml
             <a href="cont.php">くわしくはこちら</a>
         </section>
 
         <section id="history">
-        <!--#include virtual="history.html" -->
-=======
-            <a href="./cont.php">くわしくはこちら</a>
-        </section>
-
-        <section id="history">
-        <!--#include virtual="/history.html" -->
->>>>>>> e92fb8aaa0154f114caa5b57cfd7f3b8edaae397:Web/Pages/Kaguya/index.shtml
+        <!--#include virtual="pages/history.html" -->
         </section>
   </main>
   </body>
 </html>
-
