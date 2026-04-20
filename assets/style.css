@@ -41,6 +41,21 @@
   nav a.active {
     color: #4f46e5;
     border-bottom-color: #4f46e5;
+    animation: slideUnderline 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  @keyframes slideUnderline {
+    0% {
+      border-bottom-color: transparent;
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+    50% {
+      border-bottom-color: #4f46e5;
+    }
+    100% {
+      border-bottom-color: #4f46e5;
+      transform: scaleX(1);
+    }
   }
   hr {
     border: 0;
