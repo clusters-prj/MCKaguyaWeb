@@ -1,180 +1,430 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
+<html>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/style.css">
-    <title>協力者一覧 | 「超かぐや姫」再現プロジェクト</title>
     <style>
-        .filter-container {
-            background: #f4f4f4;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            align-items: center;
+      :root {
+        --indigo-primary: #4f46e5;
+        --indigo-light: #eef2ff;
+        --indigo-dark: #312e81;
+        --text-primary: #1f2937;
+        --text-secondary: #6b7280;
+        --border-color: #e5e7eb;
+      }
+
+      /* Kiwi Maru フォント */
+      @import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500;700&display=swap');
+
+      body {
+        font-family: 'Kiwi Maru', serif;
+      }
+
+      #member-controls {
+        margin: 2rem 0;
+        padding: 1.5rem;
+        background: linear-gradient(135deg, var(--indigo-light) 0%, #f0f4ff 100%);
+        border-radius: 12px;
+        border-left: 4px solid var(--indigo-primary);
+      }
+
+      .search-container {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .search-input {
+        flex: 1;
+        min-width: 200px;
+        padding: 0.75rem 1rem;
+        border: 2px solid var(--indigo-primary);
+        border-radius: 8px;
+        font-family: 'Kiwi Maru', serif;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .search-input:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        transform: translateY(-2px);
+      }
+
+      .filter-buttons {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+
+      .filter-btn {
+        padding: 0.5rem 1rem;
+        border: 2px solid var(--indigo-primary);
+        background: white;
+        color: var(--indigo-primary);
+        border-radius: 20px;
+        cursor: pointer;
+        font-family: 'Kiwi Maru', serif;
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .filter-btn:hover {
+        background: var(--indigo-primary);
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      .filter-btn.active {
+        background: var(--indigo-primary);
+        color: white;
+      }
+
+      .member-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+        list-style: none;
+        padding: 0;
+        margin: 2rem 0;
+      }
+
+      .member-card {
+        padding: 1.5rem;
+        border: 2px solid var(--indigo-primary);
+        border-radius: 12px;
+        background: white;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .member-card:hover {
+        box-shadow: 0 8px 24px rgba(79, 70, 229, 0.15);
+        transform: translateY(-4px);
+      }
+
+      .member-name {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: var(--indigo-dark);
+      }
+
+      .member-name a {
+        color: var(--indigo-primary);
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        transition: all 0.3s ease;
+      }
+
+      .member-name a:hover {
+        border-bottom-color: var(--indigo-primary);
+      }
+
+      .member-role {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        margin-bottom: 1rem;
+        flex-grow: 1;
+      }
+
+      .member-role-tag {
+        display: inline-block;
+        background: var(--indigo-light);
+        color: var(--indigo-primary);
+        padding: 0.25rem 0.75rem;
+        border-radius: 16px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .member-social {
+        margin-top: 0.5rem;
+      }
+
+      .member-social a {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: var(--indigo-light);
+        color: var(--indigo-primary);
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .member-social a:hover {
+        background: var(--indigo-primary);
+        color: white;
+        transform: translateX(4px);
+      }
+
+      .member-count {
+        text-align: center;
+        margin: 2rem 0 1rem 0;
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+      }
+
+      .no-results {
+        text-align: center;
+        padding: 3rem 1rem;
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+      }
+
+      .no-results-emoji {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      @media (max-width: 768px) {
+        .search-container {
+          flex-direction: column;
         }
-        .filter-container input, .filter-container select {
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+
+        .search-input {
+          min-width: 100%;
         }
+
         .member-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
-            list-style: none;
-            padding: 0;
+          grid-template-columns: 1fr;
         }
-        .member-item {
-            padding: 10px;
-            border: 1px solid #eee;
-            border-radius: 5px;
-            background: #fff;
+
+        .filter-buttons {
+          width: 100%;
         }
-        .role-label {
-            display: block;
-            font-size: 0.85em;
-            color: #666;
-            margin-top: 5px;
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!--#include virtual="../templates/header.html" -->
     <main>
         <section id="credits-intro">
             <h2>協力者一覧 / Credits</h2>
             <p>
-                「超かぐや姫」再現プロジェクトは、多くの有志メンバーの協力によって支えられています。<br>
+                「超かぐや姫」再現プロジェクトは、多くの有志メンバーの協力によって支えられています。
                 現在、総勢約168名の皆様と共にワールド構築を進めています。
             </p>
         </section>
 
-        <!-- 1. 運営・開発の固定表 -->
         <section id="core-staff">
             <h3>運営・開発</h3>
-            <table border="1" style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
+            <table>
                 <thead>
-                    <tr style="background: #eee;">
-                        <th style="padding: 10px;">担当区分</th>
-                        <th style="padding: 10px;">メンバー名</th>
-                        <th style="padding: 10px;">主な役割</th>
+                    <tr>
+                        <th>担当区分</th>
+                        <th>メンバー名</th>
+                        <th>主な役割</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="padding: 10px;"><strong>主催</strong></td>
-                        <td style="padding: 10px;">やちおに氏</td>
-                        <td style="padding: 10px;">インフラ構築・全体指揮</td>
+                        <td><strong>主催</strong></td>
+                        <td>やちおに氏</td>
+                        <td>インフラ構築・全体指揮</td>
                     </tr>
                     <tr>
-                        <td style="padding: 10px;"><strong>建築リーダー</strong></td>
-                        <td style="padding: 10px;">建築担当者A氏</td>
-                        <td style="padding: 10px;">ワールド地形・建築物の設計・監修</td>
+                        <td><strong>建築リーダー</strong></td>
+                        <td>建築担当者A氏</td>
+                        <td>ワールド地形・建築物の設計・監修</td>
                     </tr>
                 </tbody>
             </table>
         </section>
 
-        <!-- 2. CSVから読み込むコントリビューター一覧 -->
         <section id="contributors">
             <h3>プロジェクト・コントリビューター</h3>
             <p>建築、回路、プラグイン設定、テストプレイ等でご協力いただいた皆様です。</p>
 
-            <div class="filter-container">
-                <input type="text" id="memberSearch" placeholder="名前で検索...">
-                <select id="roleFilter">
-                    <option value="">すべての役割</option>
-                    <option value="建築">建築</option>
-                    <option value="回路">回路</option>
-                    <option value="テストプレイ">テストプレイ</option>
-                    <option value="応援">応援</option>
-                </select>
-                <span id="hitCount"></span>
+            <!-- 検索・フィルター機能 -->
+            <div id="member-controls">
+                <div class="search-container">
+                    <input 
+                        type="text" 
+                        id="search-input" 
+                        class="search-input" 
+                        placeholder="メンバー名で検索..."
+                        autocomplete="off"
+                    >
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">全て表示</button>
+                    <?php
+                    // CSVから役割を取得してフィルターボタンを動的生成
+                    $roles = array();
+                    $f = fopen("../data/members.csv", "r");
+                    $header = fgetcsv($f);
+                    while (($line = fgetcsv($f)) !== FALSE) {
+                        if (!empty($line[2])) {
+                            // 複数の役割がカンマで区切られている場合に対応
+                            $role_list = array_map('trim', explode('、', $line[2]));
+                            foreach ($role_list as $role) {
+                                if (!empty($role)) {
+                                    $roles[$role] = true;
+                                }
+                            }
+                        }
+                    }
+                    fclose($f);
+                    
+                    ksort($roles);
+                    foreach (array_keys($roles) as $role) {
+                        echo '<button class="filter-btn" data-filter="' . htmlspecialchars($role) . '">' . htmlspecialchars($role) . '</button>';
+                    }
+                    ?>
+                </div>
             </div>
 
-            <ul id="memberList" class="member-grid">
+            <!-- メンバーリスト -->
+            <ul class="member-grid" id="member-list">
                 <?php
-                $csvPath = "../data/members.csv";
-                if (file_exists($csvPath)) {
-                    // SplFileObject を使うと文字化けに強くなるため採用
-                    $file = new SplFileObject($csvPath);
-                    $file->setFlags(SplFileObject::READ_CSV | SplFileObject::READ_AHEAD | SplFileObject::SKIP_EMPTY | SplFileObject::DROP_NEW_LINE);
-
-                    $isFirstRow = true;
-                    foreach ($file as $line) {
-                        // ヘッダー（1行目）をスキップ
-                        if ($isFirstRow) {
-                            $isFirstRow = false;
-                            continue;
-                        }
-
-                        // 各項目の文字コードを UTF-8 に変換
-                        $line = array_map(function($value) {
-                            return mb_convert_encoding($value, 'UTF-8', 'SJIS-win, UTF-8');
-                        }, $line);
-
-                        if (empty($line[0])) continue;
-
-                        $name = htmlspecialchars(trim($line[0]));
-                        $link = !empty($line[1]) ? htmlspecialchars(trim($line[1])) : "";
-                        $rolesArray = array_filter(array_map('trim', array_slice($line, 2)));
-                        $rolesStr = htmlspecialchars(implode(", ", $rolesArray));
-                        $dataRoles = htmlspecialchars(implode("|", $rolesArray));
-
-                        echo "<li class='member-item' data-name='{$name}' data-roles='{$dataRoles}'>";
-                        if ($link) {
-                            echo "<strong><a href='{$link}' target='_blank' rel='noopener'>{$name}</a></strong>";
-                        } else {
-                            echo "<strong>{$name}</strong>";
-                        }
-                        echo "<span class='role-label'>({$rolesStr})</span>";
-                        echo "</li>";
+                $f = fopen("../data/members.csv", "r");
+                $header = fgetcsv($f);
+                while (($line = fgetcsv($f)) !== FALSE) {
+                    if (empty($line[0])) continue;
+                    
+                    $name = htmlspecialchars($line[0]);
+                    $link = isset($line[1]) ? htmlspecialchars(trim($line[1])) : '';
+                    $role = isset($line[2]) ? htmlspecialchars(trim($line[2])) : '';
+                    
+                    // 役割タグ用にデータ属性を生成
+                    $role_tags = array_map('trim', explode('、', $role));
+                    $data_roles = implode(',', $role_tags);
+                    
+                    echo '<li class="member-card" data-name="' . htmlspecialchars($line[0]) . '" data-roles="' . htmlspecialchars($data_roles) . '">';
+                    
+                    echo '<div class="member-name">';
+                    if (!empty($link) && filter_var($link, FILTER_VALIDATE_URL)) {
+                        echo '<a href="' . $link . '" target="_blank" rel="noopener noreferrer">' . $name . '</a>';
+                    } else {
+                        echo $name;
                     }
-                } else {
-                    echo "<li>CSVファイルが見つかりません: " . htmlspecialchars($csvPath) . "</li>";
+                    echo '</div>';
+                    
+                    // 役割をタグとして表示
+                    if (!empty($role)) {
+                        echo '<div class="member-role">';
+                        foreach ($role_tags as $tag) {
+                            if (!empty($tag)) {
+                                echo '<span class="member-role-tag">' . htmlspecialchars($tag) . '</span>';
+                            }
+                        }
+                        echo '</div>';
+                    }
+                    
+                    // ソーシャルリンクがあれば表示
+                    if (!empty($link) && filter_var($link, FILTER_VALIDATE_URL)) {
+                        echo '<div class="member-social">';
+                        if (strpos($link, 'twitter.com') !== false || strpos($link, 'x.com') !== false) {
+                            echo '<a href="' . $link . '" target="_blank" rel="noopener noreferrer">→ X/Twitter</a>';
+                        } elseif (strpos($link, 'youtube') !== false) {
+                            echo '<a href="' . $link . '" target="_blank" rel="noopener noreferrer">→ YouTube</a>';
+                        } elseif (strpos($link, 'twitch') !== false) {
+                            echo '<a href="' . $link . '" target="_blank" rel="noopener noreferrer">→ Twitch</a>';
+                        } else {
+                            echo '<a href="' . $link . '" target="_blank" rel="noopener noreferrer">→ リンク</a>';
+                        }
+                        echo '</div>';
+                    }
+                    
+                    echo '</li>';
                 }
+                fclose($f);
                 ?>
+            </ul>
+
+            <div class="member-count">
+                検索結果: <span id="result-count">0</span> 名
+            </div>
+        </section>
+
+        <section id="special-thanks">
+            <h3>スペシャルサンクス</h3>
+            <ul>
+                <li>「超かぐや姫！」制作関係者の皆様</li>
+                <li>自宅サーバー・インフラ運用の先人達</li>
             </ul>
         </section>
     </main>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const searchInput = document.getElementById('memberSearch');
-        const roleFilter = document.getElementById('roleFilter');
-        const memberItems = document.querySelectorAll('.member-item');
-        const hitCount = document.getElementById('hitCount');
+        const searchInput = document.getElementById('search-input');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const memberList = document.getElementById('member-list');
+        const resultCount = document.getElementById('result-count');
+        const memberCards = memberList.querySelectorAll('.member-card');
 
-        function filterMembers() {
-            const searchText = searchInput.value.toLowerCase();
-            const selectedRole = roleFilter.value;
+        let currentFilter = 'all';
+
+        function updateDisplay() {
+            const searchTerm = searchInput.value.toLowerCase();
             let visibleCount = 0;
 
-            memberItems.forEach(item => {
-                const name = item.getAttribute('data-name').toLowerCase();
-                const roles = item.getAttribute('data-roles').split('|');
-                
-                const matchesSearch = name.includes(searchText);
-                const matchesRole = (selectedRole === "") || roles.some(r => r.includes(selectedRole));
+            memberCards.forEach(card => {
+                const name = card.dataset.name.toLowerCase();
+                const roles = card.dataset.roles.split(',').map(r => r.trim().toLowerCase());
 
-                if (matchesSearch && matchesRole) {
-                    item.style.display = "";
+                // 検索条件
+                const matchesSearch = name.includes(searchTerm);
+
+                // フィルター条件
+                let matchesFilter = currentFilter === 'all';
+                if (!matchesFilter) {
+                    matchesFilter = roles.includes(currentFilter.toLowerCase());
+                }
+
+                // 両方の条件を満たすかチェック
+                const shouldShow = matchesSearch && matchesFilter;
+
+                if (shouldShow) {
+                    card.style.display = 'flex';
                     visibleCount++;
                 } else {
-                    item.style.display = "none";
+                    card.style.display = 'none';
                 }
             });
-            hitCount.textContent = `表示中: ${visibleCount}名`;
+
+            resultCount.textContent = visibleCount;
+
+            // 結果がない場合のメッセージ
+            if (visibleCount === 0) {
+                if (!memberList.querySelector('.no-results')) {
+                    const noResults = document.createElement('div');
+                    noResults.className = 'no-results';
+                    noResults.innerHTML = '<div class="no-results-emoji">🔍</div><p>条件に合うメンバーが見つかりません</p>';
+                    memberList.appendChild(noResults);
+                }
+            } else {
+                const noResults = memberList.querySelector('.no-results');
+                if (noResults) {
+                    noResults.remove();
+                }
+            }
         }
 
-        searchInput.addEventListener('input', filterMembers);
-        roleFilter.addEventListener('change', filterMembers);
-        filterMembers();
-    });
+        // 検索入力のイベントリスナー
+        searchInput.addEventListener('input', updateDisplay);
+
+        // フィルターボタンのイベントリスナー
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.dataset.filter;
+                searchInput.value = '';
+                updateDisplay();
+            });
+        });
+
+        // 初期表示
+        updateDisplay();
     </script>
-</body>
+  </body>
 </html>
