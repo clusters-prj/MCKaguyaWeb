@@ -105,27 +105,37 @@
             <ul id="memberList" class="member-grid">
                 <?php
                 $csvPath = "../data/members.csv";
-                if (file_exists($csvPath) && ($f = fopen($csvPath, "r")) !== FALSE) {
-                    // 1行目（ヘッダー）を読み飛ばす
-                    fgetcsv($f);
-
-                    while (($line = fgetcsv($f)) !== FALSE) {
-                        // 空行対策
+                
+                if (file_exists($csvPath)) {
+                    // ファイルの中身を丸ごと読み込む
+                    $buffer = file_get_contents($csvPath);
+                    
+                    // 文字コードを UTF-8 に変換（SJIS-win, UTF-8 の順で自動判別）
+                    $buffer = mb_convert_encoding($buffer, 'UTF-8', 'SJIS-win, UTF-8');
+                    
+                    // 一時的なストリーム（メモリ上）に書き込んで fgetcsv で扱えるようにする
+                    $fp = tmpfile();
+                    fwrite($fp, $buffer);
+                    rewind($fp);
+                
+                    // ヘッダー行（1行目）をスキップ
+                    fgetcsv($fp);
+                
+                    while (($line = fgetcsv($fp)) !== FALSE) {
                         if (empty($line[0])) continue;
-
+                
                         $name = htmlspecialchars(trim($line[0]));
                         $link = !empty($line[1]) ? htmlspecialchars(trim($line[1])) : "";
                         
-                        // 3列目以降をすべて「役割」として取得（カンマ区切りの可変長に対応）
+                        // 3列目以降をすべて「役割」として取得
                         $rolesArray = array_filter(array_map('trim', array_slice($line, 2)));
                         $rolesStr = htmlspecialchars(implode(", ", $rolesArray));
                         
-                        // JS絞り込み用のデータ属性（パイプ記号で結合）
+                        // JS絞り込み用のデータ
                         $dataRoles = htmlspecialchars(implode("|", $rolesArray));
-
+                
                         echo "<li class='member-item' data-name='{$name}' data-roles='{$dataRoles}'>";
                         
-                        // リンクがある場合は名前をaタグにする
                         if ($link) {
                             echo "<strong><a href='{$link}' target='_blank' rel='noopener'>{$name}</a></strong>";
                         } else {
@@ -135,7 +145,7 @@
                         echo "<span class='role-label'>({$rolesStr})</span>";
                         echo "</li>";
                     }
-                    fclose($f);
+                    fclose($fp);
                 } else {
                     echo "<li>メンバーリストを読み込めませんでした。</li>";
                 }
