@@ -215,7 +215,7 @@
         </section>
 
         <section id="core-staff">
-            <h3>運営・開発</h3>
+            <h3>運営</h3>
             <table>
                 <thead>
                     <tr>
@@ -227,13 +227,18 @@
                 <tbody>
                     <tr>
                         <td><strong>主催</strong></td>
-                        <td>やちおに氏</td>
-                        <td>インフラ構築・全体指揮</td>
+                        <td>やちおに</td>
+                        <td>監督・全体指揮</td>
                     </tr>
                     <tr>
-                        <td><strong>建築リーダー</strong></td>
-                        <td>建築担当者A氏</td>
-                        <td>ワールド地形・建築物の設計・監修</td>
+                        <td><strong>サーバー関連</strong></td>
+                        <td>キーマ</td>
+                        <td>サーバー提供・インフラ整備等</td>
+                    </tr>
+                    <tr>
+                        <td>追記したいけどめんどすぎる</td>
+                        <td>Tekika,RAIBU,Tチキン,あまゆき,しおさん,ノラネコ,狐,ゆうひch,無職（かんた）</td>
+                        <td>いろいろ</td>
                     </tr>
                 </tbody>
             </table>
