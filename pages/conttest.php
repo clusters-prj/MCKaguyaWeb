@@ -263,9 +263,14 @@
                     $header = fgetcsv($f);
                     while (($line = fgetcsv($f)) !== FALSE) {
                         if (!empty($line[2])) {
-                            // 複数の役割がカンマで区切られている場合に対応
-                            $role_list = array_map('trim', explode('、', $line[2]));
+                            // 複数の役割がカンマ(、または,)で区切られている場合に対応
+                            $role_string = $line[2];
+                            // 全角カンマと半角カンマの両方に対応
+                            $role_string = str_replace(',', '、', $role_string);
+                            $role_list = explode('、', $role_string);
+                            
                             foreach ($role_list as $role) {
+                                $role = trim($role);
                                 if (!empty($role)) {
                                     $roles[$role] = true;
                                 }
@@ -276,7 +281,7 @@
                     
                     ksort($roles);
                     foreach (array_keys($roles) as $role) {
-                        echo '<button class="filter-btn" data-filter="' . htmlspecialchars($role) . '">' . htmlspecialchars($role) . '</button>';
+                        echo '<button class="filter-btn" data-filter="' . htmlspecialchars($role) . '">' . htmlspecialchars($role) . '</button>' . "\n";
                     }
                     ?>
                 </div>
@@ -285,18 +290,30 @@
             <!-- メンバーリスト -->
             <ul class="member-grid" id="member-list">
                 <?php
+                // メンバーデータを配列に読み込む
+                $members = array();
                 $f = fopen("../data/members.csv", "r");
                 $header = fgetcsv($f);
                 while (($line = fgetcsv($f)) !== FALSE) {
                     if (empty($line[0])) continue;
-                    
+                    $members[] = $line;
+                }
+                fclose($f);
+                
+                // 50音順（ひらがな、カタカナ、漢字も含む）でソート
+                usort($members, function($a, $b) {
+                    return strcmp($a[0], $b[0]);
+                });
+                
+                // ソート済みのメンバーを出力
+                foreach ($members as $line) {
                     $name = htmlspecialchars($line[0]);
                     $link = isset($line[1]) ? htmlspecialchars(trim($line[1])) : '';
                     $role = isset($line[2]) ? htmlspecialchars(trim($line[2])) : '';
                     
                     // 役割タグ用にデータ属性を生成
-                    $role_tags = array_map('trim', explode('、', $role));
-                    $data_roles = implode(',', $role_tags);
+                    $role_list = array_map('trim', explode(',', str_replace('、', ',', $line[2])));
+                    $data_roles = implode(',', array_map('htmlspecialchars', $role_list));
                     
                     echo '<li class="member-card" data-name="' . htmlspecialchars($line[0]) . '" data-roles="' . htmlspecialchars($data_roles) . '">';
                     
@@ -309,8 +326,9 @@
                     echo '</div>';
                     
                     // 役割をタグとして表示
-                    if (!empty($role)) {
+                    if (!empty($line[2])) {
                         echo '<div class="member-role">';
+                        $role_tags = array_map('trim', explode(',', str_replace('、', ',', $line[2])));
                         foreach ($role_tags as $tag) {
                             if (!empty($tag)) {
                                 echo '<span class="member-role-tag">' . htmlspecialchars($tag) . '</span>';
@@ -336,7 +354,6 @@
                     
                     echo '</li>';
                 }
-                fclose($f);
                 ?>
             </ul>
 
