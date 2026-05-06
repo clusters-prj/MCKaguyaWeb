@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <title>協力者一覧 / Credits</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/style.css">
     <style>
@@ -246,8 +247,8 @@
 
         <section id="contributors">
             <h3>プロジェクト・コントリビューター</h3>
-            <p>建築、回路、プラグイン設定、テストプレイ等でご協力いただいた皆様です。</p>
-            <p>（敬称略・ABC50音順）</p>
+            <p>建築、回路、プラグイン設定、テストプレイ等でご協力いただいた皆様の一部です。</p>
+            <p>（自己申告・敬称略・ABC50音順・回答状況によっては重複がある可能性があります。）</p>
 
             <!-- 検索・フィルター機能 -->
             <div id="member-controls">
