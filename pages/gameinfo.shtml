@@ -11,9 +11,10 @@
   <main>
       <section id="overview">
           <h2>ゲーム内情報</h2>
+					<p>ゲーム内情報をまとめました。</p>
       </section>
 			<section id="links">
-				<p><a href"gameinfos/tools.shtml></p>
+				<p><a href"gameinfos/tools.shtml>ゲーム内ツールの使い方</p>
 			</section>
   </main>
   <script>
