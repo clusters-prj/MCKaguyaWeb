@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/style.css">
     <title>MCツクヨミ製作委員会ホームページ</title>
+		<meta name="description" content="MCツクヨミ製作委員会のホームページです。プロジェクト進捗やゲーム内情報を発信します。">
   </head>
   <body>
     <!--#include virtual="/templates/header.html" -->
