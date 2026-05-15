@@ -19,7 +19,7 @@
 					<p><a href="/pages/gameinfos/tools.shtml">こちらから</a></p>
 				<h3>ステータス(仮)</h3>
 					<p>サーバーの運営状況を示していますが、メンテナンス情報等は表示されません</p>
-					<p><a href="https://stats.uptimerobot.com/FfatF1JlYB" target="_blank" rel="noopener noreferrer">外部サイトに飛びます⤴︎</a></p>
+					<p><a href="https://stats.uptimerobot.com/FfatF1JlYB" target="_blank" rel="noopener noreferrer">外部サイトに飛びます<i class="fa-solid fa-arrow-up-right-from-square" style="color: #6366f1;"></i></a></p>
 			</section>
   </main>
   <script>
