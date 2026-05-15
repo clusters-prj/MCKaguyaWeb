@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/assets/style.css">
+        <title>ツールの使い方 - 超かぐや姫！再現プロジェクト</title>
+    </head>
+    <body>
+        <!--#include virtual="/templates/header.html" -->
+    <main>
+        <section id="overview">
+            <h2>ツールの使い方</h2>
+            <p>ゲーム内ツールの使い方をまとめました。</p>
+        </section>
+
+        <section id="tool-list">
+            <h2>ツール一覧</h2>
+            <ul>
+                <li>
+                    <a href="#DoubleHot">2倍ホットバー</a>
+                </li>
+            </ul>
+            <section id="hotbars">
+                <h3>2倍ホットバーにセットされているツール一覧</h3>
+                <ul>
+                    <li>
+                        <a href="#ServerMove">サーバー移動🧭</a>
+                    </li>
+                    <li>
+                        <a href="#FlySpeed">FlySpeed🪶</a>
+                    </li>
+                    <li>
+                        <a href="#TP-Portal">TP Portal🔵</a>
+                    </li>
+                    <li>
+                        <a href="#Bookmark-Manager">Bookmark Manager📙</a>
+                    </li>
+                    <li>
+                        <a href="#Nightvision">Nightvision⚫️</a>
+                    </li>
+                </ul>
+            </section>
+        </section>
+        <section id="DoubleHot">
+            <h3>2倍ホットバー</h3>
+            <p>
+                概要:ホットバーの9番目を選択することでツール一覧が開けます
+            </p>
+            <h4>~使い方~</h4>
+            <p>
+                サーバー参加時、ホットバーの9番目のスロットにバリアブロック[🚫]がセットされます。<br>
+                9番目のスロットを選択すると、ツール一覧にホットバーが入れ替わります。<br>
+                元に戻すには、もう一度9番目のスロットを選択してください。<br>
+                <a href="#hotbars">2倍ホットバーにセットされているツール一覧</a>に記載されているものがセットされています。
+            </p>
+        </section>
+        
+    </main>
+    <script>
+        window.addEventListener('load', () => {
+            const pathname = window.location.pathname;
+            document.querySelectorAll('nav a').forEach(link => {
+                const href = link.getAttribute('href');
+                if (pathname === href || (pathname === '/' && href === '/index.shtml')) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+    </body>
+</html>
