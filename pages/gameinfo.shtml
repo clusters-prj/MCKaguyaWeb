@@ -14,7 +14,7 @@
 					<p>ゲーム内情報をまとめました。</p>
       </section>
 			<section id="links">
-				<p><a href"gameinfos/tools.shtml>ゲーム内ツールの使い方</p>
+				<p><a href"/pages/gameinfos/tools.shtml>ゲーム内ツールの使い方</a></p>
 			</section>
   </main>
   <script>
