@@ -205,7 +205,7 @@
     </style>
   </head>
   <body>
-    <!--#include virtual="../templates/header.html" -->
+    <!--#include virtual="/templates/header.html" -->
     <main>
         <section id="credits-intro">
             <h2>協力者一覧 / Credits</h2>
@@ -237,7 +237,7 @@
                         <td>サーバー提供・インフラ整備等</td>
                     </tr>
                     <tr>
-                        <td><strong>追記したいけどめんどすぎる</strong></td>
+                        <td><strong>管理者たち</strong></td>
                         <td>Tekika,RAIBU,Tチキン,あまゆき,しおさん,ノラネコ,狐,ゆうひch,無職（かんた）</td>
                         <td>いろいろ</td>
                     </tr>
