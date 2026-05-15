@@ -15,13 +15,6 @@
         --border-color: #e5e7eb;
       }
 
-      /* Kiwi Maru フォント */
-      @import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500;700&display=swap');
-
-      body {
-        font-family: 'Kiwi Maru', serif;
-      }
-
       #member-controls {
         margin: 2rem 0;
         padding: 1.5rem;
