@@ -20,7 +20,7 @@
           <h3>現在の進捗状況</h3>
           <ul>
               <li><strong>ワールド地形再現:</strong> 進行中</li>
-              <li><strong>サーバーシステム実装 (Paper/Velocity):</strong> 実装中</li>
+              <li><strong>サーバーシステム実装 (Paper/Velocity):</strong> 実装終了</li>
               <li><strong>独自プラグイン・演出設定:</strong> 開発中</li>
           </ul>
       </section>
@@ -66,7 +66,7 @@
         </section>
 
         <section id="history">
-        <!--#include virtual="pages/history.html" -->
+        <!--#include virtual="/templates/history.html" -->
         </section>
   </main>
   <script>

@@ -49,7 +49,7 @@
         </section>
 
         <section id="history">
-        <!--#include virtual="history.html" -->
+        <!--#include virtual="/templates/history.html" -->
         </section>
     </main>
     <script>
