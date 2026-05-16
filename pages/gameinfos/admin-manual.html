@@ -1,150 +1,187 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/assets/style.css">
-        <title>副管理者運用マニュアル - 超かぐや姫！再現プロジェクト</title>
-    </head>
-    <body>
-        <!--#include virtual="/templates/header.html" -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/style.css">
+    <title>副管理者運用マニュアル - 超かぐや姫！再現プロジェクト</title>
+</head>
+
+<body>
+    <!--#include virtual="/templates/header.html" -->
     <main>
         <section id="overview">
             <h2>副管理者運用マニュアル</h2>
             <p>このマニュアルは、建築サーバーの円滑な運営と、トラブル発生時・建築ミス時の迅速なサポートを行うための副管理者向けガイドラインです。</p>
         </section>
-        
         <section id="main">
             <h2>1. 副管理者の役割と心構え</h2>
             <ul>
-            <li><strong>クリエイティブ・建築支援ツールの適正利用</strong>
-            <ul>
-            <li>BuildersUtilitiesやWorldEditなどの強力な権限は、プレイヤーの支援や荒らし復旧、サーバー管理のためにのみ使用してください。</li>
-            </ul>
-            </li>
-            <li><strong>建築ミスやトラブルへの迅速なサポート</strong>
-            <ul>
-            <li>プレイヤーが誤って広範囲を消してしまった場合などのSOSに、落ち着いて対応します。</li>
-            </ul>
-            </li>
-            <li><strong>コミュニティの景観と秩序の維持</strong>
-            <ul>
-            <li>利用規約に反する建築（不適切な表現など）や、他人の建築敷地への侵犯がないかを見守ります。</li>
-            </ul>
-            </li>
+                <li>
+                    <strong>クリエイティブ・建築支援ツールの適正利用</strong>
+                    <ul>
+                        <li>BuildersUtilitiesやWorldEditなどの強力な権限は、プレイヤーの支援や荒らし復旧、サーバー管理のためにのみ使用してください。</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>建築ミスやトラブルへの迅速なサポート</strong>
+                    <ul>
+                        <li>プレイヤーが誤って広範囲を消してしまった場合などのSOSに、落ち着いて対応します。</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>コミュニティの景観と秩序の維持</strong>
+                    <ul>
+                        <li>利用規約に反する建築（不適切な表現など）や、他人の建築敷地への侵犯がないかを見守ります。</li>
+                    </ul>
+                </li>
             </ul>
             <h2>2. トラブル・建築ミス対応フロー</h2>
             <p>建築サーバーで最も多い「建築ミス（WE暴発など）」や「破壊行為」が発生した場合の対応手順です。</p>
             <h3>ケースA：プレイヤーがWorldEdit等の操作をミスした場合</h3>
             <ol>
-            <li><strong>現場への急行</strong></li>
+                <li>
+                    <strong>現場への急行</strong>
+                </li>
             </ol>
             <ul>
-            <li>対象のプレイヤーから座標を聞くか、/tp [プレイヤー名] で現場へ向かう。</li>
+                <li>対象のプレイヤーから座標を聞くか、/tp [プレイヤー名] で現場へ向かう。</li>
             </ul>
             <ol start="2">
-            <li><strong>CoreProtectによる巻き戻し（復旧）</strong></li>
+                <li>
+                    <strong>CoreProtectによる巻き戻し（復旧）</strong>
+                </li>
             </ol>
             <ul>
-            <li>建築サーバーでのミスや荒らしは、CoreProtectを使って**「その場所（半径）」<strong>または</strong>「特定のプレイヤーの行動」**をピンポイントで巻き戻します。</li>
-            <li><em>コマンド例（ミスしたプレイヤー「BuilderA」の過去10分間の行動を、周囲半径30ブロック内で巻き戻す場合）：</em><br>
-            /co rollback u:BuilderA t:10m r:30</li>
-            <li>※本人が //undo で直せない範囲のミスや、ログアウトしてしまって //undo が効かない場合に実行してください。</li>
+                <li>建築サーバーでのミスや荒らしは、CoreProtectを使って**「その場所（半径）」
+                    <strong>または</strong>「特定のプレイヤーの行動」**をピンポイントで巻き戻します。</li>
+                <li>
+                    <em>コマンド例（ミスしたプレイヤー「BuilderA」の過去10分間の行動を、周囲半径30ブロック内で巻き戻す場合）：</em>
+                    <br>/co rollback u:BuilderA t:10m r:30</li>
+                <li>※本人が //undo で直せない範囲のミスや、ログアウトしてしまって //undo が効かない場合に実行してください。</li>
             </ul>
             <h3>ケースB：他人の建築が破壊・上書き（荒らし）されていた場合</h3>
             <ol>
-            <li>/co i を入力して調査モードにする。</li>
-            <li>ブロックを左クリックして「誰が、いつ設置/破壊したか」のログを確認し、犯人を特定する。</li>
-            <li>もう一度 /co i で調査モードを解除する。</li>
-            <li>悪質な破壊の場合、速やかに /tempban [プレイヤー名] 1d [理由] 等で身柄を隔離する。</li>
-            <li>犯人の行動のみを巻き戻す：<br>
-            /co rollback u:[犯人の名前] t:[確認された時間] r:[半径]</li>
+                <li>/co i を入力して調査モードにする。</li>
+                <li>ブロックを左クリックして「誰が、いつ設置/破壊したか」のログを確認し、犯人を特定する。</li>
+                <li>もう一度 /co i で調査モードを解除する。</li>
+                <li>悪質な破壊の場合、速やかに /tempban [プレイヤー名] 1d [理由] 等で身柄を隔離する。</li>
+                <li>犯人の行動のみを巻き戻す：
+                    <br>/co rollback u:[犯人の名前] t:[確認された時間] r:[半径]</li>
             </ol>
             <h2>3. 建築サーバー用・管理コマンド一覧</h2>
             <table>
-            <thead>
-            <tr>
-            <th>プラグイン</th>
-            <th>コマンド</th>
-            <th>説明・建築鯖での用途</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-            <td><strong>CoreProtect</strong></td>
-            <td>/co i</td>
-            <td>誰がブロックを置いたか・壊したかを調べる（境界線のトラブルや荒らし調査）。</td>
-            </tr>
-            <tr>
-            <td><strong>CoreProtect</strong></td>
-            <td>/co rollback ...</td>
-            <td>ミスや荒らしの巻き戻し。<strong>副管理者の最重要コマンド。</strong></td>
-            </tr>
-            <tr>
-            <td><strong>WorldEdit</strong></td>
-            <td>//wand</td>
-            <td>範囲選択用の木の斧を出す。</td>
-            </tr>
-            <tr>
-            <td><strong>WorldEdit</strong></td>
-            <td>//gmask や //mask</td>
-            <td>副管理者自身が作業を手伝う際、他人の建築を誤って巻き込まないためのマスク設定。</td>
-            </tr>
-            <tr>
-            <td><strong>Essentials</strong></td>
-            <td>/tp [プレイヤー名]</td>
-            <td>建築トラブルの現場や、保護の相談場所へ一瞬で移動する。</td>
-            </tr>
-            <tr>
-            <td><strong>Essentials</strong></td>
-            <td>/vanish (または /v)</td>
-            <td>姿を消す。集中して建築したいプレイヤーの邪魔をせずに見守る際に使用。</td>
-            </tr>
-            <tr>
-            <td><strong>Essentials</strong></td>
-            <td>/tempban / /kick</td>
-            <td>悪質な荒らしや、再三の注意に従わないプレイヤーへの対処用。</td>
-            </tr>
-            <tr>
-            <td><strong>LunaChat</strong></td>
-            <td>/lunachat mute</td>
-            <td>チャットでの連投や暴言で、他の建築プレイヤーの集中を妨げるアカウントの一時静音化。</td>
-            </tr>
-            </tbody>
+                <thead>
+                    <tr>
+                        <th>プラグイン</th>
+                        <th>コマンド</th>
+                        <th>説明・建築鯖での用途</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>CoreProtect</strong>
+                        </td>
+                        <td>/co i</td>
+                        <td>誰がブロックを置いたか・壊したかを調べる（境界線のトラブルや荒らし調査）。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>CoreProtect</strong>
+                        </td>
+                        <td>/co rollback ...</td>
+                        <td>ミスや荒らしの巻き戻し。
+                            <strong>副管理者の最重要コマンド。</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>WorldEdit</strong>
+                        </td>
+                        <td>//wand</td>
+                        <td>範囲選択用の木の斧を出す。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>WorldEdit</strong>
+                        </td>
+                        <td>//gmask や //mask</td>
+                        <td>副管理者自身が作業を手伝う際、他人の建築を誤って巻き込まないためのマスク設定。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Essentials</strong>
+                        </td>
+                        <td>/tp [プレイヤー名]</td>
+                        <td>建築トラブルの現場や、保護の相談場所へ一瞬で移動する。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Essentials</strong>
+                        </td>
+                        <td>/vanish (または /v)</td>
+                        <td>姿を消す。集中して建築したいプレイヤーの邪魔をせずに見守る際に使用。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Essentials</strong>
+                        </td>
+                        <td>/tempban / /kick</td>
+                        <td>悪質な荒らしや、再三の注意に従わないプレイヤーへの対処用。</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>LunaChat</strong>
+                        </td>
+                        <td>/lunachat mute</td>
+                        <td>チャットでの連投や暴言で、他の建築プレイヤーの集中を妨げるアカウントの一時静音化。</td>
+                    </tr>
+                </tbody>
             </table>
             <h2>4. サーバー負荷（ラグ）発生時の対応（建築鯖版）</h2>
             <p>建築サーバーでTPSが低下する（重くなる）主な原因と対策です。</p>
             <ol>
-            <li><strong>重い建築ツールの同時使用（WorldEdit / BuildersUtilities）</strong></li>
+                <li>
+                    <strong>重い建築ツールの同時使用（WorldEdit / BuildersUtilities）</strong>
+                </li>
             </ol>
             <ul>
-            <li>複数のプレイヤーが同時に巨大な操作（数十万ブロック単位の //set や //replace など）を行うとサーバーが一時的にストップします。</li>
-            <li>チャットで「大規模なWorldEditの実行を少し時間を空けて行うよう」アナウンスを入れてください。</li>
+                <li>複数のプレイヤーが同時に巨大な操作（数十万ブロック単位の //set や //replace など）を行うとサーバーが一時的にストップします。</li>
+                <li>チャットで「大規模なWorldEditの実行を少し時間を空けて行うよう」アナウンスを入れてください。</li>
             </ul>
             <ol start="2">
-            <li><strong>ModelEngine / MythicMobs による負荷</strong></li>
+                <li>
+                    <strong>ModelEngine / MythicMobs による負荷</strong>
+                </li>
             </ol>
             <ul>
-            <li>建築の装飾としてカスタムモブやモデルエンティティを配置している場合、1箇所に集中しすぎると描画や処理が重くなります。負荷が深刻な場合は設置数の調整をプレイヤーに依頼してください。</li>
+                <li>建築の装飾としてカスタムモブやモデルエンティティを配置している場合、1箇所に集中しすぎると描画や処理が重くなります。負荷が深刻な場合は設置数の調整をプレイヤーに依頼してください。</li>
             </ul>
             <ol start="3">
-            <li><strong>BlueMapのレンダリング負荷</strong></li>
+                <li>
+                    <strong>BlueMapのレンダリング負荷</strong>
+                </li>
             </ol>
             <ul>
-            <li>誰かが大規模な建築を完成させた直後や、新しい土地を開拓した直後は、BlueMapが3Dマップを生成（レンダリング）するために裏でフル稼働し、重くなることがあります。</li>
-            <li>マップの反映には時間がかかる旨を伝え、一時的に重くなるのを待つか、あまりに酷い場合は管理者に連絡してください。</li>
+                <li>誰かが大規模な建築を完成させた直後や、新しい土地を開拓した直後は、BlueMapが3Dマップを生成（レンダリング）するために裏でフル稼働し、重くなることがあります。</li>
+                <li>マップの反映には時間がかかる旨を伝え、一時的に重くなるのを待つか、あまりに酷い場合は管理者に連絡してください。</li>
             </ul>
             <ol start="4">
-            <li><strong>Skript / Vault のエラー</strong></li>
+                <li>
+                    <strong>Skript / Vault のエラー</strong>
+                </li>
             </ol>
             <ul>
-            <li>建築資材のショップシステムや、土地の売買システムがSkript等で組まれている場合、そこからエラーが吐き出され続けてラグの原因になることがあります。エラーを見かけたらすぐスクショを撮って管理者に共有してください。</li>
+                <li>建築資材のショップシステムや、土地の売買システムがSkript等で組まれている場合、そこからエラーが吐き出され続けてラグの原因になることがあります。エラーを見かけたらすぐスクショを撮って管理者に共有してください。</li>
             </ul>
             <h2>5. 管理者への報告体制</h2>
-            <p>（先ほどのサバイバル版と同様に、Discordの報告チャンネルに日時、対象者、内容、行った対応、確認事項をセットにして報告する流れでOKです）<br>
-            建築鯖だと、やっぱりCoreProtectのロールバックが「荒らし対策」だけでなく**「身内の編集ミス救済ツール」**として大活躍するね。<br>
-            これで実際の現場の動きにかなりマッチしたんじゃないかな？もし「WEのこのコマンドの権限も副管理者に持たせてるから、注意点に入れたい」とかがあればいつでも教えてね。</p>
+            <p>（先ほどのサバイバル版と同様に、Discordの報告チャンネルに日時、対象者、内容、行った対応、確認事項をセットにして報告する流れでOKです）
+                <br>建築鯖だと、やっぱりCoreProtectのロールバックが「荒らし対策」だけでなく**「身内の編集ミス救済ツール」**として大活躍するね。
+                <br>これで実際の現場の動きにかなりマッチしたんじゃないかな？もし「WEのこのコマンドの権限も副管理者に持たせてるから、注意点に入れたい」とかがあればいつでも教えてね。</p>
         </section>
     </main>
-    </body>
+</body>
+
 </html>
