@@ -10,6 +10,12 @@
   <body>
     <!--#include virtual="/templates/header.html" -->
   <main>
+			<picture>
+			  <source srcset="/assets/IMG_2355.jpeg" media="(prefers-color-scheme: dark)">
+			  <img src="images/assets/IMG_2356.jpeg" alt="サイトのヘッダー画像" class="header-img">
+			</picture>
+
+
       <section id="project-overview">
           <h2>【サイト工事中】プロジェクト概要：超かぐや姫！の再現プロジェクト</h2>
           <p>
