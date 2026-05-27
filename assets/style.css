@@ -1,115 +1,158 @@
-@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=M+PLUS+Rounded+1c:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=M+PLUS+Rounded+1c:wght=500&display=swap');
+
+:root {
+  /* ライトモード（デフォルト）の色定義 */
+  --primary-color: #2A2FF4;
+  --link-hover: #4f46e5;
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #4A5863;
+  --border-color: #e2e8f0;
+  --table-th-bg: #f1f5f9;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
   :root {
-    --primary-color: #2A2FF4;
-    --bg-color: #f8fafc;
-    --card-bg: #ffffff;
-    --text-main: #1e293b;
-    --text-muted: #4A5863;
+    /* ダークモード時の色定義 */
+    --primary-color: #6366f1;   /* 暗い背景に映える少し明るめの青・紫 */
+    --link-hover: #818cf8;
+    --bg-color: #0f172a;        /* 深いネイビー（Slate 900） */
+    --card-bg: #1e293b;         /* カードは背景より少し明るく（Slate 800） */
+    --text-main: #f8fafc;       /* ほぼ白（Slate 50） */
+    --text-muted: #94a3b8;      /* 落ち着いたグレー（Slate 400） */
+    --border-color: #334155;    /* 境界線も暗めに（Slate 700） */
+    --table-th-bg: #1e293b;     /* テーブルのヘッダー背景 */
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.5); /* 影は少し強めにして視認性を確保 */
   }
-  body {
-    font-family: "Kiwi Maru", serif;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    color: var(--text-main);
-    background-color: var(--bg-color);
+}
+
+body {
+  font-family: "Kiwi Maru", serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: var(--text-main);
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease, color 0.3s ease; /* 切り替えを滑らかにする */
+}
+
+body {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  body {
-    animation: fadeIn 0.6s ease-out;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 600;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  position: relative;
+  border-bottom: 3px solid transparent;
+  padding-bottom: 4px;
+  display: inline-block;
+}
+
+nav a:hover {
+  color: var(--link-hover);
+  border-bottom-color: var(--link-hover);
+}
+
+nav a.active {
+  color: var(--link-hover);
+  border-bottom-color: var(--link-hover);
+  animation: slideUnderline 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes slideUnderline {
+  0% {
+    border-bottom-color: transparent;
+    transform: scaleX(0);
+    transform-origin: left;
   }
-  nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+  50% {
+    border-bottom-color: var(--link-hover);
   }
-  nav a {
-    text-decoration: none;
-    color: var(--primary-color);
-    font-weight: 600;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
-    position: relative;
-    border-bottom: 3px solid transparent;
-    padding-bottom: 4px;
-    display: inline-block;
+  100% {
+    border-bottom-color: var(--link-hover);
+    transform: scaleX(1);
   }
-  nav a:hover {
-    color: #4f46e5;
-    border-bottom-color: #4f46e5;
-  }
-  nav a.active {
-    color: #4f46e5;
-    border-bottom-color: #4f46e5;
-    animation: slideUnderline 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-  @keyframes slideUnderline {
-    0% {
-      border-bottom-color: transparent;
-      transform: scaleX(0);
-      transform-origin: left;
-    }
-    50% {
-      border-bottom-color: #4f46e5;
-    }
-    100% {
-      border-bottom-color: #4f46e5;
-      transform: scaleX(1);
-    }
-  }
-  hr {
-    border: 0;
-    border-top: 1px solid #e2e8f0;
-    margin: 30px 0;
-  }
-  section {
-    background: var(--card-bg);
-    padding: 24px;
-    border-radius: 12px;
-    margin-bottom: 24px;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-  }
-  h2, h3 {
-    color: var(--primary-color);
-    border-left: 4px solid var(--primary-color);
-    padding-left: 12px;
-    margin-top: 0;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-  }
-  th, td {
-    text-align: left;
-    padding: 12px;
-    border-bottom: 1px solid #f1f5f9;
-  }
-  th {
-    background-color: #f1f5f9;
-    color: var(--text-muted);
-    font-size: 0.875rem;
-    text-transform: uppercase;
-  }
-  ul {
-    padding-left: 20px;
-  }
-  li {
-    margin-bottom: 8px;
-  }
-  strong {
-    color: var(--primary-color);
-  }
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  margin: 30px 0;
+}
+
+section {
+  background: var(--card-bg);
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+h2, h3 {
+  color: var(--primary-color);
+  border-left: 4px solid var(--primary-color);
+  padding-left: 12px;
+  margin-top: 0;
+  transition: color 0.3s ease, border-left-color 0.3s ease;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+th {
+  background-color: var(--table-th-bg);
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+strong {
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
