@@ -13,8 +13,8 @@
       <section id="project-overview">
           <h2>【サイト工事中】プロジェクト概要：超かぐや姫！の再現プロジェクト</h2>
 					<picture>
-					  <source srcset="/assets/IMG_2355.jpeg" media="(prefers-color-scheme: dark)">
-					  <img src="/assets/IMG_2356.jpeg" alt="サイトのヘッダー画像" class="header-img">
+					  <source srcset="/assets/header_night.JPG" media="(prefers-color-scheme: dark)">
+					  <img src="/assets/header_light.JPG" alt="サイトのヘッダー画像" class="header-img">
 					</picture>
           <p>
               本プロジェクトは、マインクラフトにおいて「超かぐや姫！」の世界観を忠実に、かつ独自の解釈を加えて再現することを目的に始動しました。
