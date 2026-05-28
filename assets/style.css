@@ -17,15 +17,15 @@
 @media (prefers-color-scheme: dark) {
   :root {
     /* ダークモード時の色定義 */
-    --primary-color: #6366f1;   /* 暗い背景に映える少し明るめの青・紫 */
-    --link-hover: #818cf8;
-    --bg-color: #0f172a;        /* 深いネイビー（Slate 900） */
-    --card-bg: #1e293b;         /* カードは背景より少し明るく（Slate 800） */
-    --text-main: #f8fafc;       /* ほぼ白（Slate 50） */
-    --text-muted: #94a3b8;      /* 落ち着いたグレー（Slate 400） */
-    --border-color: #334155;    /* 境界線も暗めに（Slate 700） */
-    --table-th-bg: #1e293b;     /* テーブルのヘッダー背景 */
-    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.5); /* 影は少し強めにして視認性を確保 */
+    --primary-color: #818cf8;   /* アクセントカラーをさらに明るく（Slate 400系） */
+    --link-hover: #a5b4fc;
+    --bg-color: #0b0f19;        /* 背景をさらに暗くして、沈み込みを深く */
+    --card-bg: #1e293b;         /* カードはそのまま、背景との差（明度差）を広げる */
+    --text-main: #ffffff;       /* 完全な白にして文字の視認性を最優先に */
+    --text-muted: #cbd5e1;      /* 補足文字を明るめのグレー（Slate 300）に変更 */
+    --border-color: #475569;    /* 境界線を少し明るく（Slate 600）して輪郭を出す */
+    --table-th-bg: #1e293b;     
+    --shadow: 0 4px 12px rgb(0 0 0 / 0.7); /* 影を濃くしてカードを浮き立たせる */
   }
 }
 
