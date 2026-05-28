@@ -67,7 +67,8 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: var(--primary-color);
+  /* ↓ ここを --primary-color から --text-main に変更 */
+  color: var(--text-main); 
   font-weight: 600;
   transition: color 0.3s ease, border-bottom 0.3s ease;
   position: relative;
