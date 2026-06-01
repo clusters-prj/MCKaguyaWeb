@@ -48,6 +48,10 @@ header h1 {
 nav {
   background-color: var(--pref-primary);
   margin-bottom: 20px;
+  position: relative;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
 }
 
 nav ul {
@@ -162,4 +166,64 @@ footer {
   width: 100%;
   height: auto;
   display: block;
+}
+
+/* モバイル用メニューボタン */
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  z-index: 2000;
+  color: var(--white);
+}
+
+.menu-btn span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: currentColor;
+  margin: 6px 0;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-btn { display: block; }
+  
+  .menu-btn.is-active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .menu-btn.is-active span:nth-child(2) { opacity: 0; }
+  .menu-btn.is-active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--white);
+    z-index: 1500;
+    padding: 80px 0 0 0;
+  }
+
+  nav ul.is-open { display: flex; }
+
+  nav li {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--pref-border);
+  }
+
+  nav a {
+    color: var(--pref-primary);
+    padding: 20px;
+    text-align: left;
+    font-size: 1.1rem;
+  }
+
+  nav a:hover {
+    background-color: var(--pref-secondary);
+  }
 }

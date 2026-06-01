@@ -1,5 +1,8 @@
 <nav>
-  <ul>
+  <button id="menu-btn" class="menu-btn" aria-label="メニュー開閉">
+    <span></span><span></span><span></span>
+  </button>
+  <ul id="nav-list">
     <li><a href="/index.shtml">トップ</a></li>
     <li><a href="/pages/progress.shtml">再現進捗</a></li>
     <li><a href="/pages/gameinfo.shtml">ゲーム内情報</a></li>
@@ -40,6 +43,16 @@
       toggleBtn.addEventListener('click', function() {
         const currentTheme = localStorage.getItem('selected-theme') === 'pre' ? 'style' : 'pre';
         applyTheme(currentTheme);
+      });
+    }
+
+    // モバイルメニューのトグル制御
+    const menuBtn = document.getElementById('menu-btn');
+    const navList = document.getElementById('nav-list');
+    if (menuBtn && navList) {
+      menuBtn.addEventListener('click', function() {
+        menuBtn.classList.toggle('is-active');
+        navList.classList.toggle('is-open');
       });
     }
   });
