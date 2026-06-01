@@ -79,6 +79,18 @@ nav a {
   transition: background-color 0.2s;
 }
 
+/* デザイン切替ボタン（preテーマ用） */
+#theme-toggle {
+  background-color: var(--white);
+  color: var(--pref-primary);
+  border: 1px solid var(--white);
+  padding: 4px 12px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
 nav a:hover {
   background-color: #0056cc;
   text-decoration: underline;
@@ -195,6 +207,11 @@ footer {
   .menu-btn.is-active span:nth-child(2) { opacity: 0; }
   .menu-btn.is-active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
+  /* オーバーレイが白なので、開いている時はボタンを青くする */
+  .menu-btn.is-active {
+    color: var(--pref-primary);
+  }
+
   nav ul {
     display: none;
     flex-direction: column;
@@ -225,5 +242,11 @@ footer {
 
   nav a:hover {
     background-color: var(--pref-secondary);
+  }
+
+  /* モバイル時の切替ボタン調整 */
+  #theme-toggle {
+    margin: 20px;
+    width: calc(100% - 40px);
   }
 }

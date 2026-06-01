@@ -77,6 +77,20 @@ nav a {
   display: inline-block;
 }
 
+/* デザイン切替ボタン（styleテーマ用） */
+#theme-toggle {
+  background: var(--card-bg);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 6px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
 nav a:hover {
   color: var(--link-hover);
   border-bottom-color: var(--link-hover);
@@ -213,5 +227,10 @@ strong {
   nav ul li { margin: 15px 0; }
   nav ul li a { 
     font-size: 1.5rem;
+  }
+
+  /* モバイル時の切替ボタン調整 */
+  #theme-toggle {
+    margin-top: 20px;
   }
 }
