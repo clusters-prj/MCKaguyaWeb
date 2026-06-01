@@ -6,12 +6,21 @@
     <li><a href="/pages/system.shtml">サーバー構成</a></li>
     <li><a href="/pages/cont.php">協力者一覧</a></li>
     <li><a href="/pages/contact.shtml">お問い合わせ・参加</a></li>
+    <li><button id="theme-toggle" style="cursor: pointer; padding: 2px 10px;">デザイン切替</button></li>
   </ul>
 </nav>
 <hr>
 
 <script>
+  function applyTheme(theme) {
+    const themeLink = document.getElementById('main-style');
+    if (!themeLink) return;
+    themeLink.href = theme === 'pre' ? '/assets/pre.css' : '/assets/style.css';
+    localStorage.setItem('selected-theme', theme);
+  }
+
   document.addEventListener('DOMContentLoaded', function() {
+    // ナビゲーションのハイライト
     const currentPath = window.location.pathname;
     const navLinks = document.querySelectorAll('nav a');
     
@@ -21,5 +30,17 @@
         link.classList.add('active');
       }
     });
+
+    // テーマ切り替え初期化
+    const savedTheme = localStorage.getItem('selected-theme') || 'style';
+    applyTheme(savedTheme);
+
+    const toggleBtn = document.getElementById('theme-toggle');
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', function() {
+        const currentTheme = localStorage.getItem('selected-theme') === 'pre' ? 'style' : 'pre';
+        applyTheme(currentTheme);
+      });
+    }
   });
 </script>

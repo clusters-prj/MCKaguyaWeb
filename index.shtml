@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/style.css" id="main-style">
     <title>MCツクヨミ製作委員会ホームページ</title>
 		<meta name="description" content="MCツクヨミ製作委員会のホームページです。プロジェクト進捗やゲーム内情報を発信します。">
   </head>
