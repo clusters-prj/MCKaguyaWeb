@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>協力者一覧 / Credits</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/style.css" id="main-style">
     <style>
       :root {
         --indigo-primary: #4f46e5;

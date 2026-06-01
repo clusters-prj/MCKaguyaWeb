@@ -157,3 +157,9 @@ footer {
   margin-top: 50px;
   font-size: 0.9rem;
 }
+
+.header-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
