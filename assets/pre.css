@@ -141,28 +141,35 @@ h2::before {
   margin-right: 12px;
 }
 
+/* セクション内の本文要素（p, ul, table等）が枠にくっつかないよう余白を確保 */
+section > p,
+section > ul,
+section > table {
+  margin: 15px 20px;
+}
+
 .content-body {
   padding: 20px;
 }
 
 /* テーブル（自治体サイトで多用されるデータ表示） */
 table {
-  width: 100%;
+  width: calc(100% - 40px); /* 左右のmargin分(20px*2)を引く */
   border-collapse: collapse;
-  margin: 15px 0;
+  margin: 15px 20px;
 }
 
 th {
   background-color: #f9f9f9;
   border: 1px solid var(--pref-border);
-  padding: 12px;
+  padding: 12px 15px;
   width: 30%;
   text-align: left;
 }
 
 td {
   border: 1px solid var(--pref-border);
-  padding: 12px;
+  padding: 12px 15px;
 }
 
 /* フッター：情報の集約 */
