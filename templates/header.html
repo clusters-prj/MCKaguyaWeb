@@ -61,5 +61,23 @@
         navList.classList.toggle('is-open');
       });
     }
+
+    // ページトップボタンの制御
+    const pageTopBtn = document.getElementById('page-top');
+    if (pageTopBtn) {
+      // スクロール量に応じてボタンの表示・非表示を切り替え（300px以上スクロールで表示）
+      window.addEventListener('scroll', function() {
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollY > 200) { // 200px程度から表示させると親切
+          pageTopBtn.classList.add('is-visible');
+        } else {
+          pageTopBtn.classList.remove('is-visible');
+        }
+      });
+      // クリック時にスムーズにトップへ戻る
+      pageTopBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
   });
 </script>
