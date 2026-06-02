@@ -27,12 +27,6 @@
     --table-th-bg: #1e293b;     
     --shadow: 0 4px 12px rgb(0 0 0 / 0.7); /* 影を濃くしてカードを浮き立たせる */
   }
-
-  .site-logo {
-    /* ダークモード時は色を反転させ、(反転後の)黒背景を透過させる */
-    filter: invert(1);
-    mix-blend-mode: screen;
-  }
 }
 
 body {
@@ -188,7 +182,15 @@ header {
   max-height: 80px;
   height: auto;
   border-radius: 4px;
-  mix-blend-mode: multiply; /* 白い背景部分を透過させる */
+  mix-blend-mode: multiply; /* 通常時は白を透過 */
+}
+
+/* ダークモード判定を通常設定より後に記述して確実に上書きする */
+@media (prefers-color-scheme: dark) {
+  .site-logo {
+    filter: invert(1);        /* 色を反転（黒文字を白に） */
+    mix-blend-mode: screen;    /* 反転後の黒（元白）を透過 */
+  }
 }
 
 .header-img {
