@@ -299,14 +299,16 @@ footer {
   font-size: 1.2rem;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s, background-color 0.2s;
+  transition: all 0.3s ease;
   z-index: 1000;
+  box-shadow: var(--shadow-sm);
 }
 .page-top.is-visible {
-  opacity: 0.8;
+  opacity: 1;
   visibility: visible;
 }
 .page-top:hover {
-  opacity: 1;
   background-color: #0056cc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }

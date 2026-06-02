@@ -370,6 +370,7 @@
             </ul>
         </section>
     </main>
+    <!--#include virtual="/templates/footer.html" -->
 
     <script>
         const searchInput = document.getElementById('search-input');

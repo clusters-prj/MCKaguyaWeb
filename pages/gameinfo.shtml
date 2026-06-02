@@ -27,5 +27,6 @@
 					<p><a href="https://map-town-kaguya.clusters-prj.com/" target="_blank" rel="noopener noreferrer">Townサーバー</p></a>
 			</section>
   </main>
+  <!--#include virtual="/templates/footer.html" -->
   </body>
 </html>

@@ -52,6 +52,7 @@
         <!--#include virtual="/templates/history.html" -->
         </section>
     </main>
+    <!--#include virtual="/templates/footer.html" -->
   </body>
 </html>
 

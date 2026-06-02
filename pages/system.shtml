@@ -81,5 +81,6 @@
             </table>
         </section>
     </main>
+    <!--#include virtual="/templates/footer.html" -->
   </body>
 </html>
