@@ -231,7 +231,13 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-  .menu-btn { display: block; }
+  .menu-btn {
+    display: block;
+    position: fixed;
+    top: 5px;
+    right: 10px;
+    z-index: 2000;
+  }
   
   .menu-btn.is-active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
   .menu-btn.is-active span:nth-child(2) { opacity: 0; }
@@ -281,6 +287,8 @@ footer {
   #theme-toggle {
     margin: 20px;
     width: calc(100% - 40px);
+    position: relative;
+    z-index: 1600;
   }
 }
 
