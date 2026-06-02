@@ -30,6 +30,7 @@ body {
 .site-logo {
   height: 48px;
   width: auto;
+  mix-blend-mode: multiply; /* 白背景を透過させて紙に印刷したような質感にする */
 }
 
 /* ヘッダーエリア */
