@@ -57,12 +57,21 @@ body {
   }
 }
 
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
 nav ul {
   list-style: none;
   padding: 0;
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
+  margin: 0;
 }
 
 nav a {
@@ -233,7 +242,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     background-color: var(--bg-color);
     flex-direction: column;
     justify-content: flex-start;
@@ -241,7 +250,7 @@ header {
     z-index: 1500;
     margin: 0;
     overflow-y: auto;
-    padding: 80px 0;
+    padding: 80px 0 100px 0;
     box-sizing: border-box;
   }
 
