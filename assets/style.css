@@ -173,6 +173,17 @@ strong {
   transition: color 0.3s ease;
 }
 
+header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.site-logo {
+  max-height: 80px;
+  height: auto;
+  border-radius: 4px;
+}
+
 .header-img {
   width: 100%;
   height: auto;

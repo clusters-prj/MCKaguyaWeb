@@ -27,12 +27,25 @@ body {
   padding: 0 20px;
 }
 
+.site-logo {
+  height: 48px;
+  width: auto;
+}
+
 /* ヘッダーエリア */
 header {
   background-color: var(--white);
   border-bottom: 3px solid var(--pref-primary);
   padding: 20px 0;
   margin-bottom: 0;
+}
+
+header a {
+  display: block;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-decoration: none;
 }
 
 header h1 {

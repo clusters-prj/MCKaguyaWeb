@@ -27,16 +27,5 @@
 					<p><a href="https://map-town-kaguya.clusters-prj.com/" target="_blank" rel="noopener noreferrer">Townサーバー</p></a>
 			</section>
   </main>
-  <script>
-    window.addEventListener('load', () => {
-      const pathname = window.location.pathname;
-      document.querySelectorAll('nav a').forEach(link => {
-        const href = link.getAttribute('href');
-        if (pathname === href || (pathname === '/' && href === '/index.shtml')) {
-          link.classList.add('active');
-        }
-      });
-    });
-  </script>
   </body>
 </html>
