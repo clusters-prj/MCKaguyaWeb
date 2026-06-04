@@ -30,36 +30,25 @@
           </ul>
       </section>
 
-      <section id="tech-stack">
-          <h3>テクニカルスタック</h3>
-          <p>インフラからゲーム内システムまで、以下の技術を用いて構築されています。</p>
+      <section id="osirase">
+          <h3>お知らせ</h3>
           <table>
               <thead>
                   <tr>
-                      <th>カテゴリ</th>
-                      <th>使用技術・環境</th>
+                      <th>日付</th>
+                      <th>お知らせ内容</th>
                   </tr>
               </thead>
               <tbody>
                   <tr>
-                      <td>インフラ</td>
-                      <td>Proxmox / 自宅サーバー環境</td>
-                  </tr>
-                  <tr>
-                      <td>サーバーソフトウェア</td>
-                      <td>Paper (Java Edition)</td>
-                  </tr>
-                  <tr>
-                      <td>主要システム</td>
-                      <td>LuckPerms / MythicMobs / ModelEngine</td>
-                  </tr>
-                  <tr>
-                      <td>Web配信</td>
-                      <td>Apache (HTTP Server)</td>
+                      <td>2026年6月4日</td>
+                      <td>2026年4月〜5月期の運用レポートを公開しました<br><a href="/docs/クラスタ企画運用中サーバの運用報告書2645.pdf>こちらからご覧いただけます</a></td>
                   </tr>
               </tbody>
           </table>
       </section>
+
+
 
         <section id="members">
             <h3>プロジェクトメンバー</h3>
@@ -73,9 +62,9 @@
         <!--#include virtual="/templates/history.html" -->
         </section>
 
-				<section id="discord">
-				<iframe src="https://discord.com/widget?id=1487438553888849983&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-				</section>
+        <section id="discord">
+		<iframe src="https://discord.com/widget?id=1487438553888849983&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+		</section>
   </main>
   <script>
     window.addEventListener('load', () => {
