@@ -46,6 +46,22 @@ body {
   animation: fadeIn 0.6s ease-out;
 }
 
+/* デフォルトの画像設定 */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;           /* 下部にできる謎の隙間を排除 */
+  margin: 0 auto 1.5rem;    /* 基本的に中央寄せにし、下の文章との間隔を空ける */
+  border-radius: 6px;       /* セクションの角丸（12px）に合わせて、画像も少し角丸に */
+}
+
+/* インラインで使う画像（アイコンなど）がある場合の対策 */
+p img, span img {
+  display: inline;
+  margin: 0;
+  vertical-align: middle;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
