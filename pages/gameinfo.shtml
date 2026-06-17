@@ -14,6 +14,9 @@
 					<p>ゲーム内情報をまとめました。</p>
       </section>
 			<section id="links">
+				<h3>サーバーの参加方法</h3>
+					<p>サーバーの参加方法です。</p>
+					<p><a href="/pages/gameinfos/connect.shtml">こちらから</a></p>
 				<h3>ゲーム内ツールの使い方</h3>
 					<p>ホットバーで使えるツールやコマンド達です。</p>
 					<p><a href="/pages/gameinfos/tools.shtml">こちらから</a></p>
