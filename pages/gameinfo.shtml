@@ -17,12 +17,16 @@
 				<h3>サーバーの参加方法</h3>
 					<p>サーバーの参加方法です。</p>
 					<p><a href="/pages/gameinfos/connect.shtml">こちらから</a></p>
+					
 				<h3>ゲーム内ツールの使い方</h3>
 					<p>ホットバーで使えるツールやコマンド達です。</p>
 					<p><a href="/pages/gameinfos/tools.shtml">こちらから</a></p>
 					
 				<h3>建築基準法</h3>
-					<p><a href="/pages/gameinfos/build-manual.shtml">こちらから</a></p>	
+					<p><a href="/pages/gameinfos/build-manual.shtml">こちらから</a></p>
+
+				<h3>保護のやり方(必須)</h3>
+					<p><a href="/pages/gameinfos/wra.shtml">建築が終わったら必ず行うべきことです。</a></p>	
 
 				<h3>ステータス(仮)</h3>
 					<p>サーバーの運営状況を示していますが、メンテナンス情報等は表示されません</p>
