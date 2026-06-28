@@ -28,9 +28,9 @@
 				<h3>保護のやり方(必須)</h3>
 					<p><a href="/pages/gameinfos/wra.shtml">建築が終わったら必ず行うべきことです。</a></p>	
 
-				<h3>ステータス(仮)</h3>
-					<p>サーバーの運営状況を示していますが、メンテナンス情報等は表示されません</p>
-					<p><a href="https://stats.uptimerobot.com/FfatF1JlYB" target="_blank" rel="noopener noreferrer">外部サイトに飛びます<i class="fa-solid fa-arrow-up-right-from-square" style="color: #6366f1;"></i></a></p>
+				<h3>ステータス</h3>
+					<p>サーバーの運営状況を示しています。メンテナンス情報は作業中のみ表示されます。予告は<a href="https://discord.com/channels/1487438553888849983/1488080997135421510/1489956553149911080">Discord</a>をご覧ください。</p>
+					<p><a href="https://uptime.clusters-prj.com/status/ms-k" target="_blank" rel="noopener noreferrer">専用サイトに飛びます<i class="fa-solid fa-arrow-up-right-from-square" style="color: #6366f1;"></i></a></p>
 
 				<h3>ゲーム内地図</h3>
 					<p>マップにはBluemapを使用しています。</p>
