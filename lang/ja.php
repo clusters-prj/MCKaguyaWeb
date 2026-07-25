@@ -1,0 +1,55 @@
+<?php
+return [
+    // === 共通（header/footer/nav） ===
+    'site_title'        => 'MCツクヨミ製作委員会ホームページ',
+    'site_description'  => 'MCツクヨミ製作委員会のホームページです。プロジェクト進捗やゲーム内情報を発信します。',
+    'nav_top'           => 'トップ',
+    'nav_progress'      => '再現進捗',
+    'nav_gameinfo'      => 'ゲーム内情報',
+    'nav_system'        => 'サーバー構成',
+    'nav_contributors'  => '協力者一覧',
+    'nav_contact'       => 'お問い合わせ・参加',
+    'nav_theme_toggle'  => 'デザイン切替',
+    'nav_menu_aria'     => 'メニュー開閉',
+    'page_top_aria'     => 'ページトップへ戻る',
+    'logo_alt'          => '超かぐや姫！再現プロジェクト',
+    'lang_switch_label' => '言語',
+    'footer_copyright'  => '&copy; 2026 MCツクヨミ. All rights reserved.',
+    'footer_copyright_link' => '詳細な著作権情報はこちら',
+
+    // === index.php ===
+    'index_h2'          => '【サイト工事中】プロジェクト概要：超かぐや姫！の再現プロジェクト',
+    'index_header_alt'  => 'サイトのヘッダー画像',
+    'index_intro'       => '本プロジェクトは、マインクラフトにおいて「超かぐや姫！」の世界観を忠実に、かつ独自の解釈を加えて再現することを目的に始動しました。',
+    'index_status_h3'   => '現在の進捗状況',
+    'index_status_1'    => 'サーバーシステム実装 (Paper/Velocity):',
+    'index_status_1_v'  => '実装終了',
+    'index_status_2'    => 'ワールド地形再現:',
+    'index_status_2_v'  => '進行中',
+    'index_status_3'    => '独自プラグイン・演出設定:',
+    'index_status_3_v'  => '開発中',
+    'index_status_4'    => '経済システム:',
+    'index_status_4_v'  => '開発・試験中',
+    'index_news_h3'     => 'お知らせ',
+    'index_news_date'   => '日付',
+    'index_news_content'=> 'お知らせ内容',
+    'index_members_h3'  => 'プロジェクトメンバー',
+    'index_members_host'=> '主催:',
+    'index_members_more'=> 'くわしくはこちら',
+    'index_history_h3'  => 'プロジェクト沿革',
+
+    // === history.php ===
+    'history_1' => '当LINEオープンチャットのメンバー数が200名を突破',
+    'history_2' => 'ふじゅ〜経済システムをリリース',
+    'history_3' => '0.25周年！ありがとうございます<br><a href="https://discord.com/channels/1487438553888849983/1495076649186754717/1520772153971048458">お祝いの言葉byキーマ<i class="fa-solid fa-arrow-up-right-from-square" style="color: #6366f1;"></i></a>',
+    'history_4' => '当Discordサーバーのメンバー数が200名を突破',
+    'history_5' => 'ホームページ作成',
+    'history_6' => 'Java版と統合版両対応への環境移行を完了',
+    'history_7' => 'Java版と統合版両対応への環境移行準備を開始',
+    'history_8' => '独自サーバーへの環境移行を完了',
+    'history_9' => 'プロジェクト発足・Realmsで建築開始',
+
+    // === news (index.php) ===
+    'news_1' => '統合版26.30に対応しました',
+    'news_2' => '2026年4月〜5月期の運用レポートを公開しました<br><a href="/docs/report_2645.pdf">こちらからご覧いただけます</a>',
+];
