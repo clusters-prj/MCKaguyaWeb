@@ -1,5 +1,6 @@
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/i18n.php'; ?>
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="<?= current_lang() ?>">
   <head>
     <meta charset="UTF-8">
     <title>協力者一覧 / Credits</title>
@@ -198,7 +199,7 @@
     </style>
   </head>
   <body>
-    <!--#include virtual="/templates/header.html" -->
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; ?>
     <main>
         <section id="credits-intro">
             <h2>協力者一覧 / Credits</h2>
@@ -370,7 +371,7 @@
             </ul>
         </section>
     </main>
-    <!--#include virtual="/templates/footer.html" -->
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php'; ?>
 
     <script>
         const searchInput = document.getElementById('search-input');

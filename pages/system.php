@@ -1,5 +1,6 @@
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/i18n.php'; ?>
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="<?= current_lang() ?>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,7 +30,7 @@
     </style>
 </head>
 <body>
-    <!--#include virtual="/templates/header.html" -->
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; ?>
     <main>
         <section id="system-overview">
             <h2>サーバーシステム構成</h2>
@@ -81,6 +82,6 @@
             </table>
         </section>
     </main>
-    <!--#include virtual="/templates/footer.html" -->
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php'; ?>
   </body>
 </html>

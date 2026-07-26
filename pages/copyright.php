@@ -1,5 +1,6 @@
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/i18n.php'; ?>
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="<?= current_lang() ?>">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
     <title>著作権・ガイドライン方針 - 超かぐや姫！再現プロジェクト</title>
   </head>
   <body>
-    <!--#include virtual="/templates/header.html" -->
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; ?>
   <main>
       <section id="overview">
           <h2>著作権・ガイドライン方針</h2>
@@ -36,6 +37,6 @@
 					<p><a href="https://www.cho-kaguyahime.com/special/detail.html" target="_blank" rel="noopener noreferrer">『超かぐや姫！』公式二次創作ガイドライン（外部サイト）<i class="fa-solid fa-arrow-up-right-from-square" style="color: #6366f1;"></i></a></p>
 			</section>
   </main>
-  <!--#include virtual="/templates/footer.html" -->
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php'; ?>
   </body>
 </html>

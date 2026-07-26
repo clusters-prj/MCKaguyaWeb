@@ -1,5 +1,6 @@
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/i18n.php'; ?>
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="<?= current_lang() ?>">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
     <title>ゲーム内情報 - 超かぐや姫！再現プロジェクト</title>
   </head>
   <body>
-    <!--#include virtual="/templates/header.html" -->
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; ?>
   <main>
       <section id="overview">
           <h2>ゲーム内情報</h2>
@@ -37,6 +38,6 @@
 					<p><a href="https://map-town-kaguya.clusters-prj.com/" target="_blank" rel="noopener noreferrer">Townサーバー</p></a>
 			</section>
   </main>
-  <!--#include virtual="/templates/footer.html" -->
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php'; ?>
   </body>
 </html>
