@@ -55,7 +55,7 @@ function t(string $key): string {
 // 共通処理ファイルなどに1回書いておく
 // 省略用
 function h($string) {
-    return h($string ?? '', ENT_QUOTES, 'UTF-8');
+    return htmlspecialchars($string ?? '', ENT_QUOTES, 'UTF-8');
 }
 
 /**
