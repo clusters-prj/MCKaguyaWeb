@@ -12,15 +12,15 @@ return [
     'nav_theme_toggle'  => 'Toggle Theme',
     'nav_menu_aria'     => 'Toggle menu',
     'page_top_aria'     => 'Back to top',
-    'logo_alt'          => 'Super Kaguya-hime! Restoration Project',
+    'logo_alt'          => 'Cosmic Princess Kaguya Restoration Project',
     'lang_switch_label' => 'Language',
     'footer_copyright'  => '&copy; 2026 MC Tsukuyomi. All rights reserved.',
     'footer_copyright_link' => 'Full copyright information',
 
     // === index.php ===
-    'index_h2'          => '[Site Under Construction] Project Overview: The "Super Kaguya-hime!" Restoration Project',
+    'index_h2'          => '[Site Under Construction] Project Overview: The "Cosmic Princess Kaguya" Restoration Project',
     'index_header_alt'  => 'Site header image',
-    'index_intro'       => 'This project began with the goal of faithfully recreating the world of "Super Kaguya-hime!" in Minecraft, while adding our own original interpretation.',
+    'index_intro'       => 'This project began with the goal of faithfully recreating the world of "Cosmic Princess Kaguya" in Minecraft, while adding our own original interpretation.',
     'index_status_h3'   => 'Current Progress',
     'index_status_1'    => 'Server system implementation (Paper/Velocity):',
     'index_status_1_v'  => 'Complete',
@@ -39,15 +39,15 @@ return [
     'index_history_h3'  => 'Project History',
 
     // === history.php ===
-    'history_1' => 'Our LINE open chat surpassed 200 members',
-    'history_2' => 'Released the "Fuju~" economy system',
-    'history_3' => '0.25th anniversary! Thank you all<br><a href="https://discord.com/channels/1487438553888849983/1495076649186754717/1520772153971048458">Congratulatory message by Kiima<i class="fa-solid fa-arrow-up-right-from-square" style="color: #6366f1;"></i></a>',
-    'history_4' => 'Our Discord server surpassed 200 members',
+    'history_9' => 'Our LINE open chat surpassed 200 members',
+    'history_8' => 'Released the "Fuju~" economy system',
+    'history_7' => '0.25th anniversary! Thank you all<br><a href="https://discord.com/channels/1487438553888849983/1495076649186754717/1520772153971048458">Congratulatory message by Kiima<i class="fa-solid fa-arrow-up-right-from-square" style="color: #6366f1;"></i></a>',
+    'history_6' => 'Our Discord server surpassed 200 members',
     'history_5' => 'Website created',
-    'history_6' => 'Completed migration to support both Java and Bedrock editions',
-    'history_7' => 'Began preparing migration to support both Java and Bedrock editions',
-    'history_8' => 'Completed migration to our own dedicated server',
-    'history_9' => 'Project launched - building began on Realms',
+    'history_4' => 'Completed migration to support both Java and Bedrock editions',
+    'history_3' => 'Began preparing migration to support both Java and Bedrock editions',
+    'history_2' => 'Completed migration to our own dedicated server',
+    'history_1' => 'Project launched - building began on Realms',
 
     // === news (index.php) ===
     'news_1' => 'Now supports Bedrock Edition 26.30',

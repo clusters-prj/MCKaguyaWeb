@@ -39,15 +39,15 @@ return [
     'index_history_h3'  => 'プロジェクト沿革',
 
     // === history.php ===
-    'history_1' => '当LINEオープンチャットのメンバー数が200名を突破',
-    'history_2' => 'ふじゅ〜経済システムをリリース',
-    'history_3' => '0.25周年！ありがとうございます<br><a href="https://discord.com/channels/1487438553888849983/1495076649186754717/1520772153971048458">お祝いの言葉byキーマ<i class="fa-solid fa-arrow-up-right-from-square" style="color: #6366f1;"></i></a>',
-    'history_4' => '当Discordサーバーのメンバー数が200名を突破',
+    'history_9' => '当LINEオープンチャットのメンバー数が200名を突破',
+    'history_8' => 'ふじゅ〜経済システムをリリース',
+    'history_7' => '0.25周年！ありがとうございます<br><a href="https://discord.com/channels/1487438553888849983/1495076649186754717/1520772153971048458">お祝いの言葉byキーマ<i class="fa-solid fa-arrow-up-right-from-square" style="color: #6366f1;"></i></a>',
+    'history_6' => '当Discordサーバーのメンバー数が200名を突破',
     'history_5' => 'ホームページ作成',
-    'history_6' => 'Java版と統合版両対応への環境移行を完了',
-    'history_7' => 'Java版と統合版両対応への環境移行準備を開始',
-    'history_8' => '独自サーバーへの環境移行を完了',
-    'history_9' => 'プロジェクト発足・Realmsで建築開始',
+    'history_4' => 'Java版と統合版両対応への環境移行を完了',
+    'history_3' => 'Java版と統合版両対応への環境移行準備を開始',
+    'history_2' => '独自サーバーへの環境移行を完了',
+    'history_1' => 'プロジェクト発足・Realmsで建築開始',
 
     // === news (index.php) ===
     'news_1' => '統合版26.30に対応しました',
