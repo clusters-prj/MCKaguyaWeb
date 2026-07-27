@@ -52,6 +52,12 @@ function t(string $key): string {
     return $GLOBALS['dict'][$key] ?? "[[{$key}]]";
 }
 
+// 共通処理ファイルなどに1回書いておく
+// 省略用
+function h($string) {
+    return h($string ?? '', ENT_QUOTES, 'UTF-8');
+}
+
 /**
  * 現在の言語コードを取得
  */

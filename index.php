@@ -5,46 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/style.css" id="main-style">
-    <title><?= htmlspecialchars(t('site_title')) ?></title>
-    <meta name="description" content="<?= htmlspecialchars(t('site_description')) ?>">
+    <title><?= h(t('site_title')) ?></title>
+    <meta name="description" content="<?= h(t('site_description')) ?>">
   </head>
   <body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; ?>
   <main>
       <section id="project-overview">
-          <h2><?= htmlspecialchars(t('index_h2')) ?></h2>
+          <h2><?= h(t('index_h2')) ?></h2>
 					<picture>
 					  <source srcset="/assets/header_night.JPG" media="(prefers-color-scheme: dark)">
-					  <img src="/assets/header_light.JPG" alt="<?= htmlspecialchars(t('index_header_alt')) ?>" class="header-img">
+					  <img src="/assets/header_light.JPG" alt="<?= h(t('index_header_alt')) ?>" class="header-img">
 					</picture>
           <p>
-              <?= htmlspecialchars(t('index_intro')) ?>
+              <?= h(t('index_intro')) ?>
           </p>
       </section>
 
       <section id="status">
-          <h3><?= htmlspecialchars(t('index_status_h3')) ?></h3>
+          <h3><?= h(t('index_status_h3')) ?></h3>
           <ul>
-              <li><strong><?= htmlspecialchars(t('index_status_1')) ?></strong> <?= htmlspecialchars(t('index_status_1_v')) ?></li>
-              <li><strong><?= htmlspecialchars(t('index_status_2')) ?></strong> <?= htmlspecialchars(t('index_status_2_v')) ?></li>
-              <li><strong><?= htmlspecialchars(t('index_status_3')) ?></strong> <?= htmlspecialchars(t('index_status_3_v')) ?></li>
-              <li><strong><?= htmlspecialchars(t('index_status_4')) ?></strong> <?= htmlspecialchars(t('index_status_4_v')) ?></li>
+              <li><strong><?= h(t('index_status_1')) ?></strong> <?= h(t('index_status_1_v')) ?></li>
+              <li><strong><?= h(t('index_status_2')) ?></strong> <?= h(t('index_status_2_v')) ?></li>
+              <li><strong><?= h(t('index_status_3')) ?></strong> <?= h(t('index_status_3_v')) ?></li>
+              <li><strong><?= h(t('index_status_4')) ?></strong> <?= h(t('index_status_4_v')) ?></li>
           </ul>
       </section>
 
       <section id="osirase">
-          <h3><?= htmlspecialchars(t('index_news_h3')) ?></h3>
+          <h3><?= h(t('index_news_h3')) ?></h3>
           <table>
               <thead>
                   <tr>
-                      <th><?= htmlspecialchars(t('index_news_date')) ?></th>
-                      <th><?= htmlspecialchars(t('index_news_content')) ?></th>
+                      <th><?= h(t('index_news_date')) ?></th>
+                      <th><?= h(t('index_news_content')) ?></th>
                   </tr>
               </thead>
               <tbody>
                   <tr>
                       <td>2026<?= current_lang() === 'ja' ? '年6月17日' : '-06-17' ?></td>
-                      <td><?= htmlspecialchars(t('news_1')) ?></td>
+                      <td><?= h(t('news_1')) ?></td>
                   </tr>
                   <tr>
                       <td>2026<?= current_lang() === 'ja' ? '年6月4日' : '-06-04' ?></td>
@@ -57,11 +57,11 @@
 
 
         <section id="members">
-            <h3><?= htmlspecialchars(t('index_members_h3')) ?></h3>
+            <h3><?= h(t('index_members_h3')) ?></h3>
             <ul>
-                <li><strong><?= htmlspecialchars(t('index_members_host')) ?></strong> Yationi</li>
+                <li><strong><?= h(t('index_members_host')) ?></strong> Yationi</li>
             </ul>
-            <a href="/pages/cont.php"><?= htmlspecialchars(t('index_members_more')) ?></a>
+            <a href="/pages/cont.php"><?= h(t('index_members_more')) ?></a>
         </section>
 
         <section id="history">

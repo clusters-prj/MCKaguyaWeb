@@ -282,7 +282,7 @@
                     
                     ksort($roles);
                     foreach (array_keys($roles) as $role) {
-                        echo '<button class="filter-btn" data-filter="' . htmlspecialchars($role) . '">' . htmlspecialchars($role) . '</button>' . "\n";
+                        echo '<button class="filter-btn" data-filter="' . h($role) . '">' . h($role) . '</button>' . "\n";
                     }
                     ?>
                 </div>
@@ -308,15 +308,15 @@
                 
                 // ソート済みのメンバーを出力
                 foreach ($members as $line) {
-                    $name = htmlspecialchars($line[0]);
-                    $link = isset($line[1]) ? htmlspecialchars(trim($line[1])) : '';
-                    $role = isset($line[2]) ? htmlspecialchars(trim($line[2])) : '';
+                    $name = h($line[0]);
+                    $link = isset($line[1]) ? h(trim($line[1])) : '';
+                    $role = isset($line[2]) ? h(trim($line[2])) : '';
                     
                     // 役割タグ用にデータ属性を生成
                     $role_list = array_map('trim', explode(',', str_replace('、', ',', $line[2])));
                     $data_roles = implode(',', array_map('htmlspecialchars', $role_list));
                     
-                    echo '<li class="member-card" data-name="' . htmlspecialchars($line[0]) . '" data-roles="' . htmlspecialchars($data_roles) . '">';
+                    echo '<li class="member-card" data-name="' . h($line[0]) . '" data-roles="' . h($data_roles) . '">';
                     
                     echo '<div class="member-name">';
                     if (!empty($link) && filter_var($link, FILTER_VALIDATE_URL)) {
@@ -332,7 +332,7 @@
                         $role_tags = array_map('trim', explode(',', str_replace('、', ',', $line[2])));
                         foreach ($role_tags as $tag) {
                             if (!empty($tag)) {
-                                echo '<span class="member-role-tag">' . htmlspecialchars($tag) . '</span>';
+                                echo '<span class="member-role-tag">' . h($tag) . '</span>';
                             }
                         }
                         echo '</div>';

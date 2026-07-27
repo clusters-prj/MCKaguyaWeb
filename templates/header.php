@@ -1,22 +1,22 @@
 <header>
   <a href="/index.php">
-    <img src="/assets/logo.JPG" alt="<?= htmlspecialchars(t('logo_alt')) ?>" class="site-logo">
+    <img src="/assets/logo.JPG" alt="<?= h(t('logo_alt')) ?>" class="site-logo">
   </a>
 </header>
 <nav>
-  <button id="menu-btn" class="menu-btn" aria-label="<?= htmlspecialchars(t('nav_menu_aria')) ?>">
+  <button id="menu-btn" class="menu-btn" aria-label="<?= h(t('nav_menu_aria')) ?>">
     <span></span><span></span><span></span>
   </button>
   <ul id="nav-list">
-    <li><a href="/index.php"><?= htmlspecialchars(t('nav_top')) ?></a></li>
-    <li><a href="/pages/progress.php"><?= htmlspecialchars(t('nav_progress')) ?></a></li>
-    <li><a href="/pages/gameinfo.php"><?= htmlspecialchars(t('nav_gameinfo')) ?></a></li>
-    <li><a href="/pages/system.php"><?= htmlspecialchars(t('nav_system')) ?></a></li>
-    <li><a href="/pages/cont.php"><?= htmlspecialchars(t('nav_contributors')) ?></a></li>
-    <li><a href="/pages/contact.php"><?= htmlspecialchars(t('nav_contact')) ?></a></li>
-    <li><button id="theme-toggle"><?= htmlspecialchars(t('nav_theme_toggle')) ?></button></li>
+    <li><a href="/index.php"><?= h(t('nav_top')) ?></a></li>
+    <li><a href="/pages/progress.php"><?= h(t('nav_progress')) ?></a></li>
+    <li><a href="/pages/gameinfo.php"><?= h(t('nav_gameinfo')) ?></a></li>
+    <li><a href="/pages/system.php"><?= h(t('nav_system')) ?></a></li>
+    <li><a href="/pages/cont.php"><?= h(t('nav_contributors')) ?></a></li>
+    <li><a href="/pages/contact.php"><?= h(t('nav_contact')) ?></a></li>
+    <li><button id="theme-toggle"><?= h(t('nav_theme_toggle')) ?></button></li>
     <li class="lang-switch">
-      <label for="lang-select" class="sr-only"><?= htmlspecialchars(t('lang_switch_label')) ?></label>
+      <label for="lang-select" class="sr-only"><?= h(t('lang_switch_label')) ?></label>
       <select id="lang-select" onchange="location.href='?lang='+this.value">
         <?php foreach (SUPPORTED_LANGS as $code): ?>
           <option value="<?= $code ?>" <?= $code === current_lang() ? 'selected' : '' ?>><?= strtoupper($code) ?></option>
@@ -25,7 +25,7 @@
     </li>
   </ul>
 </nav>
-<button id="page-top" class="page-top" aria-label="<?= htmlspecialchars(t('page_top_aria')) ?>">↑</button>
+<button id="page-top" class="page-top" aria-label="<?= h(t('page_top_aria')) ?>">↑</button>
 <hr>
 
 <script>
