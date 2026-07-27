@@ -2,7 +2,7 @@
 <ul>
     <li>2026/07/22 - <?= htmlspecialchars(t('history_9')) ?></li>
     <li>2026/07/20 - <?= htmlspecialchars(t('history_8')) ?></li>
-    <li>2026/06/28 - <?= htmlspecialchars(t('history_7')) ?></li>
+    <li>2026/06/28 - <?= t('history_7') ?></li>
     <li>2026/05/29 - <?= htmlspecialchars(t('history_6')) ?></li>
     <li>2026/04/17 - <?= htmlspecialchars(t('history_5')) ?></li>
     <li>2026/04/04 - <?= htmlspecialchars(t('history_4')) ?></li>
