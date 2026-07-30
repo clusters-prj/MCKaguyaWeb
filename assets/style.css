@@ -350,8 +350,8 @@ header {
 }
 
 /* 各要素（1〜4番目のpタグ）にエリア名を割り当て */
-.footer-content > p:nth-child(1) { grid-area: item1; }
-.footer-content > p:nth-child(2) { grid-area: item2; }
+.footer-content > p:nth-child(1) { grid-area: item1; text-align: left; } /* 1番目のpタグは左寄せ */ 
+.footer-content > p:nth-child(2) { grid-area: item2; text-align: left; } /* 2番目のpタグは左寄せ */
 .footer-content > p:nth-child(3) { grid-area: item3; text-align: right; } /* 3番目のpタグは右寄せ */
 .footer-content > p:nth-child(4) { grid-area: item4; text-align: right; } /* 4番目のpタグは右寄せ */
 
@@ -380,6 +380,12 @@ header {
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="%234A5863" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
   background-repeat: no-repeat;
   background-position: right 12px center;
+}
+
+/* #theme-toggle が入っている3番目の p タグを左寄せにする */
+.footer-content > p:nth-child(3) {
+  justify-self: start; /* Gridのマス目の中で左端に寄せる */
+  text-align: left;    /* <p> の中のボタン自体を左揃えにする */
 }
 
 #lang-select:hover,
