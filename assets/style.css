@@ -5,6 +5,7 @@
   /* ライトモード（デフォルト）の色定義 */
   --primary-color: #2A2FF4;
   --link-hover: #4f46e5;
+  --link-color: #3b3fef;
   --bg-color: #f8fafc;
   --card-bg: #ffffff;
   --text-main: #1e293b;
@@ -18,7 +19,8 @@
   :root {
     /* ダークモード時の色定義 */
     --primary-color: #818cf8;   /* アクセントカラーをさらに明るく（Slate 400系） */
-    --link-hover: #a5b4fc;
+    --link-hover: #dbe4ff;
+    --link-color: #c7d2fe;
     --bg-color: #0b0f19;        /* 背景をさらに暗くして、沈み込みを深く */
     --card-bg: #1e293b;         /* カードはそのまま、背景との差（明度差）を広げる */
     --text-main: #ffffff;       /* 完全な白にして文字の視認性を最優先に */
@@ -92,8 +94,7 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  /* ↓ ここを --primary-color から --text-main に変更 */
-  color: var(--text-main); 
+  color: var(--link-color); 
   font-weight: 600;
   transition: color 0.3s ease, border-bottom 0.3s ease;
   position: relative;
