@@ -30,7 +30,7 @@ return [
     'contact_email_link' => 'milieus-74.arts@icloud.com',
 
     // === index.php ===
-    'index_h2'          => 'プロジェクト概要：超かぐや姫！の再現プロジェクト',
+    'index_h2'          => '超かぐや姫！の再現プロジェクト',
     'index_header_alt'  => 'サイトのヘッダー画像',
     'index_intro'       => '本プロジェクトは、マインクラフトにおいて「超かぐや姫！」の世界観を忠実に、かつ独自の解釈を加えて再現することを目的に始動しました。',
     'index_status_h3'   => '現在の進捗状況',
@@ -64,4 +64,30 @@ return [
     // === news (index.php) ===
     'news_1' => '統合版26.30に対応しました',
     'news_2' => '2026年4月〜5月期の運用レポートを公開しました<br><a href="/docs/report_2645.pdf">こちらからご覧いただけます</a>',
-];
+
+    // === cont.php ===
+    'cont_page_title' => '協力者一覧 - 超かぐや姫！再現プロジェクト',
+    'cont_heading' => '協力者一覧 / Credits',
+    'cont_intro_1' => '「超かぐや姫」再現プロジェクトは、多くの有志メンバーの協力によって支えられています。',
+    'cont_intro_2' => '現在、総勢約168名の皆様と共にワールド構築を進めています。',
+    'cont_core_staff' => '運営',
+    'cont_core_section' => '担当区分',
+    'cont_core_name' => 'メンバー名',
+    'cont_core_role' => '主な役割',
+
+    'cont_core_body_1_1' => '主催',
+    'cont_core_body_1_2' => 'やちおに',
+    'cont_core_body_1_3' => '監督・全体指揮',
+
+    'cont_core_body_2_1' => 'サーバー関連',
+    'cont_core_body_2_2' => 'キーマ',
+    'cont_core_body_2_3' => 'サーバー提供・インフラ整備等',
+
+    'cont_core_body_3_1' => '管理者たち',
+    'cont_core_body_3_2' => 'Tekika,RAIBU,Tチキン,あまゆき,しおさん,ノラネコ,狐,ゆうひch,無職（かんた）',
+    'cont_core_body_3_3' => 'いろいろ',
+
+    'cont_contributors' => 'プロジェクト・コントリビューター',
+    'cont_contributors_intro' => '建築、回路、プラグイン設定、テストプレイ等でご協力いただいた皆様の一部です。',
+    'cont_contributors_note' => '（自己申告・敬称略・ABC50音順・回答状況によっては重複がある可能性があります。）',
+    ];

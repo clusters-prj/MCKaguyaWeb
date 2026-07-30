@@ -210,45 +210,45 @@
         <section id="credits-intro">
             <h2>協力者一覧 / Credits</h2>
             <p>
-                「超かぐや姫」再現プロジェクトは、多くの有志メンバーの協力によって支えられています。
-                現在、総勢約168名の皆様と共にワールド構築を進めています。
+                <?= h(t('cont_intro_1')) ?><br>
+                <?= h(t('cont_intro_2')) ?>
             </p>
         </section>
 
         <section id="core-staff">
-            <h3>運営</h3>
+            <h3><?= h(t('cont_core_staff')) ?></h3>
             <table>
                 <thead>
                     <tr>
-                        <th>担当区分</th>
-                        <th>メンバー名</th>
-                        <th>主な役割</th>
+                        <th><?= h(t('cont_core_section')) ?></th>
+                        <th><?= h(t('cont_core_name')) ?></th>
+                        <th><?= h(t('cont_core_role')) ?></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>主催</strong></td>
-                        <td>やちおに</td>
-                        <td>監督・全体指揮</td>
+                        <td><strong><?= h(t('cont_core_body_1_1')) ?></strong></td>
+                        <td><?= h(t('cont_core_body_1_2')) ?></td>
+                        <td><?= h(t('cont_core_body_1_3')) ?></td>
                     </tr>
                     <tr>
-                        <td><strong>サーバー関連</strong></td>
-                        <td>キーマ</td>
-                        <td>サーバー提供・インフラ整備等</td>
+                        <td><strong><?= h(t('cont_core_body_2_1')) ?></strong></td>
+                        <td><?= h(t('cont_core_body_2_2')) ?></td>
+                        <td><?= h(t('cont_core_body_2_3')) ?></td>
                     </tr>
                     <tr>
-                        <td><strong>管理者たち</strong></td>
-                        <td>Tekika,RAIBU,Tチキン,あまゆき,しおさん,ノラネコ,狐,ゆうひch,無職（かんた）</td>
-                        <td>いろいろ</td>
+                        <td><strong><?= h(t('cont_core_body_3_1')) ?></strong></td>
+                        <td><?= h(t('cont_core_body_3_2')) ?></td>
+                        <td><?= h(t('cont_core_body_3_3')) ?></td>
                     </tr>
                 </tbody>
             </table>
         </section>
 
         <section id="contributors">
-            <h3>プロジェクト・コントリビューター</h3>
-            <p>建築、回路、プラグイン設定、テストプレイ等でご協力いただいた皆様の一部です。</p>
-            <p>（自己申告・敬称略・ABC50音順・回答状況によっては重複がある可能性があります。）</p>
+            <h3><?= h(t('cont_contributors')) ?></h3>
+            <p><?= h(t('cont_contributors_intro')) ?></p>
+            <p><?= h(t('cont_contributors_note')) ?></p>
 
             <!-- 検索・フィルター機能 -->
             <div id="member-controls">
