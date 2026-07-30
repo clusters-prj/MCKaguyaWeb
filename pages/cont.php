@@ -8,20 +8,21 @@
     <link rel="stylesheet" href="/assets/style.css" id="main-style">
     <style>
       :root {
-        --indigo-primary: #4f46e5;
-        --indigo-light: #eef2ff;
-        --indigo-dark: #312e81;
-        --text-primary: #1f2937;
-        --text-secondary: #6b7280;
-        --border-color: #e5e7eb;
+        --indigo-primary: var(--primary-color, #4f46e5);
+        --indigo-light: rgba(79, 70, 229, 0.12);
+        --indigo-dark: var(--text-main, #312e81);
+        --text-primary: var(--text-main, #1f2937);
+        --text-secondary: var(--text-muted, #6b7280);
+        --border-color: var(--border-color, #e5e7eb);
       }
 
       #member-controls {
         margin: 2rem 0;
         padding: 1.5rem;
-        background: linear-gradient(135deg, var(--indigo-light) 0%, #f0f4ff 100%);
+        background: linear-gradient(135deg, var(--indigo-light) 0%, color-mix(in srgb, var(--card-bg) 70%, var(--indigo-light) 30%) 100%);
         border-radius: 12px;
         border-left: 4px solid var(--indigo-primary);
+        color: var(--text-primary);
       }
 
       .search-container {
@@ -39,6 +40,8 @@
         border-radius: 8px;
         font-family: 'Kiwi Maru', serif;
         font-size: 1rem;
+        background: var(--card-bg);
+        color: var(--text-primary);
         transition: all 0.3s ease;
       }
 
@@ -57,7 +60,7 @@
       .filter-btn {
         padding: 0.5rem 1rem;
         border: 2px solid var(--indigo-primary);
-        background: white;
+        background: var(--card-bg);
         color: var(--indigo-primary);
         border-radius: 20px;
         cursor: pointer;
@@ -91,7 +94,8 @@
         padding: 1.5rem;
         border: 2px solid var(--indigo-primary);
         border-radius: 12px;
-        background: white;
+        background: var(--card-bg);
+        color: var(--text-primary);
         transition: all 0.3s ease;
         display: flex;
         flex-direction: column;
@@ -136,6 +140,7 @@
         font-size: 0.85rem;
         font-weight: 600;
         margin-bottom: 0.5rem;
+        border: 1px solid color-mix(in srgb, var(--indigo-primary) 20%, transparent);
       }
 
       .member-social {
@@ -152,6 +157,7 @@
         font-size: 0.9rem;
         font-weight: 500;
         transition: all 0.3s ease;
+        border: 1px solid color-mix(in srgb, var(--indigo-primary) 20%, transparent);
       }
 
       .member-social a:hover {
