@@ -92,11 +92,15 @@ nav ul {
   margin: 0;
 }
 
-nav a {
+nav a,
+a {
   text-decoration: none;
   color: var(--link-color); 
   font-weight: 600;
   transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+nav a {
   position: relative;
   border-bottom: 3px solid transparent;
   padding-bottom: 4px;
@@ -117,8 +121,12 @@ nav a {
   box-shadow: var(--shadow);
 }
 
-nav a:hover {
+nav a:hover,
+a:hover {
   color: var(--link-hover);
+}
+
+nav a:hover {
   border-bottom-color: var(--link-hover);
 }
 
