@@ -64,4 +64,39 @@ return [
     // === news (index.php) ===
     'news_1' => 'Now supports Bedrock Edition 26.30',
     'news_2' => 'Published the operations report for April-May 2026<br><a href="/docs/report_2645.pdf">View it here</a>',
+
+    // === cont.php　===
+    'cont_page_title' => 'Contributor List - Super Kaguya Hime! Recreation Project',
+    'cont_heading' => 'Contributor List / Credits',
+    'cont_intro_1' => 'The "Super Kaguya Hime!" Recreation Project is supported by the dedication of many volunteers.',
+    'cont_intro_2' => 'Currently, over 200 members are working together to build this world.',
+    'cont_core_staff' => 'Management',
+    'cont_core_section' => 'Department',
+    'cont_core_name' => 'Member Name',
+    'cont_core_role' => 'Main Role',
+
+    'cont_core_body_1_1' => 'Organizer',
+    'cont_core_body_1_2' => 'Yachioni',
+    'cont_core_body_1_3' => 'Director & Overall Management',
+
+    'cont_core_body_2_1' => 'Server & Infra',
+    'cont_core_body_2_2' => 'Kima',
+    'cont_core_body_2_3' => 'Server Hosting & Infrastructure Setup',
+
+    'cont_core_body_3_1' => 'Administrators',
+    'cont_core_body_3_2' => 'Tekika, RAIBU, T Chicken, Amayuki, Shiosan, Noraneko, Kitsune, Yuuhi ch, Mushoku (Kanta)',
+    'cont_core_body_3_3' => 'Various Tasks',
+
+    'cont_contributors' => 'Project Contributors',
+    'cont_contributors_intro' => 'A partial list of members who contributed through building, redstone, plugin setup, playtesting, and more.',
+    'cont_contributors_note' => '(Self-reported, titles omitted, alphabetical / Japanese order. Duplicates may exist depending on response status.)',
+
+    'cont_search_placeholder' => 'Search by member name...',
+    'cont_member_count' => 'Search Results',
+    'cont_contributors_unit' => 'members',
+
+    'special_thanks' => 'Special Thanks',
+    'special_thanks_1' => 'Creators and Staff of "Super Kaguya Hime!"',
+    'special_thanks_2' => 'Pioneers of Home Server & Infrastructure Operations',
+
 ];

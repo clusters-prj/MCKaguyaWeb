@@ -69,7 +69,7 @@ return [
     'cont_page_title' => '協力者一覧 - 超かぐや姫！再現プロジェクト',
     'cont_heading' => '協力者一覧 / Credits',
     'cont_intro_1' => '「超かぐや姫」再現プロジェクトは、多くの有志メンバーの協力によって支えられています。',
-    'cont_intro_2' => '現在、総勢約168名の皆様と共にワールド構築を進めています。',
+    'cont_intro_2' => '現在、総勢200名以上の皆様と共にワールド構築を進めています。',
     'cont_core_staff' => '運営',
     'cont_core_section' => '担当区分',
     'cont_core_name' => 'メンバー名',
@@ -98,5 +98,5 @@ return [
     'special_thanks' => 'スペシャルサンクス',
     'special_thanks_1' => '「超かぐや姫！」制作関係者の皆様',
     'special_thanks_2' => '自宅サーバー・インフラ運用の先人達',
-    
+
     ];
