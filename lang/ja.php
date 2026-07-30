@@ -30,7 +30,7 @@ return [
     'contact_email_link' => 'milieus-74.arts@icloud.com',
 
     // === index.php ===
-    'index_h2'          => '【サイト工事中】プロジェクト概要：超かぐや姫！の再現プロジェクト',
+    'index_h2'          => 'プロジェクト概要：超かぐや姫！の再現プロジェクト',
     'index_header_alt'  => 'サイトのヘッダー画像',
     'index_intro'       => '本プロジェクトは、マインクラフトにおいて「超かぐや姫！」の世界観を忠実に、かつ独自の解釈を加えて再現することを目的に始動しました。',
     'index_status_h3'   => '現在の進捗状況',

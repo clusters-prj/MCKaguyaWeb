@@ -30,7 +30,7 @@ return [
     'contact_email_link' => 'milieus-74.arts@icloud.com',
 
     // === index.php ===
-    'index_h2'          => '[Site Under Construction] Project Overview: The "Cosmic Princess Kaguya" Restoration Project',
+    'index_h2'          => 'Project Overview: The "Cosmic Princess Kaguya" Restoration Project in Minecraft',
     'index_header_alt'  => 'Site header image',
     'index_intro'       => 'This project began with the goal of faithfully recreating the world of "Cosmic Princess Kaguya" in Minecraft, while adding our own original interpretation.',
     'index_status_h3'   => 'Current Progress',
