@@ -5,111 +5,109 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/assets/style.css" id="main-style">
-        <title>ツールの使い方 - 超かぐや姫！再現プロジェクト</title>
+        <title><?= h(t('tools_page_title')) ?></title>
     </head>
     <body>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; ?>
     <main>
         <section id="overview">
-            <h2>ツールの使い方</h2>
-            <p>ゲーム内ツールの使い方をまとめました。<br>全ツールアイテムにNBTタグを付与しているため、通常のリカバリーコンパスや羽などを使用しても機能は働きません。ご留意ください。どのアイテムも、そのアイテムを手に持って右クリック(ブロックを設置するボタン)すると機能が発動します。</p>
+            <h2><?= h(t('tools_heading')) ?></h2>
+            <p><?= h(t('tools_intro_1')) ?><br><?= h(t('tools_intro_2')) ?></p>
         </section>
 
         <section id="tool-list">
-            <h2>ツール一覧</h2>
+            <h2><?= h(t('tools_list_heading')) ?></h2>
             <ul>
                 <li>
-                    <a href="#DoubleHot">2倍ホットバー</a>
+                    <a href="#DoubleHot"><?= h(t('tools_doublehot_title')) ?></a>
                 </li>
             </ul>
             <section id="hotbars">
-                <h3>2倍ホットバーにセットされているツール一覧</h3>
+                <h3><?= h(t('tools_hotbars_heading')) ?></h3>
                 <ul>
                     <li>
-                        <a href="#ServerMove">サーバー移動🧭</a>
+                        <a href="#ServerMove"><?= h(t('tools_servermove_title')) ?></a>
                     </li>
                     <li>
-                        <a href="#FlySpeed">FlySpeed🪶</a>
+                        <a href="#FlySpeed"><?= h(t('tools_flyspeed_title')) ?></a>
                     </li>
                     <li>
-                        <a href="#TP-Portal">TP Portal🔵</a>
+                        <a href="#TP-Portal"><?= h(t('tools_tp_portal_title')) ?></a>
                     </li>
                     <li>
-                        <a href="#Bookmark-Manager">Bookmark Manager📙</a>
+                        <a href="#Bookmark-Manager"><?= h(t('tools_bookmark_title')) ?></a>
                     </li>
                     <li>
-                        <a href="#Nightvision">Nightvision⚫️</a>
+                        <a href="#Nightvision"><?= h(t('tools_nightvision_title')) ?></a>
                     </li>
                 </ul>
             </section>
         </section>
         <section id="DoubleHot">
-            <h3>2倍ホットバー</h3>
+            <h3><?= h(t('tools_doublehot_title')) ?></h3>
             <p>
-                概要:ホットバーの9番目を選択することでツール一覧が開けます
+                <?= h(t('tools_doublehot_intro')) ?>
             </p>
-            <h4>~使い方~</h4>
+            <h4>~<?= h(t('tools_doublehot_usage_heading')) ?>~</h4>
             <p>
-                サーバー参加時、ホットバーの9番目のスロットにバリアブロック[🚫]がセットされます。<br>
-                9番目のスロットを選択すると、ツール一覧にホットバーが入れ替わります。<br>
-                元に戻すには、もう一度9番目のスロットを選択してください。<br>
-                <a href="#hotbars">2倍ホットバーにセットされているツール一覧</a>に記載されているものがセットされています。
+                <?= h(t('tools_doublehot_usage_1')) ?><br>
+                <?= h(t('tools_doublehot_usage_2')) ?><br>
+                <?= h(t('tools_doublehot_usage_3')) ?><br>
+                <a href="#hotbars"><?= h(t('tools_doublehot_usage_4_link')) ?></a><?= h(t('tools_doublehot_usage_4_after')) ?>
             </p>
         </section>
         <section id="ServerMove">
-            <h3>サーバー移動</h3>
+            <h3><?= h(t('tools_servermove_title')) ?></h3>
             <p>
-                星降る海のライブ会場制作が行われたLiveサーバーと、ツクヨミの街並み再現が行われているTownサーバーを移動します。
+                <?= h(t('tools_servermove_intro')) ?>
             </p>
-            <h4>~使い方~</h4>
+            <h4>~<?= h(t('tools_usage_heading')) ?>~</h4>
             <p>
-                <a href="#DoubleHot">2倍ホットバー</a>の1番目のスロットを選択し、使用する。
+                <a href="#DoubleHot"><?= h(t('tools_doublehot_title')) ?></a> <?= h(t('tools_usage_1')) ?>
             </p>
         </section>
         <section id="FlySpeed">
-            <h3>FlySpeed🪶</h3>
+            <h3><?= h(t('tools_flyspeed_title')) ?></h3>
             <p>
-                通常状態+全5レベルの計6段階でクリエイティブモードの飛行速度を変更できます。<br>
-                Java版では縦方向の移動にも変更した速度が適用されますが、統合版には適用されません。また、統合版は元々Java版より飛行速度が速いため、FlySpeedで速さを最大にするとローディングが追いつかないレベルで速くなります。ご注意ください。
+                <?= h(t('tools_flyspeed_intro')) ?>
             </p>
-            <h4>~使い方~</h4>
+            <h4>~<?= h(t('tools_usage_heading')) ?>~</h4>
             <p>
-                <a href="#DoubleHot">2倍ホットバー</a>の2番目のスロットを選択し、使用する。
+                <a href="#DoubleHot"><?= h(t('tools_doublehot_title')) ?></a> <?= h(t('tools_usage_2')) ?>
             </p>
         </section>
 
         <section id="TP-Portal">
-            <h3>TP Portal🔵</h3>
+            <h3><?= h(t('tools_tp_portal_title')) ?></h3>
             <p>
-                アイテム使用時に同じサーバーにいるプレイヤーが一覧で表示されます。そのプレイヤーをクリックするとそのプレイヤーへテレポートできます(デバイスによってはクリックだけでなく、自インベントリに移動する必要があります)。<br>
-                また、<a href="#Bookmark-Manager">Bookmark Manager</a>を使用して登録した座標にもテレポートできます。
+                <?= h(t('tools_tp_portal_intro_1')) ?><br>
+                <?= h(t('tools_tp_portal_intro_2_before')) ?><a href="#Bookmark-Manager"><?= h(t('tools_tp_portal_intro_2_link')) ?></a><?= h(t('tools_tp_portal_intro_2_after')) ?>
             </p>
-            <h4>~使い方~</h4>
+            <h4>~<?= h(t('tools_usage_heading')) ?>~</h4>
             <p>
-                <a href="#DoubleHot">2倍ホットバー</a>の3番目のスロットを選択し、使用する。
+                <a href="#DoubleHot"><?= h(t('tools_doublehot_title')) ?></a> <?= h(t('tools_usage_3')) ?>
             </p>
         </section>
 
         <section id="Bookmark-Manager">
-            <h3>Bookmark Manager📙</h3>
+            <h3><?= h(t('tools_bookmark_title')) ?></h3>
             <p>
-                同時に3個まで利用できる、テレポート先の座標の登録やブックマーク削除が行えます。<br>
-                現段階の仕様ではブックマーク削除をすると3つとも全てリセットされるのでご注意ください。
+                <?= h(t('tools_bookmark_intro')) ?>
             </p>
-            <h4>~使い方~</h4>
+            <h4>~<?= h(t('tools_usage_heading')) ?>~</h4>
             <p>
-                <a href="#DoubleHot">2倍ホットバー</a>の4番目のスロットを選択し、使用する。
+                <a href="#DoubleHot"><?= h(t('tools_doublehot_title')) ?></a> <?= h(t('tools_usage_4')) ?>
             </p>
         </section>
 
         <section id="Nightvision">
-            <h3>Nightvision⚫️</h3>
+            <h3><?= h(t('tools_nightvision_title')) ?></h3>
             <p>
-                暗視効果をON↔OFFできます。これにより付与される暗視効果はパーティクルが表示されません。
+                <?= h(t('tools_nightvision_intro')) ?>
             </p>
-            <h4>~使い方~</h4>
+            <h4>~<?= h(t('tools_usage_heading')) ?>~</h4>
             <p>
-                <a href="#DoubleHot">2倍ホットバー</a>の5番目のスロットを選択し、使用する。
+                <a href="#DoubleHot"><?= h(t('tools_doublehot_title')) ?></a> <?= h(t('tools_usage_5')) ?>
             </p>
         </section>
     </main>
