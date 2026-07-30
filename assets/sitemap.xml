@@ -1,58 +1,346 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ========================================== -->
+  <!-- トップページ (/) -->
+  <!-- ========================================== -->
   <url>
-    <loc>https://web-kaguya.clusters-prj.com/</loc>
-    <lastmod>2026-06-17T13:38:54+09:00</lastmod>
+    <loc>https://web-kaguya.clusters-prj.com/?lang=ja</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/" />
   </url>
   <url>
-    <loc>https://web-kaguya.clusters-prj.com/pages/progress.shtml</loc>
-    <lastmod>2026-05-15T15:21:54+01:00</lastmod>
+    <loc>https://web-kaguya.clusters-prj.com/?lang=en</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/" />
+  </url>
+  <url>
+    <loc>https://web-kaguya.clusters-prj.com/?lang=zh</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/" />
+  </url>
+
+  <!-- ========================================== -->
+  <!-- progress.php -->
+  <!-- ========================================== -->
+  <url>
+    <loc>https://web-kaguya.clusters-prj.com/pages/progress.php?lang=ja</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/progress.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/progress.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/progress.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/progress.php" />
   </url>
   <url>
-    <loc>https://web-kaguya.clusters-prj.com/pages/gameinfo.shtml</loc>
-    <lastmod>2026-06-12T19:39:00+09:00</lastmod>
+    <loc>https://web-kaguya.clusters-prj.com/pages/progress.php?lang=en</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/progress.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/progress.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/progress.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/progress.php" />
   </url>
   <url>
-    <loc>https://web-kaguya.clusters-prj.com/pages/system.shtml</loc>
-    <lastmod>2026-05-15T15:21:54+01:00</lastmod>
+    <loc>https://web-kaguya.clusters-prj.com/pages/progress.php?lang=zh</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/progress.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/progress.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/progress.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/progress.php" />
   </url>
+
+  <!-- ========================================== -->
+  <!-- gameinfo.php -->
+  <!-- ========================================== -->
   <url>
-    <loc>https://web-kaguya.clusters-prj.com/pages/cont.php</loc>
-    <lastmod>2026-05-15T15:21:54+01:00</lastmod>
+    <loc>https://web-kaguya.clusters-prj.com/pages/gameinfo.php?lang=ja</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/gameinfo.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/gameinfo.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/gameinfo.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/gameinfo.php" />
   </url>
   <url>
-    <loc>https://web-kaguya.clusters-prj.com/pages/contact.shtml</loc>
-    <lastmod>2026-05-15T15:21:54+01:00</lastmod>
+    <loc>https://web-kaguya.clusters-prj.com/pages/gameinfo.php?lang=en</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/gameinfo.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/gameinfo.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/gameinfo.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/gameinfo.php" />
   </url>
   <url>
-    <loc>https://web-kaguya.clusters-prj.com/pages/copyright.shtml</loc>
-    <lastmod>2026-06-25T00:00:00+00:00</lastmod>
+    <loc>https://web-kaguya.clusters-prj.com/pages/gameinfo.php?lang=zh</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/gameinfo.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/gameinfo.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/gameinfo.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/gameinfo.php" />
+  </url>
+
+  <!-- ========================================== -->
+  <!-- system.php -->
+  <!-- ========================================== -->
+  <url>
+    <loc>https://web-kaguya.clusters-prj.com/pages/system.php?lang=ja</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/system.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/system.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/system.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/system.php" />
   </url>
   <url>
-    <loc>https://web-kaguya.clusters-prj.com/pages/gameinfos/tools.shtml</loc>
-    <lastmod>2026-05-15T15:21:56+01:00</lastmod>
+    <loc>https://web-kaguya.clusters-prj.com/pages/system.php?lang=en</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/system.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/system.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/system.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/system.php" />
+  </url>
+  <url>
+    <loc>https://web-kaguya.clusters-prj.com/pages/system.php?lang=zh</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/system.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/system.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/system.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/system.php" />
+  </url>
+
+  <!-- ========================================== -->
+  <!-- cont.php -->
+  <!-- ========================================== -->
+  <url>
+    <loc>https://web-kaguya.clusters-prj.com/pages/cont.php?lang=ja</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/cont.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/cont.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/cont.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/cont.php" />
+  </url>
+  <url>
+    <loc>https://web-kaguya.clusters-prj.com/pages/cont.php?lang=en</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/cont.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/cont.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/cont.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/cont.php" />
+  </url>
+  <url>
+    <loc>https://web-kaguya.clusters-prj.com/pages/cont.php?lang=zh</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/cont.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/cont.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/cont.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/cont.php" />
+  </url>
+
+  <!-- ========================================== -->
+  <!-- contact.php -->
+  <!-- ========================================== -->
+  <url>
+    <loc>https://web-kaguya.clusters-prj.com/pages/contact.php?lang=ja</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/contact.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/contact.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/contact.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/contact.php" />
+  </url>
+  <url>
+    <loc>https://web-kaguya.clusters-prj.com/pages/contact.php?lang=en</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/contact.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/contact.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/contact.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/contact.php" />
+  </url>
+  <url>
+    <loc>https://web-kaguya.clusters-prj.com/pages/contact.php?lang=zh</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/contact.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/contact.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/contact.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/contact.php" />
+  </url>
+
+  <!-- ========================================== -->
+  <!-- copyright.php -->
+  <!-- ========================================== -->
+  <url>
+    <loc>https://web-kaguya.clusters-prj.com/pages/copyright.php?lang=ja</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/copyright.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/copyright.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/copyright.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/copyright.php" />
+  </url>
+  <url>
+    <loc>https://web-kaguya.clusters-prj.com/pages/copyright.php?lang=en</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/copyright.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/copyright.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/copyright.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/copyright.php" />
+  </url>
+  <url>
+    <loc>https://web-kaguya.clusters-prj.com/pages/copyright.php?lang=zh</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/copyright.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/copyright.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/copyright.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/copyright.php" />
+  </url>
+
+  <!-- ========================================== -->
+  <!-- gameinfos/tools.php -->
+  <!-- ========================================== -->
+  <url>
+    <loc>https://web-kaguya.clusters-prj.com/pages/gameinfos/tools.php?lang=ja</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/tools.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/tools.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/tools.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/tools.php" />
   </url>
   <url>
-    <loc>https://web-kaguya.clusters-prj.com/pages/gameinfos/connect.shtml</loc>
-    <lastmod>2026-06-17T16:02:56+09:00</lastmod>
+    <loc>https://web-kaguya.clusters-prj.com/pages/gameinfos/tools.php?lang=en</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/tools.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/tools.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/tools.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/tools.php" />
+  </url>
+  <url>
+    <loc>https://web-kaguya.clusters-prj.com/pages/gameinfos/tools.php?lang=zh</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/tools.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/tools.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/tools.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/tools.php" />
+  </url>
+
+  <!-- ========================================== -->
+  <!-- gameinfos/connect.php -->
+  <!-- ========================================== -->
+  <url>
+    <loc>https://web-kaguya.clusters-prj.com/pages/gameinfos/connect.php?lang=ja</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/connect.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/connect.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/connect.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/connect.php" />
   </url>
   <url>
-    <loc>https://web-kaguya.clusters-prj.com/pages/gameinfos/wra.shtml</loc>
-    <lastmod>2026-06-19T23:56:56+09:00</lastmod>
-    <priority>0.7</priority>
+    <loc>https://web-kaguya.clusters-prj.com/pages/gameinfos/connect.php?lang=en</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/connect.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/connect.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/connect.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/connect.php" />
   </url>
   <url>
-    <loc>https://web-kaguya.clusters-prj.com/pages/gameinfos/build-manual.shtml</loc>
-    <lastmod>2026-06-12T19:39:00+09:00</lastmod>
-    <priority>0.7</priority>
+    <loc>https://web-kaguya.clusters-prj.com/pages/gameinfos/connect.php?lang=zh</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/connect.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/connect.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/connect.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/connect.php" />
   </url>
+
+  <!-- ========================================== -->
+  <!-- gameinfos/wra.php -->
+  <!-- ========================================== -->
+  <url>
+    <loc>https://web-kaguya.clusters-prj.com/pages/gameinfos/wra.php?lang=ja</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/wra.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/wra.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/wra.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/wra.php" />
+  </url>
+  <url>
+    <loc>https://web-kaguya.clusters-prj.com/pages/gameinfos/wra.php?lang=en</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/wra.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/wra.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/wra.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/wra.php" />
+  </url>
+  <url>
+    <loc>https://web-kaguya.clusters-prj.com/pages/gameinfos/wra.php?lang=zh</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/wra.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/wra.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/wra.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/wra.php" />
+  </url>
+
+  <!-- ========================================== -->
+  <!-- gameinfos/build-manual.php -->
+  <!-- ========================================== -->
+  <url>
+    <loc>https://web-kaguya.clusters-prj.com/pages/gameinfos/build-manual.php?lang=ja</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/build-manual.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/build-manual.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/build-manual.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/build-manual.php" />
+  </url>
+  <url>
+    <loc>https://web-kaguya.clusters-prj.com/pages/gameinfos/build-manual.php?lang=en</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/build-manual.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/build-manual.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/build-manual.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/build-manual.php" />
+  </url>
+  <url>
+    <loc>https://web-kaguya.clusters-prj.com/pages/gameinfos/build-manual.php?lang=zh</loc>
+    <lastmod>2026-07-30T16:00:00+09:00</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/build-manual.php?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/build-manual.php?lang=en" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/build-manual.php?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-kaguya.clusters-prj.com/pages/gameinfos/build-manual.php" />
+  </url>
+
 </urlset>
