@@ -6,7 +6,6 @@ return [
     'nav_top'           => 'トップ',
     'nav_progress'      => '再現進捗',
     'nav_gameinfo'      => 'ゲーム内情報',
-    // 'nav_system'        => 'サーバー構成',
     'nav_contributors'  => '協力者一覧',
     'nav_contact'       => 'お問い合わせ・参加',
     'nav_theme_toggle'  => 'デザイン切替',
@@ -49,6 +48,8 @@ return [
     'index_members_host'=> '主催:',
     'index_members_more'=> 'くわしくはこちら',
     'index_history_h3'  => 'プロジェクト沿革',
+    'systeminfo_h3'     => 'サーバー構成',
+    'systeminfo_link'   => 'くわしくはこちら',
 
     // === history.php ===
     'history_9' => '当LINEオープンチャットのメンバー数が200名を突破',

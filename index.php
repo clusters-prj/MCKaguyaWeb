@@ -65,11 +65,16 @@
         </section>
 
         <section id="history">
-        <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/history.php'; ?>
+            <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/history.php'; ?>
+        </section>
+
+        <section id="systeminfo">
+            <h3><?= h(t('systeminfo_h3')) ?></h3>
+            <a href="/pages/system.php"> <?= h(t('systeminfo_link')) ?></a>
         </section>
 
         <section id="discord">
-		<iframe src="https://discord.com/widget?id=1487438553888849983&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+		    <iframe src="https://discord.com/widget?id=1487438553888849983&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 		</section>
   </main>
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php'; ?>

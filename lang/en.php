@@ -6,7 +6,6 @@ return [
     'nav_top'           => 'Home',
     'nav_progress'      => 'Progress',
     'nav_gameinfo'      => 'Game Info',
-    // 'nav_system'        => 'Server Setup',
     'nav_contributors'  => 'Contributors',
     'nav_contact'       => 'Contact / Join Us',
     'nav_theme_toggle'  => 'Toggle Theme',
@@ -49,6 +48,8 @@ return [
     'index_members_host'=> 'Organizer:',
     'index_members_more'=> 'Learn more',
     'index_history_h3'  => 'Project History',
+    'systeminfo_h3'     => 'Server Setup',
+    'systeminfo_link'   => 'Learn more',
 
     // === history.php ===
     'history_9' => 'Our LINE open chat surpassed 200 members',
