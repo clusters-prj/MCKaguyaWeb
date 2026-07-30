@@ -50,7 +50,7 @@
         </section>
 
         <section id="history">
-        <!--#include virtual="/templates/history.html" -->
+            <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/history.php'; ?>
         </section>
     </main>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php'; ?>
