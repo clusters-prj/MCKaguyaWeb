@@ -384,7 +384,7 @@ header {
 
 /* #theme-toggle が入っている4番目の p タグを左寄せにする */
 .footer-content > p:nth-child(4) {
-  justify-self: start; /* Gridのマス目の中で左端に寄せる */
+  justify-self: end; /* Gridのマス目の中で左端に寄せる */
   text-align: right;    /* <p> の中のボタン自体を左揃えにする */
 }
 
