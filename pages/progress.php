@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/style.css" id="main-style">
-    <title>再現進捗 - 超かぐや姫！再現プロジェクト</title>
+    <title><?= h(t('progress_page_title')) ?></title>
     <style>
         .progress-container {
             margin-bottom: 20px;
@@ -31,21 +31,21 @@
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; ?>
     <main>
         <section id="progress-detail">
-            <h2>再現進捗状況</h2>
-            <p>プロジェクトの各要素における現在の進捗率です。</p>
+            <h2><?= h(t('progress_heading')) ?></h2>
+            <p><?= h(t('progress_intro')) ?></p>
 
             <div class="progress-container">
-                <h4>水のライブ会場の再現</h4>
+                <h4><?= h(t('progress_water_stage')) ?></h4>
                 <div class="progress-bar-bg">
-                    <div class="progress-bar-fill" style="width: 90%;">だいたい終了</div>
+                    <div class="progress-bar-fill" style="width: 90%;"><?= h(t('progress_water_stage_status')) ?></div>
                 </div>
-                <p>大まかにいうと終了</p>
+                <p><?= h(t('progress_water_stage_detail')) ?></p>
 
-                <h4>ツクヨミタウンの再現</h4>
+                <h4><?= h(t('progress_tsukuyomi_town')) ?></h4>
                 <div class="progress-bar-bg">
-                    <div class="progress-bar-fill" style="width: 40%;">そこそこ</div>
+                    <div class="progress-bar-fill" style="width: 40%;"><?= h(t('progress_tsukuyomi_town_status')) ?></div>
                 </div>
-                <p>第2層、庭園建築中…</p>
+                <p><?= h(t('progress_tsukuyomi_town_detail')) ?></p>
             </div>
         </section>
 

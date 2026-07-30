@@ -93,4 +93,15 @@ return [
     'special_thanks' => 'スペシャルサンクス',
     'special_thanks_1' => '「超かぐや姫！」制作関係者の皆様',
     'special_thanks_2' => '自宅サーバー・インフラ運用の先人達',
+
+    // === progress.php ===
+    'progress_page_title' => '再現進捗 - 超かぐや姫！再現プロジェクト',
+    'progress_heading' => '再現進捗状況',
+    'progress_intro' => 'プロジェクトの各要素における現在の進捗率です。',
+    'progress_water_stage' => '水のライブ会場の再現',
+    'progress_water_stage_status' => 'だいたい終了',
+    'progress_water_stage_detail' => '大まかにいうと終了',
+    'progress_tsukuyomi_town' => 'ツクヨミタウンの再現',
+    'progress_tsukuyomi_town_status' => 'そこそこ',
+    'progress_tsukuyomi_town_detail' => '第2層、庭園建築中…',
     ];
