@@ -17,18 +17,18 @@
 			<section id="links">
 				<h3><?= h(t('gameinfo_connect_title')) ?></h3>
 					<p><?= h(t('gameinfo_connect_info')) ?></p>
-					<p><a href="/pages/gameinfos/connect.shtml"><?= h(t('gameinfo_connect_link')) ?></a></p>
+					<p><a href="/pages/gameinfos/connect.php"><?= h(t('gameinfo_connect_link')) ?></a></p>
 					
 				<h3><?= h(t('gameinfo_tools_title')) ?></h3>
 					<p><?= h(t('gameinfo_tools_info')) ?></p>
-					<p><a href="/pages/gameinfos/tools.shtml"><?= h(t('gameinfo_tools_link')) ?></a></p>
+					<p><a href="/pages/gameinfos/tools.php"><?= h(t('gameinfo_tools_link')) ?></a></p>
 					
 				<h3><?= h(t('gameinfo_build_manual_title')) ?></h3>
-					<p><a href="/pages/gameinfos/build-manual.shtml"><?= h(t('gameinfo_build_manual_link')) ?></a></p>
+					<p><a href="/pages/gameinfos/build-manual.php"><?= h(t('gameinfo_build_manual_link')) ?></a></p>
 
 				<h3><?= h(t('gameinfo_wra_title')) ?></h3>
 					<p><?= h(t('gameinfo_wra_info')) ?></p>
-					<p><a href="/pages/gameinfos/wra.shtml"><?= h(t('gameinfo_wra_link')) ?></a></p>
+					<p><a href="/pages/gameinfos/wra.php"><?= h(t('gameinfo_wra_link')) ?></a></p>
 
 				<h3><?= h(t('gameinfo_status_title')) ?></h3>
 					<p><?= t('gameinfo_status_info') ?></p>

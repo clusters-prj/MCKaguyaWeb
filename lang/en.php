@@ -126,4 +126,20 @@ return [
     'gameinfo_map_title' => 'In-Game Map',
     'gameinfo_map_info' => 'We use BlueMap for our map System.',
     'gameinfo_map_town_link' => 'Town Server',
+
+    // === copyright.php ===
+    'copyright_page_title' => 'Copyright & Guidelines Policy - Super Kaguya Hime! Recreation Project',
+    'copyright_heading' => 'Copyright & Guidelines Policy',
+    'copyright_intro' => 'This page outlines our copyright policy, external licenses, and compliance stance regarding the official fan work guidelines for "Super Kaguya Hime!".',
+    'copyright_site_content' => 'Content on This Site & Server',
+    'copyright_site_content_info' => 'Unless otherwise stated, all copyrights to the text, images, and designs on this website, as well as the structures and data built on the game server, belong to the "MC Tsukuyomi Production Committee" management or their respective creators.',
+    'copyright_minecraft' => 'Relationship with Minecraft / Mojang',
+    'copyright_minecraft_info' => 'This project is an unofficial fan-made Minecraft community and server, and is not affiliated with Mojang Studios or Microsoft. Operations comply with Mojang Studios\' "Brand and Creative Guidelines".',
+    'copyright_external_license' => 'External Licenses & Credits',
+    'copyright_external_license_info' => 'This project (including the website and in-server systems) uses the following external resources and libraries:',
+    'copyright_external_license_bluemap' => 'Used for generating and displaying the in-game 3D map.',
+    'copyright_external_license_font_awesome' => 'Used for displaying various icons across the site.',
+    'copyright_guideline_policy' => 'Compliance with "Super Kaguya Hime!" Official Fan Work Guidelines',
+    'copyright_guideline_policy_info' => 'This project is an unofficial fan activity operated on a non-profit basis, guided by the official stance that "Everyone in Tsukuyomi is a Creator." We strictly adhere to the official Fan Work Guidelines to ensure our activities are never mistaken for official releases or merchandise. Please note that this project is not officially endorsed, sponsored, or affiliated with the original rights holders (such as TWIN ENGINE).',
+    'copyright_guideline_policy_link' => '"Super Kaguya Hime!" Official Fan Work Guidelines (External Site)',
 ];

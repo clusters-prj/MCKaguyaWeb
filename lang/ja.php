@@ -126,4 +126,20 @@ return [
     'gameinfo_map_title' => 'ゲーム内地図',
     'gameinfo_map_info' => 'マップにはBluemapを使用しています。',
     'gameinfo_map_town_link' => 'Townサーバー',
+
+    // === copyright.php ===
+    'copyright_page_title' => '著作権・ガイドライン方針 - 超かぐや姫！再現プロジェクト',
+    'copyright_heading' => '著作権・ガイドライン方針',
+    'copyright_intro' => '「超かぐや姫！再現プロジェクト」における各種著作権、外部ライセンス、および原作『超かぐや姫！』公式二次創作ガイドラインへの準拠スタンスを掲載しています。',
+    'copyright_site_content' => '当サイト・サーバー内のコンテンツ',
+    'copyright_site_content_info' => '本ウェブサイトに掲載されている文章、画像、デザイン、およびゲームサーバー内に構築された建築物やデータ等の著作権は、特別な記載がない限り「MCツクヨミ製作委員会」運営または各制作者に帰属します。',
+    'copyright_minecraft' => 'Minecraft公式との関係',
+    'copyright_minecraft_info' => '本プロジェクトはファンによる非公式のMinecraftコミュニティおよびサーバーであり、Mojang StudiosおよびMicrosoft社とは一切関係ありません。また、運営にあたってはMojang Studiosが定める「ブランドおよびクリエイティブに関するガイドライン」に準拠しています。',
+    'copyright_external_license' => '外部ライセンス・クレジット',
+    'copyright_external_license_info' => '本プロジェクト（ウェブサイト・サーバー内システム等）では、以下の外部リソースおよびライブラリを使用しています。',
+    'copyright_external_license_bluemap' => 'ゲーム内地図（3Dマップ）の生成・表示に使用しています。',
+    'copyright_external_license_font_awesome' => 'サイト内の各種アイコン表示に使用しています。',
+    'copyright_guideline_policy' => '『超かぐや姫！』公式二次創作ガイドラインへの準拠',
+    'copyright_guideline_policy_info' => '本プロジェクトは、有志による非公式のファン活動（二次創作活動）であり、公式が掲げる「ツクヨミは皆が表現者」というスタンスのもと、非営利目的で運営されています。当プロジェクトの進行にあたっては、公式の「二次創作ガイドライン」を全面的に遵守し、公式の発表物や販売物と誤認されることのないよう、細心の注意を払って活動を行っております。なお、当プロジェクトは公式関係者（ツインエンジン等）からの許可、協賛、または提携を受けているものではありません。',
+    'copyright_guideline_policy_link' => '『超かぐや姫！』公式二次創作ガイドライン（外部サイト)',
     ];
