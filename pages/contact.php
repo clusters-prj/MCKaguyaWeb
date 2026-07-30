@@ -12,28 +12,38 @@
             margin: 0;
         }
         .contact-method {
-            background: #f9f9f9;
-            border-left: 5px solid #4caf50;
+            background: var(--card-bg);
+            border-left: 5px solid var(--primary-color);
             padding: 20px;
             margin-bottom: 20px;
-            border-radius: 4px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            color: var(--text-main);
         }
         .contact-method h3 {
             margin-top: 0;
-            color: #333;
+            color: var(--primary-color);
         }
         .contact-link {
             display: inline-block;
             margin-top: 10px;
             padding: 10px 20px;
-            background-color: #4caf50;
-            color: white;
+            background-color: var(--primary-color);
+            color: #fff;
             text-decoration: none;
             border-radius: 4px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
         .contact-link:hover {
-            background-color: #45a049;
+            background-color: var(--link-hover);
+            transform: translateY(-1px);
+        }
+        .contact-method a:not(.contact-link) {
+            color: var(--primary-color);
+        }
+        .contact-method iframe {
+            max-width: 100%;
+            border-radius: 8px;
         }
     </style>
 </head>
