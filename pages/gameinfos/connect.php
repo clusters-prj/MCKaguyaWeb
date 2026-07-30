@@ -25,7 +25,7 @@
             </ul>
 
             <h3><?= h(t('connect_supported_versions')) ?></h3>
-            <p><?= h(t('connect_java_version_info')) ?></p>
+            <p><?= t('connect_java_version_info') ?></p>
             
             <h3><?= h(t('connect_recommended_version')) ?></h3>
             <p><?= h(t('connect_java_recommended_version')) ?></p>
@@ -44,7 +44,7 @@
                 <li><?= h(t('connect_java_step_5')) ?><br>
                     <img src="/assets/howtoconnect/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2026-04-06_212451.png" alt="<?= h(t('connect_java_alt_add_screen')) ?>">
                 </li>
-                <li><?= h(t('connect_java_step_6')) ?><br>
+                <li><?= t('connect_java_step_6') ?><br>
                     <img src="/assets/howtoconnect/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2026-04-06_212530.png" alt="<?= h(t('connect_java_alt_input_done')) ?>">
                 </li>
                 <li><?= h(t('connect_java_step_7')) ?><br>
@@ -82,7 +82,7 @@
             </ul>
 
             <h3><?= h(t('connect_supported_versions')) ?></h3>
-            <p><?= h(t('connect_bedrock_version_info')) ?></p> 
+            <p><?= t('connect_bedrock_version_info') ?></p> 
 
             <h3><?= h(t('connect_method_heading')) ?></h3>
             <h4><?= h(t('connect_bedrock_platform_heading')) ?></h4>
@@ -105,7 +105,7 @@
                 <li><?= h(t('connect_bedrock_step_5')) ?><br>
                     <img src="/assets/howtoconnect/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2026-04-06_212949.png" alt="<?= h(t('connect_bedrock_alt_add_server')) ?>">
                 </li>
-                <li><?= h(t('connect_bedrock_step_6')) ?><br>
+                <li><?= t('connect_bedrock_step_6') ?><br>
                     <img src="/assets/howtoconnect/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2026-04-06_213115.png" alt="<?= h(t('connect_bedrock_alt_info_input')) ?>">
                 </li>
                 <li><?= h(t('connect_bedrock_step_7')) ?><br>
