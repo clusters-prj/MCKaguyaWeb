@@ -342,8 +342,8 @@ header {
   display: grid;
   grid-template-columns: auto auto; /* 2列のグリッドを作る */
   grid-template-areas:
-    "item1 item2"
-    "item3 item4"; /* 2行目は item2 を2列分繋げる */
+    "item1 item3"  /* 1行目は item1 と item3 を横並び */
+    "item2 item4"; /* 2行目は item2 と item4 を横並び */
   gap: 12px 24px;
   justify-content: center; /* 全体を中央寄せ */
   align-items: center;
@@ -385,7 +385,7 @@ header {
 /* #theme-toggle が入っている3番目の p タグを左寄せにする */
 .footer-content > p:nth-child(3) {
   justify-self: start; /* Gridのマス目の中で左端に寄せる */
-  text-align: left;    /* <p> の中のボタン自体を左揃えにする */
+  text-align: right;    /* <p> の中のボタン自体を左揃えにする */
 }
 
 #lang-select:hover,
