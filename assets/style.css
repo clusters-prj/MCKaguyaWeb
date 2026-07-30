@@ -340,12 +340,12 @@ header {
 /* CSS Gridで配置を指定 */
 .footer-content {
   display: grid;
-  grid-template-columns: auto auto; /* 2列のグリッドを作る */
+  width: 100%; /* 親要素の幅いっぱいに広げる */
+  grid-template-columns: 1fr 1fr; /* 左右均等に1frずつ割り当てる */
   grid-template-areas:
-    "item1 item3"  /* 1行目は item1 と item3 を横並び */
-    "item2 item4"; /* 2行目は item2 と item4 を横並び */
+    "item1 item3"
+    "item2 item4";
   gap: 12px 24px;
-  justify-content: center; /* 全体を中央寄せ */
   align-items: center;
 }
 
