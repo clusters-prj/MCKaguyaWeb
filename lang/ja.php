@@ -6,7 +6,7 @@ return [
     'nav_top'           => 'トップ',
     'nav_progress'      => '再現進捗',
     'nav_gameinfo'      => 'ゲーム内情報',
-    'nav_system'        => 'サーバー構成',
+    // 'nav_system'        => 'サーバー構成',
     'nav_contributors'  => '協力者一覧',
     'nav_contact'       => 'お問い合わせ・参加',
     'nav_theme_toggle'  => 'デザイン切替',
@@ -74,29 +74,22 @@ return [
     'cont_core_section' => '担当区分',
     'cont_core_name' => 'メンバー名',
     'cont_core_role' => '主な役割',
-
     'cont_core_body_1_1' => '主催',
     'cont_core_body_1_2' => 'やちおに',
     'cont_core_body_1_3' => '監督・全体指揮',
-
     'cont_core_body_2_1' => 'サーバー関連',
     'cont_core_body_2_2' => 'キーマ',
     'cont_core_body_2_3' => 'サーバー提供・インフラ整備等',
-
     'cont_core_body_3_1' => '管理者たち',
     'cont_core_body_3_2' => 'Tekika,RAIBU,Tチキン,あまゆき,しおさん,ノラネコ,狐,ゆうひch,無職（かんた）',
     'cont_core_body_3_3' => 'いろいろ',
-
     'cont_contributors' => 'プロジェクト・コントリビューター',
     'cont_contributors_intro' => '建築、回路、プラグイン設定、テストプレイ等でご協力いただいた皆様の一部です。',
     'cont_contributors_note' => '（自己申告・敬称略・ABC50音順・回答状況によっては重複がある可能性があります。）',
-
     'cont_search_placeholder' => 'メンバー名で検索...',
     'cont_member_count' => '検索結果',
     'cont_contributors_unit' => '名',
-
     'special_thanks' => 'スペシャルサンクス',
     'special_thanks_1' => '「超かぐや姫！」制作関係者の皆様',
     'special_thanks_2' => '自宅サーバー・インフラ運用の先人達',
-
     ];

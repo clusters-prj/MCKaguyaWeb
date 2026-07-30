@@ -11,7 +11,7 @@
     <li><a href="/index.php"><?= h(t('nav_top')) ?></a></li>
     <li><a href="/pages/progress.php"><?= h(t('nav_progress')) ?></a></li>
     <li><a href="/pages/gameinfo.php"><?= h(t('nav_gameinfo')) ?></a></li>
-    <li><a href="/pages/system.php"><?= h(t('nav_system')) ?></a></li>
+    <!-- <li><a href="/pages/system.php"><?= h(t('nav_system')) ?></a></li> -->
     <li><a href="/pages/cont.php"><?= h(t('nav_contributors')) ?></a></li>
     <li><a href="/pages/contact.php"><?= h(t('nav_contact')) ?></a></li>
     <li><button id="theme-toggle"><?= h(t('nav_theme_toggle')) ?></button></li>

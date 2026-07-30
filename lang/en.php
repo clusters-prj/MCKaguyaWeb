@@ -6,7 +6,7 @@ return [
     'nav_top'           => 'Home',
     'nav_progress'      => 'Progress',
     'nav_gameinfo'      => 'Game Info',
-    'nav_system'        => 'Server Setup',
+    // 'nav_system'        => 'Server Setup',
     'nav_contributors'  => 'Contributors',
     'nav_contact'       => 'Contact / Join Us',
     'nav_theme_toggle'  => 'Toggle Theme',
@@ -96,7 +96,7 @@ return [
     'cont_contributors_unit' => 'members',
 
     'special_thanks' => 'Special Thanks',
-    'special_thanks_1' => 'Creators and Staff of "Super Kaguya Hime!"',
+    'special_thanks_1' => 'Creators and Staff of "Cosmic Princess Kaguya!"',
     'special_thanks_2' => 'Pioneers of Home Server & Infrastructure Operations',
 
 ];
