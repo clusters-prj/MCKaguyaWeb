@@ -13,15 +13,6 @@
     <li><a href="/pages/gameinfo.php"><?= h(t('nav_gameinfo')) ?></a></li>
     <li><a href="/pages/cont.php"><?= h(t('nav_contributors')) ?></a></li>
     <li><a href="/pages/contact.php"><?= h(t('nav_contact')) ?></a></li>
-    <li><button id="theme-toggle"><?= h(t('nav_theme_toggle')) ?></button></li>
-    <li class="lang-switch">
-      <label for="lang-select" class="sr-only"><?= h(t('lang_switch_label')) ?></label>
-      <select id="lang-select" onchange="location.href='?lang='+this.value">
-        <?php foreach (SUPPORTED_LANGS as $code): ?>
-          <option value="<?= $code ?>" <?= $code === current_lang() ? 'selected' : '' ?>><?= strtoupper($code) ?></option>
-        <?php endforeach; ?>
-      </select>
-    </li>
   </ul>
 </nav>
 <button id="page-top" class="page-top" aria-label="<?= h(t('page_top_aria')) ?>">↑</button>
