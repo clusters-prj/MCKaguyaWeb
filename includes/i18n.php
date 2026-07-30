@@ -9,7 +9,7 @@
  */
 
 // 対応言語一覧（ここに追加するだけで新しい言語を増やせます）
-const SUPPORTED_LANGS = ['ja', 'en'];
+const SUPPORTED_LANGS = ['ja', 'en', 'zh'];
 const DEFAULT_LANG = 'ja';
 
 function detect_lang(): string {
