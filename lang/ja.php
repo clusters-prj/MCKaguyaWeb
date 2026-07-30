@@ -17,6 +17,18 @@ return [
     'footer_copyright'  => '&copy; 2026 MCツクヨミ. All rights reserved.',
     'footer_copyright_link' => '詳細な著作権情報はこちら',
 
+    // === contact.php ===
+    'contact_page_title' => 'お問い合わせ - 超かぐや姫！再現プロジェクト',
+    'contact_heading' => 'お問い合わせ',
+    'contact_intro' => 'プロジェクトに関するご質問、協力の申し出、不具合報告などは以下の窓口より受け付けております。',
+    'contact_discord_title' => '公式Discordサーバー',
+    'contact_discord_info' => '開発進捗の確認や、リアルタイムでのコミュニケーションが可能です。協力希望の方もこちらへお越しください。接続方法は',
+    'contact_discord_connect' => 'こちら',
+    'contact_discord_link' => 'Discordに参加する',
+    'contact_email_title' => 'メール',
+    'contact_email_info' => 'サーバー管理者キーマへのメールにてお問い合わせください。',
+    'contact_email_link' => 'milieus-74.arts@icloud.com',
+
     // === index.php ===
     'index_h2'          => '【サイト工事中】プロジェクト概要：超かぐや姫！の再現プロジェクト',
     'index_header_alt'  => 'サイトのヘッダー画像',

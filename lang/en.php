@@ -17,6 +17,18 @@ return [
     'footer_copyright'  => '&copy; 2026 MC Tsukuyomi. All rights reserved.',
     'footer_copyright_link' => 'Full copyright information',
 
+    // === contact.php ===
+    'contact_page_title' => 'Contact - Cosmic Princess Kaguya Restoration Project',
+    'contact_heading' => 'Contact',
+    'contact_intro' => 'Questions about the project, collaboration offers, and bug reports can be submitted through the channels below.',
+    'contact_discord_title' => 'Official Discord Server',
+    'contact_discord_info' => 'You can check development progress and communicate in real time. If you would like to help, please visit us here. Connection instructions:',
+    'contact_discord_connect' => 'here',
+    'contact_discord_link' => 'Join Discord',
+    'contact_email_title' => 'Email',
+    'contact_email_info' => 'Please contact the server administrator Kima by email.',
+    'contact_email_link' => 'milieus-74.arts@icloud.com',
+
     // === index.php ===
     'index_h2'          => '[Site Under Construction] Project Overview: The "Cosmic Princess Kaguya" Restoration Project',
     'index_header_alt'  => 'Site header image',

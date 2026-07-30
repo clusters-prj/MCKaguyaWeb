@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/style.css" id="main-style">
-    <title>お問い合わせ - 超かぐや姫！再現プロジェクト</title>
+    <title><?= h(t('contact_page_title')) ?></title>
     <style>
         .contact-container {
             max-width: 800px;
@@ -41,22 +41,22 @@
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; ?>
     <main class="contact-container">
         <section id="contact-info">
-            <h2>お問い合わせ</h2>
-            <p>プロジェクトに関するご質問、協力の申し出、不具合報告などは以下の窓口より受け付けております。</p>
+            <h2><?= h(t('contact_heading')) ?></h2>
+            <p><?= h(t('contact_intro')) ?></p>
 
             <div class="contact-method">
-                <h3>公式Discordサーバー</h3>
-                <p>開発進捗の確認や、リアルタイムでのコミュニケーションが可能です。協力希望の方もこちらへお越しください。<br>接続方法は<a href="/pages/gameinfos/connect.shtml">こちら</a></p>
-                <a href="https://discord.gg/SAsYnPPrga" class="contact-link">Discordに参加する</a>
+                <h3><?= h(t('contact_discord_title')) ?></h3>
+                <p><?= h(t('contact_discord_info')) ?> <a href="/pages/gameinfos/connect.shtml"><?= h(t('contact_discord_connect')) ?></a></p>
+                <a href="https://discord.gg/SAsYnPPrga" class="contact-link"><?= h(t('contact_discord_link')) ?></a>
 												<section id="discord">
 												<iframe src="https://discord.com/widget?id=1487438553888849983&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 												</section>
             </div>
 
             <div class="contact-method">
-                <h3>メール</h3>
-                <p>サーバー管理者キーマへのメールにてお問い合わせください。</p>
-                <a href="mailto:milieus-74.arts@icloud.com" class="contact-link">milieus-74.arts@icloud.com</a>
+                <h3><?= h(t('contact_email_title')) ?></h3>
+                <p><?= h(t('contact_email_info')) ?></p>
+                <a href="mailto:milieus-74.arts@icloud.com" class="contact-link"><?= h(t('contact_email_link')) ?></a>
             </div>
         </section>
     </main>
