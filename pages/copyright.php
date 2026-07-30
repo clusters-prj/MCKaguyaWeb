@@ -11,7 +11,7 @@
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; ?>
   <main>
       <section id="overview">
-          <h2><?= h(t('copyright_page_heading')) ?></h2>
+          <h2><?= h(t('copyright_heading')) ?></h2>
 					<p><?= h(t('copyright_intro')) ?></p>
       </section>
 			<section id="credits">
