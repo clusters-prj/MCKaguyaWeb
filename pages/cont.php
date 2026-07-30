@@ -257,7 +257,7 @@
                         type="text" 
                         id="search-input" 
                         class="search-input" 
-                        placeholder="メンバー名で検索..."
+                        placeholder="<?= h(t('cont_search_placeholder')) ?>"
                         autocomplete="off"
                     >
                 </div>
@@ -365,15 +365,15 @@
             </ul>
 
             <div class="member-count">
-                検索結果: <span id="result-count">0</span> 名
+                <?= h(t('cont_member_count')) ?>: <span id="result-count">0</span> <?= h(t('cont_contributors_unit')) ?>
             </div>
         </section>
 
         <section id="special-thanks">
-            <h3>スペシャルサンクス</h3>
+            <h3><?= h(t('special_thanks')) ?></h3>
             <ul>
-                <li>「超かぐや姫！」制作関係者の皆様</li>
-                <li>自宅サーバー・インフラ運用の先人達</li>
+                <li><?= h(t('special_thanks_1')) ?></li>
+                <li><?= h(t('special_thanks_2')) ?></li>
             </ul>
         </section>
     </main>

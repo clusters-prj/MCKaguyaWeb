@@ -90,4 +90,13 @@ return [
     'cont_contributors' => 'プロジェクト・コントリビューター',
     'cont_contributors_intro' => '建築、回路、プラグイン設定、テストプレイ等でご協力いただいた皆様の一部です。',
     'cont_contributors_note' => '（自己申告・敬称略・ABC50音順・回答状況によっては重複がある可能性があります。）',
+
+    'cont_search_placeholder' => 'メンバー名で検索...',
+    'cont_member_count' => '検索結果',
+    'cont_contributors_unit' => '名',
+
+    'special_thanks' => 'スペシャルサンクス',
+    'special_thanks_1' => '「超かぐや姫！」制作関係者の皆様',
+    'special_thanks_2' => '自宅サーバー・インフラ運用の先人達',
+    
     ];
