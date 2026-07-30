@@ -8,7 +8,8 @@
         <title><?= h(t('connect_page_title')) ?></title>
     </head>
     <body>
-        <main>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; ?>
+    <main>
         <section id="overview">
             <h2><?= h(t('connect_heading')) ?></h2>
             <p><?= h(t('connect_intro')) ?></p>
@@ -146,5 +147,6 @@
             </ul>
         </section>
     </main>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php'; ?>
     </body>
 </html>
