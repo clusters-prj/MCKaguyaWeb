@@ -53,7 +53,7 @@ return [
     // === history.php ===
     'history_9' => '当LINEオープンチャットのメンバー数が200名を突破',
     'history_8' => 'ふじゅ〜経済システムをリリース',
-    'history_7' => '0.25周年！ありがとうございます<br><a href="https://discord.com/channels/1487438553888849983/1495076649186754717/1520772153971048458">お祝いの言葉byキーマ<i class="fa-solid fa-arrow-up-right-from-square" style="color: #6366f1;"></i></a>',
+    'history_7' => '0.25周年！ありがとうございます<br><a href="https://discord.com/channels/1487438553888849983/1495076649186754717/1520772153971048458">お祝いの言葉by管理者たち<i class="fa-solid fa-arrow-up-right-from-square" style="color: #6366f1;"></i></a>',
     'history_6' => '当Discordサーバーのメンバー数が200名を突破',
     'history_5' => 'ホームページ作成',
     'history_4' => 'Java版と統合版両対応への環境移行を完了',

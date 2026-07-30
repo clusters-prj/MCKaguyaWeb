@@ -53,7 +53,7 @@ return [
     // === history.php ===
     'history_9' => 'Our LINE open chat surpassed 200 members',
     'history_8' => 'Released the "Fuju~" economy system',
-    'history_7' => '0.25th anniversary! Thank you all<br><a href="https://discord.com/channels/1487438553888849983/1495076649186754717/1520772153971048458">Congratulatory message by Kiima<i class="fa-solid fa-arrow-up-right-from-square" style="color: #6366f1;"></i></a>',
+    'history_7' => '0.25th anniversary! Thank you all<br><a href="https://discord.com/channels/1487438553888849983/1495076649186754717/1520772153971048458">Congratulatory message by Administrators<i class="fa-solid fa-arrow-up-right-from-square" style="color: #6366f1;"></i></a>',
     'history_6' => 'Our Discord server surpassed 200 members',
     'history_5' => 'Website created',
     'history_4' => 'Completed migration to support both Java and Bedrock editions',
