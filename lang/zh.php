@@ -11,13 +11,13 @@ return [
     'nav_theme_toggle'  => '切换主题',
     'nav_menu_aria'     => '展开/折叠菜单',
     'page_top_aria'     => '返回顶部',
-    'logo_alt'          => '超辉夜姬！复原项目',
+    'logo_alt'          => '超時空輝耀姬！复原项目',
     'lang_switch_label' => '语言',
     'footer_copyright'  => '&copy; 2026 MC月读. All rights reserved.',
     'footer_copyright_link' => '详细版权信息请点击此处',
 
     // === contact.php ===
-    'contact_page_title' => '联系我们 - 超辉夜姬！复原项目',
+    'contact_page_title' => '联系我们 - 超時空輝耀姬！复原项目',
     'contact_heading' => '联系我们',
     'contact_intro' => '关于项目的疑问、协助意向、Bug反馈等，请通过以下渠道与我们联系。',
     'contact_discord_title' => '官方Discord服务器',
@@ -29,9 +29,9 @@ return [
     'contact_email_link' => 'milieus-74.arts@icloud.com',
 
     // === index.php ===
-    'index_h2'          => '超辉夜姬！复原项目',
+    'index_h2'          => '超時空輝耀姬！复原项目',
     'index_header_alt'  => '网站头部图片',
-    'index_intro'       => '本项目的启动宗旨是：在Minecraft中忠实还原《超辉夜姬！》的世界观，并加入我们独到的诠释。',
+    'index_intro'       => '本项目的启动宗旨是：在Minecraft中忠实还原《超時空輝耀姬！》的世界观，并加入我们独到的诠释。',
     'index_status_h3'   => '当前进度',
     'index_status_1'    => '服务器系统部署 (Paper/Velocity):',
     'index_status_1_v'  => '部署完毕',
@@ -67,9 +67,9 @@ return [
     'news_2' => '发布了2026年4月〜5月期的运营报告<br><a href="/docs/report_2645.pdf">点击此处查看</a>',
 
     // === cont.php ===
-    'cont_page_title' => '协作者列表 - 超辉夜姬！复原项目',
+    'cont_page_title' => '协作者列表 - 超時空輝耀姬！复原项目',
     'cont_heading' => '协作者列表 / Credits',
-    'cont_intro_1' => '“超辉夜姬！”复原项目得益于众多志愿成员的鼎力相助。',
+    'cont_intro_1' => '“超時空輝耀姬！”复原项目得益于众多志愿成员的鼎力相助。',
     'cont_intro_2' => '目前，我们正与总计超过200名的各位同仁共同推进世界建设。',
     'cont_core_staff' => '运营团队',
     'cont_core_section' => '负责领域',
@@ -91,11 +91,11 @@ return [
     'cont_member_count' => '搜索结果',
     'cont_contributors_unit' => '名',
     'special_thanks' => '特别鸣谢 (Special Thanks)',
-    'special_thanks_1' => '《超辉夜姬！》所有制作相关人员',
+    'special_thanks_1' => '《超時空輝耀姬！》所有制作相关人员',
     'special_thanks_2' => '家用服务器与基础设施运维的先驱们',
 
     // === progress.php ===
-    'progress_page_title' => '复原进度 - 超辉夜姬！复原项目',
+    'progress_page_title' => '复原进度 - 超時空輝耀姬！复原项目',
     'progress_heading' => '复原进度',
     'progress_intro' => '本项目各要素的当前完成度。',
     'progress_water_stage' => '水之Live会场复原',
@@ -106,7 +106,7 @@ return [
     'progress_tsukuyomi_town_detail' => '第2层，庭院建筑中…',
 
     // === gameinfo.php ===
-    'gameinfo_page_title' => '游戏内信息 - 超辉夜姬！复原项目',
+    'gameinfo_page_title' => '游戏内信息 - 超時空輝耀姬！复原项目',
     'gameinfo_heading' => '游戏内信息',
     'gameinfo_intro' => '汇总了游戏内的相关信息。',
     'gameinfo_connect_title' => '加入服务器的方法',
@@ -128,7 +128,7 @@ return [
     'gameinfo_map_town_link' => 'Town服务器',
 
     // === wra.php ===
-    'wra_page_title' => '领地保护申请指南 - 超辉夜姬！复原项目',
+    'wra_page_title' => '领地保护申请指南 - 超時空輝耀姬！复原项目',
     'wra_heading' => '领地保护申请指南🌻',
     'wra_intro_1' => '这里汇总了在游戏中为你想要建筑或活动的土地申请保护（创建WorldGuard区域）的步骤。',
     'wra_intro_2' => '本服的保护系统与Web管理后台相连，在游戏内提交申请后，经管理员审批即可自动生效。',
@@ -163,7 +163,7 @@ return [
     'wra_notice_3_body' => '如果与已有的保护区域哪怕只有1个方块的重叠，在发送时系统会用红字警告并直接取消申请。请调整位置或范围后重试。',
 
     // === build-manual.php ===
-    'build_manual_page_title' => 'MC月读制作委员会 建筑规定 - 超辉夜姬！复原项目',
+    'build_manual_page_title' => 'MC月读制作委员会 建筑规定 - 超時空輝耀姬！复原项目',
     'build_manual_heading' => 'MC月读制作委员会 建筑规定',
     'build_manual_intro' => '这是共同开发中的建筑与开发规则。请参与者务必阅读并严格遵守。',
     'build_manual_rule_1_title' => '第一条（建筑区域与开发自由）',
@@ -173,7 +173,7 @@ return [
     'build_manual_rule_2_1' => '服主（Yachioni）及副管理员若认为某建筑物严重破坏服务器世界观，有权在不事先通知的情况下进行拆除或解体。',
     'build_manual_rule_2_2' => '若需破坏或改建阻碍施工的现有建筑物，不得擅自行动。必须先向服主或副管理员发送@提及，并获得批准。',
     'build_manual_rule_3_title' => '第三条（世界观的遵守与和谐）',
-    'build_manual_rule_3_1' => '所有建筑物必须严格遵守《超辉夜姬！》的世界观，并为此服务。',
+    'build_manual_rule_3_1' => '所有建筑物必须严格遵守《超時空輝耀姬！》的世界观，并为此服务。',
     'build_manual_rule_3_2' => '如需加入原创设计（原创元素），必须尽最大努力与周围景观保持和谐，避免产生违和感。',
     'build_manual_rule_4_title' => '第四条（建筑完工后）',
     'build_manual_rule_4_1_before_link' => '所有建筑物在完工后，必须立即使用',
@@ -185,7 +185,7 @@ return [
     'build_manual_rule_5_2' => '在建筑过程中如遇疑问或问题，请迅速在OpenChat或通过私信联系服主（Yachioni）进行咨询，并听从其指示。',
 
     // === connect.php ===
-    'connect_page_title' => '连接方法(How to connect) - 超辉夜姬！复原项目',
+    'connect_page_title' => '连接方法(How to connect) - 超時空輝耀姬！复原项目',
     'connect_heading' => '连接方法(How to connect)',
     'connect_intro' => '为您介绍各版本的服务器连接方法。',
     'connect_java_heading' => 'Java版',
@@ -269,7 +269,7 @@ return [
     'connect_troubleshooting_lag_2' => '尝试重启Wi-Fi路由器',
 
     // === tools.php ===
-    'tools_page_title' => '工具使用说明 - 超辉夜姬！复原项目',
+    'tools_page_title' => '工具使用说明 - 超時空輝耀姬！复原项目',
     'tools_heading' => '工具使用说明',
     'tools_intro_1' => '这里汇总了游戏内工具的使用方法。',
     'tools_intro_2' => '由于所有工具物品都附加了NBT标签，直接使用普通的追溯指南针（Recovery Compass）或羽毛等原版物品是无法触发功能的，敬请留意。所有工具只需拿在手中并右键单击（放置方块的按键）即可触发功能。',
@@ -304,9 +304,9 @@ return [
     'tools_usage_5' => '选择2倍快捷栏的第5格并使用。',
 
     // === copyright.php ===
-    'copyright_page_title' => '版权与规范方针 - 超辉夜姬！复原项目',
+    'copyright_page_title' => '版权与规范方针 - 超時空輝耀姬！复原项目',
     'copyright_heading' => '版权与规范方针',
-    'copyright_intro' => '本页面展示了“超辉夜姬！复原项目”中关于各项版权、外部许可，以及遵循原作《超辉夜姬！》官方二次创作指南的立场。',
+    'copyright_intro' => '本页面展示了“超時空輝耀姬！复原项目”中关于各项版权、外部许可，以及遵循原作《超時空輝耀姬！》官方二次创作指南的立场。',
     'copyright_site_content' => '本站及服务器内的内容',
     'copyright_site_content_info' => '除非另有说明，本网站发布的文章、图片、设计，以及游戏服务器内构建的建筑物和数据等版权均归“MC月读制作委员会”运营方或各创作者所有。',
     'copyright_minecraft' => '与Minecraft官方的关系',
@@ -315,7 +315,7 @@ return [
     'copyright_external_license_info' => '本项目（包括网站和服务器内部系统等）使用了以下外部资源和库。',
     'copyright_external_license_bluemap' => '用于生成和显示游戏内地图（3D地图）。',
     'copyright_external_license_font_awesome' => '用于网站内各项图标的显示。',
-    'copyright_guideline_policy' => '遵循《超辉夜姬！》官方二次创作指南',
+    'copyright_guideline_policy' => '遵循《超時空輝耀姬！》官方二次创作指南',
     'copyright_guideline_policy_info' => '本项目是志愿者自发组织的非官方粉丝活动（二次创作活动），在官方倡导的“月读世界中人人皆是表达者”的立场下，以非盈利为目的进行运营。在项目推进过程中，我们全面遵守官方的“二次创作指南”，并且非常谨慎，以避免被误认为官方发布物或商品。此外，本项目并未获得官方相关方（Twin Engine等）的授权、赞助或合作。',
-    'copyright_guideline_policy_link' => '《超辉夜姬！》官方二次创作指南（外部网站）',
+    'copyright_guideline_policy_link' => '《超時空輝耀姬！》官方二次创作指南（外部网站）',
 ];
