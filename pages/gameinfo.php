@@ -5,37 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/style.css" id="main-style">
-    <title>ゲーム内情報 - 超かぐや姫！再現プロジェクト</title>
+    <title><?= h(t('gameinfo_page_title')) ?></title>
   </head>
   <body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; ?>
   <main>
       <section id="overview">
-          <h2>ゲーム内情報</h2>
-					<p>ゲーム内情報をまとめました。</p>
+          <h2><?= h(t('gameinfo_heading')) ?></h2>
+					<p><?= h(t('gameinfo_intro')) ?></p>
       </section>
 			<section id="links">
-				<h3>サーバーの参加方法</h3>
-					<p>サーバーの参加方法です。</p>
+				<h3><?= h(t('gameinfo_connect_title')) ?></h3>
+					<p><?= h(t('gameinfo_connect_info')) ?></p>
 					<p><a href="/pages/gameinfos/connect.shtml">こちらから</a></p>
 					
-				<h3>ゲーム内ツールの使い方</h3>
-					<p>ホットバーで使えるツールやコマンド達です。</p>
+				<h3><?= h(t('gameinfo_tools_title')) ?></h3>
+					<p><?= h(t('gameinfo_tools_info')) ?></p>
 					<p><a href="/pages/gameinfos/tools.shtml">こちらから</a></p>
 					
-				<h3>建築基準法</h3>
+				<h3><?= h(t('gameinfo_build_manual_title')) ?></h3>
 					<p><a href="/pages/gameinfos/build-manual.shtml">こちらから</a></p>
 
-				<h3>保護のやり方(必須)</h3>
-					<p><a href="/pages/gameinfos/wra.shtml">建築が終わったら必ず行うべきことです。</a></p>	
+				<h3><?= h(t('gameinfo_wra_title')) ?></h3>
+					<p><?= h(t('gameinfo_wra_info')) ?></p>
+					<p><a href="/pages/gameinfos/wra.shtml">建築が終わったら必ず行うべきことです。</a></p>
 
-				<h3>ステータス</h3>
-					<p>サーバーの運営状況を示しています。メンテナンス情報は作業中のみ表示されます。予告は<a href="https://discord.com/channels/1487438553888849983/1488080997135421510/1489956553149911080">Discord</a>をご覧ください。</p>
-					<p><a href="https://uptime.clusters-prj.com/status/ms-k" target="_blank" rel="noopener noreferrer">専用サイトに飛びます<i class="fa-solid fa-arrow-up-right-from-square" style="color: #6366f1;"></i></a></p>
+				<h3><?= h(t('gameinfo_status_title')) ?></h3>
+					<p><?= h(t('gameinfo_status_info')) ?></p>
+					<p><a href="https://uptime.clusters-prj.com/status/ms-k" target="_blank" rel="noopener noreferrer"> <?= h(t('gameinfo_status_link')) ?></a></p>
 
-				<h3>ゲーム内地図</h3>
-					<p>マップにはBluemapを使用しています。</p>
-					<p><a href="https://map-town-kaguya.clusters-prj.com/" target="_blank" rel="noopener noreferrer">Townサーバー</p></a>
+				<h3><?= h(t('gameinfo_map_title')) ?></h3>
+					<p><?= h(t('gameinfo_map_info')) ?></p>
+					<p><a href="https://map-town-kaguya.clusters-prj.com/" target="_blank" rel="noopener noreferrer"><?= h(t('gameinfo_map_town_link')) ?></a></p>
 			</section>
   </main>
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php'; ?>
