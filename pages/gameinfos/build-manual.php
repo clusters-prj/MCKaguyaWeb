@@ -5,36 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/style.css" id="main-style">
-    <title>MCツクヨミ制作委員会 建築規定 - 超かぐや姫！再現プロジェクト</title>
+    <title><?= h(t('build_manual_page_title')) ?></title>
   </head>
   <body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; ?>
   <main>
       <section id="overview">
-          <h2>MCツクヨミ制作委員会 建築規定</h2>
-          <p>共同開発における建築・開発のルールです。参加者は必ず一読し、遵守してください。</p>
+          <h2><?= h(t('build_manual_heading')) ?></h2>
+          <p><?= h(t('build_manual_intro')) ?></p>
       </section>
 
       <section id="rules">
-          <h3>第一条（建築区域と開発の自由）</h3>
-          <p>1. 開発者は、現在施工中の最上層区域に対して、直接建築や増設（道路などのインフラ整備を含む）を行うことができる。</p>
-          <p>2. 試作、ワールドエディット（WorldEdit）、またはストラクチャーブロックを用いた複製・検証を行う場合は、入口後方の海面に設置された「灰色ブロック指定区域」内で行わなければならない。</p>
+          <h3><?= h(t('build_manual_rule_1_title')) ?></h3>
+          <p>1. <?= h(t('build_manual_rule_1_1')) ?></p>
+          <p>2. <?= h(t('build_manual_rule_1_2')) ?></p>
 
-          <h3>第二条（建造物の管理と撤去基準）</h3>
-          <p>1. サーバー主（やちおに）および副管理者は、サーバーの世界観を著しく損なうと判断した建造物を、事前の通告なく撤去・解体する権限を有する。</p>
-          <p>2. 建築の妨げになる既存の建造物を破壊・改築する場合は、独断で行ってはならない。必ずサーバー主または副管理者へメンションを送り、承認を得るものとする。</p>
+          <h3><?= h(t('build_manual_rule_2_title')) ?></h3>
+          <p>1. <?= h(t('build_manual_rule_2_1')) ?></p>
+          <p>2. <?= h(t('build_manual_rule_2_2')) ?></p>
 
-          <h3>第三条（世界観の順守と調和）</h3>
-          <p>1. すべての建築物は、「超かぐや姫！」の世界観を厳格に守り、これに奉仕するものでなければならない。</p>
-          <p>2. 独自のデザイン（オリジナル要素）を取り入れる場合は、周囲の景観に調和させ、違和感を生じさせないよう最大限の配慮を尽くさねばならない。</p>
+          <h3><?= h(t('build_manual_rule_3_title')) ?></h3>
+          <p>1. <?= h(t('build_manual_rule_3_1')) ?></p>
+          <p>2. <?= h(t('build_manual_rule_3_2')) ?></p>
           
-          <h3>第四条(建築が終わったら）</h3>
-          <p>1. すべての建築物は、建築が完了し次第、速やかに<a href="/pages/gameinfos/wra.shtml">このページ</a>の方法を用いて、建築物を保護しなければならない。
-          <p>2. ただし、これはこの建築基準法が施行される前のものにも遡って適用され、保護されていない場合は(例え他人が建築したものであっても)保護を申請しなければならない。</p>
+          <h3><?= h(t('build_manual_rule_4_title')) ?></h3>
+          <p>1. <?= h(t('build_manual_rule_4_1_before_link')) ?> <a href="/pages/gameinfos/wra.shtml"><?= h(t('build_manual_rule_4_link_text')) ?></a> <?= h(t('build_manual_rule_4_1_after_link')) ?></p>
+          <p>2. <?= h(t('build_manual_rule_4_2')) ?></p>
 
-          <h3>第五条（単独開発の推奨と相談窓口）</h3>
-          <p>1. 開発者は、遠慮することなく単独で建築作業を進めて差し支えない。当サーバーはこれを広く推奨する。</p>
-          <p>2. 建築において疑問や問題が生じた場合は、オープンチャット、またはサーバー主（やちおに）DMにて速やかに相談し、その指示を仰ぐものとする。</p>
+          <h3><?= h(t('build_manual_rule_5_title')) ?></h3>
+          <p>1. <?= h(t('build_manual_rule_5_1')) ?></p>
+          <p>2. <?= h(t('build_manual_rule_5_2')) ?></p>
       </section>
   </main>
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php'; ?>
