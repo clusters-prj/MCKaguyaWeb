@@ -95,31 +95,31 @@
             <ol>
                 <li><?= h(t('connect_bedrock_step_1')) ?></li>
                 <li><?= h(t('connect_bedrock_step_2')) ?><br>
-                    <img src="/assets/howtoconnect/スクリーンショット_2026-04-06_212910.png" alt="<?= h(t('connect_bedrock_alt_launcher')) ?>">
+                    <img src="/assets/howtoconnect/2910.png" alt="<?= h(t('connect_bedrock_alt_launcher')) ?>">
                 </li>
                 <li><?= h(t('connect_bedrock_step_3')) ?><br>
-                    <img src="/assets/howtoconnect/スクリーンショット_2026-04-06_212933.png" alt="<?= h(t('connect_bedrock_alt_play')) ?>">
+                    <img src="/assets/howtoconnect/2933.png" alt="<?= h(t('connect_bedrock_alt_play')) ?>">
                 </li>
                 <li><?= h(t('connect_bedrock_step_4')) ?><br>
-                    <img src="/assets/howtoconnect/スクリーンショット_2026-04-06_212942.png" alt="<?= h(t('connect_bedrock_alt_server_tab')) ?>">
+                    <img src="/assets/howtoconnect/2942.png" alt="<?= h(t('connect_bedrock_alt_server_tab')) ?>">
                 </li>
                 <li><?= h(t('connect_bedrock_step_5')) ?><br>
-                    <img src="/assets/howtoconnect/スクリーンショット_2026-04-06_212949.png" alt="<?= h(t('connect_bedrock_alt_add_server')) ?>">
+                    <img src="/assets/howtoconnect/2949.png" alt="<?= h(t('connect_bedrock_alt_add_server')) ?>">
                 </li>
                 <li><?= t('connect_bedrock_step_6') ?><br>
-                    <img src="/assets/howtoconnect/スクリーンショット_2026-04-06_213115.png" alt="<?= h(t('connect_bedrock_alt_info_input')) ?>">
+                    <img src="/assets/howtoconnect/3115.png" alt="<?= h(t('connect_bedrock_alt_info_input')) ?>">
                 </li>
                 <li><?= h(t('connect_bedrock_step_7')) ?><br>
-                    <img src="/assets/howtoconnect/スクリーンショット_2026-04-06_213138.png" alt="<?= h(t('connect_bedrock_alt_confirm')) ?>">
+                    <img src="/assets/howtoconnect/3138.png" alt="<?= h(t('connect_bedrock_alt_confirm')) ?>">
                 </li>
                 <li><?= h(t('connect_bedrock_step_8')) ?><br>
-                    <img src="/assets/howtoconnect/スクリーンショット_2026-04-06_213156.png" alt="<?= h(t('connect_bedrock_alt_press_play')) ?>">
+                    <img src="/assets/howtoconnect/3156.png" alt="<?= h(t('connect_bedrock_alt_press_play')) ?>">
                 </li>
                 <li><?= h(t('connect_bedrock_step_9')) ?><br>
-                    <img src="/assets/howtoconnect/スクリーンショット_2026-04-06_213224.png" alt="<?= h(t('connect_bedrock_alt_waiting')) ?>">
+                    <img src="/assets/howtoconnect/3224.png" alt="<?= h(t('connect_bedrock_alt_waiting')) ?>">
                 </li>
                 <li><?= h(t('connect_bedrock_step_10')) ?><br>
-                    <img src="/assets/howtoconnect/スクリーンショット_2026-04-06_213251.png" alt="<?= h(t('connect_bedrock_alt_complete')) ?>">
+                    <img src="/assets/howtoconnect/3251.png" alt="<?= h(t('connect_bedrock_alt_complete')) ?>">
                 </li>
             </ol>
 
