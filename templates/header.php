@@ -1,23 +1,21 @@
 <header>
-  <a href="/index.shtml">
-    <img src="/assets/logo.JPG" alt="超かぐや姫！再現プロジェクト" class="site-logo">
+  <a href="/index.php">
+    <img src="/assets/logo.JPG" alt="<?= h(t('logo_alt')) ?>" class="site-logo">
   </a>
 </header>
 <nav>
-  <button id="menu-btn" class="menu-btn" aria-label="メニュー開閉">
+  <button id="menu-btn" class="menu-btn" aria-label="<?= h(t('nav_menu_aria')) ?>">
     <span></span><span></span><span></span>
   </button>
   <ul id="nav-list">
-    <li><a href="/index.shtml">トップ</a></li>
-    <li><a href="/pages/progress.shtml">再現進捗</a></li>
-    <li><a href="/pages/gameinfo.shtml">ゲーム内情報</a></li>
-    <li><a href="/pages/system.shtml">サーバー構成</a></li>
-    <li><a href="/pages/cont.php">協力者一覧</a></li>
-    <li><a href="/pages/contact.shtml">お問い合わせ・参加</a></li>
-    <li><button id="theme-toggle">デザイン切替</button></li>
+    <li><a href="/index.php"><?= h(t('nav_top')) ?></a></li>
+    <li><a href="/pages/progress.php"><?= h(t('nav_progress')) ?></a></li>
+    <li><a href="/pages/gameinfo.php"><?= h(t('nav_gameinfo')) ?></a></li>
+    <li><a href="/pages/cont.php"><?= h(t('nav_contributors')) ?></a></li>
+    <li><a href="/pages/contact.php"><?= h(t('nav_contact')) ?></a></li>
   </ul>
 </nav>
-<button id="page-top" class="page-top" aria-label="ページトップへ戻る">↑</button>
+<button id="page-top" class="page-top" aria-label="<?= h(t('page_top_aria')) ?>">↑</button>
 <hr>
 
 <script>
@@ -29,18 +27,16 @@
   }
 
   document.addEventListener('DOMContentLoaded', function() {
-    // ナビゲーションのハイライト
     const currentPath = window.location.pathname;
     const navLinks = document.querySelectorAll('nav a');
-    
+
     navLinks.forEach(link => {
       const href = link.getAttribute('href');
-      if (currentPath === href || (currentPath === '/' && href === '/index.shtml')) {
+      if (currentPath === href || (currentPath === '/' && href === '/index.php')) {
         link.classList.add('active');
       }
     });
 
-    // テーマ切り替え初期化
     const savedTheme = localStorage.getItem('selected-theme') || 'style';
     applyTheme(savedTheme);
 
@@ -52,7 +48,6 @@
       });
     }
 
-    // モバイルメニューのトグル制御
     const menuBtn = document.getElementById('menu-btn');
     const navList = document.getElementById('nav-list');
     if (menuBtn && navList) {
@@ -62,19 +57,16 @@
       });
     }
 
-    // ページトップボタンの制御
     const pageTopBtn = document.getElementById('page-top');
     if (pageTopBtn) {
-      // スクロール量に応じてボタンの表示・非表示を切り替え（300px以上スクロールで表示）
       window.addEventListener('scroll', function() {
         const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollY > 200) { // 200px程度から表示させると親切
+        if (scrollY > 200) {
           pageTopBtn.classList.add('is-visible');
         } else {
           pageTopBtn.classList.remove('is-visible');
         }
       });
-      // クリック時にスムーズにトップへ戻る
       pageTopBtn.addEventListener('click', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });

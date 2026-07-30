@@ -1,5 +1,6 @@
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/i18n.php'; ?>
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="<?= current_lang() ?>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,29 +8,33 @@
     <title>サーバー構成 - 超かぐや姫！再現プロジェクト</title>
     <style>
         .system-card {
-            background: #f9f9f9;
-            border-left: 5px solid #4caf50;
+            background: var(--card-bg);
+            border-left: 5px solid var(--primary-color);
             padding: 15px;
             margin-bottom: 20px;
-            border-radius: 4px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            color: var(--text-main);
         }
         .system-card h3 {
             margin-top: 0;
-            color: #333;
+            color: var(--primary-color);
         }
         .tech-tag {
             display: inline-block;
-            background: #e0e0e0;
+            background: var(--table-th-bg);
+            color: var(--text-main);
             padding: 2px 8px;
-            border-radius: 4px;
+            border-radius: 999px;
             font-size: 0.9em;
             margin-right: 5px;
             margin-bottom: 5px;
+            border: 1px solid var(--border-color);
         }
     </style>
 </head>
 <body>
-    <!--#include virtual="/templates/header.html" -->
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; ?>
     <main>
         <section id="system-overview">
             <h2>サーバーシステム構成</h2>
@@ -81,6 +86,6 @@
             </table>
         </section>
     </main>
-    <!--#include virtual="/templates/footer.html" -->
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php'; ?>
   </body>
 </html>

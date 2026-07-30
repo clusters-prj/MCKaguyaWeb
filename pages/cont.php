@@ -1,26 +1,28 @@
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/i18n.php'; ?>
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="<?= current_lang() ?>">
   <head>
     <meta charset="UTF-8">
-    <title>協力者一覧 / Credits</title>
+    <title><?= h(t('cont_page_title')) ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/style.css" id="main-style">
     <style>
       :root {
-        --indigo-primary: #4f46e5;
-        --indigo-light: #eef2ff;
-        --indigo-dark: #312e81;
-        --text-primary: #1f2937;
-        --text-secondary: #6b7280;
-        --border-color: #e5e7eb;
+        --indigo-primary: var(--primary-color, #4f46e5);
+        --indigo-light: rgba(79, 70, 229, 0.12);
+        --indigo-dark: var(--text-main, #312e81);
+        --text-primary: var(--text-main, #1f2937);
+        --text-secondary: var(--text-muted, #6b7280);
+        --border-color: var(--border-color, #e5e7eb);
       }
 
       #member-controls {
         margin: 2rem 0;
         padding: 1.5rem;
-        background: linear-gradient(135deg, var(--indigo-light) 0%, #f0f4ff 100%);
+        background: linear-gradient(135deg, var(--indigo-light) 0%, color-mix(in srgb, var(--card-bg) 70%, var(--indigo-light) 30%) 100%);
         border-radius: 12px;
         border-left: 4px solid var(--indigo-primary);
+        color: var(--text-primary);
       }
 
       .search-container {
@@ -38,6 +40,8 @@
         border-radius: 8px;
         font-family: 'Kiwi Maru', serif;
         font-size: 1rem;
+        background: var(--card-bg);
+        color: var(--text-primary);
         transition: all 0.3s ease;
       }
 
@@ -56,7 +60,7 @@
       .filter-btn {
         padding: 0.5rem 1rem;
         border: 2px solid var(--indigo-primary);
-        background: white;
+        background: var(--card-bg);
         color: var(--indigo-primary);
         border-radius: 20px;
         cursor: pointer;
@@ -90,7 +94,8 @@
         padding: 1.5rem;
         border: 2px solid var(--indigo-primary);
         border-radius: 12px;
-        background: white;
+        background: var(--card-bg);
+        color: var(--text-primary);
         transition: all 0.3s ease;
         display: flex;
         flex-direction: column;
@@ -135,6 +140,7 @@
         font-size: 0.85rem;
         font-weight: 600;
         margin-bottom: 0.5rem;
+        border: 1px solid color-mix(in srgb, var(--indigo-primary) 20%, transparent);
       }
 
       .member-social {
@@ -151,6 +157,7 @@
         font-size: 0.9rem;
         font-weight: 500;
         transition: all 0.3s ease;
+        border: 1px solid color-mix(in srgb, var(--indigo-primary) 20%, transparent);
       }
 
       .member-social a:hover {
@@ -198,50 +205,50 @@
     </style>
   </head>
   <body>
-    <!--#include virtual="/templates/header.html" -->
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; ?>
     <main>
         <section id="credits-intro">
             <h2>協力者一覧 / Credits</h2>
             <p>
-                「超かぐや姫」再現プロジェクトは、多くの有志メンバーの協力によって支えられています。
-                現在、総勢約168名の皆様と共にワールド構築を進めています。
+                <?= h(t('cont_intro_1')) ?><br>
+                <?= h(t('cont_intro_2')) ?>
             </p>
         </section>
 
         <section id="core-staff">
-            <h3>運営</h3>
+            <h3><?= h(t('cont_core_staff')) ?></h3>
             <table>
                 <thead>
                     <tr>
-                        <th>担当区分</th>
-                        <th>メンバー名</th>
-                        <th>主な役割</th>
+                        <th><?= h(t('cont_core_section')) ?></th>
+                        <th><?= h(t('cont_core_name')) ?></th>
+                        <th><?= h(t('cont_core_role')) ?></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>主催</strong></td>
-                        <td>やちおに</td>
-                        <td>監督・全体指揮</td>
+                        <td><strong><?= h(t('cont_core_body_1_1')) ?></strong></td>
+                        <td><?= h(t('cont_core_body_1_2')) ?></td>
+                        <td><?= h(t('cont_core_body_1_3')) ?></td>
                     </tr>
                     <tr>
-                        <td><strong>サーバー関連</strong></td>
-                        <td>キーマ</td>
-                        <td>サーバー提供・インフラ整備等</td>
+                        <td><strong><?= h(t('cont_core_body_2_1')) ?></strong></td>
+                        <td><?= h(t('cont_core_body_2_2')) ?></td>
+                        <td><?= h(t('cont_core_body_2_3')) ?></td>
                     </tr>
                     <tr>
-                        <td><strong>管理者たち</strong></td>
-                        <td>Tekika,RAIBU,Tチキン,あまゆき,しおさん,ノラネコ,狐,ゆうひch,無職（かんた）</td>
-                        <td>いろいろ</td>
+                        <td><strong><?= h(t('cont_core_body_3_1')) ?></strong></td>
+                        <td><?= h(t('cont_core_body_3_2')) ?></td>
+                        <td><?= h(t('cont_core_body_3_3')) ?></td>
                     </tr>
                 </tbody>
             </table>
         </section>
 
         <section id="contributors">
-            <h3>プロジェクト・コントリビューター</h3>
-            <p>建築、回路、プラグイン設定、テストプレイ等でご協力いただいた皆様の一部です。</p>
-            <p>（自己申告・敬称略・ABC50音順・回答状況によっては重複がある可能性があります。）</p>
+            <h3><?= h(t('cont_contributors')) ?></h3>
+            <p><?= h(t('cont_contributors_intro')) ?></p>
+            <p><?= h(t('cont_contributors_note')) ?></p>
 
             <!-- 検索・フィルター機能 -->
             <div id="member-controls">
@@ -250,7 +257,7 @@
                         type="text" 
                         id="search-input" 
                         class="search-input" 
-                        placeholder="メンバー名で検索..."
+                        placeholder="<?= h(t('cont_search_placeholder')) ?>"
                         autocomplete="off"
                     >
                 </div>
@@ -281,7 +288,7 @@
                     
                     ksort($roles);
                     foreach (array_keys($roles) as $role) {
-                        echo '<button class="filter-btn" data-filter="' . htmlspecialchars($role) . '">' . htmlspecialchars($role) . '</button>' . "\n";
+                        echo '<button class="filter-btn" data-filter="' . h($role) . '">' . h($role) . '</button>' . "\n";
                     }
                     ?>
                 </div>
@@ -307,15 +314,15 @@
                 
                 // ソート済みのメンバーを出力
                 foreach ($members as $line) {
-                    $name = htmlspecialchars($line[0]);
-                    $link = isset($line[1]) ? htmlspecialchars(trim($line[1])) : '';
-                    $role = isset($line[2]) ? htmlspecialchars(trim($line[2])) : '';
+                    $name = h($line[0]);
+                    $link = isset($line[1]) ? h(trim($line[1])) : '';
+                    $role = isset($line[2]) ? h(trim($line[2])) : '';
                     
                     // 役割タグ用にデータ属性を生成
                     $role_list = array_map('trim', explode(',', str_replace('、', ',', $line[2])));
                     $data_roles = implode(',', array_map('htmlspecialchars', $role_list));
                     
-                    echo '<li class="member-card" data-name="' . htmlspecialchars($line[0]) . '" data-roles="' . htmlspecialchars($data_roles) . '">';
+                    echo '<li class="member-card" data-name="' . h($line[0]) . '" data-roles="' . h($data_roles) . '">';
                     
                     echo '<div class="member-name">';
                     if (!empty($link) && filter_var($link, FILTER_VALIDATE_URL)) {
@@ -331,7 +338,7 @@
                         $role_tags = array_map('trim', explode(',', str_replace('、', ',', $line[2])));
                         foreach ($role_tags as $tag) {
                             if (!empty($tag)) {
-                                echo '<span class="member-role-tag">' . htmlspecialchars($tag) . '</span>';
+                                echo '<span class="member-role-tag">' . h($tag) . '</span>';
                             }
                         }
                         echo '</div>';
@@ -358,19 +365,19 @@
             </ul>
 
             <div class="member-count">
-                検索結果: <span id="result-count">0</span> 名
+                <?= h(t('cont_member_count')) ?>: <span id="result-count">0</span> <?= h(t('cont_contributors_unit')) ?>
             </div>
         </section>
 
         <section id="special-thanks">
-            <h3>スペシャルサンクス</h3>
+            <h3><?= h(t('special_thanks')) ?></h3>
             <ul>
-                <li>「超かぐや姫！」制作関係者の皆様</li>
-                <li>自宅サーバー・インフラ運用の先人達</li>
+                <li><?= h(t('special_thanks_1')) ?></li>
+                <li><?= h(t('special_thanks_2')) ?></li>
             </ul>
         </section>
     </main>
-    <!--#include virtual="/templates/footer.html" -->
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php'; ?>
 
     <script>
         const searchInput = document.getElementById('search-input');
