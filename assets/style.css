@@ -342,8 +342,8 @@ header {
   display: grid;
   grid-template-columns: auto auto; /* 2列のグリッドを作る */
   grid-template-areas:
-    "item1 item3"
-    "item2 item2"; /* 2行目は item2 を2列分繋げる */
+    "item1 item2"
+    "item3 item4"; /* 2行目は item2 を2列分繋げる */
   gap: 12px 24px;
   justify-content: center; /* 全体を中央寄せ */
   align-items: center;
@@ -351,9 +351,9 @@ header {
 
 /* 各要素（1〜4番目のpタグ）にエリア名を割り当て */
 .footer-content > p:nth-child(1) { grid-area: item1; }
-.footer-content > p:nth-child(2) { grid-area: item2; text-align: center; }
-.footer-content > p:nth-child(3) { grid-area: item3; }
-.footer-content > p:nth-child(4) { grid-area: item4; }
+.footer-content > p:nth-child(2) { grid-area: item2; }
+.footer-content > p:nth-child(3) { grid-area: item3; text-align: right; } /* 3番目のpタグは右寄せ */
+.footer-content > p:nth-child(4) { grid-area: item4; text-align: right; } /* 4番目のpタグは右寄せ */
 
 /* pタグのデフォルト余白をリセット */
 .footer-content p {
