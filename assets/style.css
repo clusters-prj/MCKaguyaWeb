@@ -337,13 +337,23 @@ header {
    ========================================== */
 
 /* フッターの横並びレイアウト */
+/* CSS Gridで配置を指定 */
 .footer-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: auto auto; /* 2列のグリッドを作る */
+  grid-template-areas:
+    "item1 item3"
+    "item2 item2"; /* 2行目は item2 を2列分繋げる */
+  gap: 12px 24px;
+  justify-content: center; /* 全体を中央寄せ */
   align-items: center;
-  gap: 12px 24px; /* 要素間の余白（上下 左右） */
 }
+
+/* 各要素（1〜4番目のpタグ）にエリア名を割り当て */
+.footer-content > p:nth-child(1) { grid-area: item1; }
+.footer-content > p:nth-child(2) { grid-area: item2; text-align: center; }
+.footer-content > p:nth-child(3) { grid-area: item3; }
+.footer-content > p:nth-child(4) { grid-area: item4; }
 
 /* pタグのデフォルト余白をリセット */
 .footer-content p {
