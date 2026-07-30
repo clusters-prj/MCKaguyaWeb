@@ -382,8 +382,8 @@ header {
   background-position: right 12px center;
 }
 
-/* #theme-toggle が入っている3番目の p タグを左寄せにする */
-.footer-content > p:nth-child(3) {
+/* #theme-toggle が入っている4番目の p タグを左寄せにする */
+.footer-content > p:nth-child(4) {
   justify-self: start; /* Gridのマス目の中で左端に寄せる */
   text-align: right;    /* <p> の中のボタン自体を左揃えにする */
 }

@@ -4,7 +4,6 @@
       <p><?= t('footer_copyright') ?></p>
       <p><a href="/pages/copyright.php"><?= h(t('footer_copyright_link')) ?></a></p>
 
-      <p><button id="theme-toggle"><?= h(t('nav_theme_toggle')) ?></button></p>
       <p class="lang-switch">
         <label for="lang-select" class="sr-only"><?= h(t('lang_switch_label')) ?></label>
         <select id="lang-select" onchange="location.href='?lang='+this.value">
@@ -13,6 +12,7 @@
           <?php endforeach; ?>
         </select>
       </p>
+      <p><button id="theme-toggle"><?= h(t('nav_theme_toggle')) ?></button></p>
     </div>
   </div>
 </footer>
