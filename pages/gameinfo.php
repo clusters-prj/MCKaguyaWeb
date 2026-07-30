@@ -17,22 +17,22 @@
 			<section id="links">
 				<h3><?= h(t('gameinfo_connect_title')) ?></h3>
 					<p><?= h(t('gameinfo_connect_info')) ?></p>
-					<p><a href="/pages/gameinfos/connect.shtml">こちらから</a></p>
+					<p><a href="/pages/gameinfos/connect.shtml"><?= h(t('gameinfo_connect_link')) ?></a></p>
 					
 				<h3><?= h(t('gameinfo_tools_title')) ?></h3>
 					<p><?= h(t('gameinfo_tools_info')) ?></p>
-					<p><a href="/pages/gameinfos/tools.shtml">こちらから</a></p>
+					<p><a href="/pages/gameinfos/tools.shtml"><?= h(t('gameinfo_tools_link')) ?></a></p>
 					
 				<h3><?= h(t('gameinfo_build_manual_title')) ?></h3>
-					<p><a href="/pages/gameinfos/build-manual.shtml">こちらから</a></p>
+					<p><a href="/pages/gameinfos/build-manual.shtml"><?= h(t('gameinfo_build_manual_link')) ?></a></p>
 
 				<h3><?= h(t('gameinfo_wra_title')) ?></h3>
 					<p><?= h(t('gameinfo_wra_info')) ?></p>
-					<p><a href="/pages/gameinfos/wra.shtml">建築が終わったら必ず行うべきことです。</a></p>
+					<p><a href="/pages/gameinfos/wra.shtml"><?= h(t('gameinfo_wra_link')) ?></a></p>
 
 				<h3><?= h(t('gameinfo_status_title')) ?></h3>
-					<p><?= h(t('gameinfo_status_info')) ?></p>
-					<p><a href="https://uptime.clusters-prj.com/status/ms-k" target="_blank" rel="noopener noreferrer"> <?= h(t('gameinfo_status_link')) ?></a></p>
+					<p><?= t('gameinfo_status_info') ?></p>
+					<p><a href="https://uptime.clusters-prj.com/status/ms-k" target="_blank" rel="noopener noreferrer"> <?= t('gameinfo_status_link') ?></a></p>
 
 				<h3><?= h(t('gameinfo_map_title')) ?></h3>
 					<p><?= h(t('gameinfo_map_info')) ?></p>
