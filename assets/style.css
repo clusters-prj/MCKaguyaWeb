@@ -406,3 +406,13 @@ header {
   white-space: nowrap;
   border: 0;
 }
+
+/* 簡体字中国語（zh-Hans）用のフォント指定 */
+:lang(zh-Hans) {
+  font-family:
+    "PingFang SC",        /* macOS / iOS */
+    "Hiragino Sans GB",   /* macOS（旧バージョン向け） */
+    "Microsoft YaHei",    /* Windows */
+    "Noto Sans SC",       /* Webフォント / Androidなど */
+    sans-serif;
+}
