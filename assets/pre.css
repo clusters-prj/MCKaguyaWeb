@@ -75,9 +75,17 @@ header {
   border-bottom: 3px solid var(--pref-primary);
   padding: 20px 0;
   margin-bottom: 0;
+  position: relative;
 }
 
-/* ヘッダー内のタイトル・ロゴ用リンク */
+/* ヘッダー内部のコンテナ／H1で左右余白（20px）と中央寄せを確実に確保 */
+header .container,
+header h1 {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 header h1 {
   margin: 0;
   font-size: 1.5rem;
@@ -95,13 +103,6 @@ header h1 a {
 header h1 a:hover {
   text-decoration: none;
   opacity: 0.85;
-}
-
-header h1 img {
-  padding-left: 10px;
-  height: 48px;
-  width: auto;
-  display: block;
 }
 
 /* グローバルナビゲーション：青背景に白文字の定番スタイル */
@@ -253,11 +254,10 @@ td {
   display: block;
 }
 
-/* フッター：情報の集約（ライトテーマ風） */
+/* フッター：情報の集約 */
 footer {
-  background-color: var(--pref-secondary); /* 薄い青灰色 #f0f4f9 */
-  color: var(--pref-text);
-  border-top: 2px solid var(--pref-primary); /* 上部にアクセントライン */
+  background-color: #2b3036;
+  color: var(--white);
   padding: 40px 20px;
   margin-top: 50px;
   font-size: 0.9rem;
@@ -265,13 +265,15 @@ footer {
 
 /* フッター内のリンク */
 footer a {
-  color: var(--pref-primary); /* メインの濃い青 */
+  color: #76b3ff;
   text-decoration: underline;
   font-weight: bold;
+  transition: color 0.2s ease;
 }
 
 footer a:hover {
-  color: #0056cc;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 /* ==========================================
@@ -328,15 +330,17 @@ footer a:hover {
   outline: none;
 }
 
-/* モバイル用メニューボタン */
+/* ==========================================
+   モバイル用メニューボタン＆レスポンシブ
+   ========================================== */
 .menu-btn {
   display: none;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 10px 20px;
+  padding: 10px 15px;
   z-index: 2000;
-  color: var(--white);
+  color: var(--pref-primary); /* 白背景でも見えるように濃い青に指定 */
 }
 
 .menu-btn span {
@@ -349,21 +353,36 @@ footer a:hover {
 }
 
 @media screen and (max-width: 768px) {
+  header {
+    padding: 15px 0;
+  }
+
+  /* モバイル時、右側のハンバーガーボタンと重ならないよう余白を調整 */
+  header .container,
+  header h1 {
+    padding-right: 60px;
+  }
+
   .menu-btn {
     display: block;
-    position: fixed;
-    top: 5px;
-    right: 10px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
     z-index: 2000;
+    color: var(--pref-primary);
+  }
+
+  /* メニューが開いているときはボタンを固定表示にして操作しやすくする */
+  .menu-btn.is-active {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    color: var(--pref-primary);
   }
   
   .menu-btn.is-active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
   .menu-btn.is-active span:nth-child(2) { opacity: 0; }
   .menu-btn.is-active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
-  .menu-btn.is-active {
-    color: var(--pref-primary);
-  }
 
   nav ul {
     display: none;
