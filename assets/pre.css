@@ -246,10 +246,11 @@ td {
   display: block;
 }
 
-/* フッター：情報の集約 */
+/* フッター：情報の集約（ライトテーマ風） */
 footer {
-  background-color: #444;
-  color: var(--white);
+  background-color: var(--pref-secondary); /* 薄い青灰色 #f0f4f9 */
+  color: var(--pref-text);
+  border-top: 2px solid var(--pref-primary); /* 上部にアクセントライン */
   padding: 40px 20px;
   margin-top: 50px;
   font-size: 0.9rem;
@@ -257,12 +258,13 @@ footer {
 
 /* フッター内のリンク */
 footer a {
-  color: #fff;
+  color: var(--pref-primary); /* メインの濃い青 */
   text-decoration: underline;
+  font-weight: bold;
 }
 
 footer a:hover {
-  color: #ccd6e0;
+  color: #0056cc;
 }
 
 /* ==========================================
