@@ -13,7 +13,7 @@
   --pref-text: #333333;       /* 基本文字色 */
   --pref-border: #ccd6e0;     /* 境界線 */
   --white: #ffffff;
-  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 body {
@@ -61,33 +61,33 @@ p img, span img {
 }
 
 /* ==========================================
-   ヘッダーエリア（ロゴと配置の最適化）
+   ヘッダーエリア
    ========================================== */
 header {
   background-color: var(--white);
   border-bottom: 3px solid var(--pref-primary);
   padding: 15px 20px;
-  position: relative; /* ハンバーガーボタンの配置基準 */
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-height: 78px;
 }
 
-/* ロゴリンク（潰れ防止と幅の確保） */
+/* ロゴリンク */
 header a {
   display: inline-block;
-  max-width: calc(100% - 60px); /* 右側のボタンと重ならないように制限 */
+  max-width: calc(100% - 60px);
 }
 
-/* ロゴ画像（アスペクト比を維持して潰れないように修正） */
+/* ロゴ画像（アスペクト比固定） */
 .site-logo {
   max-height: 48px;
   height: auto;
   width: auto;
   max-width: 100%;
-  object-fit: contain; /* アスペクト比を保持 */
-  mix-blend-mode: multiply; /* 白背景を透過 */
+  object-fit: contain;
+  mix-blend-mode: multiply;
   display: block;
 }
 
@@ -223,6 +223,13 @@ td {
   padding: 12px 15px;
 }
 
+/* 埋め込みDiscord Widget */
+#discord iframe {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
 /* フッター */
 footer {
   background-color: #2b3036;
@@ -296,7 +303,6 @@ footer a:hover {
    レスポンシブ（スマホ表示）
    ========================================== */
 @media screen and (max-width: 768px) {
-  /* スマホ時はナビゲーションバー自体の高さを消す */
   nav {
     background-color: transparent;
     min-height: 0;
@@ -304,41 +310,37 @@ footer a:hover {
     position: static;
   }
 
-  /* ハンバーガーボタンをヘッダーの右上（上下中央）に配置 */
+  /* ハンバーガーボタン：画面右上に常に固定（追従） */
   .menu-btn {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%); /* ヘッダー内で上下中央寄せ */
-    right: 20px;
+    position: fixed;
+    top: 15px;
+    right: 15px;
     z-index: 2000;
-    background: none;
-    border: none;
+    width: 44px;
+    height: 44px;
+    background-color: var(--white);
+    border: 1px solid var(--pref-border);
+    border-radius: 4px;
     cursor: pointer;
-    padding: 5px;
-    color: var(--pref-primary); /* 白ヘッダーでも見える濃い青 */
+    padding: 0;
+    color: var(--pref-primary);
+    box-shadow: var(--shadow-sm);
   }
 
   .menu-btn span {
     display: block;
-    width: 25px;
+    width: 22px;
     height: 2px;
     background-color: currentColor;
     margin: 3px 0;
     transition: all 0.3s ease;
   }
 
-  /* メニュー展開時のボタン位置固定 */
-  .menu-btn.is-active {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    transform: none;
-  }
-  
+  /* メニュー展開時のボタンアニメーション */
   .menu-btn.is-active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
   .menu-btn.is-active span:nth-child(2) { opacity: 0; }
   .menu-btn.is-active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
@@ -414,8 +416,8 @@ footer a:hover {
 /* ページトップボタン */
 .page-top {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: 15px;
+  bottom: 15px;
   width: 44px;
   height: 44px;
   background-color: var(--pref-primary);
