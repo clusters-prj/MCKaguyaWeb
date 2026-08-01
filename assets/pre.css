@@ -61,27 +61,34 @@ p img, span img {
 }
 
 /* ==========================================
-   ヘッダーエリア（ロゴ配置の最適化）
+   ヘッダーエリア（ロゴと配置の最適化）
    ========================================== */
 header {
   background-color: var(--white);
   border-bottom: 3px solid var(--pref-primary);
   padding: 15px 20px;
-  position: relative;
+  position: relative; /* ハンバーガーボタンの配置基準 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 78px;
 }
 
-/* ロゴのリンク部分で幅と位置を調整（画面端にくっつくのを防止） */
+/* ロゴリンク（潰れ防止と幅の確保） */
 header a {
-  display: block;
-  max-width: 1080px;
-  margin: 0 auto;
+  display: inline-block;
+  max-width: calc(100% - 60px); /* 右側のボタンと重ならないように制限 */
 }
 
+/* ロゴ画像（アスペクト比を維持して潰れないように修正） */
 .site-logo {
-  height: 48px;
-  max-width: 100%;
+  max-height: 48px;
+  height: auto;
   width: auto;
-  mix-blend-mode: multiply; /* 白背景を透過させて印刷物のような質感に */
+  max-width: 100%;
+  object-fit: contain; /* アスペクト比を保持 */
+  mix-blend-mode: multiply; /* 白背景を透過 */
+  display: block;
 }
 
 /* ==========================================
@@ -128,7 +135,7 @@ nav a.active {
   text-decoration: underline;
 }
 
-/* モバイル用メニューボタン（基本非表示） */
+/* モバイル用メニューボタン（PC時は非表示） */
 .menu-btn {
   display: none;
 }
@@ -289,54 +296,54 @@ footer a:hover {
    レスポンシブ（スマホ表示）
    ========================================== */
 @media screen and (max-width: 768px) {
-  /* スマホ時はナビゲーションの青い帯を消す */
+  /* スマホ時はナビゲーションバー自体の高さを消す */
   nav {
     background-color: transparent;
     min-height: 0;
     margin-bottom: 0;
+    position: static;
   }
 
-  /* ハンバーガーボタンと被らないようロゴの右側に隙間を作る */
-  header a {
-    padding-right: 60px;
-  }
-
-  /* ハンバーガーボタンを白いヘッダーの上に配置（濃い青色にしてくっきり表示） */
+  /* ハンバーガーボタンをヘッダーの右上（上下中央）に配置 */
   .menu-btn {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    top: 20px;
+    top: 50%;
+    transform: translateY(-50%); /* ヘッダー内で上下中央寄せ */
     right: 20px;
     z-index: 2000;
     background: none;
     border: none;
     cursor: pointer;
     padding: 5px;
-    color: var(--pref-primary); /* 濃い青色で白背景に映えさせる */
+    color: var(--pref-primary); /* 白ヘッダーでも見える濃い青 */
   }
 
   .menu-btn span {
     display: block;
     width: 25px;
     height: 2px;
-    background-color: currentColor; /* menu-btnのcolor(濃い青)を継承 */
-    margin: 6px 0;
+    background-color: currentColor;
+    margin: 3px 0;
     transition: all 0.3s ease;
   }
 
-  /* メニュー展開時のボタン固定表示 */
+  /* メニュー展開時のボタン位置固定 */
   .menu-btn.is-active {
     position: fixed;
     top: 20px;
     right: 20px;
-    color: var(--pref-primary);
+    transform: none;
   }
   
   .menu-btn.is-active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
   .menu-btn.is-active span:nth-child(2) { opacity: 0; }
   .menu-btn.is-active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-  /* スライドメニュー（全画面オーバーレイ） */
+  /* 全画面スライドメニュー */
   nav ul {
     display: none;
     flex-direction: column;
