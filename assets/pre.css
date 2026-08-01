@@ -46,66 +46,47 @@ img {
   display: block;
 }
 
-/* インラインで使う画像（アイコンなど）の対策 */
+/* インライン画像対策 */
 p img, span img {
   display: inline;
   margin: 0;
   vertical-align: middle;
 }
 
-/* コンテナの幅を広めに設定（一般的な自治体サイト風） */
+/* コンテナの幅設定 */
 .container {
   max-width: 1080px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.site-logo {
-  height: 48px;
-  max-width: 100%;
-  width: auto;
-  mix-blend-mode: multiply; /* 白背景を透過させて紙に印刷したような質感にする */
-}
-
 /* ==========================================
-   ヘッダーエリア
+   ヘッダーエリア（ロゴ配置の最適化）
    ========================================== */
 header {
   background-color: var(--white);
   border-bottom: 3px solid var(--pref-primary);
-  padding: 20px 0;
-  margin-bottom: 0;
+  padding: 15px 20px;
   position: relative;
 }
 
-/* ヘッダー内部のコンテナ／H1で左右余白（20px）と中央寄せを確実に確保 */
-header .container,
-header h1 {
+/* ロゴのリンク部分で幅と位置を調整（画面端にくっつくのを防止） */
+header a {
+  display: block;
   max-width: 1080px;
   margin: 0 auto;
-  padding: 0 20px;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 1.5rem;
-  color: var(--pref-primary);
+.site-logo {
+  height: 48px;
+  max-width: 100%;
+  width: auto;
+  mix-blend-mode: multiply; /* 白背景を透過させて印刷物のような質感に */
 }
 
-header h1 a {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--pref-primary);
-  text-decoration: none;
-}
-
-header h1 a:hover {
-  text-decoration: none;
-  opacity: 0.85;
-}
-
-/* グローバルナビゲーション：青背景に白文字の定番スタイル */
+/* ==========================================
+   グローバルナビゲーション（PC用）
+   ========================================== */
 nav {
   background-color: var(--pref-primary);
   margin-bottom: 20px;
@@ -141,26 +122,15 @@ nav a {
   transition: background-color 0.2s;
 }
 
-nav a:hover {
-  background-color: #0056cc;
+nav a:hover,
+nav a.active {
+  background-color: #003073;
   text-decoration: underline;
 }
 
-/* デザイン切替ボタン（preテーマ用） */
-#theme-toggle {
-  background-color: var(--white);
-  color: var(--pref-primary);
-  border: 1px solid var(--pref-primary);
-  padding: 6px 14px;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 4px;
-  font-family: inherit;
-  transition: all 0.2s ease;
-}
-
-#theme-toggle:hover {
-  background-color: var(--pref-secondary);
+/* モバイル用メニューボタン（基本非表示） */
+.menu-btn {
+  display: none;
 }
 
 /* パンくずリスト風のスタイル */
@@ -187,7 +157,7 @@ section {
   overflow: hidden;
 }
 
-/* セクション内の見出し：背景色付きで強調 */
+/* 見出し */
 h2 {
   background-color: var(--pref-secondary);
   color: var(--pref-primary);
@@ -208,7 +178,6 @@ h2::before {
   margin-right: 12px;
 }
 
-/* セクション内の小見出し */
 h3 {
   color: var(--pref-primary);
   font-size: 1.1rem;
@@ -217,7 +186,6 @@ h3 {
   margin: 25px 20px 15px 20px;
 }
 
-/* セクション内の本文要素（p, ul, table等）が枠にくっつかないよう余白を確保 */
 section > p,
 section > ul,
 section > table {
@@ -228,7 +196,7 @@ section > table {
   padding: 20px;
 }
 
-/* テーブル（自治体サイトで多用されるデータ表示） */
+/* テーブル */
 table {
   width: calc(100% - 40px);
   border-collapse: collapse;
@@ -248,13 +216,7 @@ td {
   padding: 12px 15px;
 }
 
-.header-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* フッター：情報の集約 */
+/* フッター */
 footer {
   background-color: #2b3036;
   color: var(--white);
@@ -263,7 +225,6 @@ footer {
   font-size: 0.9rem;
 }
 
-/* フッター内のリンク */
 footer a {
   color: #76b3ff;
   text-decoration: underline;
@@ -276,11 +237,7 @@ footer a:hover {
   text-decoration: none;
 }
 
-/* ==========================================
-   フッター・言語切り替えスタイル (style.css互換)
-   ========================================== */
-
-/* フッターの Grid レイアウト */
+/* フッター Grid レイアウト */
 .footer-content {
   display: grid;
   max-width: 1080px;
@@ -303,19 +260,23 @@ footer a:hover {
   margin: 0;
 }
 
-/* 言語切り替えセレクトボックス */
+/* テーマ切替・言語切り替えボタン類 */
+#theme-toggle,
 #lang-select {
   background-color: var(--white);
   color: var(--pref-text);
   border: 1px solid var(--pref-border);
-  padding: 6px 32px 6px 14px;
+  padding: 6px 14px;
   border-radius: 4px;
   cursor: pointer;
   font-family: inherit;
   font-size: 0.9rem;
   font-weight: bold;
   transition: all 0.2s ease;
-  
+}
+
+#lang-select {
+  padding-right: 32px;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -324,59 +285,50 @@ footer a:hover {
   background-position: right 10px center;
 }
 
-#lang-select:hover,
-#lang-select:focus {
-  border-color: var(--pref-primary);
-  outline: none;
-}
-
 /* ==========================================
-   モバイル用メニューボタン＆レスポンシブ
+   レスポンシブ（スマホ表示）
    ========================================== */
-.menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px 15px;
-  z-index: 2000;
-  color: var(--pref-primary); /* 白背景でも見えるように濃い青に指定 */
-}
-
-.menu-btn span {
-  display: block;
-  width: 25px;
-  height: 2px;
-  background-color: currentColor;
-  margin: 6px 0;
-  transition: all 0.3s ease;
-}
-
 @media screen and (max-width: 768px) {
-  header {
-    padding: 15px 0;
+  /* スマホ時はナビゲーションの青い帯を消す */
+  nav {
+    background-color: transparent;
+    min-height: 0;
+    margin-bottom: 0;
   }
 
-  /* モバイル時、右側のハンバーガーボタンと重ならないよう余白を調整 */
-  header .container,
-  header h1 {
+  /* ハンバーガーボタンと被らないようロゴの右側に隙間を作る */
+  header a {
     padding-right: 60px;
   }
 
+  /* ハンバーガーボタンを白いヘッダーの上に配置（濃い青色にしてくっきり表示） */
   .menu-btn {
     display: block;
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 20px;
+    right: 20px;
     z-index: 2000;
-    color: var(--pref-primary);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    color: var(--pref-primary); /* 濃い青色で白背景に映えさせる */
   }
 
-  /* メニューが開いているときはボタンを固定表示にして操作しやすくする */
+  .menu-btn span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: currentColor; /* menu-btnのcolor(濃い青)を継承 */
+    margin: 6px 0;
+    transition: all 0.3s ease;
+  }
+
+  /* メニュー展開時のボタン固定表示 */
   .menu-btn.is-active {
     position: fixed;
-    top: 15px;
-    right: 15px;
+    top: 20px;
+    right: 20px;
     color: var(--pref-primary);
   }
   
@@ -384,6 +336,7 @@ footer a:hover {
   .menu-btn.is-active span:nth-child(2) { opacity: 0; }
   .menu-btn.is-active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
+  /* スライドメニュー（全画面オーバーレイ） */
   nav ul {
     display: none;
     flex-direction: column;
@@ -399,7 +352,9 @@ footer a:hover {
     overflow-y: auto;
   }
 
-  nav ul.is-open { display: flex; }
+  nav ul.is-open {
+    display: flex;
+  }
 
   nav li {
     width: 100%;
@@ -414,17 +369,12 @@ footer a:hover {
     font-size: 1.1rem;
   }
 
-  nav a:hover {
+  nav a:hover,
+  nav a.active {
     background-color: var(--pref-secondary);
   }
 
-  #theme-toggle {
-    margin: 20px;
-    width: calc(100% - 40px);
-    position: relative;
-    z-index: 1600;
-  }
-
+  /* テーブル & フッターの折り返し */
   table {
     width: calc(100% - 20px);
     margin: 10px;
