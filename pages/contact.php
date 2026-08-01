@@ -57,16 +57,16 @@
             <div class="contact-method">
                 <h3><?= h(t('contact_discord_title')) ?></h3>
                 <p><?= h(t('contact_discord_info')) ?> <a href="/pages/gameinfos/connect.shtml"><?= h(t('contact_discord_connect')) ?></a></p>
-                <a href="https://discord.gg/SAsYnPPrga" class="contact-link"><?= h(t('contact_discord_link')) ?></a>
-												<section id="discord">
-												<iframe src="https://discord.com/widget?id=1487438553888849983&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-												</section>
+                <p><a href="https://discord.gg/SAsYnPPrga" class="contact-link"><?= h(t('contact_discord_link')) ?></a></p>
+                <section id="discord">
+                <iframe src="https://discord.com/widget?id=1487438553888849983&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                </section>
             </div>
 
             <div class="contact-method">
                 <h3><?= h(t('contact_email_title')) ?></h3>
                 <p><?= h(t('contact_email_info')) ?></p>
-                <a href="mailto:milieus-74.arts@icloud.com" class="contact-link"><?= h(t('contact_email_link')) ?></a>
+                <p><a href="mailto:milieus-74.arts@icloud.com" class="contact-link"><?= h(t('contact_email_link')) ?></a></p>
             </div>
         </section>
     </main>

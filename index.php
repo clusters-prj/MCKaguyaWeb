@@ -61,7 +61,7 @@
             <ul>
                 <li><strong><?= h(t('index_members_host')) ?></strong> Yationi</li>
             </ul>
-            <a href="/pages/cont.php"><?= h(t('index_members_more')) ?></a>
+            <p><a href="/pages/cont.php"><?= h(t('index_members_more')) ?></a></p>
         </section>
 
         <section id="history">
@@ -70,7 +70,7 @@
 
         <section id="systeminfo">
             <h3><?= h(t('systeminfo_h3')) ?></h3>
-            <a href="/pages/system.php"> <?= h(t('systeminfo_link')) ?></a>
+            <p><a href="/pages/system.php"> <?= h(t('systeminfo_link')) ?></a></p>
         </section>
 
         <section id="discord">
