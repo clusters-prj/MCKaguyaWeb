@@ -25,6 +25,20 @@ body {
   padding: 0;
 }
 
+/* ==========================================
+   一般的なリンクの基本スタイル
+   ========================================== */
+a {
+  color: var(--pref-primary);
+  text-decoration: none;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+a:hover {
+  color: #0056cc;
+  text-decoration: underline;
+}
+
 /* デフォルトの画像設定（はみ出し防止） */
 img {
   max-width: 100%;
@@ -53,7 +67,9 @@ p img, span img {
   mix-blend-mode: multiply; /* 白背景を透過させて紙に印刷したような質感にする */
 }
 
-/* ヘッダーエリア */
+/* ==========================================
+   ヘッダーエリア
+   ========================================== */
 header {
   background-color: var(--white);
   border-bottom: 3px solid var(--pref-primary);
@@ -61,21 +77,24 @@ header {
   margin-bottom: 0;
 }
 
-header a {
-  display: block;
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 0 20px;
-  text-decoration: none;
-}
-
+/* ヘッダー内のタイトル・ロゴ用リンク */
 header h1 {
   margin: 0;
   font-size: 1.5rem;
   color: var(--pref-primary);
-  display: flex;
+}
+
+header h1 a {
+  display: inline-flex;
   align-items: center;
   gap: 10px;
+  color: var(--pref-primary);
+  text-decoration: none;
+}
+
+header h1 a:hover {
+  text-decoration: none;
+  opacity: 0.85;
 }
 
 /* グローバルナビゲーション：青背景に白文字の定番スタイル */
@@ -114,6 +133,11 @@ nav a {
   transition: background-color 0.2s;
 }
 
+nav a:hover {
+  background-color: #0056cc;
+  text-decoration: underline;
+}
+
 /* デザイン切替ボタン（preテーマ用） */
 #theme-toggle {
   background-color: var(--white);
@@ -129,11 +153,6 @@ nav a {
 
 #theme-toggle:hover {
   background-color: var(--pref-secondary);
-}
-
-nav a:hover {
-  background-color: #0056cc;
-  text-decoration: underline;
 }
 
 /* パンくずリスト風のスタイル */
@@ -236,6 +255,16 @@ footer {
   font-size: 0.9rem;
 }
 
+/* フッター内のリンク */
+footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: #ccd6e0;
+}
+
 /* ==========================================
    フッター・言語切り替えスタイル (style.css互換)
    ========================================== */
@@ -263,7 +292,7 @@ footer {
   margin: 0;
 }
 
-/* 言語切り替えセレクトボックス（preテーマに合わせた角丸・カラー） */
+/* 言語切り替えセレクトボックス */
 #lang-select {
   background-color: var(--white);
   color: var(--pref-text);
@@ -323,7 +352,6 @@ footer {
   .menu-btn.is-active span:nth-child(2) { opacity: 0; }
   .menu-btn.is-active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-  /* オーバーレイが白なので、開いている時はボタンを青くする */
   .menu-btn.is-active {
     color: var(--pref-primary);
   }
@@ -362,7 +390,6 @@ footer {
     background-color: var(--pref-secondary);
   }
 
-  /* モバイル時の切替ボタン調整 */
   #theme-toggle {
     margin: 20px;
     width: calc(100% - 40px);
@@ -370,7 +397,6 @@ footer {
     z-index: 1600;
   }
 
-  /* モバイル時のテーブル調整 */
   table {
     width: calc(100% - 20px);
     margin: 10px;
@@ -381,7 +407,6 @@ footer {
     padding: 8px 10px;
   }
 
-  /* モバイル時のフッター調整 */
   .footer-content {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -401,7 +426,7 @@ footer {
   }
 }
 
-/* ページトップボタン（preテーマ用：控えめな角丸四角） */
+/* ページトップボタン */
 .page-top {
   position: fixed;
   right: 20px;
@@ -435,7 +460,7 @@ footer {
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
-/* スクリーンリーダー用クラス（非表示要素用） */
+/* スクリーンリーダー用クラス */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -451,9 +476,9 @@ footer {
 /* 簡体字中国語（zh-Hans）用のフォント指定 */
 :lang(zh-Hans) {
   font-family:
-    "PingFang SC",        /* macOS / iOS */
-    "Hiragino Sans GB",   /* macOS（旧バージョン向け） */
-    "Microsoft YaHei",    /* Windows */
-    "Noto Sans SC",       /* Webフォント / Androidなど */
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    "Noto Sans SC",
     sans-serif;
 }
