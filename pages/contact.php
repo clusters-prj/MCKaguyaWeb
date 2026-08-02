@@ -56,7 +56,7 @@
 
             <div class="contact-method">
                 <h3><?= h(t('contact_discord_title')) ?></h3>
-                <p><?= h(t('contact_discord_info')) ?> <a href="/pages/gameinfos/connect.shtml"><?= h(t('contact_discord_connect')) ?></a></p>
+                <p><?= h(t('contact_discord_info')) ?> <a href="/pages/gameinfos/connect.php"><?= h(t('contact_discord_connect')) ?></a></p>
                 <p><a href="https://discord.gg/SAsYnPPrga" class="contact-link"><?= h(t('contact_discord_link')) ?></a></p>
                 <section id="discord">
                 <iframe src="https://discord.com/widget?id=1487438553888849983&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>

@@ -29,7 +29,7 @@
           <p>2. <?= h(t('build_manual_rule_3_2')) ?></p>
           
           <h3><?= h(t('build_manual_rule_4_title')) ?></h3>
-          <p>1. <?= h(t('build_manual_rule_4_1_before_link')) ?> <a href="/pages/gameinfos/wra.shtml"><?= h(t('build_manual_rule_4_link_text')) ?></a> <?= h(t('build_manual_rule_4_1_after_link')) ?></p>
+          <p>1. <?= h(t('build_manual_rule_4_1_before_link')) ?> <a href="/pages/gameinfos/wra.php"><?= h(t('build_manual_rule_4_link_text')) ?></a> <?= h(t('build_manual_rule_4_1_after_link')) ?></p>
           <p>2. <?= h(t('build_manual_rule_4_2')) ?></p>
 
           <h3><?= h(t('build_manual_rule_5_title')) ?></h3>
