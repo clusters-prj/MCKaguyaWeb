@@ -1,0 +1,24 @@
+name: Syntax Check
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  syntax-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check JSON & YAML Syntax
+        run: python3 -c "import json, glob; [json.load(open(f)) for f in glob.glob('**/*.json', recursive=True)]" && python3 -c "import yaml, glob; [yaml.safe_load(open(f)) for f in glob.glob('**/*.yml', recursive=True) + glob.glob('**/*.yaml', recursive=True)]"
+
+      - name: Check Web Files Syntax (Prettier)
+        run: npx prettier --check "**/*.{html,css,js,jsx,ts,tsx,json,md}"
