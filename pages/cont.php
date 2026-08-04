@@ -203,8 +203,8 @@
             }
         }
 
-        /* 簡体字中国語（zh-Hans）用のフォント指定 */
-        :lang(zh-Hans) {
+        /* 簡体字中国語（zh-CN）用のフォント指定 */
+        :lang(zh-CN) {
         font-family:
             "PingFang SC",        /* macOS / iOS */
             "Hiragino Sans GB",   /* macOS（旧バージョン向け） */

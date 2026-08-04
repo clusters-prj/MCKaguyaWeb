@@ -460,8 +460,8 @@ footer a:hover {
   border: 0;
 }
 
-/* 簡体字中国語（zh-Hans）用のフォント指定 */
-:lang(zh-Hans) {
+/* 簡体字中国語（zh-CN）用のフォント指定 */
+:lang(zh-CN) {
   font-family:
     "PingFang SC",
     "Hiragino Sans GB",
