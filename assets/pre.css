@@ -195,7 +195,8 @@ h3 {
 
 section > p,
 section > ul,
-section > table {
+section > table,
+section > .progress-container {
   margin: 15px 20px;
 }
 
