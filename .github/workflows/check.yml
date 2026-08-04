@@ -1,6 +1,9 @@
 name: Syntax Check
 
 on:
+  push:
+    branches:
+      - '**'
   pull_request:
     branches:
       - main
@@ -18,7 +21,10 @@ jobs:
           node-version: '20'
 
       - name: Check JSON & YAML Syntax
-        run: python3 -c "import json, glob; [json.load(open(f)) for f in glob.glob('**/*.json', recursive=True)]" && python3 -c "import yaml, glob; [yaml.safe_load(open(f)) for f in glob.glob('**/*.yml', recursive=True) + glob.glob('**/*.yaml', recursive=True)]"
+        run: |
+          set -o pipefail
+          python3 -c "import json, glob, sys; [json.load(open(f)) for f in glob.glob('**/*.json', recursive=True)]" \
+          && python3 -c "import yaml, glob, sys; [yaml.safe_load(open(f)) for f in glob.glob('**/*.yml', recursive=True) + glob.glob('**/*.yaml', recursive=True)]"
 
       - name: Check Web Files Syntax (Prettier)
         run: npx prettier --check "**/*.{html,css,js,jsx,ts,tsx,json,md}"
