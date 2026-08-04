@@ -278,7 +278,7 @@ return [
     'tools_doublehot_title' => '雙倍快捷列',
     'tools_doublehot_intro' => '切換至快捷列的第 9 個欄位即可開啟工具清單',
     'tools_doublehot_usage_heading' => '使用方式',
-    'tools_doublehot_usage_1' => '加入伺服器時，快捷列第 9 格會預設放入障礙方塊 [🚫]。',
+    'tools_doublehot_usage_1' => '加入伺服器時，快捷列第 9 格會預設放入屏障方塊 [🚫]。',
     'tools_doublehot_usage_2' => '當切換至第 9 個欄位時，快捷列會自動替換為工具清單。',
     'tools_doublehot_usage_3' => '若要切換回原本的快捷列，再次選擇第 9 個欄位即可。',
     'tools_doublehot_usage_4_link' => '雙倍快捷列預設工具列表',
