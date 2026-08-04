@@ -145,6 +145,9 @@
 
         .member-social {
             margin-top: 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
 
         .member-social a {
@@ -307,6 +310,78 @@
             <!-- メンバーリスト -->
             <ul class="member-grid" id="member-list">
                 <?php
+                // URLのホスト名からリンクの表示ラベルを推測する
+                function guess_link_label($url)
+                {
+                    $host = strtolower((string) parse_url($url, PHP_URL_HOST));
+                    $host = preg_replace("/^www\./", "", $host);
+
+                    if ($host === "x.com" || $host === "twitter.com") {
+                        return "X/Twitter";
+                    }
+
+                    $patterns = [
+                        "youtube" => "YouTube",
+                        "youtu.be" => "YouTube",
+                        "twitch" => "Twitch",
+                        "tiktok" => "TikTok",
+                        "bilibili" => "bilibili",
+                        "nicovideo" => "ニコニコ",
+                        "discord" => "Discord",
+                        "github" => "GitHub",
+                    ];
+                    foreach ($patterns as $needle => $label) {
+                        if (strpos($host, $needle) !== false) {
+                            return $label;
+                        }
+                    }
+                    return "リンク";
+                }
+
+                // SNSリンク欄をパースして複数リンクに分解する。
+                // 半角スペース・全角スペース・改行区切りに対応し、
+                // 末尾の「(TikTok)」のような注記があれば表示ラベルとして使う。
+                function parse_member_links($raw)
+                {
+                    $links = [];
+                    $parts = preg_split('/[\s\x{3000}]+/u', trim((string) $raw), -1, PREG_SPLIT_NO_EMPTY);
+                    if ($parts === false) {
+                        return $links;
+                    }
+
+                    foreach ($parts as $part) {
+                        $label = "";
+                        if (preg_match('/^(.+?)[(（]([^)）]+)[)）]$/u', $part, $m)) {
+                            $part = $m[1];
+                            $label = trim($m[2]);
+                        }
+
+                        // 「X:https://...」のような接頭辞は取り除く
+                        // （表記ゆれが多いのでラベルには使わず、ホスト名から推測する）
+                        $scheme_at = stripos($part, "http://");
+                        if ($scheme_at === false) {
+                            $scheme_at = stripos($part, "https://");
+                        }
+                        if ($scheme_at !== false && $scheme_at > 0) {
+                            $part = substr($part, $scheme_at);
+                        }
+
+                        // スキームが省略されている場合は https を補う
+                        if (!preg_match("#^https?://#i", $part)) {
+                            $part = "https://" . ltrim($part, "/");
+                        }
+                        if (!filter_var($part, FILTER_VALIDATE_URL)) {
+                            continue;
+                        }
+
+                        if ($label === "") {
+                            $label = guess_link_label($part);
+                        }
+                        $links[] = ["url" => $part, "label" => $label];
+                    }
+                    return $links;
+                }
+
                 // メンバーデータを配列に読み込む
                 $members = [];
                 $f = fopen("../data/members.csv", "r");
@@ -327,7 +402,8 @@
                 // ソート済みのメンバーを出力
                 foreach ($members as $line) {
                     $name = h($line[0]);
-                    $link = isset($line[1]) ? h(trim($line[1])) : "";
+                    $links = parse_member_links(isset($line[1]) ? $line[1] : "");
+                    $primary_link = !empty($links) ? $links[0]["url"] : "";
                     $role = isset($line[2]) ? h(trim($line[2])) : "";
 
                     // 役割タグ用にデータ属性を生成
@@ -337,8 +413,8 @@
                     echo '<li class="member-card" data-name="' . h($line[0]) . '" data-roles="' . h($data_roles) . '">';
 
                     echo '<div class="member-name">';
-                    if (!empty($link) && filter_var($link, FILTER_VALIDATE_URL)) {
-                        echo '<a href="' . $link . '" target="_blank" rel="noopener noreferrer">' . $name . "</a>";
+                    if ($primary_link !== "") {
+                        echo '<a href="' . h($primary_link) . '" target="_blank" rel="noopener noreferrer">' . $name . "</a>";
                     } else {
                         echo $name;
                     }
@@ -356,17 +432,11 @@
                         echo "</div>";
                     }
 
-                    // ソーシャルリンクがあれば表示
-                    if (!empty($link) && filter_var($link, FILTER_VALIDATE_URL)) {
+                    // ソーシャルリンクがあれば表示（複数リンクにも対応）
+                    if (!empty($links)) {
                         echo '<div class="member-social">';
-                        if (strpos($link, "twitter.com") !== false || strpos($link, "x.com") !== false) {
-                            echo '<a href="' . $link . '" target="_blank" rel="noopener noreferrer">→ X/Twitter</a>';
-                        } elseif (strpos($link, "youtube") !== false) {
-                            echo '<a href="' . $link . '" target="_blank" rel="noopener noreferrer">→ YouTube</a>';
-                        } elseif (strpos($link, "twitch") !== false) {
-                            echo '<a href="' . $link . '" target="_blank" rel="noopener noreferrer">→ Twitch</a>';
-                        } else {
-                            echo '<a href="' . $link . '" target="_blank" rel="noopener noreferrer">→ リンク</a>';
+                        foreach ($links as $social) {
+                            echo '<a href="' . h($social["url"]) . '" target="_blank" rel="noopener noreferrer">→ ' . h($social["label"]) . "</a>";
                         }
                         echo "</div>";
                     }
