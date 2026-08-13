@@ -104,7 +104,17 @@ function match_accept_language(string $header): ?string {
 function detect_lang(): string {
     // 1. URLパラメータ ?lang=en が最優先
     if (isset($_GET['lang']) && in_array($_GET['lang'], SUPPORTED_LANGS, true)) {
-        setcookie('lang', $_GET['lang'], time() + 60 * 60 * 24 * 365, '/');
+        if (!headers_sent()) {
+            setcookie('lang', $_GET['lang'], [
+                'expires'  => time() + 60 * 60 * 24 * 365,
+                'path'     => '/',
+                // HTTPS でアクセスされている場合のみ Secure を付ける
+                // （開発時の http://localhost でもクッキーが保存されるように）
+                'secure'   => !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off',
+                'httponly' => true,
+                'samesite' => 'Lax',
+            ]);
+        }
         return $_GET['lang'];
     }
 
