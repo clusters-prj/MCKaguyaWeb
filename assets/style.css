@@ -350,10 +350,10 @@ header {
 }
 
 /* 各要素（1〜4番目のpタグ）にエリア名を割り当て */
-.footer-content > p:nth-child(1) { grid-area: item1; text-align: left; } /* 1番目のpタグは左寄せ */ 
-.footer-content > p:nth-child(2) { grid-area: item2; text-align: left; } /* 2番目のpタグは左寄せ */
-.footer-content > p:nth-child(3) { grid-area: item3; text-align: right; } /* 3番目のpタグは右寄せ */
-.footer-content > p:nth-child(4) { grid-area: item4; text-align: right; } /* 4番目のpタグは右寄せ */
+.footer-content > *:nth-child(1) { grid-area: item1; text-align: left; } /* 1番目のpタグは左寄せ */ 
+.footer-content > *:nth-child(2) { grid-area: item2; text-align: left; } /* 2番目のpタグは左寄せ */
+.footer-content > *:nth-child(3) { grid-area: item3; text-align: right; } /* 3番目のpタグは右寄せ */
+.footer-content > *:nth-child(4) { grid-area: item4; text-align: right; } /* 4番目のpタグは右寄せ */
 
 /* pタグのデフォルト余白をリセット */
 .footer-content p {
@@ -383,7 +383,7 @@ header {
 }
 
 /* #theme-toggle が入っている4番目の p タグを左寄せにする */
-.footer-content > p:nth-child(4) {
+.footer-content > *:nth-child(4) {
   justify-self: end; /* Gridのマス目の中で左端に寄せる */
   text-align: right;    /* <p> の中のボタン自体を左揃えにする */
 }
@@ -470,4 +470,9 @@ header {
 /* 進捗バーは左からではなく右から伸ばす */
 [dir="rtl"] .progress-bar-bg {
   direction: rtl;
+}
+
+/* 言語切替を <form> にしたぶんの調整（見た目は従来の <p> と同じにする） */
+.footer-content > form.lang-switch {
+  margin: 0;
 }

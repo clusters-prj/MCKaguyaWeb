@@ -266,10 +266,10 @@ footer a:hover {
   align-items: center;
 }
 
-.footer-content > p:nth-child(1) { grid-area: item1; text-align: left; }
-.footer-content > p:nth-child(2) { grid-area: item2; text-align: left; }
-.footer-content > p:nth-child(3) { grid-area: item3; text-align: right; }
-.footer-content > p:nth-child(4) { grid-area: item4; text-align: right; justify-self: end; }
+.footer-content > *:nth-child(1) { grid-area: item1; text-align: left; }
+.footer-content > *:nth-child(2) { grid-area: item2; text-align: left; }
+.footer-content > *:nth-child(3) { grid-area: item3; text-align: right; }
+.footer-content > *:nth-child(4) { grid-area: item4; text-align: right; justify-self: end; }
 
 .footer-content p {
   margin: 0;
@@ -405,10 +405,10 @@ footer a:hover {
     text-align: center;
   }
 
-  .footer-content > p:nth-child(1),
-  .footer-content > p:nth-child(2),
-  .footer-content > p:nth-child(3),
-  .footer-content > p:nth-child(4) {
+  .footer-content > *:nth-child(1),
+  .footer-content > *:nth-child(2),
+  .footer-content > *:nth-child(3),
+  .footer-content > *:nth-child(4) {
     text-align: center;
     justify-self: center;
   }
@@ -518,4 +518,9 @@ footer a:hover {
 
 [dir="rtl"] .progress-bar-bg {
   direction: rtl;
+}
+
+/* 言語切替を <form> にしたぶんの調整（見た目は従来の <p> と同じにする） */
+.footer-content > form.lang-switch {
+  margin: 0;
 }
