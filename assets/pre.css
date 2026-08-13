@@ -1,23 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
 
 /* 全要素のサイズ計算を統一して崩れを防止 */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 :root {
   /* 県庁らしい信頼感のあるカラーパレット */
-  --pref-primary: #004098;    /* メインの濃い青 */
-  --pref-secondary: #f0f4f9;  /* 背景用の薄い青灰色 */
-  --pref-accent: #d43d3d;     /* アクセント（重要なお知らせ等） */
-  --pref-text: #333333;       /* 基本文字色 */
-  --pref-border: #ccd6e0;     /* 境界線 */
+  --pref-primary: #004098; /* メインの濃い青 */
+  --pref-secondary: #f0f4f9; /* 背景用の薄い青灰色 */
+  --pref-accent: #d43d3d; /* アクセント（重要なお知らせ等） */
+  --pref-text: #333333; /* 基本文字色 */
+  --pref-border: #ccd6e0; /* 境界線 */
   --white: #ffffff;
-  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 body {
-  font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family:
+    "Noto Sans JP",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
   line-height: 1.8;
   color: var(--pref-text);
   background-color: #fcfcfc;
@@ -31,7 +41,9 @@ body {
 a {
   color: var(--pref-primary);
   text-decoration: none;
-  transition: color 0.2s ease, text-decoration 0.2s ease;
+  transition:
+    color 0.2s ease,
+    text-decoration 0.2s ease;
 }
 
 a:hover {
@@ -47,7 +59,8 @@ img {
 }
 
 /* インライン画像対策 */
-p img, span img {
+p img,
+span img {
   display: inline;
   margin: 0;
   vertical-align: middle;
@@ -266,10 +279,23 @@ footer a:hover {
   align-items: center;
 }
 
-.footer-content > *:nth-child(1) { grid-area: item1; text-align: left; }
-.footer-content > *:nth-child(2) { grid-area: item2; text-align: left; }
-.footer-content > *:nth-child(3) { grid-area: item3; text-align: right; }
-.footer-content > *:nth-child(4) { grid-area: item4; text-align: right; justify-self: end; }
+.footer-content > *:nth-child(1) {
+  grid-area: item1;
+  text-align: left;
+}
+.footer-content > *:nth-child(2) {
+  grid-area: item2;
+  text-align: left;
+}
+.footer-content > *:nth-child(3) {
+  grid-area: item3;
+  text-align: right;
+}
+.footer-content > *:nth-child(4) {
+  grid-area: item4;
+  text-align: right;
+  justify-self: end;
+}
 
 .footer-content p {
   margin: 0;
@@ -342,9 +368,15 @@ footer a:hover {
   }
 
   /* メニュー展開時のボタンアニメーション */
-  .menu-btn.is-active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-  .menu-btn.is-active span:nth-child(2) { opacity: 0; }
-  .menu-btn.is-active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  .menu-btn.is-active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-btn.is-active span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-btn.is-active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
 
   /* 全画面スライドメニュー */
   nav ul {
@@ -391,7 +423,8 @@ footer a:hover {
     font-size: 0.9rem;
   }
 
-  th, td {
+  th,
+  td {
     padding: 8px 10px;
   }
 
@@ -445,7 +478,7 @@ footer a:hover {
 .page-top:hover {
   background-color: #0056cc;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* スクリーンリーダー用クラス */
@@ -464,10 +497,7 @@ footer a:hover {
 /* 簡体字中国語（zh-CN）用のフォント指定 */
 :lang(zh-CN) {
   font-family:
-    "PingFang SC",
-    "Hiragino Sans GB",
-    "Microsoft YaHei",
-    "Noto Sans SC",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC",
     sans-serif;
 }
 /* ==========================================
@@ -476,11 +506,7 @@ footer a:hover {
 
 :lang(ar) {
   font-family:
-    "Noto Naskh Arabic",
-    "Geeza Pro",
-    "Segoe UI",
-    "Times New Roman",
-    serif;
+    "Noto Naskh Arabic", "Geeza Pro", "Segoe UI", "Times New Roman", serif;
 }
 
 [dir="rtl"] .page-top {
