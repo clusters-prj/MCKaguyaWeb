@@ -19,8 +19,14 @@
  * ページ固有の <style> や <link> は、この include の「後ろ」に書くこと。
  */
 
-$page_title = isset($page_title_key) ? t($page_title_key) : t('site_title');
-$page_desc  = isset($page_desc_key) ? t($page_desc_key) : t('site_description');
+// 翻訳キーの代わりに $page_title / $page_desc を直接渡すこともできる
+// （日本語のみの運用ページなど、翻訳を用意しない場合に使う）。
+if (!isset($page_title)) {
+    $page_title = isset($page_title_key) ? t($page_title_key) : t('site_title');
+}
+if (!isset($page_desc)) {
+    $page_desc = isset($page_desc_key) ? t($page_desc_key) : t('site_description');
+}
 ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

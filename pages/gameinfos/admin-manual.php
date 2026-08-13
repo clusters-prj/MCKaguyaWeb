@@ -1,16 +1,22 @@
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/i18n.php';
+
+// 運営内部向けの日本語のみのページなので、翻訳キーではなく直接指定する
+$page_title = '副管理者運用マニュアル - 超かぐや姫！再現プロジェクト';
+$page_desc  = '建築サーバーの副管理者向けの運用ガイドラインです。';
+?>
 <!DOCTYPE html>
-<html lang="<?= current_lang() ?>">
+<html lang="ja" dir="ltr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/style.css" id="main-style">
-    <title>副管理者運用マニュアル - 超かぐや姫！再現プロジェクト</title>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/head.php'; ?>
+    <!-- 運営向けの内部資料のため検索結果には出さない -->
+    <meta name="robots" content="noindex, nofollow">
 </head>
 
 <body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; ?>
-    <main>
+    <main id="main-content">
         <section id="overview">
             <h2>副管理者運用マニュアル</h2>
             <p>このマニュアルは、建築サーバーの円滑な運営と、トラブル発生時・建築ミス時の迅速なサポートを行うための副管理者向けガイドラインです。</p>
@@ -177,9 +183,8 @@
                 <li>建築資材のショップシステムや、土地の売買システムがSkript等で組まれている場合、そこからエラーが吐き出され続けてラグの原因になることがあります。エラーを見かけたらすぐスクショを撮って管理者に共有してください。</li>
             </ul>
             <h2>5. 管理者への報告体制</h2>
-            <p>（先ほどのサバイバル版と同様に、Discordの報告チャンネルに日時、対象者、内容、行った対応、確認事項をセットにして報告する流れでOKです）
-                <br>建築鯖だと、やっぱりCoreProtectのロールバックが「荒らし対策」だけでなく**「身内の編集ミス救済ツール」**として大活躍するね。
-                <br>これで実際の現場の動きにかなりマッチしたんじゃないかな？もし「WEのこのコマンドの権限も副管理者に持たせてるから、注意点に入れたい」とかがあればいつでも教えてね。</p>
+            <p>Discordの報告チャンネルに、日時・対象者・内容・行った対応・確認事項をセットにして報告してください。
+                <br>建築サーバーでは、CoreProtectのロールバックが荒らし対策だけでなく<strong>身内の編集ミスの救済ツール</strong>としても活躍します。</p>
         </section>
     </main>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php'; ?>
