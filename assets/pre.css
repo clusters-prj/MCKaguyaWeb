@@ -470,3 +470,52 @@ footer a:hover {
     "Noto Sans SC",
     sans-serif;
 }
+/* ==========================================
+   RTL（右横書き）対応 — アラビア語など
+   ========================================== */
+
+:lang(ar) {
+  font-family:
+    "Noto Naskh Arabic",
+    "Geeza Pro",
+    "Segoe UI",
+    "Times New Roman",
+    serif;
+}
+
+[dir="rtl"] .page-top {
+  right: auto;
+  left: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  [dir="rtl"] .menu-btn {
+    right: auto;
+    left: 10px;
+  }
+
+  [dir="rtl"] nav ul {
+    left: auto;
+    right: 0;
+  }
+}
+
+[dir="rtl"] th,
+[dir="rtl"] td {
+  text-align: right;
+}
+
+[dir="rtl"] .contact-method,
+[dir="rtl"] .system-card {
+  border-left: none;
+  border-right: 5px solid var(--pref-primary);
+}
+
+[dir="rtl"] #member-controls {
+  border-left: none;
+  border-right: 4px solid var(--indigo-primary, var(--pref-primary));
+}
+
+[dir="rtl"] .progress-bar-bg {
+  direction: rtl;
+}

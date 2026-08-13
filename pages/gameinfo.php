@@ -1,6 +1,6 @@
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/i18n.php'; ?>
 <!DOCTYPE html>
-<html lang="<?= current_lang() ?>">
+<html lang="<?= current_lang() ?>" dir="<?= lang_dir() ?>">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

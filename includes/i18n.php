@@ -12,6 +12,9 @@
 const SUPPORTED_LANGS = ['ja', 'en','es','fr','ko','zh-CN','zh-TW','ar','ru','pt'];
 const DEFAULT_LANG = 'ja';
 
+// 右から左に読む言語（RTL）。<html dir="rtl"> の判定に使う。
+const RTL_LANGS = ['ar'];
+
 /**
  * Accept-Language ヘッダーを解析して、最も適合する対応言語を返す。
  *
@@ -159,4 +162,12 @@ function h($string) {
  */
 function current_lang(): string {
     return $GLOBALS['current_lang'];
+}
+
+/**
+ * 現在の言語の文字方向を返す（'rtl' または 'ltr'）。
+ * <html lang="..." dir="<?= lang_dir() ?>"> のように使う。
+ */
+function lang_dir(): string {
+    return in_array(current_lang(), RTL_LANGS, true) ? 'rtl' : 'ltr';
 }
