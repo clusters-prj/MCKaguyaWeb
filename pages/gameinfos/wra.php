@@ -9,6 +9,7 @@ $page_desc_key  = 'wra_intro_1';
       <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/head.php'; ?>
     </head>
     <body>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; ?>
         <main>
         <section id="overview">
             <h2><?= h(t('wra_heading')) ?></h2>
@@ -74,5 +75,6 @@ $page_desc_key  = 'wra_intro_1';
             </ul>
         </section>
     </main>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php'; ?>
     </body>
 </html>
