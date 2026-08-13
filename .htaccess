@@ -14,6 +14,16 @@ ErrorDocument 500 /errors/500.php
 </Files>
 
 # ==========================================
+# サイトマップ
+# ==========================================
+# 検索エンジンは /sitemap.xml を見に来るが、中身は言語ごとに
+# 生成するため実体は sitemap.php。内部で読み替える。
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^sitemap\.xml$ /sitemap.php [L]
+</IfModule>
+
+# ==========================================
 # セキュリティヘッダー
 # ==========================================
 <IfModule mod_headers.c>
