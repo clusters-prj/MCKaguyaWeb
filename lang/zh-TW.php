@@ -313,7 +313,7 @@ return [
     'copyright_minecraft_info' => '本專案為玩家社群自發性建立之非官方 Minecraft 社群與伺服器，與 Mojang Studios 及 Microsoft 公司無任何關聯。此外，營運過程皆嚴格遵守 Mojang Studios 所制定之「品牌與創作指引」（Brand and Creative Guidelines）。',
     'copyright_external_license' => '外部授權與誌謝',
     'copyright_external_license_info' => '本專案（含網站與伺服器內部系統等）使用了以下外部資源與函式庫：',
-    'copyright_external_license_Bluemap' => '用於生成與顯示遊戲內地圖（3D 地圖）。',
+    'copyright_external_license_bluemap' => '用於生成與顯示遊戲內地圖（3D 地圖）。',
     'copyright_external_license_font_awesome' => '用於顯示網站內之各式圖示。',
     'copyright_guideline_policy' => '遵守《超時空輝耀姬！》官方二次創作指引',
     'copyright_guideline_policy_info' => '本專案為粉絲自發組織之非官方二次創作活動，秉持官方所倡導的「月讀人人皆為創作者」之精神，以非營利目的進行營運。專案推動過程中，我們全面遵守官方「二次創作指引」，並極力避免產生任何與官方發布物或商品混淆之情事。另外，本專案未獲得官方相關單位（如 TWIN ENGINE 等）之授權、贊助或合作。',
