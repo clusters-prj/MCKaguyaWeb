@@ -35,7 +35,7 @@
 </head>
 <body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; ?>
-    <main>
+    <main id="main-content">
         <section id="system-overview">
             <h2>サーバーシステム構成</h2>
             <p>本プロジェクトを支えるインフラおよびソフトウェアの構成詳細です。</p>

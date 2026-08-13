@@ -10,7 +10,7 @@ $page_desc_key  = 'tools_intro_1';
     </head>
     <body>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; ?>
-    <main>
+    <main id="main-content">
         <section id="overview">
             <h2><?= h(t('tools_heading')) ?></h2>
             <p><?= h(t('tools_intro_1')) ?><br><?= h(t('tools_intro_2')) ?></p>

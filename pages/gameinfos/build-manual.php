@@ -10,7 +10,7 @@ $page_desc_key  = 'build_manual_intro';
   </head>
   <body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; ?>
-  <main>
+  <main id="main-content">
       <section id="overview">
           <h2><?= h(t('build_manual_heading')) ?></h2>
           <p><?= h(t('build_manual_intro')) ?></p>

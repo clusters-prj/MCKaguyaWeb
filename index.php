@@ -10,7 +10,7 @@ $page_desc_key  = 'site_description';
   </head>
   <body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; ?>
-  <main>
+  <main id="main-content">
       <section id="project-overview">
           <h2><?= h(t('index_h2')) ?></h2>
 					<picture>
@@ -74,7 +74,10 @@ $page_desc_key  = 'site_description';
         </section>
 
         <section id="discord">
-		    <iframe src="https://discord.com/widget?id=1487438553888849983&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+		    <iframe src="https://discord.com/widget?id=1487438553888849983&amp;theme=dark"
+                        title="<?= h(t('discord_widget_title')) ?>"
+                        width="350" height="500" loading="lazy" frameborder="0"
+                        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 		</section>
   </main>
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php'; ?>

@@ -220,7 +220,7 @@ $page_desc_key  = 'cont_intro_1';
   </head>
   <body>
     <?php include $_SERVER["DOCUMENT_ROOT"] . "/templates/header.php"; ?>
-    <main>
+    <main id="main-content">
         <section id="credits-intro">
             <h2>協力者一覧 / Credits</h2>
             <p>

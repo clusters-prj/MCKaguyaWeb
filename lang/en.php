@@ -338,4 +338,8 @@ return [
     'error_hint_retry'      => 'This may be a temporary problem. Please try again later.',
     'error_hint_contact'    => 'If the problem persists, please contact the site administrator.',
     'error_code_label'      => 'Error code',
+
+    // === Accessibility / embeds ===
+    'skip_to_content'      => 'Skip to main content',
+    'discord_widget_title' => 'Discord server widget',
 ];

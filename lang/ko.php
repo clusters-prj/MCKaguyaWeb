@@ -338,4 +338,8 @@ return [
     'error_hint_retry'      => '일시적인 문제일 수 있습니다. 잠시 후 다시 시도해 주세요.',
     'error_hint_contact'    => '문제가 계속되면 사이트 관리자에게 문의해 주세요.',
     'error_code_label'      => '오류 코드',
+
+    // === 접근성 / 임베드 ===
+    'skip_to_content'      => '본문으로 건너뛰기',
+    'discord_widget_title' => 'Discord 서버 위젯',
 ];

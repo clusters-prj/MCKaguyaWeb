@@ -338,4 +338,8 @@ return [
     'error_hint_retry'      => '一時的な不具合の可能性があります。時間をおいて再度アクセスしてください。',
     'error_hint_contact'    => '問題が続く場合は、サイト管理者までご連絡ください。',
     'error_code_label'      => 'エラーコード',
+
+    // === アクセシビリティ / 埋め込み ===
+    'skip_to_content'      => '本文へスキップ',
+    'discord_widget_title' => 'Discordサーバーウィジェット',
     ];

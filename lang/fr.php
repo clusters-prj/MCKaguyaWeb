@@ -339,4 +339,8 @@ return [
     'error_hint_retry'      => 'Il peut s’agir d’un problème temporaire. Réessayez plus tard.',
     'error_hint_contact'    => 'Si le problème persiste, contactez l\'administrateur du site.',
     'error_code_label'      => 'Code d\'erreur',
+
+    // === Accessibilité / éléments intégrés ===
+    'skip_to_content'      => 'Aller au contenu principal',
+    'discord_widget_title' => 'Widget du serveur Discord',
     ];

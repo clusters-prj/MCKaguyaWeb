@@ -338,4 +338,8 @@ return [
     'error_hint_retry'      => '這可能是暫時性問題，請稍後再試。',
     'error_hint_contact'    => '若問題持續發生，請聯絡網站管理員。',
     'error_code_label'      => '錯誤代碼',
+
+    // === 無障礙 / 嵌入內容 ===
+    'skip_to_content'      => '跳至主要內容',
+    'discord_widget_title' => 'Discord 伺服器小工具',
 ];

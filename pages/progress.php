@@ -30,7 +30,7 @@ $page_desc_key  = 'progress_intro';
 </head>
 <body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; ?>
-    <main>
+    <main id="main-content">
         <section id="progress-detail">
             <h2><?= h(t('progress_heading')) ?></h2>
             <p><?= h(t('progress_intro')) ?></p>

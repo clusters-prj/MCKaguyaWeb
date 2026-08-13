@@ -338,4 +338,8 @@ return [
     'error_hint_retry'      => '这可能是临时故障，请稍后再试。',
     'error_hint_contact'    => '如果问题持续存在，请联系网站管理员。',
     'error_code_label'      => '错误代码',
+
+    // === 无障碍 / 嵌入内容 ===
+    'skip_to_content'      => '跳到主要内容',
+    'discord_widget_title' => 'Discord 服务器小组件',
 ];
