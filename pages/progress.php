@@ -1,11 +1,12 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/i18n.php'; ?>
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/i18n.php';
+$page_title_key = 'progress_page_title';
+$page_desc_key  = 'progress_intro';
+?>
 <!DOCTYPE html>
 <html lang="<?= current_lang() ?>" dir="<?= lang_dir() ?>">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/style.css" id="main-style">
-    <title><?= h(t('progress_page_title')) ?></title>
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/head.php'; ?>
     <style>
         .progress-container {
             margin-bottom: 20px;

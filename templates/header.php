@@ -37,9 +37,8 @@
       }
     });
 
-    const savedTheme = localStorage.getItem('selected-theme') || 'style';
-    applyTheme(savedTheme);
-
+    // 保存済みテーマの初期反映は templates/head.php 内のインライン
+    // スクリプトで済ませてある（FOUC 防止のため）。ここでは切替のみ扱う。
     const toggleBtn = document.getElementById('theme-toggle');
     if (toggleBtn) {
       toggleBtn.addEventListener('click', function() {

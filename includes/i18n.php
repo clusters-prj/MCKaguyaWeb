@@ -15,6 +15,9 @@ const DEFAULT_LANG = 'ja';
 // 右から左に読む言語（RTL）。<html dir="rtl"> の判定に使う。
 const RTL_LANGS = ['ar'];
 
+// 本番の公開URL。canonical / hreflang / og:url の組み立てに使う。
+const SITE_URL = 'https://web-kaguya.clusters-prj.com';
+
 /**
  * Accept-Language ヘッダーを解析して、最も適合する対応言語を返す。
  *
@@ -170,4 +173,42 @@ function current_lang(): string {
  */
 function lang_dir(): string {
     return in_array(current_lang(), RTL_LANGS, true) ? 'rtl' : 'ltr';
+}
+
+/**
+ * 現在のページのパス（クエリ文字列を除く）を返す。
+ * 「/」でアクセスされた場合は「/index.php」に正規化する。
+ */
+function current_path(): string {
+    $path = (string) parse_url($_SERVER['REQUEST_URI'] ?? '/index.php', PHP_URL_PATH);
+    if ($path === '' || substr($path, -1) === '/') {
+        $path .= 'index.php';
+    }
+    return $path;
+}
+
+/**
+ * 現在のページを指定言語で開くためのURLを返す。
+ *
+ * ?lang= 以外のクエリ文字列（アンカー用のパラメータ等）は保持する。
+ * $lang に null を渡すと lang パラメータを取り除いたURLになる
+ * （hreflang="x-default" 用）。
+ */
+function lang_url(?string $lang): string {
+    $query = [];
+    parse_str((string) parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_QUERY), $query);
+    unset($query['lang']);
+    if ($lang !== null) {
+        $query['lang'] = $lang;
+    }
+    $qs = http_build_query($query);
+    return current_path() . ($qs !== '' ? '?' . $qs : '');
+}
+
+/**
+ * 検索エンジン向けの絶対URL（canonical / og:url）を組み立てる。
+ * リバースプロキシ配下でもホスト名が固定されるよう SITE_URL を基準にする。
+ */
+function absolute_url(string $path): string {
+    return rtrim(SITE_URL, '/') . $path;
 }
