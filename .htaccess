@@ -1,4 +1,12 @@
 # エラーページの定義
-ErrorDocument 403 /errors/403.html
-ErrorDocument 404 /errors/404.html
-ErrorDocument 500 /errors/500.html
+# .php にしているのは、多言語表示（includes/i18n.php）を通すため。
+# Apache は ErrorDocument を内部リダイレクトで処理するので、
+# ブラウザに返るステータスコードは 403/404/500 のまま保たれる。
+ErrorDocument 403 /errors/403.php
+ErrorDocument 404 /errors/404.php
+ErrorDocument 500 /errors/500.php
+
+# エラーテンプレート本体への直接アクセスを禁止する
+<Files "_error.php">
+    Require all denied
+</Files>
