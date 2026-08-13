@@ -1,4 +1,6 @@
-# エラーページの定義
+# ==========================================
+# エラーページ
+# ==========================================
 # .php にしているのは、多言語表示（includes/i18n.php）を通すため。
 # Apache は ErrorDocument を内部リダイレクトで処理するので、
 # ブラウザに返るステータスコードは 403/404/500 のまま保たれる。
@@ -10,3 +12,66 @@ ErrorDocument 500 /errors/500.php
 <Files "_error.php">
     Require all denied
 </Files>
+
+# ==========================================
+# セキュリティヘッダー
+# ==========================================
+<IfModule mod_headers.c>
+    # MIMEタイプの推測を止める（拡張子と中身が食い違うファイルの誤実行を防ぐ）
+    Header always set X-Content-Type-Options "nosniff"
+
+    # 他サイトへの遷移時に、パスやクエリを含む完全なURLを送らない
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # 使っていないブラウザ機能を明示的に拒否する
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+
+    # クリックジャッキング対策。Discordウィジェットは「読み込む側」なので
+    # 当サイトが他サイトに埋め込まれることは想定していない。
+    Header always set Content-Security-Policy "frame-ancestors 'self'"
+
+    # 静的アセットのキャッシュ。テーマCSSは切替時に即反映されてほしいので短め。
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "public, max-age=3600"
+    </FilesMatch>
+    <FilesMatch "\.(jpg|jpeg|png|gif|webp|ico|svg|woff2?)$">
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+
+    # PHPが生成するページは言語ごとに内容が変わる。
+    # Cookie を見て言語を決めているので、共有キャッシュに載らないようにする。
+    <FilesMatch "\.php$">
+        Header set Cache-Control "private, no-cache"
+        Header append Vary "Accept-Language, Cookie"
+    </FilesMatch>
+</IfModule>
+
+# ==========================================
+# 転送量の削減
+# ==========================================
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+    AddOutputFilterByType DEFLATE application/javascript application/json
+    AddOutputFilterByType DEFLATE application/xml image/svg+xml
+</IfModule>
+
+# ==========================================
+# 文字コード
+# ==========================================
+# 明示しないと、サーバー既定（ISO-8859-1 等）で解釈され
+# 日本語や中国語が文字化けする環境がある。
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .css .js .xml
+
+# ==========================================
+# 非公開ファイル
+# ==========================================
+# メンバー一覧CSVは cont.php から読むだけで、直接配布する意図はない
+<FilesMatch "\.(csv|md)$">
+    Require all denied
+</FilesMatch>
+
+# バージョン管理・エディタの残骸を配信しない
+<FilesMatch "^(\.|.*~$)">
+    Require all denied
+</FilesMatch>
