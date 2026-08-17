@@ -1,11 +1,12 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/i18n.php'; ?>
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/i18n.php';
+$page_title = '経済システムの解説 - 超かぐや姫！再現プロジェクト';
+$page_desc  = 'かぐや鯖の経済システム（FJEconomy）の使い方を解説します。ゲーム内コマンド、Webダッシュボード、アリーナの賞金・ベット機能まで。';
+?>
 <!DOCTYPE html>
-<html lang="<?= current_lang() ?>">
+<html lang="<?= current_lang() ?>" dir="<?= lang_dir() ?>">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/style.css" id="main-style">
-    <title>経済システムの解説 - 超かぐや姫！再現プロジェクト</title>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/head.php'; ?>
     <style>
         .eco-card {
             background: var(--card-bg);
@@ -33,7 +34,7 @@
 </head>
 <body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; ?>
-    <main>
+    <main id="main-content">
         <section id="overview">
             <h2>経済システムの解説</h2>
             <p>

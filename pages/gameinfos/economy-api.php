@@ -1,11 +1,12 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/i18n.php'; ?>
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/i18n.php';
+$page_title = '経済システム API利用ガイド - 超かぐや姫！再現プロジェクト';
+$page_desc  = 'fjeapiの公開エンドポイントとAPIキー認証付きエンドポイントの使い方をまとめた開発者向けガイドです。';
+?>
 <!DOCTYPE html>
-<html lang="<?= current_lang() ?>">
+<html lang="<?= current_lang() ?>" dir="<?= lang_dir() ?>">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/style.css" id="main-style">
-    <title>経済システム API利用ガイド - 超かぐや姫！再現プロジェクト</title>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/head.php'; ?>
     <style>
         .api-card {
             background: var(--card-bg);
@@ -66,7 +67,7 @@
 </head>
 <body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; ?>
-    <main>
+    <main id="main-content">
         <section id="overview">
             <h2>経済システム API利用ガイド</h2>
             <p>
