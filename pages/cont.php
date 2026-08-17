@@ -1,11 +1,12 @@
-<?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/i18n.php"; ?>
+<?php
+require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/i18n.php";
+$page_title_key = 'cont_page_title';
+$page_desc_key  = 'cont_intro_1';
+?>
 <!DOCTYPE html>
-<html lang="<?= current_lang() ?>">
+<html lang="<?= current_lang() ?>" dir="<?= lang_dir() ?>">
   <head>
-    <meta charset="UTF-8">
-    <title><?= h(t("cont_page_title")) ?></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/style.css" id="main-style">
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/head.php'; ?>
     <style>
         :root {
             --indigo-primary: var(--primary-color, #4f46e5);
@@ -219,7 +220,7 @@
   </head>
   <body>
     <?php include $_SERVER["DOCUMENT_ROOT"] . "/templates/header.php"; ?>
-    <main>
+    <main id="main-content">
         <section id="credits-intro">
             <h2>協力者一覧 / Credits</h2>
             <p>

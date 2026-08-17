@@ -15,6 +15,24 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      # サイトの本体はPHPなのに、これまで構文チェックの対象外だった。
+      # 1ファイルでもパースエラーがあると本番で白画面になるため必須。
+      - name: Check PHP syntax
+        run: |
+          set -o pipefail
+          find . -name '*.php' -not -path './vendor/*' -print0 \
+            | xargs -0 -n1 -P4 php -l
+
+      # 翻訳キーの過不足を検出する。
+      # 足りないキーは画面に [[key_name]] と出てしまう。
+      - name: Check translation keys
+        run: php tools/check_lang_keys.php
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:

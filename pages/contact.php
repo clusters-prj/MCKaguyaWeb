@@ -1,11 +1,12 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/i18n.php'; ?>
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/i18n.php';
+$page_title_key = 'contact_page_title';
+$page_desc_key  = 'contact_intro';
+?>
 <!DOCTYPE html>
-<html lang="<?= current_lang() ?>">
+<html lang="<?= current_lang() ?>" dir="<?= lang_dir() ?>">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/style.css" id="main-style">
-    <title><?= h(t('contact_page_title')) ?></title>
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/head.php'; ?>
     <style>
         .contact-container {
             max-width: 800px;
@@ -49,7 +50,7 @@
 </head>
 <body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; ?>
-    <main class="contact-container">
+    <main id="main-content" class="contact-container">
         <section id="contact-info">
             <h2><?= h(t('contact_heading')) ?></h2>
             <p><?= h(t('contact_intro')) ?></p>
@@ -59,7 +60,10 @@
                 <p><?= h(t('contact_discord_info')) ?> <a href="/pages/gameinfos/connect.php"><?= h(t('contact_discord_connect')) ?></a></p>
                 <p><a href="https://discord.gg/SAsYnPPrga" class="contact-link"><?= h(t('contact_discord_link')) ?></a></p>
                 <section id="discord">
-                <iframe src="https://discord.com/widget?id=1487438553888849983&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                <iframe src="https://discord.com/widget?id=1487438553888849983&amp;theme=dark"
+                        title="<?= h(t('discord_widget_title')) ?>"
+                        width="350" height="500" loading="lazy" frameborder="0"
+                        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
                 </section>
             </div>
 

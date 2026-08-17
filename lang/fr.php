@@ -322,4 +322,28 @@ return [
     'copyright_guideline_policy' => 'Conformité avec les directives officielles sur les créations de fans de « Kaguya, princesse cosmique »',
     'copyright_guideline_policy_info' => 'Ce projet est une initiative non officielle menée par des fans et sans but lucratif, conformément au principe officiel « Tsukuyomi est un lieu où chacun peut s’exprimer ». Nous respectons strictement les directives officielles relatives aux créations de fans et veillons à ce que notre projet ne puisse jamais être confondu avec une production ou un produit officiel. Ce projet n’est ni autorisé, ni sponsorisé, ni affilié à Twin Engine ou à tout autre ayant droit officiel.',
     'copyright_guideline_policy_link' => 'Directives officielles pour les créations de fans de « Kaguya, princesse cosmique » (site externe)',
+
+    // === Pages d'erreur (403/404/500) ===
+    'error_403_title'       => 'Accès refusé',
+    'error_403_desc'        => 'Désolé, vous n\'êtes pas autorisé à consulter cette page.',
+    'error_404_title'       => 'Page introuvable',
+    'error_404_desc'        => 'Désolé, la page que vous cherchez n\'existe pas ou a été déplacée.',
+    'error_500_title'       => 'Erreur interne du serveur',
+    'error_500_desc'        => 'Désolé, un problème est survenu de notre côté. Merci de réessayer dans un moment.',
+    'error_what_to_do'      => 'Que faire ?',
+    'error_go_home'         => 'Retour à l\'accueil',
+    'error_go_back'         => 'Page précédente',
+    'error_browse_menu'     => 'Voir les informations du serveur',
+    'error_contact'         => 'Nous contacter',
+    'error_faq'             => 'Causes fréquentes',
+    'error_hint_url'        => 'Vérifiez que l\'URL est correctement saisie.',
+    'error_hint_permission' => 'Vous n\'avez peut-être pas les droits d\'accès à cette ressource.',
+    'error_hint_removed'    => 'La page a peut-être été supprimée ou déplacée.',
+    'error_hint_retry'      => 'Il peut s’agir d’un problème temporaire. Réessayez plus tard.',
+    'error_hint_contact'    => 'Si le problème persiste, contactez l\'administrateur du site.',
+    'error_code_label'      => 'Code d\'erreur',
+
+    // === Accessibilité / éléments intégrés ===
+    'skip_to_content'      => 'Aller au contenu principal',
+    'discord_widget_title' => 'Widget du serveur Discord',
     ];

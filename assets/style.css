@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap");
 
 :root {
   /* ライトモード（デフォルト）の色定義 */
-  --primary-color: #2A2FF4;
+  --primary-color: #2a2ff4;
   --link-hover: #4f46e5;
   --link-color: #3b3fef;
   --bg-color: #f8fafc;
   --card-bg: #ffffff;
   --text-main: #1e293b;
-  --text-muted: #4A5863;
+  --text-muted: #4a5863;
   --border-color: #e2e8f0;
   --table-th-bg: #f1f5f9;
   --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
@@ -18,15 +18,15 @@
 @media (prefers-color-scheme: dark) {
   :root {
     /* ダークモード時の色定義 */
-    --primary-color: #818cf8;   /* アクセントカラーをさらに明るく（Slate 400系） */
+    --primary-color: #818cf8; /* アクセントカラーをさらに明るく（Slate 400系） */
     --link-hover: #dbe4ff;
     --link-color: #c7d2fe;
-    --bg-color: #0b0f19;        /* 背景をさらに暗くして、沈み込みを深く */
-    --card-bg: #1e293b;         /* カードはそのまま、背景との差（明度差）を広げる */
-    --text-main: #ffffff;       /* 完全な白にして文字の視認性を最優先に */
-    --text-muted: #cbd5e1;      /* 補足文字を明るめのグレー（Slate 300）に変更 */
-    --border-color: #475569;    /* 境界線を少し明るく（Slate 600）して輪郭を出す */
-    --table-th-bg: #1e293b;     
+    --bg-color: #0b0f19; /* 背景をさらに暗くして、沈み込みを深く */
+    --card-bg: #1e293b; /* カードはそのまま、背景との差（明度差）を広げる */
+    --text-main: #ffffff; /* 完全な白にして文字の視認性を最優先に */
+    --text-muted: #cbd5e1; /* 補足文字を明るめのグレー（Slate 300）に変更 */
+    --border-color: #475569; /* 境界線を少し明るく（Slate 600）して輪郭を出す */
+    --table-th-bg: #1e293b;
     --shadow: 0 4px 12px rgb(0 0 0 / 0.7); /* 影を濃くしてカードを浮き立たせる */
   }
 }
@@ -41,7 +41,9 @@ body {
   padding: 40px 20px;
   color: var(--text-main);
   background-color: var(--bg-color);
-  transition: background-color 0.3s ease, color 0.3s ease; /* 切り替えを滑らかにする */
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease; /* 切り替えを滑らかにする */
 }
 
 body {
@@ -52,13 +54,14 @@ body {
 img {
   max-width: 100%;
   height: auto;
-  display: block;           /* 下部にできる謎の隙間を排除 */
-  margin: 0 auto 1.5rem;    /* 基本的に中央寄せにし、下の文章との間隔を空ける */
-  border-radius: 6px;       /* セクションの角丸（12px）に合わせて、画像も少し角丸に */
+  display: block; /* 下部にできる謎の隙間を排除 */
+  margin: 0 auto 1.5rem; /* 基本的に中央寄せにし、下の文章との間隔を空ける */
+  border-radius: 6px; /* セクションの角丸（12px）に合わせて、画像も少し角丸に */
 }
 
 /* インラインで使う画像（アイコンなど）がある場合の対策 */
-p img, span img {
+p img,
+span img {
   display: inline;
   margin: 0;
   vertical-align: middle;
@@ -95,9 +98,11 @@ nav ul {
 nav a,
 a {
   text-decoration: none;
-  color: var(--link-color); 
+  color: var(--link-color);
   font-weight: 600;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
+  transition:
+    color 0.3s ease,
+    border-bottom 0.3s ease;
 }
 
 nav a {
@@ -163,15 +168,20 @@ section {
   border-radius: 12px;
   margin-bottom: 24px;
   box-shadow: var(--shadow);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-h2, h3 {
+h2,
+h3 {
   color: var(--primary-color);
   border-left: 4px solid var(--primary-color);
   padding-left: 12px;
   margin-top: 0;
-  transition: color 0.3s ease, border-left-color 0.3s ease;
+  transition:
+    color 0.3s ease,
+    border-left-color 0.3s ease;
 }
 
 table {
@@ -180,7 +190,8 @@ table {
   margin-top: 10px;
 }
 
-th, td {
+th,
+td {
   text-align: left;
   padding: 12px;
   border-bottom: 1px solid var(--border-color);
@@ -191,7 +202,9 @@ th {
   color: var(--text-muted);
   font-size: 0.875rem;
   text-transform: uppercase;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 ul {
@@ -222,8 +235,8 @@ header {
 /* ダークモード判定を通常設定より後に記述して確実に上書きする */
 @media (prefers-color-scheme: dark) {
   .site-logo {
-    filter: invert(1);        /* 色を反転（黒文字を白に） */
-    mix-blend-mode: screen;    /* 反転後の黒（元白）を透過 */
+    filter: invert(1); /* 色を反転（黒文字を白に） */
+    mix-blend-mode: screen; /* 反転後の黒（元白）を透過 */
   }
 }
 
@@ -262,10 +275,16 @@ header {
     right: 10px;
     z-index: 2000;
   }
-  
-  .menu-btn.is-active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-  .menu-btn.is-active span:nth-child(2) { opacity: 0; }
-  .menu-btn.is-active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  .menu-btn.is-active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-btn.is-active span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-btn.is-active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
 
   nav ul {
     display: none;
@@ -285,10 +304,14 @@ header {
     box-sizing: border-box;
   }
 
-  nav ul.is-open { display: flex; }
+  nav ul.is-open {
+    display: flex;
+  }
 
-  nav ul li { margin: 15px 0; }
-  nav ul li a { 
+  nav ul li {
+    margin: 15px 0;
+  }
+  nav ul li a {
     font-size: 1.5rem;
   }
 
@@ -350,10 +373,22 @@ header {
 }
 
 /* 各要素（1〜4番目のpタグ）にエリア名を割り当て */
-.footer-content > p:nth-child(1) { grid-area: item1; text-align: left; } /* 1番目のpタグは左寄せ */ 
-.footer-content > p:nth-child(2) { grid-area: item2; text-align: left; } /* 2番目のpタグは左寄せ */
-.footer-content > p:nth-child(3) { grid-area: item3; text-align: right; } /* 3番目のpタグは右寄せ */
-.footer-content > p:nth-child(4) { grid-area: item4; text-align: right; } /* 4番目のpタグは右寄せ */
+.footer-content > *:nth-child(1) {
+  grid-area: item1;
+  text-align: left;
+} /* 1番目のpタグは左寄せ */
+.footer-content > *:nth-child(2) {
+  grid-area: item2;
+  text-align: left;
+} /* 2番目のpタグは左寄せ */
+.footer-content > *:nth-child(3) {
+  grid-area: item3;
+  text-align: right;
+} /* 3番目のpタグは右寄せ */
+.footer-content > *:nth-child(4) {
+  grid-area: item4;
+  text-align: right;
+} /* 4番目のpタグは右寄せ */
 
 /* pタグのデフォルト余白をリセット */
 .footer-content p {
@@ -372,7 +407,7 @@ header {
   font-weight: 500;
   transition: all 0.3s ease;
   box-shadow: var(--shadow);
-  
+
   /* デフォルトの矢印をカスタム矢印に差し替え */
   appearance: none;
   -webkit-appearance: none;
@@ -383,9 +418,9 @@ header {
 }
 
 /* #theme-toggle が入っている4番目の p タグを左寄せにする */
-.footer-content > p:nth-child(4) {
+.footer-content > *:nth-child(4) {
   justify-self: end; /* Gridのマス目の中で左端に寄せる */
-  text-align: right;    /* <p> の中のボタン自体を左揃えにする */
+  text-align: right; /* <p> の中のボタン自体を左揃えにする */
 }
 
 #lang-select:hover,
@@ -410,9 +445,108 @@ header {
 /* 簡体字中国語（zh-CN）用のフォント指定 */
 :lang(zh-CN) {
   font-family:
-    "PingFang SC",        /* macOS / iOS */
-    "Hiragino Sans GB",   /* macOS（旧バージョン向け） */
-    "Microsoft YaHei",    /* Windows */
-    "Noto Sans SC",       /* Webフォント / Androidなど */
-    sans-serif;
+    "PingFang SC",
+    /* macOS / iOS */ "Hiragino Sans GB",
+    /* macOS（旧バージョン向け） */ "Microsoft YaHei",
+    /* Windows */ "Noto Sans SC",
+    /* Webフォント / Androidなど */ sans-serif;
+}
+/* ==========================================
+   RTL（右横書き）対応 — アラビア語など
+   ========================================== */
+
+/* アラビア語向けのフォント指定 */
+:lang(ar) {
+  font-family:
+    "Noto Naskh Arabic",
+    /* Webフォント / Androidなど */ "Geeza Pro",
+    /* macOS / iOS */ "Segoe UI",
+    /* Windows */ "Times New Roman",
+    serif;
+}
+
+/* 左右に固定配置している要素を反転する。
+   論理プロパティ（inset-inline-*）が使える要素は自動で反転するが、
+   left/right をハードコードしている箇所は個別に上書きする。 */
+[dir="rtl"] .page-top {
+  right: auto;
+  left: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  [dir="rtl"] .menu-btn {
+    right: auto;
+    left: 10px;
+  }
+
+  [dir="rtl"] nav ul {
+    left: auto;
+    right: 0;
+  }
+}
+
+/* テキスト寄せ・ボーダーなど、方向を持つ装飾の反転 */
+[dir="rtl"] th,
+[dir="rtl"] td {
+  text-align: right;
+}
+
+[dir="rtl"] .contact-method,
+[dir="rtl"] .system-card {
+  border-left: none;
+  border-right: 5px solid var(--primary-color);
+}
+
+[dir="rtl"] #member-controls {
+  border-left: none;
+  border-right: 4px solid var(--indigo-primary, var(--primary-color));
+}
+
+/* 進捗バーは左からではなく右から伸ばす */
+[dir="rtl"] .progress-bar-bg {
+  direction: rtl;
+}
+
+/* 言語切替を <form> にしたぶんの調整（見た目は従来の <p> と同じにする） */
+.footer-content > form.lang-switch {
+  margin: 0;
+}
+
+/* キーボード操作用のスキップリンク。
+   フォーカスが当たったときだけ画面左上に現れる。 */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 3000;
+  padding: 12px 20px;
+  background-color: var(--primary-color);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0 0 8px 0;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+/* フォーカスリングを全体的に見えるようにする（キーボード操作時のみ） */
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* 「視差効果を減らす」設定を尊重する */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

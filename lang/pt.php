@@ -321,4 +321,28 @@ return [
     'copyright_guideline_policy' => 'Conformidade com as Diretrizes de Obras Derivadas de "Chou Kaguya Hime!"',
     'copyright_guideline_policy_info' => 'Este projeto é uma atividade de fãs voluntária e sem fins lucrativos. Durante o desenvolvimento, respeitamos integralmente as diretrizes oficiais para criação de conteúdo derivado, evitando qualquer confusão com produtos oficiais. Este projeto não possui patrocínio, licença ou cooperação oficial de detentores dos direitos autorais (como TWIN ENGINE, etc.).',
     'copyright_guideline_policy_link' => 'Diretrizes Oficiais de Obras Derivadas de "Chou Kaguya Hime!" (Link externo)',
+
+    // === Páginas de erro (403/404/500) ===
+    'error_403_title'       => 'Acesso negado',
+    'error_403_desc'        => 'Desculpe, você não tem autorização para ver esta página.',
+    'error_404_title'       => 'Página não encontrada',
+    'error_404_desc'        => 'Desculpe, a página que você procura não existe ou foi movida.',
+    'error_500_title'       => 'Erro interno do servidor',
+    'error_500_desc'        => 'Desculpe, ocorreu um problema no servidor. Tente novamente daqui a pouco.',
+    'error_what_to_do'      => 'O que eu posso fazer?',
+    'error_go_home'         => 'Voltar ao início',
+    'error_go_back'         => 'Voltar',
+    'error_browse_menu'     => 'Ver informações do servidor',
+    'error_contact'         => 'Fale conosco',
+    'error_faq'             => 'Causas comuns',
+    'error_hint_url'        => 'Verifique se o endereço foi digitado corretamente.',
+    'error_hint_permission' => 'Talvez você não tenha permissão para acessar este recurso.',
+    'error_hint_removed'    => 'A página pode ter sido excluída ou movida.',
+    'error_hint_retry'      => 'Pode ser um problema temporário. Tente novamente mais tarde.',
+    'error_hint_contact'    => 'Se o problema continuar, entre em contato com o administrador do site.',
+    'error_code_label'      => 'Código de erro',
+
+    // === Acessibilidade / incorporações ===
+    'skip_to_content'      => 'Ir para o conteúdo principal',
+    'discord_widget_title' => 'Widget do servidor Discord',
 ];

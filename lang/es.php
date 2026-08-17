@@ -321,4 +321,28 @@ return [
     'copyright_guideline_policy' => 'Cumplimiento de las directrices oficiales de trabajos derivados de "Chou Kaguya Hime!"',
     'copyright_guideline_policy_info' => 'Este proyecto es una actividad no oficial realizada por voluntarios sin fines de lucro, basada en el principio de que "En Tsukuyomi todos son creadores". Durante el desarrollo del proyecto, cumplimos plenamente con las "Directrices de trabajos derivados" oficiales y evitamos cualquier confusión con productos u obras oficiales. Asimismo, este proyecto no cuenta con la autorización, patrocinio ni colaboración de las entidades oficiales (como TWIN ENGINE, etc.).',
     'copyright_guideline_policy_link' => 'Directrices oficiales de trabajos derivados de "Chou Kaguya Hime!" (Sitio externo)',
+
+    // === Páginas de error (403/404/500) ===
+    'error_403_title'       => 'Acceso denegado',
+    'error_403_desc'        => 'Lo sentimos, no tienes autorización para ver esta página.',
+    'error_404_title'       => 'Página no encontrada',
+    'error_404_desc'        => 'Lo sentimos, la página que buscas no existe o ha sido movida.',
+    'error_500_title'       => 'Error interno del servidor',
+    'error_500_desc'        => 'Lo sentimos, se ha producido un problema en el servidor. Vuelve a intentarlo dentro de un rato.',
+    'error_what_to_do'      => '¿Qué puedo hacer?',
+    'error_go_home'         => 'Volver al inicio',
+    'error_go_back'         => 'Volver atrás',
+    'error_browse_menu'     => 'Ver la información del servidor',
+    'error_contact'         => 'Contacto',
+    'error_faq'             => 'Causas habituales',
+    'error_hint_url'        => 'Comprueba que la URL esté escrita correctamente.',
+    'error_hint_permission' => 'Es posible que no tengas permiso para acceder a este recurso.',
+    'error_hint_removed'    => 'Puede que la página haya sido eliminada o movida.',
+    'error_hint_retry'      => 'Puede tratarse de un problema temporal. Inténtalo de nuevo más tarde.',
+    'error_hint_contact'    => 'Si el problema continúa, ponte en contacto con el administrador del sitio.',
+    'error_code_label'      => 'Código de error',
+
+    // === Accesibilidad / incrustaciones ===
+    'skip_to_content'      => 'Saltar al contenido principal',
+    'discord_widget_title' => 'Widget del servidor de Discord',
 ];

@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# エラーページとデータファイルはクロール対象外
+Disallow: /errors/
+Disallow: /data/
+
+Sitemap: https://web-kaguya.clusters-prj.com/sitemap.xml
