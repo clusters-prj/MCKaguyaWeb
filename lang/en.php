@@ -63,8 +63,8 @@ return [
     'history_1' => 'Project launched - building began on Realms',
 
     // === news (index.php) ===
-    'news_1' => 'Now supports Bedrock Edition 26.30',
-    'news_2' => 'Published the operations report for April-May 2026<br><a href="/docs/report_2645.pdf">View it here</a>',
+    'news_1' => 'Published the operations report for April-May 2026<br><a href="/docs/report_2645.pdf">View it here</a>',
+    'news_2' => 'Now supports Bedrock Edition 26.30',
 
     // === cont.php　===
     'cont_page_title' => 'Contributor List - Super Kaguya Hime! Recreation Project',
@@ -120,6 +120,9 @@ return [
     'gameinfo_wra_title' => 'Land Protection Guide (Required)',
     'gameinfo_wra_info' => 'Must be completed once you finish building.',
     'gameinfo_wra_link' => 'Click here',
+    'gameinfo_economy_title' => 'Economy System Guide',
+    'gameinfo_economy_info' => 'Learn about the server currency, shops, transfers, and the public API.',
+    'gameinfo_economy_link' => 'Click here',
     'gameinfo_status_title' => 'Server Status',
     'gameinfo_status_info' => 'Displays the operational status of the server. Maintenance notices are shown only while work is in progress. For advance notices, please check <a href="https://discord.com/channels/1487438553888849983/1488080997135421510/1489956553149911080">Discord</a>.',
     'gameinfo_status_link' => 'Goes to dedicated site<i class="fa-solid fa-arrow-up-right-from-square" style="color: #6366f1;"></i>',

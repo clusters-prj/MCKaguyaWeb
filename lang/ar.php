@@ -63,8 +63,8 @@ return [
     'history_1' => 'تأسيس المشروع وبدء البناء على Realms',
 
     // === news (index.php) ===
-    'news_1' => 'إضافة الدعم لإصدار Bedrock Edition 26.30',
-    'news_2' => 'تم نشر تقرير العمليات للفترة من أبريل إلى مايو 2026<br><a href="/docs/report_2645.pdf">انقر هنا للإطلاع عليه</a>',
+    'news_1' => 'تم نشر تقرير العمليات للفترة من أبريل إلى مايو 2026<br><a href="/docs/report_2645.pdf">انقر هنا للإطلاع عليه</a>',
+    'news_2' => 'إضافة الدعم لإصدار Bedrock Edition 26.30',
 
     // === cont.php ===
     'cont_page_title' => 'قائمة المساهمين - مشروع إعادة إنشاء Chou Kaguya Hime!',
@@ -120,6 +120,9 @@ return [
     'gameinfo_wra_title' => 'دليل طلب حماية الأراضي (قراءة إجبارية)',
     'gameinfo_wra_info' => 'خطوة إجبارية يجب القيام بها بعد الانتهاء من أي بناء.',
     'gameinfo_wra_link' => 'انقر هنا للعرض',
+    'gameinfo_economy_title' => 'دليل النظام الاقتصادي',
+    'gameinfo_economy_info' => 'تعرّف على عملة السرفر والمتاجر والتحويلات وواجهة برمجة التطبيقات العامة.',
+    'gameinfo_economy_link' => 'انقر هنا للعرض',
     'gameinfo_status_title' => 'حالة السيرفر',
     'gameinfo_status_info' => 'يعرض حالة تشغيل السيرفر. تظهر إشعارات الصيانة فقط أثناء تنفيذها. لمعرفة مواعيد الصيانة المسبقة، يرجى زيارة <a href="https://discord.com/channels/1487438553888849983/1488080997135421510/1489956553149911080">ديسكورد</a>.',
     'gameinfo_status_link' => 'الانتقال إلى صفحة الحالة المخصصة<i class="fa-solid fa-arrow-up-right-from-square" style="color: #6366f1;"></i>',

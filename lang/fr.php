@@ -63,8 +63,8 @@ return [
     'history_1' => 'Lancement du projet et début de la construction sur Minecraft Realms.',
 
     // === news (index.php) ===
-    'news_1' => 'Compatible avec l’Édition Bedrock 26.30.',
-    'news_2' => 'Le rapport d’exploitation pour la période d’avril à mai 2026 est désormais disponible.<br><a href="/docs/report_2645.pdf">Consultez-le ici</a>',
+    'news_1' => 'Le rapport d’exploitation pour la période d’avril à mai 2026 est désormais disponible.<br><a href="/docs/report_2645.pdf">Consultez-le ici</a>',
+    'news_2' => 'Compatible avec l’Édition Bedrock 26.30.',
 
     // === cont.php ===
     'cont_page_title' => 'Contributeurs - Projet de recréation de Kaguya, princesse cosmique',
@@ -120,6 +120,9 @@ return [
     'gameinfo_wra_title' => 'Comment protéger un terrain (obligatoire)',
     'gameinfo_wra_info' => 'À effectuer impérativement une fois votre construction terminée.',
     'gameinfo_wra_link' => 'Cliquez ici',
+    'gameinfo_economy_title' => 'Guide du système économique',
+    'gameinfo_economy_info' => 'Découvrez la monnaie du serveur, les boutiques, les virements et l\'API publique.',
+    'gameinfo_economy_link' => 'Cliquez ici',
     'gameinfo_status_title' => 'État du serveur',
     'gameinfo_status_info' => 'Affiche l’état actuel du serveur. Les informations de maintenance ne sont visibles que pendant les opérations. Pour les annonces à l’avance, veuillez consulter le <a href="https://discord.com/channels/1487438553888849983/1488080997135421510/1489956553149911080">Discord</a>.',
     'gameinfo_status_link' => 'Ouvrir le site dédié<i class="fa-solid fa-arrow-up-right-from-square" style="color: #6366f1;"></i>',

@@ -30,6 +30,10 @@
 					<p><?= h(t('gameinfo_wra_info')) ?></p>
 					<p><a href="/pages/gameinfos/wra.php"><?= h(t('gameinfo_wra_link')) ?></a></p>
 
+				<h3><?= h(t('gameinfo_economy_title')) ?></h3>
+					<p><?= h(t('gameinfo_economy_info')) ?></p>
+					<p><a href="/pages/gameinfos/economy.php"><?= h(t('gameinfo_economy_link')) ?></a></p>
+
 				<h3><?= h(t('gameinfo_status_title')) ?></h3>
 					<p><?= t('gameinfo_status_info') ?></p>
 					<p><a href="https://uptime.clusters-prj.com/status/ms-k" target="_blank" rel="noopener noreferrer"> <?= t('gameinfo_status_link') ?></a></p>

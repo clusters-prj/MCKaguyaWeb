@@ -63,8 +63,8 @@ return [
     'history_1' => 'Fundación del proyecto・Inicio de construcción en Realms',
 
     // === news (index.php) ===
-    'news_1' => 'Compatibilidad con Bedrock Edition versión 26.30 añadida',
-    'news_2' => 'Publicado el informe de operaciones para abril ~ mayo de 2026<br><a href="/docs/report_2645.pdf">Haga clic aquí para verlo</a>',
+    'news_1' => 'Publicado el informe de operaciones para abril ~ mayo de 2026<br><a href="/docs/report_2645.pdf">Haga clic aquí para verlo</a>',
+    'news_2' => 'Compatibilidad con Bedrock Edition versión 26.30 añadida',
 
     // === cont.php ===
     'cont_page_title' => 'Lista de colaboradores - ¡Proyecto de Recreación de Chou Kaguya Hime!',
@@ -120,6 +120,9 @@ return [
     'gameinfo_wra_title' => 'Guía de solicitud de protección de terreno (Lectura obligatoria)',
     'gameinfo_wra_info' => 'Paso obligatorio a realizar tras completar una construcción.',
     'gameinfo_wra_link' => 'Haga clic aquí para ver',
+    'gameinfo_economy_title' => 'Guía del sistema económico',
+    'gameinfo_economy_info' => 'Aprende sobre la moneda del servidor, las tiendas, las transferencias y la API pública.',
+    'gameinfo_economy_link' => 'Haga clic aquí',
     'gameinfo_status_title' => 'Estado del servidor',
     'gameinfo_status_info' => 'Muestra el estado operativo del servidor. Los avisos de mantenimiento solo se muestran durante la ejecución. Para avisos previos de mantenimiento, visite <a href="https://discord.com/channels/1487438553888849983/1488080997135421510/1489956553149911080">Discord</a>.',
     'gameinfo_status_link' => 'Ir a la página de estado dedicada<i class="fa-solid fa-arrow-up-right-from-square" style="color: #6366f1;"></i>',
