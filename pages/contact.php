@@ -70,7 +70,7 @@ $page_desc_key  = 'contact_intro';
             <div class="contact-method">
                 <h3><?= h(t('contact_email_title')) ?></h3>
                 <p><?= h(t('contact_email_info')) ?></p>
-                <p><a href="mailto:milieus-74.arts@icloud.com" class="contact-link"><?= h(t('contact_email_link')) ?></a></p>
+                <p><a href="mailto:kaguya-support@mail.clusters-prj.com" class="contact-link"><?= h(t('contact_email_link')) ?></a></p>
             </div>
         </section>
     </main>
