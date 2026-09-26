@@ -63,8 +63,9 @@ return [
     'history_1' => '프로젝트 발족・Realms에서 건축 시작',
 
     // === news (index.php) ===
-    'news_1' => '통합판(Bedrock) 26.30 버전 대응 완료',
-    'news_2' => '2026년 4월~5월 운영 리포트 공개<br><a href="/docs/report_2645.pdf">여기에서 확인하실 수 있습니다</a>',
+    'news_1' => '2026년 4월~5월 운영 리포트 공개<br><a href="/docs/report_2645.pdf">여기에서 확인하실 수 있습니다</a>',
+    'news_2' => '통합판(Bedrock) 26.30 버전 대응 완료',
+    'news_3' => '통합판(Bedrock) 26.45 버전 대응 완료',
 
     // === cont.php ===
     'cont_page_title' => '기여자 목록 - 초 카구야 히메! 재현 프로젝트',

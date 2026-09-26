@@ -63,8 +63,9 @@ return [
     'history_1' => '專案成立・於 Realms 開始建築',
 
     // === news (index.php) ===
-    'news_1' => '已支援基岩版 26.30 版本',
-    'news_2' => '已公開 2026 年 4 月～5 月營運報告<br><a href="/docs/report_2645.pdf">點此處前去查看</a>',
+    'news_1' => '已公開 2026 年 4 月～5 月營運報告<br><a href="/docs/report_2645.pdf">點此處前去查看</a>',
+    'news_2' => '已支援基岩版 26.30 版本',
+    'news_3' => '已支援基岩版 26.45 版本',
 
     // === cont.php ===
     'cont_page_title' => '協作者名單 - 超時空輝耀姬！還原專案',

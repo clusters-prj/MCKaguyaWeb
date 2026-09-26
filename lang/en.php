@@ -63,8 +63,9 @@ return [
     'history_1' => 'Project launched - building began on Realms',
 
     // === news (index.php) ===
-    'news_1' => 'Published the operations report for April-May 2026<br><a href="/docs/report_2645.pdf">View it here</a>',
-    'news_2' => 'Now supports Bedrock Edition 26.30',
+    'news_1' => 'Now supports Bedrock Edition 26.30',
+    'news_2' => 'Published the operations report for April-May 2026<br><a href="/docs/report_2645.pdf">View it here</a>',
+    'news_3' => 'Now supports Bedrock Edition 26.45',
 
     // === cont.php　===
     'cont_page_title' => 'Contributor List - Super Kaguya Hime! Recreation Project',

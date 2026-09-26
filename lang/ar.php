@@ -63,8 +63,9 @@ return [
     'history_1' => 'تأسيس المشروع وبدء البناء على Realms',
 
     // === news (index.php) ===
-    'news_1' => 'تم نشر تقرير العمليات للفترة من أبريل إلى مايو 2026<br><a href="/docs/report_2645.pdf">انقر هنا للإطلاع عليه</a>',
-    'news_2' => 'إضافة الدعم لإصدار Bedrock Edition 26.30',
+    'news_1' => 'إضافة الدعم لإصدار Bedrock Edition 26.30',
+    'news_2' => 'تم نشر تقرير العمليات للفترة من أبريل إلى مايو 2026<br><a href="/docs/report_2645.pdf">انقر هنا للإطلاع عليه</a>',
+    'news_3' => 'إضافة الدعم لإصدار Bedrock Edition 26.45',
 
     // === cont.php ===
     'cont_page_title' => 'قائمة المساهمين - مشروع إعادة إنشاء Chou Kaguya Hime!',

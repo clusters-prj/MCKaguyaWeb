@@ -44,19 +44,15 @@ $page_desc_key  = 'site_description';
               <tbody>
                   <tr>
                       <td>2026<?= current_lang() === 'ja' ? '年8月29日' : '-08-29' ?></td>
-                      <td>統合版26.45に対応しました</td>
+                      <td><?= h(t('news_3')) ?></td>
                   </tr>
                   <tr>
                       <td>2026<?= current_lang() === 'ja' ? '年6月30日' : '-06-30' ?></td>
-                      <td><?= h(t('news_1')) ?></td>
-                  </tr>
-                  <tr>
-                      <td>2026<?= current_lang() === 'ja' ? '年6月17日' : '-06-17' ?></td>
                       <td><?= h(t('news_2')) ?></td>
                   </tr>
                   <tr>
-                      <td>2026<?= current_lang() === 'ja' ? '年6月4日' : '-06-04' ?></td>
-                      <td><?= h(t('news_3')) ?></td>
+                      <td>2026<?= current_lang() === 'ja' ? '年6月17日' : '-06-17' ?></td>
+                      <td><?= h(t('news_1')) ?></td>
                   </tr>
               </tbody>
           </table>

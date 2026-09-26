@@ -63,8 +63,9 @@ return [
     'history_1' => 'Lancement du projet et début de la construction sur Minecraft Realms.',
 
     // === news (index.php) ===
-    'news_1' => 'Le rapport d’exploitation pour la période d’avril à mai 2026 est désormais disponible.<br><a href="/docs/report_2645.pdf">Consultez-le ici</a>',
-    'news_2' => 'Compatible avec l’Édition Bedrock 26.30.',
+    'news_1' => 'Compatible avec l’Édition Bedrock 26.30.',
+    'news_2' => 'Le rapport d’exploitation pour la période d’avril à mai 2026 est désormais disponible.<br><a href="/docs/report_2645.pdf">Consultez-le ici</a>',
+    'news_3' => 'Compatible avec l’Édition Bedrock 26.45.',
 
     // === cont.php ===
     'cont_page_title' => 'Contributeurs - Projet de recréation de Kaguya, princesse cosmique',

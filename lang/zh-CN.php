@@ -63,8 +63,9 @@ return [
     'history_1' => '项目启动・在Realms上开始建筑',
 
     // === news (index.php) ===
-    'news_1' => '已适配基岩版 26.30',
-    'news_2' => '发布了2026年4月〜5月期的运营报告<br><a href="/docs/report_2645.pdf">点击此处查看</a>',
+    'news_1' => '发布了2026年4月〜5月期的运营报告<br><a href="/docs/report_2645.pdf">点击此处查看</a>',
+    'news_2' => '已适配基岩版 26.30',
+    'news_3' => '已适配基岩版 26.45',
 
     // === cont.php ===
     'cont_page_title' => '协作者列表 - 超时空辉夜姬！复原项目',
