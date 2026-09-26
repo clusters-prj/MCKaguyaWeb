@@ -255,6 +255,11 @@ $page_desc_key  = 'cont_intro_1';
                         <td><?= h(t("cont_core_body_3_2")) ?></td>
                         <td><?= h(t("cont_core_body_3_3")) ?></td>
                     </tr>
+                    <tr>
+                        <td><strong><?= h(t("cont_core_body_4_1")) ?></strong></td>
+                        <td><a href="https://x.com/Kuma_gamesMk2" target="_blank" rel="noopener noreferrer"><?= h(t("cont_core_body_4_2")) ?></a></td>
+                        <td><?= h(t("cont_core_body_4_3")) ?></td>
+                    </tr>
                 </tbody>
             </table>
         </section>
