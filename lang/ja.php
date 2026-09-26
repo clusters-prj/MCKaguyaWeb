@@ -85,7 +85,6 @@ return [
     'cont_core_body_3_1' => '管理者たち',
     'cont_core_body_3_2' => 'Tekika,RAIBU,Tチキン,あまゆき,しおさん,ノラネコ,狐,ゆうひch,無職（かんた）',
     'cont_core_body_3_3' => 'いろいろ',
-    'cont_core_body_4_1' => 'サーバー関連',
     'cont_core_body_4_2' => 'クマ',
     'cont_core_body_4_3' => '物理鯖の一部提供',
     'cont_contributors' => 'プロジェクト・コントリビューター',

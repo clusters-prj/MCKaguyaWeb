@@ -85,7 +85,6 @@ return [
     'cont_core_body_3_1' => 'Administrators',
     'cont_core_body_3_2' => 'Tekika, RAIBU, T Chicken, Amayuki, Shiosan, Noraneko, Kitsune, Yuuhi ch, Mushoku (Kanta)',
     'cont_core_body_3_3' => 'Various Tasks',
-    'cont_core_body_4_1' => 'Server & Infra',
     'cont_core_body_4_2' => 'Kuma',
     'cont_core_body_4_3' => 'Provides part of the physical server',
     'cont_contributors' => 'Project Contributors',

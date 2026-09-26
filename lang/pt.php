@@ -85,7 +85,6 @@ return [
     'cont_core_body_3_1' => 'Moderadores',
     'cont_core_body_3_2' => 'Tekika, RAIBU, Tチキン, あまゆき, しおさん, ノラネコ, 狐, ゆうひch, 無職（かんた）',
     'cont_core_body_3_3' => 'Suporte geral e gerenciamento da comunidade',
-    'cont_core_body_4_1' => 'Infraestrutura',
     'cont_core_body_4_2' => 'クマ (Kuma)',
     'cont_core_body_4_3' => 'Fornecimento de parte do servidor físico',
     'cont_contributors' => 'Colaboradores',

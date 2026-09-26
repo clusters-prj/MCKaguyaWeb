@@ -85,7 +85,6 @@ return [
     'cont_core_body_3_1' => '管理員團隊',
     'cont_core_body_3_2' => 'Tekika,RAIBU,Tチキン,あまゆき,しおさん,ノラネコ,狐,ゆうひch,無職（かんた）',
     'cont_core_body_3_3' => '各類行政與維護事項',
-    'cont_core_body_4_1' => '伺服器維護',
     'cont_core_body_4_2' => 'クマ (Kuma)',
     'cont_core_body_4_3' => '提供部分實體伺服器',
     'cont_contributors' => '專案貢獻者',

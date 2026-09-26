@@ -85,7 +85,6 @@ return [
     'cont_core_body_3_1' => 'فريق المشرفين',
     'cont_core_body_3_2' => 'Tekika, RAIBU, Tチキン, あまゆき, しおさん, ノラネコ, 狐, ゆうひch, 無職（かんた）',
     'cont_core_body_3_3' => 'الدعم الإداري العام والصيانة',
-    'cont_core_body_4_1' => 'البنية التحتية',
     'cont_core_body_4_2' => 'クマ (Kuma)',
     'cont_core_body_4_3' => 'توفير جزء من الخادم الفعلي',
     'cont_contributors' => 'المساهمون في المشروع',

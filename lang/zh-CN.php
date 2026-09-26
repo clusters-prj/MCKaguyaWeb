@@ -85,7 +85,6 @@ return [
     'cont_core_body_3_1' => '管理员们',
     'cont_core_body_3_2' => 'Tekika, RAIBU, T Chicken, Amayuki, Shio-san, Noraneko, Kitsune, Yuhi ch, Mushoku(Kanta)',
     'cont_core_body_3_3' => '各项杂务',
-    'cont_core_body_4_1' => '服务器相关',
     'cont_core_body_4_2' => 'クマ (Kuma)',
     'cont_core_body_4_3' => '提供部分物理服务器',
     'cont_contributors' => '项目贡献者 (Contributors)',

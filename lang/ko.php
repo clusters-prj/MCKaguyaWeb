@@ -85,7 +85,6 @@ return [
     'cont_core_body_3_1' => '관리자 팀',
     'cont_core_body_3_2' => 'Tekika, RAIBU, Tチキン, あまゆき, しおさん, ノラネコ, 狐, ゆうひch, 無職（かんた）',
     'cont_core_body_3_3' => '기타 운영 전반 지원',
-    'cont_core_body_4_1' => '서버 관련',
     'cont_core_body_4_2' => 'クマ (Kuma)',
     'cont_core_body_4_3' => '물리 서버 일부 제공',
     'cont_contributors' => '프로젝트 기여자',
