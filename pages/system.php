@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/style.css" id="main-style">
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/fonts.php'; ?>
     <title>サーバー構成 - 超かぐや姫！再現プロジェクト</title>
     <style>
         .system-card {

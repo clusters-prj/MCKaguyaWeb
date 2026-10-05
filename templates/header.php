@@ -2,7 +2,7 @@
 <a class="skip-link" href="#main-content"><?= h(t('skip_to_content')) ?></a>
 <header>
   <a href="/index.php">
-    <img src="/assets/logo.JPG" alt="<?= h(t('logo_alt')) ?>" class="site-logo">
+    <img src="/assets/logo.png" alt="<?= h(t('logo_alt')) ?>" class="site-logo">
   </a>
 </header>
 <nav>
@@ -19,21 +19,10 @@
     <li><a href="/pages/contact.php"><?= h(t('nav_contact')) ?></a></li>
   </ul>
 </nav>
-<button id="page-top" class="page-top" type="button" aria-label="<?= h(t('page_top_aria')) ?>">↑</button>
+  <button id="page-top" class="page-top" type="button" aria-label="<?= h(t('page_top_aria')) ?>">↑</button>
 <hr>
 
 <script>
-  function applyTheme(theme) {
-    const themeLink = document.getElementById('main-style');
-    if (!themeLink) return;
-    themeLink.href = theme === 'pre' ? '/assets/pre.css' : '/assets/style.css';
-    try {
-      localStorage.setItem('selected-theme', theme);
-    } catch (e) {
-      // localStorage が使えない環境では、このページ内でのみ切り替わる
-    }
-  }
-
   document.addEventListener('DOMContentLoaded', function() {
     const currentPath = window.location.pathname;
     const navLinks = document.querySelectorAll('nav a');
@@ -46,19 +35,6 @@
         link.setAttribute('aria-current', 'page');
       }
     });
-
-    // 保存済みテーマの初期反映は templates/head.php 内のインライン
-    // スクリプトで済ませてある（FOUC 防止のため）。ここでは切替のみ扱う。
-    const toggleBtn = document.getElementById('theme-toggle');
-    if (toggleBtn) {
-      toggleBtn.addEventListener('click', function() {
-        let saved = null;
-        try {
-          saved = localStorage.getItem('selected-theme');
-        } catch (e) { /* 読めなければ既定テーマ扱い */ }
-        applyTheme(saved === 'pre' ? 'style' : 'pre');
-      });
-    }
 
     const menuBtn = document.getElementById('menu-btn');
     const navList = document.getElementById('nav-list');

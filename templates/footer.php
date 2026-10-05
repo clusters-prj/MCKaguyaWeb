@@ -45,7 +45,6 @@ $lang_names = [
         </select>
         <noscript><button type="submit"><?= h(t('lang_switch_label')) ?></button></noscript>
       </form>
-      <p><button id="theme-toggle" type="button"><?= h(t('nav_theme_toggle')) ?></button></p>
     </div>
   </div>
 </footer>
