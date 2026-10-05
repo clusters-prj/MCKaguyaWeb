@@ -58,7 +58,7 @@ $page_desc_key  = 'contact_intro';
             <div class="contact-method">
                 <h3><?= h(t('contact_discord_title')) ?></h3>
                 <p><?= h(t('contact_discord_info')) ?> <a href="/pages/gameinfos/connect.php"><?= h(t('contact_discord_connect')) ?></a></p>
-                <p><a href="https://discord.gg/SAsYnPPrga" class="contact-link"><?= h(t('contact_discord_link')) ?></a></p>
+                <p><a href="https://discord.gg/SuaFBcxAY" class="contact-link"><?= h(t('contact_discord_link')) ?></a></p>
                 <section id="discord">
                 <iframe src="https://discord.com/widget?id=1487438553888849983&amp;theme=dark"
                         title="<?= h(t('discord_widget_title')) ?>"
