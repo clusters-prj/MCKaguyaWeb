@@ -25,7 +25,7 @@ $page_desc_key  = 'site_description';
           <a class="home-button" href="/pages/contact.php"><?= h(t('nav_contact')) ?><span aria-hidden="true">↗</span></a>
           <a class="home-text-link" href="#world"><?= h(t('index_status_h3')) ?><span aria-hidden="true">↓</span></a>
         </div>
-        <div class="home-hero__note"><span class="home-spark" aria-hidden="true">✳</span> A world built block by block.</div>
+        <div class="home-hero__note">A world built block by block.</div>
       </div>
       <figure class="home-hero__visual">
         <img src="<?= h('/assets/gallery/' . basename($home_value('hero_image', '2026-10-05_17.31.29.webp'))) ?>" alt="<?= h($home_value('hero_image_alt', '星の海に浮かぶツクヨミの鳥居と光の道')) ?>" fetchpriority="high">
