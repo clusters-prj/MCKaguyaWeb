@@ -35,31 +35,31 @@ $page_desc_key  = 'connect_intro';
             <ol>
                 <li><?= h(t('connect_java_step_1')) ?></li>
                 <li><?= h(t('connect_java_step_2')) ?><br>
-                    <img src="/assets/howtoconnect/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2026-04-06_212320.png" alt="<?= h(t('connect_java_alt_launch')) ?>">
+                    <img src="/assets/howtoconnect/2320.webp" alt="<?= h(t('connect_java_alt_launch')) ?>">
                 </li>
                 <li><?= h(t('connect_java_step_3')) ?><br>
-                    <img src="/assets/howtoconnect/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2026-04-06_212356.png" alt="<?= h(t('connect_java_alt_multiplayer')) ?>">
+                    <img src="/assets/howtoconnect/2356.webp" alt="<?= h(t('connect_java_alt_multiplayer')) ?>">
                 </li>
                 <li><?= h(t('connect_java_step_4')) ?><br>
-                    <img src="/assets/howtoconnect/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2026-04-06_212438.png" alt="<?= h(t('connect_java_alt_add_server')) ?>">
+                    <img src="/assets/howtoconnect/2438.webp" alt="<?= h(t('connect_java_alt_add_server')) ?>">
                 </li>
                 <li><?= h(t('connect_java_step_5')) ?><br>
-                    <img src="/assets/howtoconnect/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2026-04-06_212451.png" alt="<?= h(t('connect_java_alt_add_screen')) ?>">
+                    <img src="/assets/howtoconnect/2451.webp" alt="<?= h(t('connect_java_alt_add_screen')) ?>">
                 </li>
                 <li><?= t('connect_java_step_6') ?><br>
-                    <img src="/assets/howtoconnect/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2026-04-06_212530.png" alt="<?= h(t('connect_java_alt_input_done')) ?>">
+                    <img src="/assets/howtoconnect/2530.webp" alt="<?= h(t('connect_java_alt_input_done')) ?>">
                 </li>
                 <li><?= h(t('connect_java_step_7')) ?><br>
-                    <img src="/assets/howtoconnect/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2026-04-06_212607.png" alt="<?= h(t('connect_java_alt_added_list')) ?>">
+                    <img src="/assets/howtoconnect/2607.webp" alt="<?= h(t('connect_java_alt_added_list')) ?>">
                 </li>
                 <li><?= h(t('connect_java_step_8')) ?><br>
-                    <img src="/assets/howtoconnect/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2026-04-06_212614.png" alt="<?= h(t('connect_java_alt_click')) ?>">
+                    <img src="/assets/howtoconnect/2614.webp" alt="<?= h(t('connect_java_alt_click')) ?>">
                 </li>
                 <li><?= h(t('connect_java_step_9')) ?><br>
-                    <img src="/assets/howtoconnect/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2026-04-06_212627.png" alt="<?= h(t('connect_java_alt_waiting')) ?>">
+                    <img src="/assets/howtoconnect/2627.webp" alt="<?= h(t('connect_java_alt_waiting')) ?>">
                 </li>
                 <li><?= h(t('connect_java_step_10')) ?><br>
-                    <img src="/assets/howtoconnect/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2026-04-06_212716.png" alt="<?= h(t('connect_java_alt_complete')) ?>">
+                    <img src="/assets/howtoconnect/2716.webp" alt="<?= h(t('connect_java_alt_complete')) ?>">
                 </li>
             </ol>
         </section>
@@ -96,31 +96,31 @@ $page_desc_key  = 'connect_intro';
             <ol>
                 <li><?= h(t('connect_bedrock_step_1')) ?></li>
                 <li><?= h(t('connect_bedrock_step_2')) ?><br>
-                    <img src="/assets/howtoconnect/2910.png" alt="<?= h(t('connect_bedrock_alt_launcher')) ?>">
+                    <img src="/assets/howtoconnect/2910.webp" alt="<?= h(t('connect_bedrock_alt_launcher')) ?>">
                 </li>
                 <li><?= h(t('connect_bedrock_step_3')) ?><br>
-                    <img src="/assets/howtoconnect/2933.png" alt="<?= h(t('connect_bedrock_alt_play')) ?>">
+                    <img src="/assets/howtoconnect/2933.webp" alt="<?= h(t('connect_bedrock_alt_play')) ?>">
                 </li>
                 <li><?= h(t('connect_bedrock_step_4')) ?><br>
-                    <img src="/assets/howtoconnect/2942.png" alt="<?= h(t('connect_bedrock_alt_server_tab')) ?>">
+                    <img src="/assets/howtoconnect/2942.webp" alt="<?= h(t('connect_bedrock_alt_server_tab')) ?>">
                 </li>
                 <li><?= h(t('connect_bedrock_step_5')) ?><br>
-                    <img src="/assets/howtoconnect/2949.png" alt="<?= h(t('connect_bedrock_alt_add_server')) ?>">
+                    <img src="/assets/howtoconnect/2949.webp" alt="<?= h(t('connect_bedrock_alt_add_server')) ?>">
                 </li>
                 <li><?= t('connect_bedrock_step_6') ?><br>
-                    <img src="/assets/howtoconnect/3115.png" alt="<?= h(t('connect_bedrock_alt_info_input')) ?>">
+                    <img src="/assets/howtoconnect/3115.webp" alt="<?= h(t('connect_bedrock_alt_info_input')) ?>">
                 </li>
                 <li><?= h(t('connect_bedrock_step_7')) ?><br>
-                    <img src="/assets/howtoconnect/3138.png" alt="<?= h(t('connect_bedrock_alt_confirm')) ?>">
+                    <img src="/assets/howtoconnect/3138.webp" alt="<?= h(t('connect_bedrock_alt_confirm')) ?>">
                 </li>
                 <li><?= h(t('connect_bedrock_step_8')) ?><br>
-                    <img src="/assets/howtoconnect/3156.png" alt="<?= h(t('connect_bedrock_alt_press_play')) ?>">
+                    <img src="/assets/howtoconnect/3156.webp" alt="<?= h(t('connect_bedrock_alt_press_play')) ?>">
                 </li>
                 <li><?= h(t('connect_bedrock_step_9')) ?><br>
-                    <img src="/assets/howtoconnect/3224.png" alt="<?= h(t('connect_bedrock_alt_waiting')) ?>">
+                    <img src="/assets/howtoconnect/3224.webp" alt="<?= h(t('connect_bedrock_alt_waiting')) ?>">
                 </li>
                 <li><?= h(t('connect_bedrock_step_10')) ?><br>
-                    <img src="/assets/howtoconnect/3251.png" alt="<?= h(t('connect_bedrock_alt_complete')) ?>">
+                    <img src="/assets/howtoconnect/3251.webp" alt="<?= h(t('connect_bedrock_alt_complete')) ?>">
                 </li>
             </ol>
 
@@ -133,7 +133,7 @@ $page_desc_key  = 'connect_intro';
             <h2><?= h(t('connect_troubleshooting_heading')) ?></h2>
             
             <h3><?= h(t('connect_troubleshooting_not_working')) ?></h3>
-            <img src="/assets/howtoconnect/image.webp" alt="<?= h(t('connect_troubleshooting_image_alt')) ?>" style="max-width: 100%; height: auto;">
+            <img src="/assets/howtoconnect/3300.webp" alt="<?= h(t('connect_troubleshooting_image_alt')) ?>" style="max-width: 100%; height: auto;">
             <ul>
                 <li><?= h(t('connect_troubleshooting_not_working_1')) ?></li>
                 <li><?= h(t('connect_troubleshooting_not_working_2')) ?></li>

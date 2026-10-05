@@ -1,0 +1,12 @@
+{
+  "name": "mckaguyaweb-tools",
+  "private": true,
+  "type": "module",
+  "description": "開発用ツール（画像の最適化など）。サイト本体は PHP で、Node は本番では使いません。",
+  "scripts": {
+    "optimize": "node tools/optimize-images.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.0"
+  }
+}

@@ -11,12 +11,12 @@ $imageDir = $root . '/assets/gallery';
 $defaults = [
     'hero_title' => "物語の街を、\n歩ける世界に。",
     'hero_intro' => '本プロジェクトは、マインクラフトにおいて「超かぐや姫！」の世界観を忠実に、かつ独自の解釈を加えて再現することを目的に始動しました。',
-    'hero_image' => '2026-10-05_17.31.29.webp',
+    'hero_image' => '1015.webp',
     'hero_image_alt' => '星の海に浮かぶツクヨミの鳥居と光の道',
     'gallery' => [
-        ['title'=>'路上ライブが行われた道','description'=>'光に導かれて、ライブの余韻を歩く。','images'=>['2026-10-04_02.43.18.webp','2026-10-04_02.41.29.webp']],
-        ['title'=>'ネオン商店街','description'=>'灯りが連なる、街のにぎわい。','images'=>['2026-10-04_02.31.28.webp','2026-10-04_02.29.10.webp']],
-        ['title'=>'川床','description'=>'水辺に灯る、やわらかな時間。','images'=>['2026-10-04_02.12.49.webp','2026-10-04_02.12.30.webp']],
+        ['title'=>'路上ライブが行われた道','description'=>'光に導かれて、ライブの余韻を歩く。','images'=>['1014.webp','1013.webp']],
+        ['title'=>'ネオン商店街','description'=>'灯りが連なる、街のにぎわい。','images'=>['1010.webp','1009.webp']],
+        ['title'=>'川床','description'=>'水辺に灯る、やわらかな時間。','images'=>['1008.webp','1007.webp']],
     ],
     'news' => [
         ['date'=>'2026.08.29','text'=>'メンバーを募集しています'],
@@ -44,7 +44,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mime = (new finfo(FILEINFO_MIME_TYPE))->file($file['tmp_name']);
         $ext = ['image/webp'=>'webp','image/png'=>'png','image/jpeg'=>'jpg','image/avif'=>'avif'][$mime] ?? null;
         if ($file['error'] === UPLOAD_ERR_OK && $file['size'] <= 15 * 1024 * 1024 && $ext) {
-            $name = 'editor-' . date('Ymd-His') . '-' . bin2hex(random_bytes(3)) . '.' . $ext;
+            // ファイル名は連番（既存の数字ファイル名の最大値 + 1）にする
+            $numbers = array_map('intval', array_filter(array_map(static fn($n) => pathinfo($n, PATHINFO_FILENAME), $imageFiles), 'ctype_digit'));
+            $name = ((max($numbers ?: [0])) + 1) . '.' . $ext;
             if (move_uploaded_file($file['tmp_name'], $imageDir . '/' . $name)) $message = '画像を追加しました。選択欄から使えます。';
         } else $message = '画像を追加できませんでした。WebP、PNG、JPEG、AVIF（15MB以下）を選んでください。';
         $imageFiles = array_values(array_filter(scandir($imageDir) ?: [], static fn($n) => preg_match('/\.(webp|png|jpe?g|avif)$/i', $n)));
