@@ -16,16 +16,16 @@
 
   let themes = [
     [
-      { src: '/assets/gallery/2026-10-04_02.43.18.webp', alt: '路上ライブが行われた道', title: '路上ライブが行われた道', description: '光に導かれて、ライブの余韻を歩く。' },
-      { src: '/assets/gallery/2026-10-04_02.41.29.webp', alt: 'ランタンに照らされたライブの通り', title: '路上ライブが行われた道', description: 'ランタンの灯りが続く、夜の通り。' }
+      { src: '/assets/gallery/1014.webp', alt: '路上ライブが行われた道', title: '路上ライブが行われた道', description: '光に導かれて、ライブの余韻を歩く。' },
+      { src: '/assets/gallery/1013.webp', alt: 'ランタンに照らされたライブの通り', title: '路上ライブが行われた道', description: 'ランタンの灯りが続く、夜の通り。' }
     ],
     [
-      { src: '/assets/gallery/2026-10-04_02.31.28.webp', alt: 'ネオン商店街の街並み', title: 'ネオン商店街', description: '灯りが連なる、街のにぎわい。' },
-      { src: '/assets/gallery/2026-10-04_02.29.10.webp', alt: '夜のネオン商店街を見上げた景色', title: 'ネオン商店街', description: '夜の路地を抜けて、街の奥へ。' }
+      { src: '/assets/gallery/1010.webp', alt: 'ネオン商店街の街並み', title: 'ネオン商店街', description: '灯りが連なる、街のにぎわい。' },
+      { src: '/assets/gallery/1009.webp', alt: '夜のネオン商店街を見上げた景色', title: 'ネオン商店街', description: '夜の路地を抜けて、街の奥へ。' }
     ],
     [
-      { src: '/assets/gallery/2026-10-04_02.12.49.webp', alt: '水辺に広がる川床', title: '川床', description: '水辺に灯る、やわらかな時間。' },
-      { src: '/assets/gallery/2026-10-04_02.12.30.webp', alt: '夕暮れの川床と水面', title: '川床', description: '夕暮れの光が水面にほどける。' }
+      { src: '/assets/gallery/1008.webp', alt: '水辺に広がる川床', title: '川床', description: '水辺に灯る、やわらかな時間。' },
+      { src: '/assets/gallery/1007.webp', alt: '夕暮れの川床と水面', title: '川床', description: '夕暮れの光が水面にほどける。' }
     ]
   ];
 
