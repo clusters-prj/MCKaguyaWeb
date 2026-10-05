@@ -84,3 +84,6 @@
 @media(prefers-reduced-motion:reduce){.feature-gallery *{transition:none!important}}
 
 .feature-gallery__caption{max-width:min(820px,82%)}.home-scroll-page .feature-gallery__caption h3{font-size:clamp(1.9rem,3.5vw,3.35rem)}@media(min-width:681px){.feature-arrow--prev{right:84px;left:auto}.feature-arrow--next{right:20px}}
+
+/* ヒーローが width:100% + padding で画面幅を超え、モバイルで右側が切れていた問題の修正 */
+.home-scroll-page .home-hero{box-sizing:border-box}

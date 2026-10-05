@@ -34,9 +34,7 @@ if (!isset($page_desc)) {
     <meta name="description" content="<?= h($page_desc) ?>">
 
     <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Silkscreen:wght@400;700&family=Zen+Old+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/templates/fonts.php'; ?>
 
     <!-- 検索エンジン向け: 正規URLと各言語版の対応関係 -->
     <link rel="canonical" href="<?= h(absolute_url(lang_url(current_lang()))) ?>">
