@@ -85,7 +85,6 @@
 
 .feature-gallery__caption{max-width:min(820px,82%)}.home-scroll-page .feature-gallery__caption h3{font-size:clamp(1.9rem,3.5vw,3.35rem)}@media(min-width:681px){.feature-arrow--prev{right:84px;left:auto}.feature-arrow--next{right:20px}}
 
-<<<<<<< HEAD
 /* Portrait layouts: stack content and scale the artwork to the available height. */
 @media (max-aspect-ratio: 4/5) {
   .home-scroll-page>nav ul{flex-wrap:wrap;justify-content:center;row-gap:8px}
@@ -412,7 +411,11 @@
     font-size: .55rem;
   }
 }
-=======
+
 /* ヒーローが width:100% + padding で画面幅を超え、モバイルで右側が切れていた問題の修正 */
 .home-scroll-page .home-hero{box-sizing:border-box}
->>>>>>> 4cbec4cac353410a76836473506f3a1b3e07c892
+
+
+/* 「接続方法は こちら」のリンクを暗い背景の上でも読めるようにする */
+.home-join__link{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:.25em}
+.home-join__link:hover,.home-join__link:focus-visible{color:#ffd9b8}

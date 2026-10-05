@@ -28,7 +28,7 @@ $page_desc_key  = 'site_description';
         <div class="home-hero__note">A world built block by block.</div>
       </div>
       <figure class="home-hero__visual">
-        <img src="<?= h('/assets/gallery/' . basename($home_value('hero_image', '1015.webp'))) ?>" alt="<?= h($home_value('hero_image_alt', '星の海に浮かぶツクヨミの鳥居と光の道')) ?>" fetchpriority="high">
+        <img width="1280" height="720" src="<?= h('/assets/gallery/' . basename($home_value('hero_image', '1015.webp'))) ?>" alt="<?= h($home_value('hero_image_alt', '星の海に浮かぶツクヨミの鳥居と光の道')) ?>" fetchpriority="high">
         <span class="hero-orbit" aria-hidden="true"></span>
         <figcaption><span>TSUKUYOMI / MOON GATE</span><span>星降る海へ</span></figcaption>
       </figure>
@@ -46,7 +46,7 @@ $page_desc_key  = 'site_description';
           <a class="home-text-link" href="/pages/gameinfo.php"><?= h(t('nav_gameinfo')) ?><span aria-hidden="true">↗</span></a>
         </div>
         <figure class="home-intro__image reveal-side reveal-side--right">
-          <img src="/assets/gallery/945.webp" alt="水辺に建つツクヨミの街への入口" loading="lazy">
+          <img width="1280" height="720" src="/assets/gallery/945.webp" alt="水辺に建つツクヨミの街への入口" loading="lazy">
           <figcaption><span>THE GATE TO TSUKUYOMI</span><span>その先に広がる、もうひとつの世界。</span></figcaption>
         </figure>
       </div>
@@ -60,7 +60,7 @@ $page_desc_key  = 'site_description';
       </div>
       <article class="feature-gallery" data-feature-gallery aria-roledescription="カルーセル" aria-label="ツクヨミの再現建築">
         <div class="feature-gallery__image-wrap">
-          <img data-feature-image src="/assets/gallery/1014.webp" alt="路上ライブが行われた道" loading="lazy">
+          <img width="1280" height="720" data-feature-image src="/assets/gallery/1014.webp" alt="路上ライブが行われた道" loading="lazy">
           <div class="feature-gallery__shade"></div>
           <div class="feature-gallery__coordinates" aria-hidden="true"><span>35° 39' 12.0" N</span><i></i><span>BLOCK / BY / BLOCK</span></div>
           <div class="feature-gallery__caption" aria-live="polite" aria-atomic="true">
@@ -82,10 +82,10 @@ $page_desc_key  = 'site_description';
       <script>window.HOMEPAGE_GALLERY = <?= json_encode($home_content['gallery'] ?? null, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>;</script>
       <div class="home-builds">
         <div class="home-builds__intro"><p class="home-kicker">A LIVING CITY</p><h3>街のあちこちに、<br>つくり手の景色。</h3><p>再現エリアの外にも、メンバーが育ててきた風景が広がっています。</p></div>
-        <figure><img src="/assets/gallery/1011.webp" alt="灯りがともる和風の街並み" loading="lazy"><figcaption>夜の街並み</figcaption></figure>
-        <figure><img src="/assets/gallery/661.webp" alt="桜に囲まれた木造の門" loading="lazy"><figcaption>桜の門</figcaption></figure>
-        <figure><img src="/assets/gallery/767.webp" alt="夜空の下に広がる桜並木と町" loading="lazy"><figcaption>星明かりの町</figcaption></figure>
-        <figure><img src="/assets/gallery/893.webp" alt="水辺の灯りと遠くに見える塔" loading="lazy"><figcaption>水辺の塔</figcaption></figure>
+        <figure><img width="1280" height="720" src="/assets/gallery/1011.webp" alt="灯りがともる和風の街並み" loading="lazy"><figcaption>夜の街並み</figcaption></figure>
+        <figure><img width="1280" height="720" src="/assets/gallery/661.webp" alt="桜に囲まれた木造の門" loading="lazy"><figcaption>桜の門</figcaption></figure>
+        <figure><img width="1280" height="720" src="/assets/gallery/767.webp" alt="夜空の下に広がる桜並木と町" loading="lazy"><figcaption>星明かりの町</figcaption></figure>
+        <figure><img width="1280" height="720" src="/assets/gallery/893.webp" alt="水辺の灯りと遠くに見える塔" loading="lazy"><figcaption>水辺の塔</figcaption></figure>
       </div>
       <p class="gallery-swipe-hint"><span aria-hidden="true">↔</span> 3つの風景はスワイプ・矢印操作で順に切り替わります</p>
     </section>
@@ -118,9 +118,9 @@ $page_desc_key  = 'site_description';
     </section>
 
     <section class="home-join reveal" id="join" aria-labelledby="join-title">
-      <img src="/assets/gallery/903.webp" alt="ライブステージの背景となるツクヨミの建築" loading="lazy">
+      <img width="1280" height="720" src="/assets/gallery/903.webp" alt="ライブステージの背景となるツクヨミの建築" loading="lazy">
       <div class="home-join__veil"></div>
-      <div class="home-join__content reveal-side reveal-side--left"><p class="home-kicker">YOUR NEXT ADVENTURE STARTS HERE</p><h2 id="join-title">この世界の続きを、<br><em>一緒につくろう。</em></h2><p><?= h(t('contact_discord_info')) ?></p><a class="home-button home-button--light" href="/pages/contact.php"><?= h(t('contact_discord_link')) ?><span aria-hidden="true">↗</span></a></div>
+      <div class="home-join__content reveal-side reveal-side--left"><p class="home-kicker">YOUR NEXT ADVENTURE STARTS HERE</p><h2 id="join-title">この世界の続きを、<br><em>一緒につくろう。</em></h2><p><?= h(t('contact_discord_info')) ?> <a class="home-join__link" href="/pages/gameinfos/connect.php"><?= h(t('contact_discord_connect')) ?></a></p><a class="home-button home-button--light" href="/pages/contact.php"><?= h(t('contact_discord_link')) ?><span aria-hidden="true">↗</span></a></div>
       <span class="home-join__index">05 — 05 <i></i> JOIN THE PROJECT</span>
     </section>
   </main>
