@@ -200,7 +200,7 @@ return [
     'connect_java_device_mac' => 'Mac OS',
     'connect_java_device_linux' => 'Linux',
     'connect_supported_versions' => '지원 버전',
-    'connect_java_version_info' => '1.9.0 ~ 26.1.2<br>※현재 호환성 문제로 <strong>26.2 이상 버전은 이용하실 수 없습니다.</strong>',
+    'connect_java_version_info' => '1.9.0 ~ 최신 버전<br><strong>최신 버전도 지원합니다.</strong>',
     'connect_recommended_version' => '권장 버전',
     'connect_java_recommended_version' => '26.1.2 (네이티브 지원)',
     'connect_method_heading' => '접속 방법',

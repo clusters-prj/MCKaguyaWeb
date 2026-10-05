@@ -200,7 +200,7 @@ return [
     'connect_java_device_mac' => 'Mac OS',
     'connect_java_device_linux' => 'Linux',
     'connect_supported_versions' => 'Versões Suportadas',
-    'connect_java_version_info' => '1.9.0 ~ 26.1.2<br>※Devido a incompatibilidades, <strong>versões 26.2 ou superiores não são suportadas no momento.</strong>',
+    'connect_java_version_info' => '1.9.0 ~ versão mais recente<br><strong>A versão mais recente também é suportada.</strong>',
     'connect_recommended_version' => 'Versão Recomendada',
     'connect_java_recommended_version' => '26.1.2 (Suporte nativo)',
     'connect_method_heading' => 'Passo a Passo para Conectar',
