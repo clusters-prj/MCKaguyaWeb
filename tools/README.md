@@ -4,7 +4,7 @@ PHPで動作するローカル向けの編集画面です。コードを書か�
 
 ## 起動方法
 
-プロジェクトのルートフォルダーでPHP開発サーバーを起動します。
+プロジェクトのルートフォルダーでPHP開発サーバーを起動します（編集ツールだけがPHPで動きます。サイト本体は `npm run dev` で別に起動します）。
 
 ```bash
 php -S 0.0.0.0:8000
@@ -34,7 +34,7 @@ http://192.168.1.20:8000/tools/editor.php
 
 ## 保存先
 
-「変更を保存」すると `data/homepage.json` に書き込まれ、サイトへすぐ反映されます。アップロードした画像は `assets/gallery/` に保存されます。JSONファイルを削除または空にすると、サイトは初期設定の内容で表示します。
+「変更を保存」すると `data/homepage.json` に書き込まれ、サイトへすぐ反映されます。アップロードした画像は `public/assets/gallery/` に保存されます。サイト本体は `data/homepage.json` をリクエストごとに読み込むため、再ビルドは不要です。JSONファイルを削除または空にすると、サイトは初期設定の内容で表示します。
 
 ## アクセス範囲について
 
@@ -42,7 +42,7 @@ http://192.168.1.20:8000/tools/editor.php
 
 ## 画像の最適化（開発用）
 
-`tools/optimize-images.mjs` は、画像を縮小して WebP に変換するスクリプトです。手元のPCで実行するだけの開発用ツールで、サイトの実行や本番サーバーには Node は不要です。
+`tools/optimize-images.mjs` は、画像を縮小して WebP に変換するスクリプトです。手元のPCで実行するだけの開発用ツールで、本番でこのスクリプトを実行する必要はありません。
 
 ```bash
 npm install                 # 初回のみ
@@ -50,4 +50,4 @@ npm run optimize            # ドライラン（変換後のサイズを表示�
 npm run optimize -- --write # 実際に書き込む
 ```
 
-既定の対象は `assets/howtoconnect` と `assets/gallery` です。オプション（`--delete-original` / `--max` / `--quality` / 対象ディレクトリ）はスクリプト冒頭のコメントを参照してください。拡張子が変わった画像は、ページ側の参照パスを手で直す必要があります。
+既定の対象は `public/assets/howtoconnect` と `public/assets/gallery` です。オプション（`--delete-original` / `--max` / `--quality` / 対象ディレクトリ）はスクリプト冒頭のコメントを参照してください。拡張子が変わった画像は、ページ側の参照パスを手で直す必要があります。

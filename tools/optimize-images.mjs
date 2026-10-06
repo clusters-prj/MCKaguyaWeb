@@ -4,7 +4,7 @@
  *   npm install            # 初回のみ
  *   npm run optimize       # ドライラン: 変換後のサイズを表示するだけ（何も書き込まない）
  *   npm run optimize -- --write
- *   npm run optimize -- --write --delete-original assets/howtoconnect
+ *   npm run optimize -- --write --delete-original public/assets/howtoconnect
  *
  * 動作:
  *   - PNG / JPEG を長辺 --max px 以内に縮小して WebP に変換（同じ場所に .webp を作成）
@@ -18,7 +18,7 @@
  *   --delete-original   変換に成功した PNG/JPEG を削除する（--write が必要）
  *   --max <px>          長辺の上限（既定 1920）
  *   --quality <1-100>   WebP の品質（既定 80）
- *   対象ディレクトリ    省略時は assets/howtoconnect と assets/gallery
+ *   対象ディレクトリ    省略時は public/assets/howtoconnect と public/assets/gallery
  */
 import { readdir, readFile, writeFile, unlink } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
@@ -47,7 +47,7 @@ if (deleteOriginal && !write) {
   process.exit(1);
 }
 
-const targets = (dirs.length ? dirs : ['assets/howtoconnect', 'assets/gallery']).map((d) => path.resolve(root, d));
+const targets = (dirs.length ? dirs : ['public/assets/howtoconnect', 'public/assets/gallery']).map((d) => path.resolve(root, d));
 const exts = new Set(['.png', '.jpg', '.jpeg', '.webp']);
 
 async function* walk(dir) {

@@ -1,4 +1,4 @@
-name: Syntax Check
+name: Check
 
 on:
   push:
@@ -9,40 +9,37 @@ on:
       - main
 
 jobs:
-  syntax-check:
+  check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.2'
-
-      # サイトの本体はPHPなのに、これまで構文チェックの対象外だった。
-      # 1ファイルでもパースエラーがあると本番で白画面になるため必須。
-      - name: Check PHP syntax
-        run: |
-          set -o pipefail
-          find . -name '*.php' -not -path './vendor/*' -print0 \
-            | xargs -0 -n1 -P4 php -l
-
-      # 翻訳キーの過不足を検出する。
-      # 足りないキーは画面に [[key_name]] と出てしまう。
-      - name: Check translation keys
-        run: php tools/check_lang_keys.php
-
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # 翻訳キーの過不足を検出する。
+      # 足りないキーは画面に [[key_name]] と出てしまう。
+      - name: Check translation keys
+        run: npm run check:lang
+
+      - name: Type check
+        run: npm run typecheck
 
       - name: Check JSON & YAML Syntax
         run: |
           set -o pipefail
-          python3 -c "import json, glob, sys; [json.load(open(f)) for f in glob.glob('**/*.json', recursive=True)]" \
-          && python3 -c "import yaml, glob, sys; [yaml.safe_load(open(f)) for f in glob.glob('**/*.yml', recursive=True) + glob.glob('**/*.yaml', recursive=True)]"
+          python3 -c "import json, glob, sys; [json.load(open(f)) for f in glob.glob('messages/*.json') + glob.glob('data/*.json') + ['package.json', 'tsconfig.json']]" \
+          && python3 -c "import yaml, glob, sys; [yaml.safe_load(open(f)) for f in glob.glob('.github/**/*.yml', recursive=True)]"
 
       - name: Check Web Files Syntax (Prettier)
-        run: npx prettier --check "**/*.{html,css,js,jsx,ts,tsx,json,md}"
+        run: npx prettier --check "src/**/*.{ts,tsx}" "messages/*.json"
+
+      - name: Build
+        run: npm run build

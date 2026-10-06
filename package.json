@@ -1,12 +1,29 @@
 {
-  "name": "mckaguyaweb-tools",
+  "name": "mckaguyaweb",
   "private": true,
   "type": "module",
-  "description": "開発用ツール（画像の最適化など）。サイト本体は PHP で、Node は本番では使いません。",
+  "description": "MCツクヨミ製作委員会ホームページ（Next.js）",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "check:lang": "node tools/check-lang-keys.mjs",
     "optimize": "node tools/optimize-images.mjs"
   },
+  "dependencies": {
+    "next": "^15.5.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
   "devDependencies": {
-    "sharp": "^0.34.0"
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "sharp": "^0.34.0",
+    "typescript": "^5.8.0"
   }
 }
