@@ -1,0 +1,208 @@
+:root {
+    --indigo-primary: var(--primary-color, #4f46e5);
+    --indigo-light: rgba(79, 70, 229, 0.12);
+    --indigo-dark: var(--text-main, #312e81);
+    --text-primary: var(--text-main, #1f2937);
+    --text-secondary: var(--text-muted, #6b7280);
+    --border-color: var(--border-color, #e5e7eb);
+}
+
+#member-controls {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--indigo-light) 0%, color-mix(in srgb, var(--card-bg) 70%, var(--indigo-light) 30%) 100%);
+    border-radius: 12px;
+    border-left: 4px solid var(--indigo-primary);
+    color: var(--text-primary);
+}
+
+.search-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.search-input {
+    flex: 1;
+    min-width: 200px;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--indigo-primary);
+    border-radius: 8px;
+    font-family: 'Kiwi Maru', serif;
+    font-size: 1rem;
+    background: var(--card-bg);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    transform: translateY(-2px);
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--indigo-primary);
+    background: var(--card-bg);
+    color: var(--indigo-primary);
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Kiwi Maru', serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background: var(--indigo-primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: var(--indigo-primary);
+    color: white;
+}
+
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.member-card {
+    padding: 1.5rem;
+    border: 2px solid var(--indigo-primary);
+    border-radius: 12px;
+    background: var(--card-bg);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.member-card:hover {
+    box-shadow: 0 8px 24px rgba(79, 70, 229, 0.15);
+    transform: translateY(-4px);
+}
+
+.member-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--indigo-dark);
+}
+
+.member-name a {
+    color: var(--indigo-primary);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.member-name a:hover {
+    border-bottom-color: var(--indigo-primary);
+}
+
+.member-role {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.member-role-tag {
+    display: inline-block;
+    background: var(--indigo-light);
+    color: var(--indigo-primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    border: 1px solid color-mix(in srgb, var(--indigo-primary) 20%, transparent);
+}
+
+.member-social {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.member-social a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--indigo-light);
+    color: var(--indigo-primary);
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid color-mix(in srgb, var(--indigo-primary) 20%, transparent);
+}
+
+.member-social a:hover {
+    background: var(--indigo-primary);
+    color: white;
+    transform: translateX(4px);
+}
+
+.member-count {
+    text-align: center;
+    margin: 2rem 0 1rem 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.no-results {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.no-results-emoji {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .search-container {
+    flex-direction: column;
+    }
+
+    .search-input {
+    min-width: 100%;
+    }
+
+    .member-grid {
+    grid-template-columns: 1fr;
+    }
+
+    .filter-buttons {
+    width: 100%;
+    }
+}
+
+/* 簡体字中国語（zh-CN）用のフォント指定 */
+:lang(zh-CN) {
+font-family:
+    "PingFang SC",        /* macOS / iOS */
+    "Hiragino Sans GB",   /* macOS（旧バージョン向け） */
+    "Microsoft YaHei",    /* Windows */
+    "Noto Sans SC",       /* Webフォント / Androidなど */
+    sans-serif;
+}
