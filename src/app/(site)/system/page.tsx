@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 const css = `
 .system-card { background: var(--card-bg); border-left: 5px solid var(--primary-color); padding: 15px; margin-bottom: 20px; border-radius: 8px; box-shadow: var(--shadow); color: var(--text-main); }
 .system-card h3 { margin-top: 0; color: var(--primary-color); }
+.system-3d { display: block; width: 100%; height: 760px; max-height: 85vh; border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 20px; background: #0a0d1a; }
 .tech-tag { display: inline-block; background: var(--table-th-bg); color: var(--text-main); padding: 2px 8px; border-radius: 999px; font-size: 0.9em; margin-right: 5px; margin-bottom: 5px; border: 1px solid var(--border-color); }
 `;
 
@@ -25,22 +26,24 @@ export default function SystemPage() {
           </p>
 
           <div className="system-card">
-            <h3>インフラストラクチャ</h3>
-            <p>安定した動作と柔軟な管理のため、仮想化環境を採用しています。</p>
-            <span className="tech-tag">Proxmox VE</span>
-            <span className="tech-tag">Ubuntu Server</span>
-            <span className="tech-tag">自宅サーバー</span>
-          </div>
-
-          <div className="system-card">
-            <h3>ネットワーク・プロキシ</h3>
+            <h3>3Dマップで見る構成</h3>
             <p>
-              Velocityをフロントエンドに配置し、複数のバックエンドサーバーを統合しています。
+              自宅のProxmox 4ノードと、外部データセンターの間借りコンテナを、Cloudflare
+              Tunnelでつないでいます。ドラッグで回転、部品や線をタップすると解説が出ます。
             </p>
+            <span className="tech-tag">Proxmox VE</span>
+            <span className="tech-tag">Cloudflare Tunnel</span>
             <span className="tech-tag">Velocity (Proxy)</span>
             <span className="tech-tag">Paper (Backend)</span>
             <span className="tech-tag">MariaDB (Database)</span>
           </div>
+
+          <iframe
+            src="/system-3d.html"
+            title="サーバー構成の3Dマップ"
+            loading="lazy"
+            className="system-3d"
+          />
 
           <div className="system-card">
             <h3>主要プラグイン構成</h3>
@@ -68,30 +71,6 @@ export default function SystemPage() {
             <span className="tech-tag">Node.js</span>
             <span className="tech-tag">TypeScript</span>
           </div>
-        </section>
-
-        <section id="spec">
-          <h3>ハードウェアスペック</h3>
-          <table>
-            <tbody>
-              <tr>
-                <th>CPU</th>
-                <td>Intel Core i7 相当 (仮想割り当て)</td>
-              </tr>
-              <tr>
-                <th>RAM</th>
-                <td>4+4GB DDR4</td>
-              </tr>
-              <tr>
-                <th>Storage</th>
-                <td>HDD/NVMe SSD</td>
-              </tr>
-              <tr>
-                <th>OS</th>
-                <td>Linux (Ubuntu based)</td>
-              </tr>
-            </tbody>
-          </table>
         </section>
       </main>
     </>

@@ -1,0 +1,695 @@
+<!doctype html><html lang="ja"><head><meta charset=utf8><meta name="robots" content="noindex"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>MCツクヨミ サーバー構成</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap">
+<style>
+/* Layout: 3 floating planes (自宅 / Cloudflare / 外部データセンター) in one orbitable 3D scene, with a side panel for explanations.
+   Proxmox nodes are flat slabs; every LXC container is a translucent outlined box with its services inside.
+   Single dark look on purpose: the scene is a night sky for the moon god. */
+:root {
+  --bg: #0a0d1a;
+  --panel: #111630;
+  --line: #262d4c;
+  --fg: #e6e9f5;
+  --muted: #929cc0;
+  --moon: #f0d58a;
+  --mc: #7fd6ff;
+  --db: #f2b84b;
+  --ssh: #6fe0a8;
+  --proxy: #b9c2e0;
+  --cf: #f6821f;
+  --font-ui: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  color-scheme: dark;
+}
+html, body { height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.6;
+  padding-inline: 16px;
+  padding-block: 12px;
+  box-sizing: border-box;
+}
+#app { display: flex; flex-direction: column; height: 100%; gap: 10px; }
+header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; }
+h1 { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: .02em; text-wrap: balance; }
+h1 small { font-family: var(--font-mono); font-size: 11px; font-weight: 400; color: var(--muted); margin-left: 8px; letter-spacing: .08em; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  font: inherit; font-size: 12px; color: var(--fg); background: transparent;
+  border: 1px solid var(--line); border-radius: 3px; padding: 3px 10px;
+  display: inline-flex; align-items: center; gap: 7px; cursor: pointer;
+}
+.chip i { width: 18px; height: 3px; border-radius: 2px; background: var(--c); display: inline-block; }
+.chip[aria-pressed="false"] { opacity: .4; }
+.chip[aria-pressed="false"] i { background: var(--muted); }
+.chip:focus-visible, .btn:focus-visible, select:focus-visible { outline: 2px solid var(--moon); outline-offset: 2px; }
+main { flex: 1; min-height: 0; display: flex; gap: 12px; }
+#stage { position: relative; flex: 1; min-width: 0; min-height: 260px; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; background: var(--bg); }
+#gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
+#gl:active { cursor: grabbing; }
+#hint { position: absolute; left: 10px; bottom: 8px; font-size: 11px; color: var(--muted); pointer-events: none; font-family: var(--font-mono); }
+.tools { position: absolute; right: 8px; top: 8px; display: flex; gap: 6px; }
+.btn { font: inherit; font-size: 12px; color: var(--fg); background: rgba(17,22,48,.85); border: 1px solid var(--line); border-radius: 3px; padding: 3px 10px; cursor: pointer; }
+.btn[aria-pressed="true"] { border-color: var(--moon); color: var(--moon); }
+#panel { width: 330px; flex: 0 0 330px; min-width: 0; overflow-y: auto; border: 1px solid var(--line); border-radius: 4px; background: var(--panel); padding: 14px; box-sizing: border-box; }
+#panel label { font-size: 11px; color: var(--muted); letter-spacing: .06em; display: block; margin-bottom: 4px; }
+select { width: 100%; font: inherit; font-size: 13px; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 3px; padding: 5px 6px; margin-bottom: 14px; }
+#panel h2 { margin: 0 0 2px; font-size: 17px; text-wrap: balance; }
+.tag { display: inline-block; font-family: var(--font-mono); font-size: 11px; color: var(--tagc, var(--moon)); letter-spacing: .06em; margin-bottom: 8px; }
+#panel p { margin: 0 0 10px; overflow-wrap: anywhere; }
+dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 4px 12px; }
+dt { color: var(--muted); font-size: 12px; padding-top: 1px; }
+dd { margin: 0; min-width: 0; overflow-wrap: anywhere; font-size: 13px; }
+dd code, #panel code { font-family: var(--font-mono); font-size: 12px; color: var(--moon); }
+.flows { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 8px; }
+.flows li { display: grid; grid-template-columns: 10px 1fr; gap: 10px; }
+.flows li b { display: block; width: 4px; height: 100%; min-height: 20px; border-radius: 2px; background: var(--c); }
+.flows span { min-width: 0; overflow-wrap: anywhere; font-size: 13px; }
+.note { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+@media (max-width: 860px) {
+  main { flex-direction: column; }
+  #panel { width: auto; flex: 0 0 auto; max-height: 42%; }
+  #stage { min-height: 240px; }
+  h1 { font-size: 17px; }
+}
+</style>
+
+<div id="app">
+  <header>
+    <h1>MCツクヨミ サーバー構成<small>3D MAP</small></h1>
+    <div class="chips" id="chips"></div>
+  </header>
+  <main>
+    <div id="stage">
+      <canvas id="gl"></canvas>
+      <div class="tools">
+        <button class="btn" id="spin" aria-pressed="false" type="button">自動回転</button>
+        <button class="btn" id="reset" type="button">視点リセット</button>
+      </div>
+      <div id="hint">ドラッグで回転 / 2本指で移動・拡大 / 部品や線をタップで解説</div>
+    </div>
+    <aside id="panel" aria-live="polite">
+      <label for="pick">部品をえらぶ</label>
+      <select id="pick"></select>
+      <div id="info"></div>
+    </aside>
+  </main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  var FLOW = {
+    mc:    { name: "プレイヤー経路", css: "#7fd6ff", hex: 0x7fd6ff, desc: "Velocity から外部の Paper(town)へ送る経路" },
+    db:    { name: "DB接続",         css: "#f2b84b", hex: 0xf2b84b, desc: "外部 Paper から 127 の MariaDB へつなぐ経路" },
+    ssh:   { name: "SSH / SFTP",     css: "#6fe0a8", hex: 0x6fe0a8, desc: "運営のPCから外部コンテナへ入る経路" },
+    proxy: { name: "内部プロキシ",   css: "#b9c2e0", hex: 0xb9c2e0, desc: "Velocity から自宅内サーバーへの振り分け" },
+    web:   { name: "経済Web (fjew)", css: "#ff8fb8", hex: 0xff8fb8, desc: "ブラウザから fjew を開き、残高などを見る経路" }
+  };
+
+  var PLANES = [
+    { id: "home",    name: "運営の自宅",   sub: "Proxmox 4ノード", c: [-10, -0.15, 0], s: [19, 17],   hex: 0x4a63c9, op: 0.24 },
+    { id: "cf",      name: "Cloudflare",   sub: "Access / Tunnel",            c: [3, 3.85, 0],    s: [6, 14],    hex: 0xf6821f, op: 0.2 },
+    { id: "partner", name: "外部データセンター", sub: "独立したクラスタ(間借り)", c: [11, -0.15, 0], s: [11.4, 12.8], hex: 0x3fae8c, op: 0.26 }
+  ];
+
+  /* host: true  = Proxmox ノードの床(平たい板)。side は名札を床のどちら側に置くか(-1 奥 / 1 手前)
+     frame: true = LXC コンテナの枠(半透明の箱)。size の高さが枠の高さ。中のサービスは別ノードとして枠の中に置く */
+  var NODES = [
+    { id: "player", name: "プレイヤー", sub: "Java / Bedrock", pos: [-23.5, 0.45, -4.9], size: [1.8, 0.9, 1.8], hex: 0xdfe6ff, plane: "外",
+      body: "ツクヨミで遊ぶ人たち。Bedrock 版は Velocity 側の Geyser を通って入る構成です。",
+      facts: [] },
+
+    /* ---- Proxmox ノード(自宅) ---- */
+    { id: "nec", host: true, side: -1, name: "NEC", sub: "Proxmox ノード", pos: [-14.2, 0, -2.0], size: [8.6, 0.14, 12.2], hex: 0x6f86e8, plane: "Proxmoxノード",
+      body: "サブノード。ツクヨミの玄関口になる 127 MS-KV と、経済 Web の fjew が動く 105 Web-1 が載っています。",
+      facts: [["ツクヨミ関連", "127 MS-KV / 105 Web-1"], ["ほか", "104 Logs / 107 DDNS / 113 Paperless"]] },
+    { id: "dell", host: true, side: -1, name: "dell", sub: "Proxmox ノード(メイン)", pos: [-5.0, 0, -3.5], size: [8.2, 0.14, 9.0], hex: 0x6f86e8, plane: "Proxmoxノード",
+      body: "メインサーバー。外へ公開するトンネル ProxmoxTunnel1 の cloudflared が動いています。mbp2016 が故障したため、そこにあった VM / コンテナもすべてここに移してあります。",
+      facts: [["ツクヨミ関連", "ProxmoxTunnel1 の cloudflared / 129 MS-K2"], ["ほか", "101 NextCloud / 102 Web-Front1 / 103 Github / 106 DNS / 109 MS-R2 / 111 DiscordBots / 121 Samba-Server / 201 DockerV など"]] },
+    { id: "surpro", host: true, side: 1, name: "surpro", sub: "Proxmox ノード", pos: [-12.0, 0, 6.5], size: [6.0, 0.14, 3.6], hex: 0x6f86e8, plane: "Proxmoxノード",
+      body: "サブノード。130 MS-K3 が載っています。",
+      facts: [["ツクヨミ関連", "130 MS-K3"]] },
+    { id: "pbs", name: "HP-PBS", sub: "バックアップ専用", pos: [-4.6, 0.4, 6.5], size: [2.6, 0.9, 1.8], hex: 0xb48cff, plane: "Proxmoxノード",
+      body: "Proxmox Backup Server。各ノードの VM / コンテナのバックアップを受け止める専用機です。",
+      facts: [["役割", "バックアップ先(通常のVM/CTは載せない)"]] },
+
+    /* ---- 127 MS-KV(NEC) ---- */
+    { id: "ct127", frame: true, name: "127 MS-KV", sub: "LXC コンテナ", pos: [-14.2, 1.12, -4.9], size: [7.6, 2.1, 5.2], hex: 0x7fb4ff, plane: "自宅",
+      body: "ツクヨミの玄関口になるコンテナ。Velocity、MariaDB、外部へつなぐ cloudflared の入口が、すべてこの中に入っています。",
+      facts: [["ノード", "NEC"], ["中身", "Velocity / MariaDB / cf-access-paper"]] },
+    { id: "velocity", name: "Velocity", sub: "プロキシ", pos: [-16.4, 0.77, -4.9], size: [3.0, 1.4, 2.2], hex: 0x7fb4ff, plane: "自宅",
+      body: "プレイヤーを受けて、自宅内の 129・130 と外部の Paper(town)に振り分けるプロキシ。",
+      facts: [["コンテナ", "127 MS-KV"], ["town の転送先", "<code>localhost:30001</code>"]] },
+    { id: "mariadb", name: "MariaDB :3306", sub: "ゲームと Web のDB", pos: [-12.3, 0.42, -6.2], size: [1.7, 0.7, 1.4], hex: 0xf2b84b, plane: "自宅",
+      body: "外部の Paper のプラグインと fjew がつなぐデータベース。インターネットには直接出さず、Cloudflare Tunnel と Access の先に隠しています。",
+      facts: [["コンテナ", "127 MS-KV"], ["バージョン", "MariaDB 11.8.6"], ["待受", "実質 <code>0.0.0.0</code>(mysqld.cnf の 127.0.0.1 は別設定で上書き)"], ["つまずき", "<code>skip_name_resolve</code> の設定を <code>z-custom.cnf</code> に追記して解決"]] },
+    { id: "cfpaper", name: "cf-access-paper", sub: "localhost:30001", pos: [-12.1, 0.42, -3.6], size: [2.2, 0.7, 1.4], hex: 0x7fd6ff, plane: "自宅",
+      body: "Velocity が外部の Paper に届くためのローカルの入口。cloudflared が ゲーム用の窓口のホスト名へつなぎ直します。",
+      facts: [["コンテナ", "127 MS-KV"], ["種類", "systemd サービス(<code>cloudflared access tcp</code>)"], ["ポート", "30001(隣の番号と混同しないよう意図的に選択)"], ["落とし穴", "velocity.toml が <code>localhost:25565</code> のままだと Velocity 自身に戻ってループする"]] },
+
+    /* ---- 105 Web-1(NEC) ---- */
+    { id: "ct105", frame: true, name: "105 Web-1", sub: "LXC コンテナ", pos: [-14.2, 0.87, 0.9], size: [7.6, 1.6, 3.6], hex: 0xff8fb8, plane: "自宅",
+      body: "Web 系のサービスをまとめて動かしているコンテナ。経済システムの fjew もここで動いています。",
+      facts: [["ノード", "NEC"], ["中身", "fjew / fjeapi / msal-node / wra(pm2 で管理)"]] },
+    { id: "fjew", name: "fjew", sub: "経済の Web UI", pos: [-14.9, 0.42, 0.9], size: [2.2, 0.7, 1.5], hex: 0xff8fb8, plane: "自宅",
+      body: "経済システム(FJEconomy)の Web UI。連携したアカウントの残高などを見られるサイトで、Node.js(Express)で動いています。データは MariaDB に直接読み書きします。",
+      facts: [["コンテナ", "105 Web-1(pm2 で管理)"], ["ポート", "3200"], ["公開", "fjew.clusters-prj.com(Access なし。誰でも開ける設定)"], ["機能", "ログイン、メールでのパスワード再設定"], ["ほか", "同じ Web-1 に読み取り用の API(fjeapi)もあります"]] },
+
+    /* ---- dell 上のもの ---- */
+    { id: "tunnel1", name: "dell cloudflared", sub: "ProxmoxTunnel1(ホスト上)", pos: [-6.4, 0.52, -6.3], size: [2.4, 0.9, 1.6], hex: 0xf6a35a, plane: "自宅",
+      body: "自宅の公開口になっているトンネル。dell のホスト上で直接動いていて、コンテナではありません。ここに DB用の窓口 と fjew のルートを足してあります。",
+      facts: [["ノード", "dell"], ["トンネル", "ProxmoxTunnel1"], ["追加ルート", "DB用の窓口 → 127 MS-KV の MariaDB(3306)"]] },
+    { id: "ct129", frame: true, name: "129 MS-K2", sub: "LXC コンテナ", pos: [-5.0, 0.87, -2.6], size: [6.6, 1.6, 3.2], hex: 0x9db5ff, plane: "自宅",
+      body: "127 の Velocity の配下にある、自宅内の Minecraft サーバーのコンテナ。mbp2016 の故障で dell に移りました。", facts: [["ノード", "dell(旧 mbp2016)"], ] },
+    { id: "k2", name: "Paper", sub: "Minecraft サーバー", pos: [-5.0, 0.42, -2.6], size: [2.4, 0.7, 1.5], hex: 0x9db5ff, plane: "自宅",
+      body: "Velocity から振り分けられる Minecraft サーバー本体。", facts: [["コンテナ", "129 MS-K2"]] },
+
+    /* ---- surpro 上のもの ---- */
+    { id: "ct130", frame: true, name: "130 MS-K3", sub: "LXC コンテナ", pos: [-12.0, 0.87, 6.5], size: [5.0, 1.6, 2.8], hex: 0x9db5ff, plane: "自宅",
+      body: "127 の Velocity の配下にある、自宅内の Minecraft サーバーのコンテナ。", facts: [["ノード", "surpro"], ] },
+    { id: "k3", name: "Paper", sub: "Minecraft サーバー", pos: [-12.0, 0.42, 6.5], size: [2.4, 0.7, 1.5], hex: 0x9db5ff, plane: "自宅",
+      body: "Velocity から振り分けられる Minecraft サーバー本体。", facts: [["コンテナ", "130 MS-K3"]] },
+
+    { id: "ryupc", name: "運営のPC", sub: "Windows", pos: [-7.6, 0.3, 6.5], size: [1.9, 0.7, 1.5], hex: 0x6fe0a8, plane: "自宅",
+      body: "外部コンテナに SSH / SFTP で入るときの出発点。手元で cloudflared を動かして、SSH 用の入口経由でつなぎます。",
+      facts: [["コマンド", "<code>cloudflared access tcp</code>"]] },
+
+    /* ---- Cloudflare ---- */
+    { id: "h_db", name: "DB用の窓口", sub: "Service Token で認証", pos: [3, 4.35, -5.4], size: [4.2, 0.7, 1.4], hex: 0xf2b84b, plane: "Cloudflare",
+      body: "外部コンテナから DB へ入るための窓口。人ではなくサービス用のトークンで通します。",
+      facts: [["トンネル", "ProxmoxTunnel1"], ["Access", "ポリシーの動作は「サービス認証 (Service Auth)」"], ["つまずき", "「許可 (Allow)」にしていたため通らず、サービス認証に直して解決"]] },
+    { id: "h_ssh", name: "SSH 用の入口", sub: "メールで Access 許可", pos: [3, 4.35, -1.8], size: [4.2, 0.7, 1.4], hex: 0x6fe0a8, plane: "Cloudflare",
+      body: "運営が外部コンテナに入るための窓口。メールアドレスで本人確認します。",
+      facts: [["トンネル", "Kuma"], ["Access", "メールアドレスのポリシー"]] },
+    { id: "h_mc", name: "ゲーム用の窓口", sub: "→ Paper :25565", pos: [3, 4.35, 1.8], size: [4.2, 0.7, 1.4], hex: 0x7fd6ff, plane: "Cloudflare",
+      body: "Velocity から外部の Paper へ届く窓口。プレイヤーの通信もここを通ります。",
+      facts: [["トンネル", "Kuma"]] },
+    { id: "h_fjew", name: "fjew.clusters-prj.com", sub: "誰でも開ける(Access なし)", pos: [3, 4.35, 5.4], size: [4.2, 0.7, 1.4], hex: 0xff8fb8, plane: "Cloudflare",
+      body: "経済 Web の公開窓口。ログインのあるサイトなので Access は付けず、誰でも開けるようにしています。",
+      facts: [["トンネル", "ProxmoxTunnel1"], ["転送先", "105 Web-1 の fjew(3200)"]] },
+    { id: "browser", name: "ブラウザ", sub: "プレイヤー", pos: [3, 0.45, 10.8], size: [1.8, 0.9, 1.8], hex: 0xdfe6ff, plane: "外",
+      body: "プレイヤーが、残高の確認やアカウント連携のために fjew を開く入口。",
+      facts: [] },
+
+    /* ---- 外部データセンター ---- */
+    { id: "pve", host: true, side: 1, name: "pve", sub: "Proxmox ノード", pos: [11, -0.02, 0], size: [10.2, 0.1, 11.6], hex: 0x6f86e8, plane: "外部データセンター",
+      body: "間借りしている 1 コンテナが載っているノード。ホスト名は Proxmox の初期設定のままの pve です。ノードの管理はクラスタの持ち主が行い、運営が触れるのはコンテナの中だけです。",
+      facts: [["ノード名", "pve"], ["運営が触れる範囲", "pro-mctsukuyomi の中だけ"]] },
+    { id: "container", frame: true, name: "pro-mctsukuyomi", sub: "間借りしている 1 コンテナ", pos: [11, 1.17, 0], size: [8.0, 2.2, 9.2], hex: 0x3fd0a0, plane: "外部データセンター",
+      body: "独立したデータセンター(クラスタ)の pve ノードの上で、運営が間借りしている 1 コンテナ。Kuma トンネル、Paper、DB と SSH の入口は、すべてこのコンテナの中に入っています。",
+      facts: [["借り方", "クラスタ全体ではなく 1 コンテナだけ"], ["経緯", "もとは自宅の 128 MS-K1。kuma 側に移り、名前と ID が変わった"], ["中身", "cloudflared (Kuma) / Paper / cf-access-db / sshd"], ["ホスト側の設定", "クラスタの持ち主が行う(DNS の指定など)"]] },
+    { id: "kuma", name: "cloudflared (Kuma)", sub: "外部側のトンネル", pos: [8.4, 0.45, 0], size: [2.2, 0.9, 1.8], hex: 0xf6a35a, plane: "外部データセンター",
+      body: "外部コンテナの中で動くトンネル。ポート開放なしで、SSH と Paper の 2 本をまとめて公開しています。",
+      facts: [["トンネル名", "Kuma"], ["DNS", "<code>1.1.1.1</code> を設定(クローン元の内部DNS設定が残ると事前チェックで失敗)"], ["永続化", "持ち主側で <code>pct set &lt;VMID&gt; --nameserver 1.1.1.1</code>"]] },
+    { id: "paper", name: "Paper :25565", sub: "town", pos: [13, 0.7, 0], size: [3, 1.4, 2], hex: 0x7fd6ff, plane: "外部データセンター",
+      body: "ツクヨミのゲームサーバー本体(town)。Velocity からはトンネル越しに見え、DB へは手元の cf-access-db を通ってつなぎます。",
+      facts: [["待受", "<code>25565</code>"], ["DB", "<code>localhost:3306</code> 経由で 127 の MariaDB"]] },
+    { id: "cfdb", name: "cf-access-db", sub: "localhost:3306", pos: [12.5, 0.35, -3.8], size: [2.6, 0.7, 1.5], hex: 0xf2b84b, plane: "外部データセンター",
+      body: "Paper が DB に届くための手元の入口。Service Token を付けて DB用の窓口に接続します。",
+      facts: [["種類", "systemd サービス(<code>cf-access-db</code>)"], ["認証", "Service Token"], ["つまずき", "接続先のホスト名の設定がずれていた"]] },
+    { id: "sshd", name: "sshd", sub: "SSH / SFTP", pos: [12.5, 0.35, 3.8], size: [1.8, 0.7, 1.5], hex: 0x6fe0a8, plane: "外部データセンター",
+      body: "運営が管理作業で入る口。外には出さず、Kuma トンネルの中だけで受けます。", facts: [] }
+  ];
+
+  var LINKS = [
+    { id: "l_player", a: "player", b: "velocity", flow: "mc", lift: 1.6, name: "プレイヤー → Velocity", body: "プレイヤーが Velocity に接続する最初の区間です。", facts: [["ポート", "25565(想定)"]] },
+    { id: "l_vel_cp", a: "velocity", b: "cfpaper", flow: "mc", lift: 0.8, name: "Velocity → cf-access-paper", body: "town への接続をローカルの 30001 番に向けます。", facts: [["設定", "<code>velocity.toml</code> の town → <code>localhost:30001</code>"]] },
+    { id: "l_cp_hmc", a: "cfpaper", b: "h_mc", flow: "mc", lift: 3.2, name: "cf-access-paper → ゲーム用の窓口", body: "cloudflared がローカルの接続を Cloudflare 経由で ゲーム用の窓口に運びます。", facts: [["ホスト", "非公開"]] },
+    { id: "l_hmc_kuma", a: "h_mc", b: "kuma", flow: "mc", lift: 2.2, name: "ゲーム用の窓口 → Kuma トンネル", body: "Cloudflare から外部コンテナ内の cloudflared (Kuma) へ届きます。", facts: [] },
+    { id: "l_kuma_paper", a: "kuma", b: "paper", flow: "mc", lift: 0.8, name: "Kuma → Paper", body: "トンネルの出口から Paper の 25565 番へ渡します。", facts: [["転送先", "<code>localhost:25565</code>"]] },
+
+    { id: "l_paper_cfdb", a: "paper", b: "cfdb", flow: "db", lift: 0.8, name: "Paper → cf-access-db", body: "プラグインは自分のコンテナの 3306 番に DB があるつもりで接続します。", facts: [["接続先", "<code>localhost:3306</code>"]] },
+    { id: "l_cfdb_hdb", a: "cfdb", b: "h_db", flow: "db", lift: 2.2, name: "cf-access-db → DB用の窓口", body: "Service Token を付けて Cloudflare Access を通過します。", facts: [["認証", "Service Token"]] },
+    { id: "l_hdb_dell", a: "h_db", b: "tunnel1", flow: "db", lift: 2.2, name: "DB用の窓口 → ProxmoxTunnel1", body: "自宅側のトンネルに入ります。", facts: [["トンネル", "ProxmoxTunnel1"]] },
+    { id: "l_dell_maria", a: "tunnel1", b: "mariadb", flow: "db", lift: 0.9, name: "dell → MariaDB", body: "自宅内のネットワークで 127 の MariaDB にたどり着きます。", facts: [["宛先", "127 MS-KV の MariaDB(3306)"]] },
+
+    { id: "l_pc_hssh", a: "ryupc", b: "h_ssh", flow: "ssh", lift: 1.8, name: "運営のPC → SSH入口", body: "手元の cloudflared がメール認証を済ませてから、SSH の通信を運びます。", facts: [["コマンド", "<code>cloudflared access tcp</code>"]] },
+    { id: "l_hssh_kuma", a: "h_ssh", b: "kuma", flow: "ssh", lift: 2.2, name: "SSH入口 → Kuma トンネル", body: "Cloudflare から外部コンテナ内の cloudflared (Kuma) へ届きます。", facts: [] },
+    { id: "l_kuma_sshd", a: "kuma", b: "sshd", flow: "ssh", lift: 0.8, name: "Kuma → sshd", body: "トンネルの出口から sshd へ渡します。", facts: [] },
+
+    { id: "l_w1", a: "browser", b: "h_fjew", flow: "web", lift: 1.2, name: "ブラウザ → fjew の公開窓口", body: "プレイヤーがブラウザでfjew.clusters-prj.comを開きます。", facts: [] },
+    { id: "l_w2", a: "h_fjew", b: "tunnel1", flow: "web", lift: 2.2, name: "fjew の窓口 → ProxmoxTunnel1", body: "自宅側のトンネルに入ります。", facts: [["トンネル", "ProxmoxTunnel1"]] },
+    { id: "l_w3", a: "tunnel1", b: "fjew", flow: "web", lift: 1.4, name: "dell → fjew", body: "自宅内のネットワークで 105 Web-1 の fjew にたどり着きます。", facts: [["宛先", "105 Web-1 の fjew(3200)"]] },
+    { id: "l_w4", a: "fjew", b: "mariadb", flow: "web", lift: 1.2, name: "fjew → MariaDB", body: "fjew は残高などのデータを MariaDB から直接読み書きします。ゲーム側のプラグインと同じデータベースです。", facts: [["ポイント", "データの正本は DB。Web とプラグインが同じものを見る"]] },
+
+    { id: "l_p2", a: "velocity", b: "k2", flow: "proxy", lift: 2.2, name: "Velocity → 129 MS-K2", body: "自宅内のサーバーへ振り分けます。", facts: [] },
+    { id: "l_p3", a: "velocity", b: "k3", flow: "proxy", lift: 1.4, name: "Velocity → 130 MS-K3", body: "自宅内のサーバーへ振り分けます。", facts: [] }
+  ];
+
+  var OVERVIEW =
+    '<h2>全体の見取り図</h2>' +
+    '<span class="tag">3つの場所を Cloudflare でつなぐ</span>' +
+    '<p>ツクヨミは、自宅(127 の Velocity)と、独立した外部データセンターで間借りしている 1 コンテナ(Paper の town など、ゲーム側はすべてこの中)を、Cloudflare Tunnel でつないでいます。どちらもポート開放は不要です。</p>' +
+    '<p>経済システム(FJEconomy)の Web UI「fjew」は自宅の 105 Web-1 で動いていて、同じ MariaDB を読み書きします。Cloudflare Tunnel 経由で、誰でもブラウザから開けます。</p>' +
+    '<p>自宅は稼働中の Proxmox 4 ノード(dell・NEC・surpro・HP-PBS)で、青い床と紫の箱が各ノードです。枠で囲った箱が LXC コンテナで、動いているサービスはその枠の中に入れてあります。mbp2016 は故障したため、載っていたものは dell に移しています。</p>' +
+    '<ul class="flows">' +
+    Object.keys(FLOW).map(function (k) {
+      return '<li style="--c:' + FLOW[k].css + '"><b></b><span><strong>' + FLOW[k].name + '</strong><br>' + FLOW[k].desc + '</span></li>';
+    }).join("") +
+    '</ul>' +
+    '<p class="note">Tailscale も試しましたが、LXC の TUN デバイスまわりが面倒で見送りました。この図は 2026年10月時点の構成です。</p>';
+
+  var info = document.getElementById("info");
+  var pick = document.getElementById("pick");
+  var chipsEl = document.getElementById("chips");
+  var flowOn = { mc: true, db: true, ssh: true, proxy: true, web: true };
+
+  /* ---------- UI: chips, select, panel ---------- */
+  Object.keys(FLOW).forEach(function (k) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "chip"; b.setAttribute("aria-pressed", "true");
+    b.style.setProperty("--c", FLOW[k].css);
+    b.innerHTML = "<i></i>" + FLOW[k].name;
+    b.addEventListener("click", function () {
+      flowOn[k] = !flowOn[k];
+      b.setAttribute("aria-pressed", String(flowOn[k]));
+      applyFlowVisibility();
+    });
+    chipsEl.appendChild(b);
+  });
+
+  function buildSelect() {
+    var h = '<option value="">全体の見取り図</option>';
+    var order = [];
+    var groups = {};
+    NODES.forEach(function (n) {
+      if (!groups[n.plane]) { groups[n.plane] = []; order.push(n.plane); }
+      groups[n.plane].push(n);
+    });
+    order.forEach(function (g) {
+      h += '<optgroup label="' + g + '">' + groups[g].map(function (n) { return '<option value="' + n.id + '">' + n.name + (n.frame ? "(コンテナ)" : "") + '</option>'; }).join("") + '</optgroup>';
+    });
+    Object.keys(FLOW).forEach(function (k) {
+      h += '<optgroup label="経路: ' + FLOW[k].name + '">' + LINKS.filter(function (l) { return l.flow === k; }).map(function (l) { return '<option value="' + l.id + '">' + l.name + '</option>'; }).join("") + '</optgroup>';
+    });
+    pick.innerHTML = h;
+  }
+  buildSelect();
+
+  function factsHtml(f) {
+    if (!f || !f.length) return "";
+    return "<dl>" + f.map(function (x) { return "<dt>" + x[0] + "</dt><dd>" + x[1] + "</dd>"; }).join("") + "</dl>";
+  }
+
+  function showInfo(id) {
+    pick.value = id || "";
+    if (!id) { info.innerHTML = OVERVIEW; return; }
+    var n = NODES.filter(function (x) { return x.id === id; })[0];
+    if (n) {
+      info.innerHTML = "<h2>" + n.name + "</h2><span class=\"tag\">" + n.plane + " / " + n.sub + "</span><p>" + n.body + "</p>" + factsHtml(n.facts);
+      return;
+    }
+    var l = LINKS.filter(function (x) { return x.id === id; })[0];
+    if (l) {
+      info.innerHTML = "<h2>" + l.name + "</h2><span class=\"tag\" style=\"--tagc:" + FLOW[l.flow].css + "\">" + FLOW[l.flow].name + "</span><p>" + l.body + "</p>" + factsHtml(l.facts);
+    }
+  }
+  showInfo(null);
+
+  /* ---------- 3D scene ---------- */
+  var canvas = document.getElementById("gl");
+  var stage = document.getElementById("stage");
+  var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var renderer, scene, camera;
+  var nodeMeshes = [], nodeById = {}, linkObjs = [], hitMeshes = [];
+  var selected = null;
+  var spinOn = false;
+
+  var sph = { theta: 0.12, phi: 1.05, r: 34 };
+  var DEFAULT_TARGET = new THREE.Vector3(-3.5, 1.8, 0.5);
+  var target = DEFAULT_TARGET.clone();
+  var goal = null;
+
+  function makeLabel(title, sub, accentHex) {
+    var S = 2, padX = 14, titleFont = "700 28px", subFont = "400 20px";
+    var fam = '"Zen Kaku Gothic New","Hiragino Sans","Noto Sans JP",sans-serif';
+    var c = document.createElement("canvas");
+    var g = c.getContext("2d");
+    g.font = titleFont + " " + fam;
+    var w1 = g.measureText(title).width;
+    g.font = subFont + " " + fam;
+    var w2 = sub ? g.measureText(sub).width : 0;
+    var cw = Math.ceil(Math.max(w1, w2) + padX * 2);
+    var ch = sub ? 78 : 52;
+    c.width = cw * S; c.height = ch * S;
+    g = c.getContext("2d");
+    g.scale(S, S);
+    g.fillStyle = "rgba(10,13,26,0.82)";
+    g.fillRect(0, 0, cw, ch);
+    g.fillStyle = "#" + ("000000" + accentHex.toString(16)).slice(-6);
+    g.fillRect(0, 0, 4, ch);
+    g.textBaseline = "middle";
+    g.fillStyle = "#e6e9f5";
+    g.font = titleFont + " " + fam;
+    g.fillText(title, padX, sub ? 26 : ch / 2);
+    if (sub) {
+      g.fillStyle = "#929cc0";
+      g.font = subFont + " " + fam;
+      g.fillText(sub, padX, 56);
+    }
+    var tex = new THREE.CanvasTexture(c);
+    tex.minFilter = THREE.LinearFilter;
+    var sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false }));
+    var k = 0.0125;
+    sp.scale.set(cw * k, ch * k, 1);
+    sp.renderOrder = 10;
+    return sp;
+  }
+
+  function buildScene() {
+    scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x0a0d1a);
+    scene.fog = new THREE.Fog(0x0a0d1a, 80, 170);
+    camera = new THREE.PerspectiveCamera(40, 1, 0.1, 400);
+
+    scene.add(new THREE.AmbientLight(0xaab6ff, 0.75));
+    var dl = new THREE.DirectionalLight(0xfff1cf, 0.9);
+    dl.position.set(-10, 24, 18);
+    scene.add(dl);
+
+    // moon
+    var moon = new THREE.Mesh(new THREE.SphereGeometry(1.5, 32, 24), new THREE.MeshBasicMaterial({ color: 0xf0d58a }));
+    moon.position.set(-24, 11, -16);
+    scene.add(moon);
+    var halo = new THREE.Mesh(new THREE.SphereGeometry(2.2, 32, 24), new THREE.MeshBasicMaterial({ color: 0xf0d58a, transparent: true, opacity: 0.12 }));
+    halo.position.copy(moon.position);
+    scene.add(halo);
+
+    // stars
+    var sg = new THREE.BufferGeometry();
+    var pts = [];
+    for (var i = 0; i < 420; i++) {
+      var th = Math.random() * Math.PI * 2, ph = Math.acos(2 * Math.random() - 1), rr = 85 + Math.random() * 40;
+      pts.push(rr * Math.sin(ph) * Math.cos(th), Math.abs(rr * Math.cos(ph)) * 0.8 + 6, rr * Math.sin(ph) * Math.sin(th));
+    }
+    sg.setAttribute("position", new THREE.Float32BufferAttribute(pts, 3));
+    scene.add(new THREE.Points(sg, new THREE.PointsMaterial({ color: 0xc9d2ff, size: 0.35, sizeAttenuation: true, transparent: true, opacity: 0.7 })));
+
+    // planes
+    PLANES.forEach(function (p) {
+      var geo = new THREE.BoxGeometry(p.s[0], 0.2, p.s[1]);
+      var m = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color: p.hex, transparent: true, opacity: p.op, roughness: 0.9, metalness: 0 }));
+      m.position.set(p.c[0], p.c[1], p.c[2]);
+      scene.add(m);
+      var e = new THREE.LineSegments(new THREE.EdgesGeometry(geo), new THREE.LineBasicMaterial({ color: p.hex, transparent: true, opacity: 0.9 }));
+      e.position.copy(m.position);
+      scene.add(e);
+      var lb = makeLabel(p.name, p.sub, p.hex);
+      lb.position.set(p.c[0], p.c[1] + 0.2, p.c[2] + p.s[1] / 2 + 1.7);
+      scene.add(lb);
+    });
+
+    // nodes: services, Proxmox host slabs, LXC container frames
+    NODES.forEach(function (n) {
+      var geo = new THREE.BoxGeometry(n.size[0], n.size[1], n.size[2]);
+      var isFrame = !!n.frame, isHost = !!n.host;
+      var base = isHost ? 0.12 : 0.18;
+      var mat;
+      if (isFrame) {
+        mat = new THREE.MeshBasicMaterial({ color: n.hex, transparent: true, opacity: 0.12, depthWrite: false });
+      } else {
+        mat = new THREE.MeshStandardMaterial({
+          color: n.hex, roughness: 0.55, metalness: 0.1, emissive: n.hex, emissiveIntensity: base,
+          transparent: isHost, opacity: isHost ? 0.55 : 1
+        });
+      }
+      var mesh = new THREE.Mesh(geo, mat);
+      mesh.position.set(n.pos[0], n.pos[1], n.pos[2]);
+      mesh.userData = { kind: "node", id: n.id, base: base, frame: isFrame, prio: isHost ? 2 : (isFrame ? 1 : 0) };
+      var edgeBase = (isHost || isFrame) ? 0.9 : 0.35;
+      var edge = new THREE.LineSegments(new THREE.EdgesGeometry(geo), new THREE.LineBasicMaterial({ color: (isHost || isFrame) ? n.hex : 0xffffff, transparent: true, opacity: edgeBase }));
+      mesh.add(edge);
+      mesh.userData.edge = edge;
+      mesh.userData.edgeBase = edgeBase;
+      scene.add(mesh);
+      nodeMeshes.push(mesh);
+      nodeById[n.id] = { def: n, mesh: mesh };
+      var lb = makeLabel(n.name, n.sub, n.hex);
+      if (isHost) {
+        lb.position.set(n.pos[0], 0.5, n.pos[2] + n.side * (n.size[2] / 2 + 0.7));
+      } else if (isFrame) {
+        lb.position.set(n.pos[0], n.pos[1] + n.size[1] / 2 + 0.6, n.pos[2] - n.size[2] / 2);
+      } else {
+        lb.position.set(n.pos[0], n.pos[1] + n.size[1] / 2 + 0.85, n.pos[2]);
+      }
+      scene.add(lb);
+    });
+
+    // links
+    var dotGeo = new THREE.SphereGeometry(0.11, 10, 8);
+    LINKS.forEach(function (l) {
+      var A = nodeById[l.a], B = nodeById[l.b];
+      var p0 = new THREE.Vector3(A.def.pos[0], A.def.pos[1] + A.def.size[1] / 2, A.def.pos[2]);
+      var p1 = new THREE.Vector3(B.def.pos[0], B.def.pos[1] + B.def.size[1] / 2, B.def.pos[2]);
+      var mid = p0.clone().add(p1).multiplyScalar(0.5);
+      mid.y = Math.max(p0.y, p1.y) + l.lift;
+      var curve = new THREE.QuadraticBezierCurve3(p0, mid, p1);
+      var col = FLOW[l.flow].hex;
+      var tube = new THREE.Mesh(new THREE.TubeGeometry(curve, 28, 0.05, 6, false), new THREE.MeshBasicMaterial({ color: col, transparent: true, opacity: 0.55 }));
+      scene.add(tube);
+      var hit = new THREE.Mesh(new THREE.TubeGeometry(curve, 20, 0.3, 6, false), new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false }));
+      hit.userData = { kind: "link", id: l.id, flow: l.flow, prio: 0 };
+      scene.add(hit);
+      hitMeshes.push(hit);
+      var dots = [];
+      var cnt = 4;
+      for (var i = 0; i < cnt; i++) {
+        var d = new THREE.Mesh(dotGeo, new THREE.MeshBasicMaterial({ color: 0xffffff }));
+        d.userData.off = i / cnt;
+        scene.add(d);
+        dots.push(d);
+      }
+      linkObjs.push({ def: l, curve: curve, tube: tube, hit: hit, dots: dots, speed: l.flow === "proxy" ? 0.08 : 0.16 });
+    });
+  }
+
+  function applyFlowVisibility() {
+    linkObjs.forEach(function (o) {
+      var on = flowOn[o.def.flow];
+      o.tube.visible = on;
+      o.hit.visible = on;
+      o.dots.forEach(function (d) { d.visible = on; });
+    });
+  }
+
+  function applySelection() {
+    NODES.forEach(function (n) {
+      var m = nodeById[n.id].mesh;
+      var on = selected === n.id;
+      if (m.userData.frame) {
+        m.material.opacity = on ? 0.3 : 0.12;
+      } else {
+        m.material.emissiveIntensity = on ? 0.75 : m.userData.base;
+      }
+      m.userData.edge.material.opacity = on ? 1 : m.userData.edgeBase;
+    });
+    linkObjs.forEach(function (o) {
+      var on = selected === o.def.id;
+      o.tube.material.opacity = on ? 1 : 0.55;
+    });
+  }
+
+  function select(id) {
+    selected = id || null;
+    applySelection();
+    showInfo(selected);
+    if (selected && nodeById[selected]) {
+      var p = nodeById[selected].def.pos;
+      goal = new THREE.Vector3(p[0], Math.max(p[1], 1.2), p[2]);
+    } else if (selected) {
+      var lo = linkObjs.filter(function (o) { return o.def.id === selected; })[0];
+      if (lo) { goal = lo.curve.getPoint(0.5); }
+    } else {
+      goal = DEFAULT_TARGET.clone();
+    }
+  }
+
+  function fitCamera() {
+    var w = stage.clientWidth || 800, h = stage.clientHeight || 500;
+    var aspect = w / h;
+    renderer.setSize(w, h, false);
+    camera.aspect = aspect;
+    var portrait = aspect < 0.95;
+    if (!fitCamera.done) {
+      sph.theta = portrait ? 0.95 : 0.12;
+      var halfW = portrait ? 16 : 23;
+      var vh = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
+      sph.r = Math.max(30, (halfW / (vh * Math.min(aspect, 2.2))) * 1.05);
+      fitCamera.done = true;
+      fitCamera.r0 = sph.r; fitCamera.t0 = sph.theta;
+    }
+    camera.updateProjectionMatrix();
+  }
+
+  function updateCamera() {
+    camera.position.set(
+      target.x + sph.r * Math.sin(sph.phi) * Math.sin(sph.theta),
+      target.y + sph.r * Math.cos(sph.phi),
+      target.z + sph.r * Math.sin(sph.phi) * Math.cos(sph.theta)
+    );
+    camera.lookAt(target);
+  }
+
+  /* ---------- input ---------- */
+  // カメラの向きに合わせて注視点を平行移動する(dx, dy は画面上のピクセル)
+  function panBy(dx, dy) {
+    var h = stage.clientHeight || 500;
+    var k = (2 * sph.r * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2))) / h;
+    var right = new THREE.Vector3(), up = new THREE.Vector3(), fwd = new THREE.Vector3();
+    camera.updateMatrixWorld();
+    camera.matrixWorld.extractBasis(right, up, fwd);
+    target.addScaledVector(right, -dx * k).addScaledVector(up, dy * k);
+    target.x = Math.min(30, Math.max(-35, target.x));
+    target.y = Math.min(14, Math.max(-4, target.y));
+    target.z = Math.min(20, Math.max(-20, target.z));
+    goal = null;
+  }
+
+  var pointers = {};
+  var downInfo = null;
+  var pinchDist = 0;
+  var pinchMid = null;
+
+  canvas.addEventListener("pointerdown", function (e) {
+    canvas.setPointerCapture(e.pointerId);
+    pointers[e.pointerId] = { x: e.clientX, y: e.clientY, pan: e.button === 2 || e.shiftKey };
+    var ids = Object.keys(pointers);
+    if (ids.length === 1) { downInfo = { x: e.clientX, y: e.clientY, t: performance.now(), moved: 0 }; }
+    if (ids.length === 2) {
+      var a = pointers[ids[0]], b = pointers[ids[1]];
+      pinchDist = Math.hypot(a.x - b.x, a.y - b.y);
+      pinchMid = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+      downInfo = null;
+    }
+  });
+  canvas.addEventListener("pointermove", function (e) {
+    var p = pointers[e.pointerId];
+    if (!p) return;
+    var dx = e.clientX - p.x, dy = e.clientY - p.y;
+    p.x = e.clientX; p.y = e.clientY;
+    var ids = Object.keys(pointers);
+    if (ids.length === 1) {
+      if (p.pan) {
+        panBy(dx, dy);
+      } else {
+        sph.theta -= dx * 0.006;
+        sph.phi = Math.min(1.5, Math.max(0.2, sph.phi - dy * 0.005));
+        goal = null;
+      }
+      if (downInfo) downInfo.moved += Math.abs(dx) + Math.abs(dy);
+    } else if (ids.length === 2) {
+      var a = pointers[ids[0]], b = pointers[ids[1]];
+      var d = Math.hypot(a.x - b.x, a.y - b.y);
+      var mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+      if (pinchMid) { panBy(mx - pinchMid.x, my - pinchMid.y); }
+      pinchMid = { x: mx, y: my };
+      if (pinchDist > 0) { sph.r = Math.min(120, Math.max(10, sph.r * (pinchDist / d))); }
+      pinchDist = d;
+    }
+  });
+  function endPointer(e) {
+    var had = pointers[e.pointerId];
+    delete pointers[e.pointerId];
+    if (had && downInfo && Object.keys(pointers).length === 0) {
+      if (downInfo.moved < 6 && performance.now() - downInfo.t < 600) pickAt(e.clientX, e.clientY);
+    }
+    downInfo = null; pinchDist = 0; pinchMid = null;
+  }
+  canvas.addEventListener("pointerup", endPointer);
+  canvas.addEventListener("pointercancel", endPointer);
+  canvas.addEventListener("contextmenu", function (e) { e.preventDefault(); });
+  canvas.addEventListener("wheel", function (e) {
+    e.preventDefault();
+    // トラックパッドの2本指スライドは移動、ピンチ(ctrlKey 付き)とマウスのホイールは拡大縮小
+    var trackpadSlide = !e.ctrlKey && (e.deltaX !== 0 || !Number.isInteger(e.deltaY));
+    if (trackpadSlide) {
+      panBy(-e.deltaX, -e.deltaY);
+    } else {
+      var f = e.ctrlKey ? 0.01 : 0.0012;
+      sph.r = Math.min(120, Math.max(10, sph.r * (1 + e.deltaY * f)));
+    }
+  }, { passive: false });
+
+  var ray = new THREE.Raycaster();
+  function pickAt(cx, cy) {
+    var rect = canvas.getBoundingClientRect();
+    var ndc = new THREE.Vector2(((cx - rect.left) / rect.width) * 2 - 1, -((cy - rect.top) / rect.height) * 2 + 1);
+    ray.setFromCamera(ndc, camera);
+    var hits = ray.intersectObjects(nodeMeshes.concat(hitMeshes), false);
+    // services and links win over container frames, frames win over node slabs
+    var best = null;
+    for (var i = 0; i < hits.length; i++) {
+      var u = hits[i].object.userData;
+      if (u.kind === "link" && !flowOn[u.flow]) continue;
+      if (!best || u.prio < best.prio) best = { id: u.id, prio: u.prio };
+      if (u.prio === 0) break;
+    }
+    select(best ? best.id : null);
+  }
+
+  pick.addEventListener("change", function () { select(pick.value || null); });
+  document.getElementById("reset").addEventListener("click", function () {
+    sph.theta = fitCamera.t0; sph.phi = 1.05; sph.r = fitCamera.r0;
+    select(null);
+  });
+  var spinBtn = document.getElementById("spin");
+  spinBtn.addEventListener("click", function () {
+    spinOn = !spinOn;
+    spinBtn.setAttribute("aria-pressed", String(spinOn));
+  });
+
+  /* ---------- loop ---------- */
+  function frame(now) {
+    var t = reduced ? 0 : now / 1000;
+    if (goal) {
+      target.lerp(goal, 0.08);
+      if (target.distanceTo(goal) < 0.02) goal = null;
+    }
+    if (spinOn && !reduced && Object.keys(pointers).length === 0) sph.theta += 0.0025;
+    linkObjs.forEach(function (o) {
+      if (!flowOn[o.def.flow]) return;
+      var sel = selected === o.def.id;
+      for (var i = 0; i < o.dots.length; i++) {
+        var d = o.dots[i];
+        var u = (t * o.speed + d.userData.off) % 1;
+        d.position.copy(o.curve.getPoint(u));
+        d.scale.setScalar(sel ? 1.5 : 1);
+      }
+    });
+    updateCamera();
+    renderer.render(scene, camera);
+    requestAnimationFrame(frame);
+  }
+
+  function init() {
+    try {
+      renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+    } catch (err) {
+      stage.innerHTML = '<p style="padding:16px;color:#929cc0">この環境では 3D を表示できませんでした(WebGL が使えません)。</p>';
+      return;
+    }
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    buildScene();
+    applyFlowVisibility();
+    fitCamera();
+    if (window.ResizeObserver) { new ResizeObserver(fitCamera).observe(stage); } else { window.addEventListener("resize", fitCamera); }
+    requestAnimationFrame(frame);
+  }
+
+  var fontsReady = (document.fonts && document.fonts.load)
+    ? Promise.race([
+        Promise.all([document.fonts.load('700 28px "Zen Kaku Gothic New"'), document.fonts.load('400 20px "Zen Kaku Gothic New"')]),
+        new Promise(function (r) { setTimeout(r, 1500); })
+      ])
+    : Promise.resolve();
+  fontsReady.then(init, init);
+})();
+</script>
+
+</body></html>
