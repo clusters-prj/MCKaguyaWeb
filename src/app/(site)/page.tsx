@@ -360,6 +360,21 @@ export default async function HomePage() {
             ))}
           </ul>
         </div>
+        <div className="home-news">
+          <div>
+            <p className="home-kicker">SERVER SETUP</p>
+            <h3>{t("systeminfo_h3")}</h3>
+          </div>
+          <ul>
+            <li>
+              <time>3D MAP</time>
+              <Link className="home-text-link" href="/system">
+                {t("systeminfo_link")}
+                <span aria-hidden="true">↗</span>
+              </Link>
+            </li>
+          </ul>
+        </div>
       </section>
 
       <section
