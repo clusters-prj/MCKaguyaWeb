@@ -41,6 +41,8 @@ export const PAGES: { path: string; priority: string }[] = [
   { path: "/gameinfo/tools", priority: "0.6" },
   { path: "/gameinfo/wra", priority: "0.7" },
   { path: "/gameinfo/build-manual", priority: "0.7" },
+  { path: "/gameinfo/economy", priority: "0.7" },
+  { path: "/gameinfo/economy-api", priority: "0.6" },
 ];
 
 export function isLang(value: string | null | undefined): value is Lang {

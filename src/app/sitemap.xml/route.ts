@@ -32,7 +32,7 @@ export function GET() {
     ]);
     alternates.push(["x-default", `${SITE_URL}${page.path}`]);
 
-    for (const [, loc] of alternates.slice(0, SUPPORTED_LANGS.length)) {
+    for (const [, loc] of alternates) {
       entries.push(
         [
           "  <url>",
