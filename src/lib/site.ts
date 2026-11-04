@@ -35,6 +35,7 @@ export const PAGES: { path: string; priority: string }[] = [
   { path: "/gameinfo", priority: "0.8" },
   { path: "/system", priority: "0.8" },
   { path: "/cont", priority: "0.8" },
+  { path: "/archive", priority: "0.8" },
   { path: "/contact", priority: "0.8" },
   { path: "/copyright", priority: "0.5" },
   { path: "/gameinfo/connect", priority: "0.9" },
