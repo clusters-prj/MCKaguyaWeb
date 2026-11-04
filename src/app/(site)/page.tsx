@@ -17,8 +17,8 @@ export default async function HomePage() {
   const { t } = await getT();
   const home = loadHomeContent();
 
-  const heroTitle = home.hero_title || "物語の街を、\n歩ける世界に。";
-  const heroIntro = home.hero_intro || t("index_intro");
+  const heroTitle = t("archive_hero_title");
+  const heroIntro = t("archive_hero_intro");
   const heroImage = `/assets/gallery/${basename(home.hero_image || "1015.webp")}`;
   const heroAlt = home.hero_image_alt || "星の海に浮かぶツクヨミの鳥居と光の道";
   const gallery =
@@ -28,13 +28,16 @@ export default async function HomePage() {
   const steps = gallery
     ? gallery.map((g, i) => g.title || DEFAULT_STEPS[i])
     : DEFAULT_STEPS;
-  const news = home.news?.length
-    ? home.news
-    : [
-        { date: "2026.08.29", text: t("news_3") },
-        { date: "2026.06.30", text: t("news_2") },
-        { date: "2026.06.17", text: t("news_1") },
-      ];
+  const news = [
+    { date: "NOTICE", text: t("archive_news_end") },
+    ...(home.news?.length
+      ? home.news
+      : [
+          { date: "2026.08.29", text: t("news_3") },
+          { date: "2026.06.30", text: t("news_2") },
+          { date: "2026.06.17", text: t("news_1") },
+        ]),
+  ];
 
   preload(heroImage, { as: "image", fetchPriority: "high" });
 
@@ -67,12 +70,12 @@ export default async function HomePage() {
           </h1>
           <p className="home-lead">{heroIntro}</p>
           <div className="home-hero__actions">
-            <Link className="home-button" href="/contact">
-              {t("nav_contact")}
+            <Link className="home-button" href="/archive">
+              {t("archive_hero_cta")}
               <span aria-hidden="true">↗</span>
             </Link>
-            <a className="home-text-link" href="#world">
-              {t("index_status_h3")}
+            <a className="home-text-link" href="#gallery">
+              {t("archive_gallery_title")}
               <span aria-hidden="true">↓</span>
             </a>
           </div>
@@ -391,25 +394,18 @@ export default async function HomePage() {
         />
         <div className="home-join__veil"></div>
         <div className="home-join__content reveal-side reveal-side--left">
-          <p className="home-kicker">YOUR NEXT ADVENTURE STARTS HERE</p>
+          <p className="home-kicker">THANK YOU FOR EVERYTHING</p>
           <h2 id="join-title">
-            この世界の続きを、
-            <br />
-            <em>一緒につくろう。</em>
+            <em>{t("archive_thanks_title")}</em>
           </h2>
-          <p>
-            {t("contact_discord_info")}{" "}
-            <Link className="home-join__link" href="/gameinfo/connect">
-              {t("contact_discord_connect")}
-            </Link>
-          </p>
-          <Link className="home-button home-button--light" href="/contact">
-            {t("contact_discord_link")}
+          <p>{t("archive_thanks_body")}</p>
+          <Link className="home-button home-button--light" href="/archive">
+            {t("archive_hero_cta")}
             <span aria-hidden="true">↗</span>
           </Link>
         </div>
         <span className="home-join__index">
-          05 — 05 <i></i> JOIN THE PROJECT
+          05 — 05 <i></i> THANK YOU
         </span>
       </section>
     </main>

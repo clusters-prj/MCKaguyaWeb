@@ -20,6 +20,7 @@ export default async function SiteLayout({
       { href: "/progress", label: t("nav_progress") },
       { href: "/gameinfo", label: t("nav_gameinfo") },
       { href: "/cont", label: t("nav_contributors") },
+      { href: "/archive", label: t("nav_archive") },
       { href: "/contact", label: t("nav_contact") },
     ],
   };
