@@ -339,5 +339,11 @@
   "archive_docs_info": "将运营中使用的资料原样公开。",
   "archive_docs_report": "运营报告（2026年4～5月，PDF）",
   "archive_docs_system": "服务器结构3D地图",
-  "archive_copyright_note": "各成果的著作权归各自权利人所有。详情请参阅著作权信息。"
+  "archive_copyright_note": "各成果的著作权归各自权利人所有。详情请参阅著作权信息。",
+  "archive_hero_title": "故事中的城市，\n我们漫步其间的日子的记录。",
+  "archive_hero_intro": "MC月读制作委员会已结束活动。我们在Minecraft中还原《超辉夜姬！》世界的成果，现已作为存档公开。",
+  "archive_hero_cta": "查看存档",
+  "archive_thanks_title": "感谢您的参与。",
+  "archive_thanks_body": "衷心感谢所有参与过本项目的各位。我们制作的一切都保存在存档中。",
+  "archive_news_end": "活动结束公告。感谢一路以来的支持"
 }

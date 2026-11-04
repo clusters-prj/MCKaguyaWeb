@@ -339,5 +339,11 @@
   "archive_docs_info": "운영에 사용하던 자료를 그대로 공개합니다.",
   "archive_docs_report": "운영 보고서(2026년 4~5월, PDF)",
   "archive_docs_system": "서버 구성 3D 지도",
-  "archive_copyright_note": "각 결과물의 저작권은 각 권리자에게 귀속됩니다. 자세한 내용은 저작권 정보를 확인해 주세요."
+  "archive_copyright_note": "각 결과물의 저작권은 각 권리자에게 귀속됩니다. 자세한 내용은 저작권 정보를 확인해 주세요.",
+  "archive_hero_title": "이야기 속 도시를\n걸었던 날들의 기록.",
+  "archive_hero_intro": "MC 츠쿠요미 프로젝트는 활동을 종료했습니다. 「超かぐや姫！」의 세계를 마인크래프트에 재현해 온 성과를 아카이브로 공개합니다.",
+  "archive_hero_cta": "아카이브 보기",
+  "archive_thanks_title": "함께해 주셔서 감사합니다.",
+  "archive_thanks_body": "프로젝트에 참여해 주신 모든 분들께 진심으로 감사드립니다. 만들어 온 것들은 아카이브에 남겨 두었습니다.",
+  "archive_news_end": "활동 종료 안내. 지금까지 감사했습니다"
 }

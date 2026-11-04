@@ -339,5 +339,11 @@
   "archive_docs_info": "Les documents que nous utilisions pour gérer le projet, publiés tels quels.",
   "archive_docs_report": "Rapport d'exploitation (avr.–mai 2026, PDF)",
   "archive_docs_system": "Carte 3D de la structure du serveur",
-  "archive_copyright_note": "Les droits d'auteur de chaque création appartiennent à leurs titulaires respectifs. Voir les informations sur les droits d'auteur pour plus de détails."
+  "archive_copyright_note": "Les droits d'auteur de chaque création appartiennent à leurs titulaires respectifs. Voir les informations sur les droits d'auteur pour plus de détails.",
+  "archive_hero_title": "La ville du récit,\nla trace des jours où nous l'avons parcourue.",
+  "archive_hero_intro": "Le projet MC Tsukuyomi a mis fin à ses activités. Ce que nous avons construit en recréant dans Minecraft l'univers de « Chokaguya-hime ! » est désormais conservé dans les archives.",
+  "archive_hero_cta": "Voir les archives",
+  "archive_thanks_title": "Merci d'avoir participé.",
+  "archive_thanks_body": "Nous remercions chaleureusement toutes celles et ceux qui ont pris part au projet. Tout ce que nous avons créé est conservé dans les archives.",
+  "archive_news_end": "Avis de fin du projet. Merci pour tout"
 }

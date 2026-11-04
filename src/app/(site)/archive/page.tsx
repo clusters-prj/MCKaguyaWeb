@@ -66,7 +66,12 @@ export default async function ArchivePage() {
           <p>{t("archive_gallery_info")}</p>
           <div className="archive-gallery">
             {images.map((file) => (
-              <a key={file} href={`/assets/gallery/${file}`} target="_blank" rel="noopener noreferrer">
+              <a
+                key={file}
+                href={`/assets/gallery/${file}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img
                   src={`/assets/gallery/${file}`}
                   alt={t("archive_gallery_alt")}
@@ -129,16 +134,22 @@ export default async function ArchivePage() {
           <p>{t("archive_docs_info")}</p>
           <ul>
             <li>
-              <Link href="/gameinfo/connect">{t("gameinfo_connect_title")}</Link>
+              <Link href="/gameinfo/connect">
+                {t("gameinfo_connect_title")}
+              </Link>
             </li>
             <li>
-              <Link href="/gameinfo/build-manual">{t("gameinfo_build_manual_title")}</Link>
+              <Link href="/gameinfo/build-manual">
+                {t("gameinfo_build_manual_title")}
+              </Link>
             </li>
             <li>
               <Link href="/gameinfo/wra">{t("gameinfo_wra_title")}</Link>
             </li>
             <li>
-              <Link href="/gameinfo/economy">{t("gameinfo_economy_title")}</Link>
+              <Link href="/gameinfo/economy">
+                {t("gameinfo_economy_title")}
+              </Link>
             </li>
             <li>
               <Link href="/gameinfo/tools">{t("gameinfo_tools_title")}</Link>
@@ -147,7 +158,11 @@ export default async function ArchivePage() {
               <Link href="/system">{t("archive_docs_system")}</Link>
             </li>
             <li>
-              <a href="/docs/report_2645.pdf" target="_blank" rel="noopener noreferrer">
+              <a
+                href="/docs/report_2645.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {t("archive_docs_report")}
               </a>
             </li>

@@ -339,5 +339,11 @@
   "archive_docs_info": "Os documentos que usávamos para administrar o projeto, publicados como estavam.",
   "archive_docs_report": "Relatório de operações (abr–mai 2026, PDF)",
   "archive_docs_system": "Mapa 3D da estrutura do servidor",
-  "archive_copyright_note": "Os direitos autorais de cada obra pertencem aos respectivos titulares. Consulte as informações de direitos autorais para mais detalhes."
+  "archive_copyright_note": "Os direitos autorais de cada obra pertencem aos respectivos titulares. Consulte as informações de direitos autorais para mais detalhes.",
+  "archive_hero_title": "A cidade da história,\num registro dos dias em que a percorremos.",
+  "archive_hero_intro": "O Projeto MC Tsukuyomi encerrou suas atividades. O que construímos ao recriar no Minecraft o mundo de \"Chokaguya-hime!\" está agora preservado no arquivo.",
+  "archive_hero_cta": "Ver o arquivo",
+  "archive_thanks_title": "Obrigado por fazer parte.",
+  "archive_thanks_body": "Agradecemos de coração a todos que participaram do projeto. Tudo o que criamos está guardado no arquivo.",
+  "archive_news_end": "Aviso de encerramento do projeto. Obrigado por tudo"
 }
